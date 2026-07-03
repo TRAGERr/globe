@@ -1,0 +1,1 @@
+if !(is3DEN) then {this hideObject true};

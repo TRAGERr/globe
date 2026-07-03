@@ -1,0 +1,82 @@
+class CfgPatches
+{
+	class Soft_Globe_SUV_01
+	{
+		addonRootClass="A3_Soft_F_expEden";
+		requiredAddons[]=
+		{
+			"A3_Soft_F_expEden"
+		};
+		requiredVersion=0.1;
+		units[]={};
+		weapons[]={};
+	};
+};
+class CfgVehicles
+{
+	class Car_F;
+	class SUV_01_base_F: Car_F
+	{
+		class Sounds
+		{
+			soundSetsInt[]=
+			{
+				"Suv_01_Engine_RPM0_INT_SoundSet",
+				"Suv_01_Engine_RPM1_INT_SoundSet",
+				"Suv_01_Engine_RPM2_INT_SoundSet",
+				"Suv_01_Engine_RPM3_INT_SoundSet",
+				"Suv_01_Engine_RPM4_INT_SoundSet",
+				"Suv_01_Rattling_INT_SoundSet",
+				"Suv_01_Stress_INT_SoundSet",
+				"Suv_01_Rain_INT_SoundSet",
+				"Suv_01_Tires_Rock_Fast_INT_SoundSet",
+				"Suv_01_Tires_Grass_Fast_INT_SoundSet",
+				"Suv_01_Tires_Sand_Fast_INT_SoundSet",
+				"Suv_01_Tires_Gravel_Fast_INT_SoundSet",
+				"Suv_01_Tires_Mud_Fast_INT_SoundSet",
+				"Suv_01_Tires_Asphalt_Fast_INT_SoundSet",
+				"Suv_01_Tires_Water_Fast_INT_SoundSet",
+				"Suv_01_Tires_Rock_Slow_INT_SoundSet",
+				"Suv_01_Tires_Grass_Slow_INT_SoundSet",
+				"Suv_01_Tires_Sand_Slow_INT_SoundSet",
+				"Suv_01_Tires_Gravel_Slow_INT_SoundSet",
+				"Suv_01_Tires_Mud_Slow_INT_SoundSet",
+				"Suv_01_Tires_Asphalt_Slow_INT_SoundSet",
+				"Suv_01_Tires_Water_Slow_INT_SoundSet",
+				"Suv_01_Tires_Turn_Hard_INT_SoundSet",
+				"Suv_01_Tires_Turn_Soft_INT_SoundSet",
+				"Suv_01_Tires_Brake_Hard_INT_SoundSet",
+				"Suv_01_Tires_Brake_Soft_INT_SoundSet",
+				"Tires_Movement_Dirt_Int_01_SoundSet"
+			};
+			soundSetsExt[]=
+			{
+				"Suv_01_Engine_RPM0_EXT_SoundSet",
+				"Suv_01_Engine_RPM1_EXT_SoundSet",
+				"Suv_01_Engine_RPM2_EXT_SoundSet",
+				"Suv_01_Engine_RPM3_EXT_SoundSet",
+				"Suv_01_Engine_RPM4_EXT_SoundSet",
+				"Suv_01_Rain_EXT_SoundSet",
+				"Suv_01_Tires_Rock_Fast_EXT_SoundSet",
+				"Suv_01_Tires_Grass_Fast_EXT_SoundSet",
+				"Suv_01_Tires_Sand_Fast_EXT_SoundSet",
+				"Suv_01_Tires_Gravel_Fast_EXT_SoundSet",
+				"Suv_01_Tires_Mud_Fast_EXT_SoundSet",
+				"Suv_01_Tires_Asphalt_Fast_EXT_SoundSet",
+				"Suv_01_Tires_Water_Fast_EXT_SoundSet",
+				"Suv_01_Tires_Rock_Slow_EXT_SoundSet",
+				"Suv_01_Tires_Grass_Slow_EXT_SoundSet",
+				"Suv_01_Tires_Sand_Slow_EXT_SoundSet",
+				"Suv_01_Tires_Gravel_Slow_EXT_SoundSet",
+				"Suv_01_Tires_Mud_Slow_EXT_SoundSet",
+				"Suv_01_Tires_Asphalt_Slow_EXT_SoundSet",
+				"Suv_01_Tires_Water_Slow_EXT_SoundSet",
+				"Suv_01_Tires_Turn_Hard_EXT_SoundSet",
+				"Suv_01_Tires_Turn_Soft_EXT_SoundSet",
+				"Suv_01_Tires_Brake_Hard_EXT_SoundSet",
+				"Suv_01_Tires_Brake_Soft_EXT_SoundSet",
+				"Tires_Movement_Dirt_Ext_01_SoundSet"
+			};
+		};
+	};
+};
