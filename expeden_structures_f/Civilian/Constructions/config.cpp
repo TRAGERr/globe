@@ -8,12 +8,22 @@ class CfgPatches
 			"A3_Structures_F_Globe_Civilian"
 		};
 		requiredVersion=0.1;
-		units[]={};
+		units[]=
+		{
+			"Land_GasTank_01_blue_G_full",
+			"Land_GasTank_01_khaki_G_full",
+			"Land_GasTank_01_yellow_G_full",
+			"Land_SteelTank_01_blue_G",
+			"Land_SteelTank_01_khaki_G",
+			"Land_SteelTank_01_yellow_G",
+		};
 		weapons[]={};
 	};
 };
 class CfgVehicles
 {
+	class GasTank_base_F;
+	class GasTank_01_base_F;
 	class Lamps_base_F;
 	class Land_PortableLight_single_F: Lamps_base_F
 	{
@@ -142,5 +152,260 @@ class CfgVehicles
 		class Reflectors
 		{
 		};
+	};
+	class GasTank_01_full_base_G: GasTank_01_base_F
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="GasTank_01_full_base_G";
+		scope=0;
+		scopeCurator=0;
+		vehicleClass="Tents";
+		class AnimationSources
+		{
+			class Sign_source
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.001;
+			};
+		};
+		armor=123;
+		disableInventory=1;
+		destrType="DestructBuilding";
+		class DestructionEffects
+		{
+			class ClusterLight
+			{
+				simulation="light";
+				type="ClusterLight";
+				position="";
+				intensity="0.001*1000";
+				interval=1;
+				lifeTime="0.25*2";
+			};
+			class ClusterFire
+			{
+				simulation="particles";
+				type="ClusterFire";
+				position="";
+				interval=1;
+				intensity=0.01;
+				lifeTime=0.01;
+			};
+			class Explo
+			{
+				simulation="particles";
+				type="MineExplosionParticles";
+				position="";
+				lifeTime=0.0099999998;
+				interval=0.6;
+				intensity=0.001;
+			};
+			class Sound: Explo
+			{
+				simulation="sound";
+				type="ERA_Explosion";
+				lifeTime=4;
+				interval=1;
+			};
+			class ClusterSmokeLingering
+			{
+				simulation="particles";
+				type="ClusterSmokeLingering";
+				position="";
+				intensity=0.1;
+				interval=0.2;
+				lifeTime=0.01;
+			};
+			class ClusterSmoke
+			{
+				simulation="particles";
+				type="ClusterSmoke";
+				position="";
+				intensity=0.1;
+				interval=0.2;
+				lifeTime=0.01;
+			};
+		};
+		class EventHandlers
+		{
+			class Globe_gasTankEH
+			{
+				killed="_this call expEden_fnc_gasTankExploded;";
+			};
+		};
+	};
+	class Land_GasTank_01_blue_G_full: GasTank_01_full_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=1;
+			animate[]=
+			{
+				
+				{
+					"sign_hide",
+					0
+				}
+			};
+			hide[]={};
+			verticalOffset=0.33899999;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_GasTank_01_blue_F.jpg";
+		_generalMacro="Land_GasTank_01_blue_G_full";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_GasTank_01_blue_G_full0";
+		model="\A3\Structures_F_Heli\Civ\Constructions\GasTank_01_blue_F.p3d";
+	};
+	class Land_GasTank_01_khaki_G_full: GasTank_01_full_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=1;
+			animate[]=
+			{
+				
+				{
+					"sign_hide",
+					0
+				}
+			};
+			hide[]={};
+			verticalOffset=0.33899999;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_GasTank_01_khaki_F.jpg";
+		_generalMacro="Land_GasTank_01_khaki_G_full";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_GasTank_01_khaki_G_full0";
+		model="\A3\Structures_F_Heli\Civ\Constructions\GasTank_01_khaki_F.p3d";
+	};
+	class Land_GasTank_01_yellow_G_full: GasTank_01_full_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=1;
+			animate[]=
+			{
+				
+				{
+					"sign_hide",
+					0
+				}
+			};
+			hide[]={};
+			verticalOffset=0.33899999;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_GasTank_01_yellow_F.jpg";
+		_generalMacro="Land_GasTank_01_yellow_G_full";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_GasTank_01_yellow_G_full0";
+		model="\A3\Structures_F_Heli\Civ\Constructions\GasTank_01_yellow_F.p3d";
+	};
+	class SteelTank_01_base_G: GasTank_base_F
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="SteelTank_01_base_G";
+		scope=0;
+		scopeCurator=0;
+		vehicleClass="Tents";
+		class AnimationSources
+		{
+			class Sign_source
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=0.001;
+			};
+		};
+	};
+	class Land_SteelTank_01_blue_G: SteelTank_01_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=1;
+			animate[]=
+			{
+				
+				{
+					"sign_hide",
+					1
+				}
+			};
+			hide[]={};
+			verticalOffset=0.33899999;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_SteelTank_01_blue_G.jpg";
+		_generalMacro="Land_SteelTank_01_blue_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_SteelTank_01_blue_G0";
+		model="\A3\Structures_F_Heli\Civ\Constructions\GasTank_01_blue_F.p3d";
+	};
+	class Land_SteelTank_01_khaki_G: SteelTank_01_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=1;
+			animate[]=
+			{
+				
+				{
+					"sign_hide",
+					1
+				}
+			};
+			hide[]={};
+			verticalOffset=0.33899999;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_SteelTank_01_khaki_G.jpg";
+		_generalMacro="Land_SteelTank_01_khaki_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_SteelTank_01_khaki_G0";
+		model="\A3\Structures_F_Heli\Civ\Constructions\GasTank_01_khaki_F.p3d";
+	};
+	class Land_SteelTank_01_yellow_G: SteelTank_01_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=1;
+			animate[]=
+			{
+				
+				{
+					"sign_hide",
+					1
+				}
+			};
+			hide[]={};
+			verticalOffset=0.33899999;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_SteelTank_01_yellow_G.jpg";
+		_generalMacro="Land_SteelTank_01_yellow_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_SteelTank_01_yellow_G0";
+		model="\A3\Structures_F_Heli\Civ\Constructions\GasTank_01_yellow_F.p3d";
 	};
 };

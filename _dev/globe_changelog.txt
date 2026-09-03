@@ -1,6 +1,125 @@
 [b]FIXED:[/b]
 
-	🛠 
+	🛠 footsteps sound while running when weapon is put away → [url=https://github.com/TRAGERr/capsule/pull/1/changes/d988f1a085de7c77f17e86ab6964752932f6fa93]see chacnges[/url] (Thanks to [url=https://github.com/vits89]Schatten[/url])
+	🛠 some animations → [url=https://github.com/TRAGERr/capsule/pull/1/changes/b4d7b6192d9bbe43e914e78720fb42c6e1aa1c11]see chacnges[/url] (Thanks to [url=https://github.com/vits89]Schatten[/url] and Leopard20)
+	🛠 weird thing where 1400AD units were somehow executing the random texture from the [b]Civilian (Tee)[/b] ([i]class C_ManTShirt_01[/i]) postInit event handlers
+	🛠 Show Law of War hints was enabled for renigate soldiers (sideEnemy)
+	🛠 "Cannot create non-ai vehicle" errors, there was typos in class names for some Civilian Presence system presets
+	🛠 some 'not found' text strings warnings
+
+
+[b]ADDED:[/b]
+
+	+ [b]Delete Condition[/b] → [i]new Eden Editor option for Presense attributes[/i]
+	+ [b]Delete Delay[/b] → [i]new Eden Editor option for Presense attributes[/i]
+	+ [b]Big Muzzle Dust[/b]
+	+ [b]Mortar Muzzle Dust[/b]
+	+ [b]Artillery Muzzle Dust[/b]
+	+ [b]Tank Muzzle Dust (Left)[/b]
+	+ [b]Tank Muzzle Dust[/b]
+	+ [b]Tank Muzzle Dust (Long)[/b]
+	+ [b]Tank Muzzle Dust (Big)[/b]
+	+ [b]Tank Muzzle Dust (Small)[/b]
+	+ [b]Object Destruction Fire[/b]
+	+ [b]Object Destruction Fire (v2)[/b]
+	+ [b]Aircraft Fire[/b]
+	+ [b]Object Destruction Fire (Small, v1)[/b]
+	+ [b]Object Destruction Fire (Small, v2)[/b]
+	+ [b]Jet Exhaust Flame[/b]
+	+ [b]Cluster Explosion (v1)[/b]
+	+ [b]Cluster Explosion (v2)[/b]
+
+	+ [b]Small Fast Smoke[/b]
+	+ [b]Small Slow Smoke (v1)[/b]
+	+ [b]Small Slow Smoke (v2)[/b]
+	+ [b]Big Bright Smoke[/b]
+	+ [b]Black-Gray Smoke[/b]
+	+ [b]Grenade Explosion Smoke[/b]
+	+ [b]Secondary Explosion Smoke[/b]
+	+ [b]Crater Smoke[/b]
+	+ [b]Crater Smoke (Orange)[/b]
+	+ [b]Crater Smoke (Big)[/b]
+	+ [b]Shell Smoke[/b]
+	+ [b]Exploding Ammo Smoke[/b]
+	+ [b]ERA Explosion Smoke[/b]
+	+ new CfgVehicleIcons type [i]iconSmoke_G[/i]
+
+	+ [b]Yellow Illumination[/b]
+	+ [b]White Illumination[/b]
+	+ [b]Red Illumination[/b]
+	+ [b]Green Illumination[/b]
+	+ [b]Yellow Illumination (20-mm)[/b]
+	+ [b]White Illumination (20-mm)[/b]
+	+ [b]Red Illumination (20-mm)[/b]
+	+ [b]Green Illumination (20-mm)[/b]
+	+ new CfgVehicleIcons type [i]iconFlare_G[/i]
+
+	+ [b]Light Cone (Guard Tower)[/b]
+	+ [b]Light Cone (Power Line)[/b]
+	+ [b]Light Cone (Car)[/b]
+	+ [b]Light Cone (Truck)[/b]
+	+ [b]Light Cone (Sawmill)[/b]
+	+ [b]Light Cone (Eddie)[/b]
+	+ [b]Light Cone (Tractor)[/b]
+	+ [b]Light Cone (Offroad 1)[/b]
+	+ [b]Light Cone (Offroad 2)[/b]
+	+ [b]Light Cone (Offroad Spotlight)[/b]
+	+ [b]Light Cone (Lighthouse)[/b]
+	+ [b]Light Cone (Lighthouse, Small)[/b]
+	+ [b]Light Cone (VTOL)[/b]
+	+ [b]Light Cone (WY-55 Hellcat Searchlight)[/b]
+	+ new CfgVehicleIcons type [i]iconReflector_G[/i]
+
+	i [i]next assets is placeable Light Sources objects [Props → Effects → Lamps][/i]
+	+ [b]Destruction[/b]
+	+ [b]Explosion (Small)[/b]
+	+ [b]Countermeasure (Flare)[/b]
+	+ [b]Light Bonfire 1[/b]
+	+ [b]Light Bonfire 2[/b]
+	+ [b]Small Flame[/b]
+	+ [b]Chemlight (Green)[/b]
+	+ [b]Chemlight (Red)[/b]
+	+ [b]Chemlight (Yellow)[/b]
+	+ [b]Chemlight (Blue)[/b]
+	+ [b]Destruction (Small)[/b]
+	+ [b]Explosion[/b]
+	+ [b]Explosion (Medium)[/b]
+	+ [b]Muzzle Flash (Medium)[/b]
+	+ [b]Muzzle Flash (Launcher)[/b]
+	+ [b]Muzzle Flash (Launcher, Small)[/b]
+	+ [b]Muzzle Flash (Cannon)[/b]
+	+ [b]Muzzle Flash (Small)[/b]
+	+ [b]Grenade Explosion[/b]
+	+ [b]Mine Explosion[/b]
+	+ [b]Rocket Explosion[/b]
+	+ [b]Cruise Missile[/b]
+	+ [b]Sparks[/b]
+	+ [b]Sparks (Sabot)[/b]
+	+ [b]Cluster Explosion[/b]
+	+ [b]Cluster Submunition[/b]
+	+ [b]Training Mine[/b]
+	+ [b]Lantern[/b]
+	+ [b]Railgun 75mm[/b]
+	+ [b]Big Fire[/b]
+	+ [b]Medium Fire[/b]
+	+ [b]Scud Launch[/b]
+	+ [b]Lightning (Legacy)[/b]
+	+ [b]Lightning (Prototype)[/b]
+	+ [b]Lightning[/b]
+	+ [b]Guard Tower[/b]
+	+ [b]Power Line Lamp[/b]
+	+ [b]Car Headlight[/b]
+	+ [b]Truck Headlight[/b]
+	+ [b]Sawmill[/b]
+	+ [b]Eddie[/b]
+	+ [b]Tractor[/b]
+	+ [b]Offroad (Spotlight)[/b]
+	+ [b]Offroad 1[/b]
+	+ [b]Offroad 2[/b]
+	+ [b]Lighthouse[/b]
+	+ [b]Lighthouse (Small)[/b]
+	+ [b]VTOL[/b]
+	+ [b]WY-55 Hellcat[/b]
 
 
 [b]UPDATED:[/b]
@@ -8,30 +127,6 @@
 	⭮ 
 
 
-[b]ADDED:[/b]
-
-	+ [b]Aircon Condenser [on][/b]
-	+ [b]Aircon Condenser (Rusty) [on][/b]
-
-
-
 [b]DELETED:[/b]
 
 	- 
-
-
-
-
-
-
-
-
-
-			"Land_Billboard_12_G_blank",
-			"Land_Billboard_12_G_gyros",
-			"Land_Billboard_12_G_magazines",
-			"Land_Billboard_12_G_newspapers",
-			"Land_Billboard_12_G_tabloids",
-			"Land_SteelTank_01_blue_G",
-			"Land_SteelTank_01_khaki_G",
-			"Land_SteelTank_01_yellow_G",

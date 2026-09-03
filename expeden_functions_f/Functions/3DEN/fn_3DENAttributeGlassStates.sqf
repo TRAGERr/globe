@@ -60,12 +60,14 @@ switch _mode do
 						sleep 0.5;
 						SETUP_GLASS(_object,_forEachIndex,_x);
 						sleep 0.5;
+						forceHitPointsDamageSync _object;
 						_object allowDamage false;
 					}
 				}
 				else
 				{
 					SETUP_GLASS(_object,_forEachIndex,_x);
+					forceHitPointsDamageSync _object;
 				}
 			};
 		}

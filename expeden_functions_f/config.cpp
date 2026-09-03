@@ -33,6 +33,24 @@ class CfgFunctions
 		class Misc
 		{
 			file="\A3\Functions_F_Globe\Functions\Misc";
+			class razorWire
+			{
+			};
+			class razorWireDamage
+			{
+			};
+			class shortArcZap
+			{
+			};
+			class shortArcZapTransformer
+			{
+			};
+			class shortArcZapTransformerFX
+			{
+			};
+			class doorKnocking
+			{
+			};
 			class pylonPodSearchlightActions
 			{
 			};
@@ -40,6 +58,9 @@ class CfgFunctions
 			{
 			};
 			class showLawOfWar
+			{
+			};
+			class showLawOfWarCondition
 			{
 			};
 			class exportEditorPreviews
@@ -200,6 +221,22 @@ class CfgFunctions
 			{
 			};
 		};
+		class CAS
+		{
+			file="\A3\Functions_F_Globe\Functions\CAS";
+			class moduleLoiteringMunitionAAF
+			{
+			};
+			class moduleLoiteringMunitionCSAT
+			{
+			};
+			class moduleLoiteringMunitionNATO
+			{
+			};
+			class moduleLoiteringMunition
+			{
+			};
+		};
 		class VR
 		{
 			file="\A3\Functions_F_Globe\Functions\VR";
@@ -223,6 +260,12 @@ class CfgFunctions
 		class Attributes
 		{
 			file="\A3\Functions_F_Globe\Functions\3DEN";
+			class 3DENObjectBoxMarkerCondition
+			{
+			};
+			class 3DENAttributeDoorKnocking
+			{
+			};
 			class 3DENShowLawOfWarAttributeSave
 			{
 			};
@@ -267,6 +310,9 @@ class CfgFunctions
 		class Effects
 		{
 			file="\A3\Functions_F_Globe\Functions\Effects";
+			class gasTankExploded
+			{
+			};
 			class effectFiredRPG7
 			{
 			};
@@ -297,6 +343,9 @@ class CfgFunctions
 		class Weapons
 		{
 			file="\A3\Functions_F_Globe\Functions\Weapons";
+			class missileMulfunction
+			{
+			};
 			class caseDrops9
 			{
 			};
@@ -373,6 +422,30 @@ class CfgFunctions
 	};
 	class A3_Jets
 	{
+		class AircrfatCarrier
+		{
+			class Carrier01AnimateDeflectors
+			{
+				description="This O&T Expasnion Eden mod change vanilla function with fixes for MP, overite of vanilla class will deleted on Arma 3 dev fix. see FT ticket T174022";
+				file="A3\Functions_F_Globe\Functions\Futura\fn_carrier01animatedeflectors.sqf";
+			};
+		};
+		class AircraftFunctionality
+		{
+			class AircraftTailhookAi
+			{
+				description="This O&T Expasnion Eden mod change vanilla function with fixes for MP, overite of vanilla class will deleted on Arma 3 dev fix. see FT ticket T174022";
+				file="A3\Functions_F_Globe\Functions\Futura\fn_AircraftTailhookAi.sqf";
+			};
+		};
+		class CarrierOps
+		{
+			class AircraftTailhook
+			{
+				description="This O&T Expasnion Eden mod change vanilla function with fixes for MP, overite of vanilla class will deleted on Arma 3 dev fix. see FT ticket T174022";
+				file="A3\Functions_F_Globe\Functions\Futura\fn_aircraftTailhook.sqf";
+			};
+		};
 		class Ejection
 		{
 			class PlaneEjection

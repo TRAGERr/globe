@@ -3,30 +3,14 @@ private _mode = param [0,"",[""]];
 private _this = param [1,[]];
 
 /*
-_showData
-param 1 - west 
-param 2 - east
-param 3 - indeps
-param 4 - civs
+	_showData
+		param 1 - west 
+		param 2 - east
+		param 3 - indeps
+		param 4 - civs
 */
-private _showData = missionNamespace getVariable ["Globe_ShowLoW", [false,false,false,false]];
-
-private _time = systemTime;
-private _isRealIHLDay = ((_time select 1) == 8 && (_time select 2) == 12);	//→ avgust 12 day IHL
-
-private _date = date;
-private _isGameIHLDay = ((_date select 1) == 8 && (_date select 2) == 12);
-
-if (_isRealIHLDay || _isGameIHLDay) then 
-{
-	_showData = [true, true, true, true];									//→ force show hints if IHL Day
-};
-
-private _sideIndex = [west, east, resistance, civilian] find (side player);
-if (_sideIndex != -1 && {!(_showData select _sideIndex)}) exitWith {};
-
+_showData = missionNamespace getVariable ["Globe_ShowLoW", [false,false,false,false]];
 _hint = [];
-
 switch _mode do
 {
 
@@ -38,6 +22,7 @@ switch _mode do
 		_objSide		= side group _obj;
 
 		if (_shooter != player && _shooterReal != player) exitwith {};
+		if (!([side player] call expEden_fnc_showLawOfWarCondition)) exitWith {};
 
 		if !(isnull group _obj) then 
 		{
@@ -163,6 +148,7 @@ switch _mode do
 		if !('cluster' in (toLower _magazine)) 	exitWith {};
 		if !('cluster' in (toLower _ammo)) 		exitWith {};
 		if (_shooter != player) exitwith {};
+		if (!([side player] call expEden_fnc_showLawOfWarCondition)) exitWith {};
 	
 		_hint = ["ClusterConvention_G","Article1","Hint"];
 	};
@@ -174,12 +160,14 @@ switch _mode do
 
 		if (getNumber (configfile >> "CfgAmmo" >> _ammo >> "hit") <= 0)	exitwith {};
 		if (_shooter != player) exitwith {};
+		if (!([side player] call expEden_fnc_showLawOfWarCondition)) exitWith {};
+
 		_hint = ["OttawaTreaty_G","Article3","Hint"];
 	};
 
 	case "postInit": 
 	{
-		addmissioneventhandler ["entityKilled",{["entityKilled",_this] call expEden_fnc_showLawOfWar}];
+		addMissionEventHandler ["entityKilled",{["entityKilled",_this] call expEden_fnc_showLawOfWar}];
 	};
 };
 

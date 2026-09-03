@@ -12,6 +12,8 @@ class CfgPatches
 		requiredVersion=0.1;
 		units[]=
 		{
+			"SoundSetSource_Sfx_WindNoise_01_G",
+			"SoundSetSource_Sfx_MissileMulfunction_01_G",
 			"SoundSetSource_VR_Ambient_01_G",
 			"SoundSource_DebrisGlass_01_G",
 			"SoundSetSource_Sfx_MemoryFragment_01_G",
@@ -1048,6 +1050,10 @@ class CfgAddons
 		{
 			list[]=
 			{
+				"Static_Globe_SAM_Systems",
+				"expEden_fixTextureSourcesFactions_G",
+				"Structures_Globe_Civilian_Garbage",
+				"Structures_Globe_Industrial_Tanks",
 				"Structures_Globe_Humanitarian_Camps",
 				"Structures_Globe_Humanitarian",
 				"Weapons_Globe_MMG_01_light",
@@ -1344,24 +1350,482 @@ class CfgLights
 	{
 		intensity="25000 * (power interpolate [0.1, 1.0, 0.7, 1.0])";
 	};
+	class BigFireLight_01_G: BigFireLight
+	{
+		intensity=25000;
+	};
 	class MediumFireLight: ObjectDestructionLightSmall
 	{
 		intensity="3500 * (power interpolate [0.1, 1.0, 0.7, 1.0])";
 	};
-};
-class VehicleExplosionEffectsBig
-{
-	class ExpSparksBig;
-};
-class VehicleCapacitorExplosionEffectsBig: VehicleExplosionEffectsBig
-{
-	class ExpSparksBig: ExpSparksBig
+	class MediumFireLight_01_G: MediumFireLight
 	{
-		type="ExpSparksCapacitor";
+		intensity=3500;
+	};
+	class ExplosionLight;
+	class ExplosionLight_01_G: ExplosionLight
+	{
+		brightness=1;
+	};
+	class ScudLight;
+	class ScudLight_01_G: ScudLight
+	{
+		position[]=
+		{
+			0,
+			0,
+			0
+		};
+	};
+	class SmallFireLight;
+	class SmallFireLight_01_G: SmallFireLight
+	{
+		intensity=2500;
+	};
+	class SmallFirePlaceLight;
+	class SmallFirePlaceLight_01_G: SmallFirePlaceLight
+	{
+		intensity=1200;
+	};
+	class FiredLightCannon;
+	class FiredLightCannon_01_G: FiredLightCannon
+	{
+		position[]=
+		{
+			0,
+			0,
+			0
+		};
+	};
+	class RocketLight;
+	class RocketLight_01_G: RocketLight
+	{
+		brightness=18;
+	};
+	class CruiseMissileLight;
+	class CruiseMissileLight_01_G: CruiseMissileLight
+	{
+		brightness=18;
+	};
+	class Lantern_01_Light;
+	class Lantern_01_Light_01_G: Lantern_01_Light
+	{
+		intensity=1200;
+	};
+	class FiredLightRailgun;
+	class FiredLightRailgun_01_G: FiredLightRailgun
+	{
+		position[]=
+		{
+			0,
+			0,
+			0
+		};
+	};
+	class FlareLight_01_base_G
+	{
+		diffuse[]={1,1,1};
+		color[]={1,1,1};
+		ambient[]={0,0,0,0};
+		brightness=12;
+		intensity=35000;
+		size=1;
+		drawLight=0;
+		blinking=0;
+		class Attenuation
+		{
+			start=15;
+			constant=0.1;
+			linear=0.1;
+			quadratic=0.03;
+			hardLimitStart=50;
+			hardLimitEnd=100;
+		};
+	};
+	class FlareLight_01_white_G: FlareLight_01_base_G
+	{
+		diffuse[]={1,1,1};
+		color[]={1,1,1};
+	};
+	class FlareLight_01_green_G: FlareLight_01_base_G
+	{
+		diffuse[]={0.25,0.5,0.25};
+		color[]={0.25,0.5,0.25};
+	};
+	class FlareLight_01_red_G: FlareLight_01_base_G
+	{
+		diffuse[]={0.5,0.25,0.25};
+		color[]={0.5,0.25,0.25};
+	};
+	class FlareLight_01_yellow_G: FlareLight_01_base_G
+	{
+		diffuse[]={0.5,0.5,0.25};
+		color[]={0.5,0.5,0.25};
+	};
+	class FlareLight_02_base_G: FlareLight_01_base_G
+	{
+		intensity=20000;
+	};
+	class FlareLight_02_white_G: FlareLight_02_base_G
+	{
+		diffuse[]={1,1,1};
+		color[]={1,1,1};
+	};
+	class FlareLight_02_green_G: FlareLight_02_base_G
+	{
+		diffuse[]={0.25,0.5,0.25};
+		color[]={0.25,0.5,0.25};
+	};
+	class FlareLight_02_red_G: FlareLight_02_base_G
+	{
+		diffuse[]={0.5,0.25,0.25};
+		color[]={0.5,0.25,0.25};
+	};
+	class FlareLight_02_yellow_G: FlareLight_02_base_G
+	{
+		diffuse[]={0.5,0.5,0.25};
+		color[]={0.5,0.5,0.25};
+	};
+	class ThunderBoltLight_01_G
+	{
+		diffuse[]={1,1,2};
+		ambient[]={0.5,0.5,1};
+		intensity=1000000;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0;
+			quadratic=1;
+		};
+	};
+	class ThunderBoltLight_02_G
+	{
+		diffuse[]={2120,3170,5550};
+		ambient[]={0.001,0.001,0.001};
+		intensity=120000;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0;
+			quadratic=1;
+		};
+	};
+	class ThunderBoltLight_03_G
+	{
+		diffuse[]={2120,2170,8550};
+		ambient[]={0.001,0.001,0.001};
+		intensity=120000;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0;
+			quadratic=1;
+		};
+	};
+	class GuardTower_G
+	{
+		color[]={1100,1000,1000};
+		ambient[]={10,10,12};
+		intensity=120;
+		size=1;
+		blinking=0;
+		useFlare=1;
+		flareSize=5;
+		flareMaxDistance=250;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=2;
+			quadratic=0.5;
+			hardLimitStart=50;
+			hardLimitEnd=70;
+		};
+	};
+	class PowerLine_G
+	{
+		color[]={1000,500,300};
+		ambient[]={10,5,3};
+		intensity=7;
+		size=1;
+		useFlare=1;
+		flareSize=2;
+		flareMaxDistance=220;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0;
+			quadratic=0.30000001;
+			hardLimitStart=30;
+			hardLimitEnd=60;
+		};
+	};
+	class LampGenericCar_G
+	{
+		color[]={1200,600,300};
+		ambient[]={12,6,3};
+		intensity=7;
+		size=1;
+		useFlare=1;
+		flareSize=2;
+		flareMaxDistance=220;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0;
+			quadratic=0.30000001;
+			hardLimitStart=40;
+			hardLimitEnd=60;
+		};
+	};
+	class Sawmill_G
+	{
+		color[]={1100,1000,1000};
+		ambient[]={10,10,12};
+		intensity=150;
+		size=1;
+		useFlare=1;
+		flareSize=5;
+		flareMaxDistance=250;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=2;
+			quadratic=0.5;
+			hardLimitStart=50;
+			hardLimitEnd=70;
+		};
+	};
+	class UGV2_G
+	{
+		color[]={1,1,1};
+		ambient[]={1,1,1};
+		intensity=743;
+		size=1;
+		useFlare=0;
+		flareSize=0.5;
+		flareMaxDistance=25;
+		dayLight=1;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0.00050000002;
+			quadratic=0;
+			hardLimitStart=2.7;
+			hardLimitEnd=30.200001;
+		};
+	};
+	class Tractor1Light_G
+	{
+		color[]={1,0.60000002,0.40000001};
+		ambient[]={0.050000001,0.050000001,0.050000001};
+		intensity=8000;
+		size=1;
+		useFlare=1;
+		dayLight=0;
+		class Attenuation
+		{
+			start=2.5;
+			constant=0.80000001;
+			linear=0.0099999998;
+			quadratic=0.1;
+			hardLimitStart=10;
+			hardLimitEnd=15;
+		};
+	};
+	class Offroad1Spotlight_G
+	{
+		color[]={1.9,1.8,1.7};
+		ambient[]={0.001,0.00025000001,1.9999999e-05};
+		intensity=10000;
+		size=1;
+		useFlare=1;
+		flareSize=1.5;
+		flareMaxDistance=50;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=15;
+			quadratic=7;
+			hardLimitStart=5;
+			hardLimitEnd=7;
+		};
+	};
+	class Offroad1_01_G
+	{
+		color[]={1.9,1.8,1.7};
+		ambient[]={5,5,5};
+		intensity=100;
+		size=1;
+		useFlare=0;
+		dayLight=0;
+		flareSize=1;
+		class Attenuation
+		{
+			start=1;
+			constant=0;
+			linear=0;
+			quadratic=0.050000001;
+			hardLimitStart=50;
+			hardLimitEnd=80;
+		};
+	};
+	class Offroad1_02_G
+	{
+		color[]={1,0.25,0.02};
+		ambient[]={0.001,0.00025000001,1.9999999e-05};
+		intensity=10000;
+		size=1;
+		useFlare=1;
+		flareSize=1.5;
+		flareMaxDistance=350;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=15;
+			quadratic=7;
+			hardLimitStart=5;
+			hardLimitEnd=7;
+		};
+	};
+	class LightHouse1_G
+	{
+		color[]={8000,7000,6000};
+		ambient[]={20,17.5,15};
+		intensity=1000;
+		size=1;
+		useFlare=1;
+		flareSize=25;
+		flareMaxDistance=2500;
+		blinking=0;
+		dayLight=0;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0.1;
+			quadratic=0;
+			hardLimitStart=800;
+			hardLimitEnd=1000;
+		};
+	};
+	class LightHouse3_G
+	{
+		color[]={70,75,100};
+		ambient[]={70,75,100};
+		intensity=7;
+		size=1;
+		innerAngle=5;
+		outerAngle=175;
+		coneFadeCoef=10;
+		useFlare=1;
+		dayLight=0;
+		FlareSize=0.69999999;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=1;
+			quadratic=0;
+			hardLimitStart=10;
+			hardLimitEnd=50;
+		};
+	};
+	class VTOL_G
+	{
+		color[]={7000,7500,10000};
+		ambient[]={70,75,100};
+		intensity=50;
+		size=1;
+		useFlare=1;
+		flareSize=10;
+		flareMaxDistance=250;
+		dayLight=0;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=1;
+			quadratic=1;
+			hardLimitStart=100;
+			hardLimitEnd=200;
+		};
+	};
+	class LampGenericTruck_G
+	{
+		color[]={7000,7500,10000};
+		ambient[]={70,75,100};
+		intensity=50;
+		size=1;
+		useFlare=1;
+		flareSize=10;
+		flareMaxDistance=250;
+		dayLight=0;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=1;
+			quadratic=1;
+			hardLimitStart=100;
+			hardLimitEnd=200;
+		};
+	};
+	class HeliLight3_G
+	{
+		color[]={7000,7500,10000};
+		ambient[]={70,75,100};
+		intensity=50;
+		size=1;
+		useFlare=1;
+		dayLight=0;
+		FlareSize=4;
+		class Attenuation
+		{
+			start=0;
+			constant=0;
+			linear=0;
+			quadratic=0.050000001;
+			hardLimitStart=400;
+			hardLimitEnd=450;
+		};
 	};
 };
 class CfgSoundSets
 {
+	class Sfx_WindNoise_01_G_SoundSet
+	{
+		soundShaders[]=
+		{
+			"Sfx_WindNoise_01_G_SoundShader"
+		};
+		volumeFactor=1;
+		volumeCurve="linearCurve";
+		spatial=1;
+		doppler=0;
+		loop=1;
+	};
+	class Sfx_MissileMulfunction_01_G
+	{
+		soundShaders[]=
+		{
+			"Sfx_MissileMulfunction_01_G_SoundShader"
+		};
+		volumeFactor=1.05;
+		volumeCurve="InverseSquare2Curve";
+		spatial=1;
+		doppler=0;
+		loop=1;
+	};
 	class VR_Ambient_01_G_SoundSets
 	{
 		soundShaders[]=
@@ -4242,6 +4706,34 @@ class CfgSoundSets
 };
 class CfgSoundShaders
 {
+	class Sfx_WindNoise_01_G_SoundShader
+	{
+		samples[]=
+		{
+			
+			{
+				"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\UAV_06_WindNoise_01_Ext",
+				1
+			}
+		};
+		volume=0.74125375;
+		range=150;
+		rangeCurve="linearCurve";
+	};
+	class Sfx_MissileMulfunction_01_G_SoundShader
+	{
+		samples[]=
+		{
+			
+			{
+				"A3\Sounds_F_Orange\Vehicles\Air\UAV_06\uav_6_deminedrone_bomb_whistle",
+				1
+			}
+		};
+		volume=1.6;
+		range=700;
+		rangeCurve="linearCurve";
+	};
 	class VR_Ambient_01_G_SoundShaders
 	{
 		samples[]=
@@ -8320,7 +8812,7 @@ class CfgSoundShaders
 				1
 			}
 		};
-		volume=1;
+		volume=0.8;
 		range=60;
 		rangeCurve="objectTransitionCurve";
 	};
@@ -8867,7 +9359,6 @@ class CfgDistanceFilters
 class CfgVehicles
 {
 	class SoundSetSource_01_base_F;
-	class All;
 	class Tank_F;
 	class Ship_F;
 	class Boat_F: Ship_F
@@ -8959,11 +9450,9 @@ class CfgVehicles
 	class ThingX;
 	class NonStrategic;
 	class static;
-	class House_Small_F;
-	class House;
-	class House_F: House
+	class House_F;
+	class House_Small_F: House_F
 	{
-		class DestructionEffects;
 	};
 	class Lamps_base_F: House_Small_F
 	{
@@ -15125,15276 +15614,47 @@ class CfgVehicles
 		destrType="DestructNo";
 		reversed=1;
 	};
-	class Airport_center: House_F
+	class Land_Airport_center_F: House_F
 	{
 		author="O&T Expansion Eden";
-		mapSize=34.400002;
 		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Airport_center.jpg";
-		class SimpleObject
-		{
-			eden=0;
-			animate[]=
-			{
-				
-				{
-					"glass_1_hide",
-					0
-				},
-				
-				{
-					"glass_1_unhide",
-					0
-				},
-				
-				{
-					"glass_2_hide",
-					0
-				},
-				
-				{
-					"glass_2_unhide",
-					0
-				},
-				
-				{
-					"glass_3_hide",
-					0
-				},
-				
-				{
-					"glass_3_unhide",
-					0
-				},
-				
-				{
-					"glass_4_hide",
-					0
-				},
-				
-				{
-					"glass_4_unhide",
-					0
-				},
-				
-				{
-					"glass_5_hide",
-					0
-				},
-				
-				{
-					"glass_5_unhide",
-					0
-				},
-				
-				{
-					"glass_6_hide",
-					0
-				},
-				
-				{
-					"glass_6_unhide",
-					0
-				},
-				
-				{
-					"glass_7_hide",
-					0
-				},
-				
-				{
-					"glass_7_unhide",
-					0
-				},
-				
-				{
-					"glass_8_hide",
-					0
-				},
-				
-				{
-					"glass_8_unhide",
-					0
-				},
-				
-				{
-					"glass_9_hide",
-					0
-				},
-				
-				{
-					"glass_9_unhide",
-					0
-				},
-				
-				{
-					"glass_10_hide",
-					0
-				},
-				
-				{
-					"glass_10_unhide",
-					0
-				},
-				
-				{
-					"glass_11_hide",
-					0
-				},
-				
-				{
-					"glass_11_unhide",
-					0
-				},
-				
-				{
-					"glass_12_hide",
-					0
-				},
-				
-				{
-					"glass_12_unhide",
-					0
-				},
-				
-				{
-					"glass_13_hide",
-					0
-				},
-				
-				{
-					"glass_13_unhide",
-					0
-				},
-				
-				{
-					"glass_14_hide",
-					0
-				},
-				
-				{
-					"glass_14_unhide",
-					0
-				},
-				
-				{
-					"glass_15_hide",
-					0
-				},
-				
-				{
-					"glass_15_unhide",
-					0
-				},
-				
-				{
-					"glass_16_hide",
-					0
-				},
-				
-				{
-					"glass_16_unhide",
-					0
-				},
-				
-				{
-					"glass_17_hide",
-					0
-				},
-				
-				{
-					"glass_17_unhide",
-					0
-				},
-				
-				{
-					"glass_18_hide",
-					0
-				},
-				
-				{
-					"glass_18_unhide",
-					0
-				},
-				
-				{
-					"glass_19_hide",
-					0
-				},
-				
-				{
-					"glass_19_unhide",
-					0
-				},
-				
-				{
-					"glass_20_hide",
-					0
-				},
-				
-				{
-					"glass_20_unhide",
-					0
-				},
-				
-				{
-					"glass_21_hide",
-					0
-				},
-				
-				{
-					"glass_21_unhide",
-					0
-				},
-				
-				{
-					"glass_22_hide",
-					0
-				},
-				
-				{
-					"glass_22_unhide",
-					0
-				},
-				
-				{
-					"glass_23_hide",
-					0
-				},
-				
-				{
-					"glass_23_unhide",
-					0
-				},
-				
-				{
-					"glass_24_hide",
-					0
-				},
-				
-				{
-					"glass_24_unhide",
-					0
-				},
-				
-				{
-					"glass_25_hide",
-					0
-				},
-				
-				{
-					"glass_25_unhide",
-					0
-				},
-				
-				{
-					"glass_26_hide",
-					0
-				},
-				
-				{
-					"glass_26_unhide",
-					0
-				},
-				
-				{
-					"glass_27_hide",
-					0
-				},
-				
-				{
-					"glass_27_unhide",
-					0
-				},
-				
-				{
-					"glass_28_hide",
-					0
-				},
-				
-				{
-					"glass_28_unhide",
-					0
-				},
-				
-				{
-					"glass_29_hide",
-					0
-				},
-				
-				{
-					"glass_29_unhide",
-					0
-				},
-				
-				{
-					"glass_30_hide",
-					0
-				},
-				
-				{
-					"glass_30_unhide",
-					0
-				},
-				
-				{
-					"glass_31_hide",
-					0
-				},
-				
-				{
-					"glass_31_unhide",
-					0
-				},
-				
-				{
-					"glass_32_hide",
-					0
-				},
-				
-				{
-					"glass_32_unhide",
-					0
-				}
-			};
-			hide[]={};
-			verticalOffset=2.7309999;
-			verticalOffsetWorld=0;
-			init="''";
-		};
 		_generalMacro="Airport_center";
 		scope=2;
 		scopeCurator=2;
 		displayName="$STR_A3_CFGVEHICLES_LAND_AIRPORT_TERMINAL_1_F0";
-		model="\A3\Structures_F\Ind\AirPort\Airport_center_F.p3d";
-		icon="iconObject_1x1";
-		editorCategory="EdCat_Structures_Altis";
-		editorSubcategory="EdSubcat_Airports";
-		vehicleClass="Structures_Transport";
-		cost=60000;
-		numberOfWindows=32;
-		keepInEPESceneAfterDeath=1;
-		selectionDamage="DamT_1";
-		class DestructionEffects
-		{
-		};
-		class HitPoints
-		{
-			class Glass_1_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_1";
-				visual="Glass_1_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_1_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_2_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_2";
-				visual="Glass_2_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_2_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_3_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_3";
-				visual="Glass_3_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_3_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_4_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_4";
-				visual="Glass_4_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_4_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_5_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_5";
-				visual="Glass_5_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_5_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_6_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_6";
-				visual="Glass_6_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_6_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_7_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_7";
-				visual="Glass_7_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_7_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_8_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_8";
-				visual="Glass_8_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_8_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_9_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_9";
-				visual="Glass_9_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_9_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_10_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_10";
-				visual="Glass_10_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_10_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_11_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_11";
-				visual="Glass_11_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_11_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_12_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_12";
-				visual="Glass_12_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_12_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_13_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_13";
-				visual="Glass_13_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_13_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_14_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_14";
-				visual="Glass_14_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_14_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_15_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_15";
-				visual="Glass_15_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_15_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_16_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_16";
-				visual="Glass_16_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_16_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_17_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_17";
-				visual="Glass_17_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_17_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_18_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_18";
-				visual="Glass_18_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_18_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_19_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_19";
-				visual="Glass_19_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_19_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_20_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_20";
-				visual="Glass_20_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_20_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_21_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_21";
-				visual="Glass_21_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_21_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_22_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_22";
-				visual="Glass_22_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_22_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_23_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_23";
-				visual="Glass_23_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_23_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_24_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_24";
-				visual="Glass_24_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_24_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_25_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_25";
-				visual="Glass_25_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_25_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_26_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_26";
-				visual="Glass_26_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_26_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_27_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_27";
-				visual="Glass_27_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_27_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_28_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_28";
-				visual="Glass_28_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_28_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_29_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_29";
-				visual="Glass_29_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_29_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_30_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_30";
-				visual="Glass_30_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_30_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_31_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_31";
-				visual="Glass_31_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_31_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_32_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_32";
-				visual="Glass_32_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_32_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-		};
-		class Damage
-		{
-			tex[]=
-			{
-				"A3\Structures_F\Data\Windows\window_set_CA.paa",
-				"A3\Structures_F\Data\Windows\destruct_half_window_set_CA.paa"
-			};
-			mat[]=
-			{
-				"A3\Structures_F\Data\Windows\window_set.rvmat",
-				"A3\Structures_F\Data\Windows\destruct_half_window_set.rvmat",
-				"A3\Structures_F\Data\Windows\destruct_full_window_set.rvmat"
-			};
-		};
-		class AnimationSources
-		{
-			class Glass_1_source
-			{
-				source="Hit";
-				hitpoint="Glass_1_hitpoint";
-				raw=1;
-			};
-			class Glass_2_source
-			{
-				source="Hit";
-				hitpoint="Glass_2_hitpoint";
-				raw=1;
-			};
-			class Glass_3_source
-			{
-				source="Hit";
-				hitpoint="Glass_3_hitpoint";
-				raw=1;
-			};
-			class Glass_4_source
-			{
-				source="Hit";
-				hitpoint="Glass_4_hitpoint";
-				raw=1;
-			};
-			class Glass_5_source
-			{
-				source="Hit";
-				hitpoint="Glass_5_hitpoint";
-				raw=1;
-			};
-			class Glass_6_source
-			{
-				source="Hit";
-				hitpoint="Glass_6_hitpoint";
-				raw=1;
-			};
-			class Glass_7_source
-			{
-				source="Hit";
-				hitpoint="Glass_7_hitpoint";
-				raw=1;
-			};
-			class Glass_8_source
-			{
-				source="Hit";
-				hitpoint="Glass_8_hitpoint";
-				raw=1;
-			};
-			class Glass_9_source
-			{
-				source="Hit";
-				hitpoint="Glass_9_hitpoint";
-				raw=1;
-			};
-			class Glass_10_source
-			{
-				source="Hit";
-				hitpoint="Glass_10_hitpoint";
-				raw=1;
-			};
-			class Glass_11_source
-			{
-				source="Hit";
-				hitpoint="Glass_11_hitpoint";
-				raw=1;
-			};
-			class Glass_12_source
-			{
-				source="Hit";
-				hitpoint="Glass_12_hitpoint";
-				raw=1;
-			};
-			class Glass_13_source
-			{
-				source="Hit";
-				hitpoint="Glass_13_hitpoint";
-				raw=1;
-			};
-			class Glass_14_source
-			{
-				source="Hit";
-				hitpoint="Glass_14_hitpoint";
-				raw=1;
-			};
-			class Glass_15_source
-			{
-				source="Hit";
-				hitpoint="Glass_15_hitpoint";
-				raw=1;
-			};
-			class Glass_16_source
-			{
-				source="Hit";
-				hitpoint="Glass_16_hitpoint";
-				raw=1;
-			};
-			class Glass_17_source
-			{
-				source="Hit";
-				hitpoint="Glass_17_hitpoint";
-				raw=1;
-			};
-			class Glass_18_source
-			{
-				source="Hit";
-				hitpoint="Glass_18_hitpoint";
-				raw=1;
-			};
-			class Glass_19_source
-			{
-				source="Hit";
-				hitpoint="Glass_19_hitpoint";
-				raw=1;
-			};
-			class Glass_20_source
-			{
-				source="Hit";
-				hitpoint="Glass_20_hitpoint";
-				raw=1;
-			};
-			class Glass_21_source
-			{
-				source="Hit";
-				hitpoint="Glass_21_hitpoint";
-				raw=1;
-			};
-			class Glass_22_source
-			{
-				source="Hit";
-				hitpoint="Glass_22_hitpoint";
-				raw=1;
-			};
-			class Glass_23_source
-			{
-				source="Hit";
-				hitpoint="Glass_23_hitpoint";
-				raw=1;
-			};
-			class Glass_24_source
-			{
-				source="Hit";
-				hitpoint="Glass_24_hitpoint";
-				raw=1;
-			};
-			class Glass_25_source
-			{
-				source="Hit";
-				hitpoint="Glass_25_hitpoint";
-				raw=1;
-			};
-			class Glass_26_source
-			{
-				source="Hit";
-				hitpoint="Glass_26_hitpoint";
-				raw=1;
-			};
-			class Glass_27_source
-			{
-				source="Hit";
-				hitpoint="Glass_27_hitpoint";
-				raw=1;
-			};
-			class Glass_28_source
-			{
-				source="Hit";
-				hitpoint="Glass_28_hitpoint";
-				raw=1;
-			};
-			class Glass_29_source
-			{
-				source="Hit";
-				hitpoint="Glass_29_hitpoint";
-				raw=1;
-			};
-			class Glass_30_source
-			{
-				source="Hit";
-				hitpoint="Glass_30_hitpoint";
-				raw=1;
-			};
-			class Glass_31_source
-			{
-				source="Hit";
-				hitpoint="Glass_31_hitpoint";
-				raw=1;
-			};
-			class Glass_32_source
-			{
-				source="Hit";
-				hitpoint="Glass_32_hitpoint";
-				raw=1;
-			};
-		};
-	};
-	class Airport_left: Airport_center
+	}
+	class Land_Airport_left_F: Land_Airport_center_F
 	{
 		author="O&T Expansion Eden";
-		mapSize=59.189999;
 		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Airport_left.jpg";
-		class SimpleObject
-		{
-			eden=0;
-			animate[]=
-			{
-				
-				{
-					"glass_1_hide",
-					0
-				},
-				
-				{
-					"glass_1_unhide",
-					0
-				},
-				
-				{
-					"glass_2_hide",
-					0
-				},
-				
-				{
-					"glass_2_unhide",
-					0
-				},
-				
-				{
-					"glass_3_hide",
-					0
-				},
-				
-				{
-					"glass_3_unhide",
-					0
-				},
-				
-				{
-					"glass_4_hide",
-					0
-				},
-				
-				{
-					"glass_4_unhide",
-					0
-				},
-				
-				{
-					"glass_5_hide",
-					0
-				},
-				
-				{
-					"glass_5_unhide",
-					0
-				},
-				
-				{
-					"glass_6_hide",
-					0
-				},
-				
-				{
-					"glass_6_unhide",
-					0
-				},
-				
-				{
-					"glass_7_hide",
-					0
-				},
-				
-				{
-					"glass_7_unhide",
-					0
-				},
-				
-				{
-					"glass_8_hide",
-					0
-				},
-				
-				{
-					"glass_8_unhide",
-					0
-				},
-				
-				{
-					"glass_9_hide",
-					0
-				},
-				
-				{
-					"glass_9_unhide",
-					0
-				},
-				
-				{
-					"glass_10_hide",
-					0
-				},
-				
-				{
-					"glass_10_unhide",
-					0
-				},
-				
-				{
-					"glass_11_hide",
-					0
-				},
-				
-				{
-					"glass_11_unhide",
-					0
-				},
-				
-				{
-					"glass_12_hide",
-					0
-				},
-				
-				{
-					"glass_12_unhide",
-					0
-				},
-				
-				{
-					"glass_13_hide",
-					0
-				},
-				
-				{
-					"glass_13_unhide",
-					0
-				},
-				
-				{
-					"glass_14_hide",
-					0
-				},
-				
-				{
-					"glass_14_unhide",
-					0
-				},
-				
-				{
-					"glass_15_hide",
-					0
-				},
-				
-				{
-					"glass_15_unhide",
-					0
-				},
-				
-				{
-					"glass_16_hide",
-					0
-				},
-				
-				{
-					"glass_16_unhide",
-					0
-				},
-				
-				{
-					"glass_17_hide",
-					0
-				},
-				
-				{
-					"glass_17_unhide",
-					0
-				},
-				
-				{
-					"glass_18_hide",
-					0
-				},
-				
-				{
-					"glass_18_unhide",
-					0
-				},
-				
-				{
-					"glass_19_hide",
-					0
-				},
-				
-				{
-					"glass_19_unhide",
-					0
-				},
-				
-				{
-					"glass_20_hide",
-					0
-				},
-				
-				{
-					"glass_20_unhide",
-					0
-				},
-				
-				{
-					"glass_21_hide",
-					0
-				},
-				
-				{
-					"glass_21_unhide",
-					0
-				},
-				
-				{
-					"glass_22_hide",
-					0
-				},
-				
-				{
-					"glass_22_unhide",
-					0
-				},
-				
-				{
-					"glass_23_hide",
-					0
-				},
-				
-				{
-					"glass_23_unhide",
-					0
-				},
-				
-				{
-					"glass_24_hide",
-					0
-				},
-				
-				{
-					"glass_24_unhide",
-					0
-				},
-				
-				{
-					"glass_25_hide",
-					0
-				},
-				
-				{
-					"glass_25_unhide",
-					0
-				},
-				
-				{
-					"glass_26_hide",
-					0
-				},
-				
-				{
-					"glass_26_unhide",
-					0
-				},
-				
-				{
-					"glass_27_hide",
-					0
-				},
-				
-				{
-					"glass_27_unhide",
-					0
-				},
-				
-				{
-					"glass_28_hide",
-					0
-				},
-				
-				{
-					"glass_28_unhide",
-					0
-				},
-				
-				{
-					"glass_29_hide",
-					0
-				},
-				
-				{
-					"glass_29_unhide",
-					0
-				},
-				
-				{
-					"glass_30_hide",
-					0
-				},
-				
-				{
-					"glass_30_unhide",
-					0
-				},
-				
-				{
-					"glass_31_hide",
-					0
-				},
-				
-				{
-					"glass_31_unhide",
-					0
-				},
-				
-				{
-					"door_1_rot",
-					0
-				},
-				
-				{
-					"door_1_locked_rot",
-					0
-				},
-				
-				{
-					"door_2_rot",
-					0
-				},
-				
-				{
-					"door_2_locked_rot",
-					0
-				},
-				
-				{
-					"door_3_rot",
-					0
-				},
-				
-				{
-					"door_3_locked_rot",
-					0
-				},
-				
-				{
-					"door_4_rot",
-					0
-				},
-				
-				{
-					"door_4_locked_rot",
-					0
-				},
-				
-				{
-					"door_5_rot",
-					0
-				},
-				
-				{
-					"door_5_locked_rot",
-					0
-				},
-				
-				{
-					"door_6_rot",
-					0
-				},
-				
-				{
-					"door_6_locked_rot",
-					0
-				},
-				
-				{
-					"door_7a_move",
-					0
-				},
-				
-				{
-					"door_7a_locked_move",
-					0
-				},
-				
-				{
-					"door_7b_move",
-					0
-				},
-				
-				{
-					"door_7b_locked_move",
-					0
-				},
-				
-				{
-					"door_8a_move",
-					0
-				},
-				
-				{
-					"door_8a_locked_move",
-					0
-				},
-				
-				{
-					"door_8b_move",
-					0
-				},
-				
-				{
-					"door_8b_locked_move",
-					0
-				},
-				
-				{
-					"glass_32_hide",
-					0
-				},
-				
-				{
-					"glass_32_unhide",
-					0
-				},
-				
-				{
-					"glass_33_hide",
-					0
-				},
-				
-				{
-					"glass_33_unhide",
-					0
-				},
-				
-				{
-					"glass_34_hide",
-					0
-				},
-				
-				{
-					"glass_34_unhide",
-					0
-				},
-				
-				{
-					"glass_35_hide",
-					0
-				},
-				
-				{
-					"glass_35_unhide",
-					0
-				},
-				
-				{
-					"glass_36_hide",
-					0
-				},
-				
-				{
-					"glass_36_unhide",
-					0
-				},
-				
-				{
-					"glass_37_hide",
-					0
-				},
-				
-				{
-					"glass_37_unhide",
-					0
-				},
-				
-				{
-					"glass_38_hide",
-					0
-				},
-				
-				{
-					"glass_38_unhide",
-					0
-				},
-				
-				{
-					"glass_39_hide",
-					0
-				},
-				
-				{
-					"glass_39_unhide",
-					0
-				},
-				
-				{
-					"glass_40_hide",
-					0
-				},
-				
-				{
-					"glass_40_unhide",
-					0
-				},
-				
-				{
-					"glass_41_hide",
-					0
-				},
-				
-				{
-					"glass_41_unhide",
-					0
-				},
-				
-				{
-					"glass_42_hide",
-					0
-				},
-				
-				{
-					"glass_42_unhide",
-					0
-				},
-				
-				{
-					"glass_43_hide",
-					0
-				},
-				
-				{
-					"glass_43_unhide",
-					0
-				},
-				
-				{
-					"glass_44_hide",
-					0
-				},
-				
-				{
-					"glass_44_unhide",
-					0
-				},
-				
-				{
-					"glass_45_hide",
-					0
-				},
-				
-				{
-					"glass_45_unhide",
-					0
-				},
-				
-				{
-					"glass_46_hide",
-					0
-				},
-				
-				{
-					"glass_46_unhide",
-					0
-				},
-				
-				{
-					"glass_47_hide",
-					0
-				},
-				
-				{
-					"glass_47_unhide",
-					0
-				},
-				
-				{
-					"glass_48_hide",
-					0
-				},
-				
-				{
-					"glass_48_unhide",
-					0
-				},
-				
-				{
-					"glass_49_hide",
-					0
-				},
-				
-				{
-					"glass_49_unhide",
-					0
-				},
-				
-				{
-					"glass_50_hide",
-					0
-				},
-				
-				{
-					"glass_50_unhide",
-					0
-				},
-				
-				{
-					"glass_51_hide",
-					0
-				},
-				
-				{
-					"glass_51_unhide",
-					0
-				},
-				
-				{
-					"glass_52_hide",
-					0
-				},
-				
-				{
-					"glass_52_unhide",
-					0
-				},
-				
-				{
-					"glass_53_hide",
-					0
-				},
-				
-				{
-					"glass_53_unhide",
-					0
-				},
-				
-				{
-					"glass_54_hide",
-					0
-				},
-				
-				{
-					"glass_54_unhide",
-					0
-				},
-				
-				{
-					"glass_55_hide",
-					0
-				},
-				
-				{
-					"glass_55_unhide",
-					0
-				},
-				
-				{
-					"glass_56_hide",
-					0
-				},
-				
-				{
-					"glass_56_unhide",
-					0
-				},
-				
-				{
-					"glass_57_hide",
-					0
-				},
-				
-				{
-					"glass_57_unhide",
-					0
-				},
-				
-				{
-					"glass_58_hide",
-					0
-				},
-				
-				{
-					"glass_58_unhide",
-					0
-				},
-				
-				{
-					"glass_59_hide",
-					0
-				},
-				
-				{
-					"glass_59_unhide",
-					0
-				},
-				
-				{
-					"glass_60_hide",
-					0
-				},
-				
-				{
-					"glass_60_unhide",
-					0
-				},
-				
-				{
-					"glass_61_hide",
-					0
-				},
-				
-				{
-					"glass_61_unhide",
-					0
-				}
-			};
-			hide[]={};
-			verticalOffset=6.7740002;
-			verticalOffsetWorld=0;
-			init="''";
-		};
 		_generalMacro="Airport_left";
 		scope=2;
 		scopeCurator=2;
 		displayName="$STR_A3_CFGVEHICLES_LAND_AIRPORT_TERMINAL_1_F1";
-		icon="iconObject_2x3";
-		model="\A3\Structures_F\Ind\AirPort\Airport_left_F.p3d";
-		cost=60000;
-		numberOfDoors=8;
-		numberOfWindows=61;
-		class HitPoints
-		{
-			class Glass_1_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_1";
-				visual="Glass_1_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_1_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_1_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_2_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_2";
-				visual="Glass_2_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_2_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_2_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_3_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_3";
-				visual="Glass_3_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_3_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1150_0600";
-						position="Glass_3_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_4_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_4";
-				visual="Glass_4_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_4_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1150_0600";
-						position="Glass_4_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_5_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_5";
-				visual="Glass_5_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_5_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_5_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_6_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_6";
-				visual="Glass_6_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_6_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_6_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_7_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_7";
-				visual="Glass_7_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_7_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_7_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_8_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_8";
-				visual="Glass_8_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_8_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_8_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_9_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_9";
-				visual="Glass_9_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_9_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_9_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_10_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_10";
-				visual="Glass_10_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_10_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_10_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_11_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_11";
-				visual="Glass_11_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_11_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_11_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_12_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_12";
-				visual="Glass_12_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_12_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_12_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_13_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_13";
-				visual="Glass_13_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_13_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2350_1900";
-						position="Glass_13_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_14_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_14";
-				visual="Glass_14_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_14_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2350_1900";
-						position="Glass_14_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_15_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_15";
-				visual="Glass_15_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_15_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2350_1900";
-						position="Glass_15_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_16_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_16";
-				visual="Glass_16_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_16_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2350_1900";
-						position="Glass_16_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_17_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_17";
-				visual="Glass_17_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_17_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2350_1900";
-						position="Glass_17_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_18_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_18";
-				visual="Glass_18_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_18_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_18_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_19_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_19";
-				visual="Glass_19_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_19_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_19_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_20_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_20";
-				visual="Glass_20_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_20_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_20_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_21_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_21";
-				visual="Glass_21_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_21_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_21_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_22_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_22";
-				visual="Glass_22_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_22_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_22_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_23_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_23";
-				visual="Glass_23_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_23_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_23_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_24_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_24";
-				visual="Glass_24_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_24_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_24_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_25_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_25";
-				visual="Glass_25_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_25_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_25_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_26_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_26";
-				visual="Glass_26_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_26_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_26_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_27_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_27";
-				visual="Glass_27_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_27_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_27_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_28_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_28";
-				visual="Glass_28_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_28_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_28_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_29_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_29";
-				visual="Glass_29_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_29_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_29_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_30_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_30";
-				visual="Glass_30_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_30_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_30_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_31_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_31";
-				visual="Glass_31_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_31_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_31_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_32_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_32";
-				visual="Glass_32_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_32_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_32_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_33_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_33";
-				visual="Glass_33_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_33_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_33_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_34_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_34";
-				visual="Glass_34_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_34_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_34_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_35_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_35";
-				visual="Glass_35_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_35_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_35_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_36_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_36";
-				visual="Glass_36_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_36_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1150_0600";
-						position="Glass_36_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_37_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_37";
-				visual="Glass_37_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_37_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1150_0600";
-						position="Glass_37_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_38_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_38";
-				visual="Glass_38_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_38_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_38_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_39_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_39";
-				visual="Glass_39_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_39_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_39_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_40_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_40";
-				visual="Glass_40_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_40_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_40_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_41_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_41";
-				visual="Glass_41_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_41_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_41_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_42_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_42";
-				visual="Glass_42_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_42_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_42_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_43_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_43";
-				visual="Glass_43_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_43_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1ND";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2ND";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3ND";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4ND";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5ND";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6ND";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7ND";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1SD";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2SD";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3SD";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4SD";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5SD";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6SD";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7SD";
-						position="Glass_43_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_44_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_44";
-				visual="Glass_44_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_44_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_44_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_45_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_45";
-				visual="Glass_45_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_45_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1300_2750";
-						position="Glass_45_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_46_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_46";
-				visual="Glass_46_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_46_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_46_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_47_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_47";
-				visual="Glass_47_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_47_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_47_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_48_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_48";
-				visual="Glass_48_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_48_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1850_1450";
-						position="Glass_48_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_49_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_49";
-				visual="Glass_49_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_49_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_49_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_50_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_50";
-				visual="Glass_50_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_50_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_2400_0700";
-						position="Glass_50_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_51_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_51";
-				visual="Glass_51_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_51_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1850_1450";
-						position="Glass_51_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_52_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_52";
-				visual="Glass_52_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_52_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1250_2200";
-						position="Glass_52_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_53_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_53";
-				visual="Glass_53_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_53_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1250_2200";
-						position="Glass_53_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_54_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_54";
-				visual="Glass_54_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_54_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1250_2200";
-						position="Glass_54_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_55_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_55";
-				visual="Glass_55_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_55_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6
-					{
-						simulation="particles";
-						type="BrokenGlass6N_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7
-					{
-						simulation="particles";
-						type="BrokenGlass7N_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass6S
-					{
-						simulation="particles";
-						type="BrokenGlass6S_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass7S
-					{
-						simulation="particles";
-						type="BrokenGlass7S_1250_2200";
-						position="Glass_55_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_56_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_56";
-				visual="Glass_56_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_56_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_0400_0400";
-						position="Glass_56_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_57_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_57";
-				visual="Glass_57_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_57_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_0400_0400";
-						position="Glass_57_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_58_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_58";
-				visual="Glass_58_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_58_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_0400_0400";
-						position="Glass_58_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_59_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_59";
-				visual="Glass_59_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_59_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_0400_0400";
-						position="Glass_59_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_60_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_60";
-				visual="Glass_60_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_60_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_0400_0400";
-						position="Glass_60_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-			class Glass_61_hitpoint
-			{
-				armor=0.001;
-				material=-1;
-				name="Glass_61";
-				visual="Glass_61_hide";
-				passThrough=0;
-				radius=0.40000001;
-				convexComponent="Glass_61_hide";
-				class DestructionEffects
-				{
-					class BrokenGlass1
-					{
-						simulation="particles";
-						type="BrokenGlass1N_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2
-					{
-						simulation="particles";
-						type="BrokenGlass2N_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3
-					{
-						simulation="particles";
-						type="BrokenGlass3N_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4
-					{
-						simulation="particles";
-						type="BrokenGlass4N_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5
-					{
-						simulation="particles";
-						type="BrokenGlass5N_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass1S
-					{
-						simulation="particles";
-						type="BrokenGlass1S_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass2S
-					{
-						simulation="particles";
-						type="BrokenGlass2S_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass3S
-					{
-						simulation="particles";
-						type="BrokenGlass3S_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass4S
-					{
-						simulation="particles";
-						type="BrokenGlass4S_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-					class BrokenGlass5S
-					{
-						simulation="particles";
-						type="BrokenGlass5S_0400_0400";
-						position="Glass_61_effects";
-						intensity=0.15000001;
-						interval=1;
-						lifeTime=0.050000001;
-					};
-				};
-			};
-		};
-		class AnimationSources: AnimationSources
-		{
-			class Door_1_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GenericDoorsSound";
-				soundPosition="Door_1_trigger";
-			};
-			class Door_1_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_1_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Door_2_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GenericDoorsSound";
-				soundPosition="Door_2_trigger";
-			};
-			class Door_2_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_2_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Door_3_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GenericDoorsSound";
-				soundPosition="Door_3_trigger";
-			};
-			class Door_3_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_3_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Door_4_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GenericDoorsSound";
-				soundPosition="Door_4_trigger";
-			};
-			class Door_4_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_4_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Door_5_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GenericDoorsSound";
-				soundPosition="Door_5_trigger";
-			};
-			class Door_5_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_5_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Door_6_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GenericDoorsSound";
-				soundPosition="Door_6_trigger";
-			};
-			class Door_6_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_6_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Door_7_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GlassServoDoorsSound";
-				soundPosition="Door_7_trigger";
-			};
-			class Door_7_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_7_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Door_8_sound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-				sound="GlassServoDoorsSound";
-				soundPosition="Door_8_trigger";
-			};
-			class Door_8_noSound_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=1;
-			};
-			class Door_8_locked_source
-			{
-				source="user";
-				initPhase=0;
-				animPeriod=0.80000001;
-			};
-			class Glass_33_source
-			{
-				source="Hit";
-				hitpoint="Glass_33_hitpoint";
-				raw=1;
-			};
-			class Glass_34_source
-			{
-				source="Hit";
-				hitpoint="Glass_34_hitpoint";
-				raw=1;
-			};
-			class Glass_35_source
-			{
-				source="Hit";
-				hitpoint="Glass_35_hitpoint";
-				raw=1;
-			};
-			class Glass_36_source
-			{
-				source="Hit";
-				hitpoint="Glass_36_hitpoint";
-				raw=1;
-			};
-			class Glass_37_source
-			{
-				source="Hit";
-				hitpoint="Glass_37_hitpoint";
-				raw=1;
-			};
-			class Glass_38_source
-			{
-				source="Hit";
-				hitpoint="Glass_38_hitpoint";
-				raw=1;
-			};
-			class Glass_39_source
-			{
-				source="Hit";
-				hitpoint="Glass_39_hitpoint";
-				raw=1;
-			};
-			class Glass_40_source
-			{
-				source="Hit";
-				hitpoint="Glass_40_hitpoint";
-				raw=1;
-			};
-			class Glass_41_source
-			{
-				source="Hit";
-				hitpoint="Glass_41_hitpoint";
-				raw=1;
-			};
-			class Glass_42_source
-			{
-				source="Hit";
-				hitpoint="Glass_42_hitpoint";
-				raw=1;
-			};
-			class Glass_43_source
-			{
-				source="Hit";
-				hitpoint="Glass_43_hitpoint";
-				raw=1;
-			};
-			class Glass_44_source
-			{
-				source="Hit";
-				hitpoint="Glass_44_hitpoint";
-				raw=1;
-			};
-			class Glass_45_source
-			{
-				source="Hit";
-				hitpoint="Glass_45_hitpoint";
-				raw=1;
-			};
-			class Glass_46_source
-			{
-				source="Hit";
-				hitpoint="Glass_46_hitpoint";
-				raw=1;
-			};
-			class Glass_47_source
-			{
-				source="Hit";
-				hitpoint="Glass_47_hitpoint";
-				raw=1;
-			};
-			class Glass_48_source
-			{
-				source="Hit";
-				hitpoint="Glass_48_hitpoint";
-				raw=1;
-			};
-			class Glass_49_source
-			{
-				source="Hit";
-				hitpoint="Glass_49_hitpoint";
-				raw=1;
-			};
-			class Glass_50_source
-			{
-				source="Hit";
-				hitpoint="Glass_50_hitpoint";
-				raw=1;
-			};
-			class Glass_51_source
-			{
-				source="Hit";
-				hitpoint="Glass_51_hitpoint";
-				raw=1;
-			};
-			class Glass_52_source
-			{
-				source="Hit";
-				hitpoint="Glass_52_hitpoint";
-				raw=1;
-			};
-			class Glass_53_source
-			{
-				source="Hit";
-				hitpoint="Glass_53_hitpoint";
-				raw=1;
-			};
-			class Glass_54_source
-			{
-				source="Hit";
-				hitpoint="Glass_54_hitpoint";
-				raw=1;
-			};
-			class Glass_55_source
-			{
-				source="Hit";
-				hitpoint="Glass_55_hitpoint";
-				raw=1;
-			};
-			class Glass_56_source
-			{
-				source="Hit";
-				hitpoint="Glass_56_hitpoint";
-				raw=1;
-			};
-			class Glass_57_source
-			{
-				source="Hit";
-				hitpoint="Glass_57_hitpoint";
-				raw=1;
-			};
-			class Glass_58_source
-			{
-				source="Hit";
-				hitpoint="Glass_58_hitpoint";
-				raw=1;
-			};
-			class Glass_59_source
-			{
-				source="Hit";
-				hitpoint="Glass_59_hitpoint";
-				raw=1;
-			};
-			class Glass_60_source
-			{
-				source="Hit";
-				hitpoint="Glass_60_hitpoint";
-				raw=1;
-			};
-			class Glass_61_source
-			{
-				source="Hit";
-				hitpoint="Glass_61_hitpoint";
-				raw=1;
-			};
-		};
-		class UserActions
-		{
-			class OpenDoor_1
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_1_trigger";
-				priority=11;
-				actionNamedSel="Door_1_action";
-				radius=1.75;
-				aiMaxRange=5.25;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_1_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 1, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_1: OpenDoor_1
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_1_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_1', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 1, 0] call BIS_fnc_Door)";
-			};
-			class OpenDoor_2
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_2_trigger";
-				priority=11;
-				actionNamedSel="Door_2_action";
-				radius=1.75;
-				aiMaxRange=5.25;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_2_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 2, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_2: OpenDoor_2
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_2_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_2', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 2, 0] call BIS_fnc_Door)";
-			};
-			class OpenDoor_3
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_3_trigger";
-				priority=11;
-				actionNamedSel="Door_3_action";
-				radius=1.75;
-				aiMaxRange=5.25;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_3_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 3, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_3: OpenDoor_3
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_3_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_3', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 3, 0] call BIS_fnc_Door)";
-			};
-			class OpenDoor_4
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_4_trigger";
-				priority=11;
-				actionNamedSel="Door_4_action";
-				radius=1.75;
-				aiMaxRange=5.25;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_4_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 4, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_4: OpenDoor_4
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_4_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_4', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 4, 0] call BIS_fnc_Door)";
-			};
-			class OpenDoor_5
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_5_trigger";
-				priority=11;
-				actionNamedSel="Door_5_action";
-				radius=1.75;
-				aiMaxRange=5.25;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_5_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 5, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_5: OpenDoor_5
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_5_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_5', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 5, 0] call BIS_fnc_Door)";
-			};
-			class OpenDoor_6
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_6_trigger";
-				priority=11;
-				actionNamedSel="Door_6_action";
-				radius=1.75;
-				aiMaxRange=5.25;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_6_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 6, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_6: OpenDoor_6
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_6_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_6', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 6, 0] call BIS_fnc_Door)";
-			};
-			class OpenDoor_7
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_7_trigger";
-				priority=11;
-				actionNamedSel="Door_7_action";
-				radius=3;
-				aiMaxRange=9;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_7_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 7, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_7: OpenDoor_7
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_7_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_7', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 7, 0] call BIS_fnc_Door)";
-			};
-			class OpenDoor_8
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_O_DOOR";
-				position="Door_8_trigger";
-				priority=11;
-				actionNamedSel="Door_8_action";
-				radius=3;
-				aiMaxRange=9;
-				onlyForPlayer=0;
-				condition="((this animationSourcePhase 'Door_8_sound_source') < 0.5) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 8, 1] call BIS_fnc_Door)";
-			};
-			class CloseDoor_8: OpenDoor_8
-			{
-				displayNameDefault="<img image='\A3\Ui_f\data\IGUI\Cfg\Actions\open_door_ca.paa' size='2.5' />";
-				displayName="$STR_DN_OUT_C_DOOR";
-				priority=11;
-				condition="((this animationSourcePhase 'Door_8_sound_source') >= 0.5) && ((this getVariable ['bis_disabled_Door_8', 0]) != 1) && (cameraOn isKindOf 'CAManBase')";
-				statement="([this, 8, 0] call BIS_fnc_Door)";
-			};
-		};
-		actionBegin1="OpenDoor_1";
-		actionEnd1="OpenDoor_1";
-		actionBegin2="OpenDoor_2";
-		actionEnd2="OpenDoor_2";
-		actionBegin3="OpenDoor_3";
-		actionEnd3="OpenDoor_3";
-		actionBegin4="OpenDoor_4";
-		actionEnd4="OpenDoor_4";
-		actionBegin5="OpenDoor_5";
-		actionEnd5="OpenDoor_5";
-		actionBegin6="OpenDoor_6";
-		actionEnd6="OpenDoor_6";
-		actionBegin7="OpenDoor_7";
-		actionEnd7="OpenDoor_7";
-		actionBegin8="OpenDoor_8";
-		actionEnd8="OpenDoor_8";
-	};
-	class Airport_right: Airport_left
+	}
+	class Land_Airport_right_F: Land_Airport_left_F
 	{
 		author="O&T Expansion Eden";
 		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Airport_right.jpg";
-		class SimpleObject
-		{
-			eden=0;
-			animate[]=
-			{
-				
-				{
-					"glass_1_hide",
-					0
-				},
-				
-				{
-					"glass_1_unhide",
-					0
-				},
-				
-				{
-					"glass_2_hide",
-					0
-				},
-				
-				{
-					"glass_2_unhide",
-					0
-				},
-				
-				{
-					"glass_3_hide",
-					0
-				},
-				
-				{
-					"glass_3_unhide",
-					0
-				},
-				
-				{
-					"glass_4_hide",
-					0
-				},
-				
-				{
-					"glass_4_unhide",
-					0
-				},
-				
-				{
-					"glass_5_hide",
-					0
-				},
-				
-				{
-					"glass_5_unhide",
-					0
-				},
-				
-				{
-					"glass_6_hide",
-					0
-				},
-				
-				{
-					"glass_6_unhide",
-					0
-				},
-				
-				{
-					"glass_7_hide",
-					0
-				},
-				
-				{
-					"glass_7_unhide",
-					0
-				},
-				
-				{
-					"glass_8_hide",
-					0
-				},
-				
-				{
-					"glass_8_unhide",
-					0
-				},
-				
-				{
-					"glass_9_hide",
-					0
-				},
-				
-				{
-					"glass_9_unhide",
-					0
-				},
-				
-				{
-					"glass_10_hide",
-					0
-				},
-				
-				{
-					"glass_10_unhide",
-					0
-				},
-				
-				{
-					"glass_11_hide",
-					0
-				},
-				
-				{
-					"glass_11_unhide",
-					0
-				},
-				
-				{
-					"glass_12_hide",
-					0
-				},
-				
-				{
-					"glass_12_unhide",
-					0
-				},
-				
-				{
-					"glass_13_hide",
-					0
-				},
-				
-				{
-					"glass_13_unhide",
-					0
-				},
-				
-				{
-					"glass_14_hide",
-					0
-				},
-				
-				{
-					"glass_14_unhide",
-					0
-				},
-				
-				{
-					"glass_15_hide",
-					0
-				},
-				
-				{
-					"glass_15_unhide",
-					0
-				},
-				
-				{
-					"glass_16_hide",
-					0
-				},
-				
-				{
-					"glass_16_unhide",
-					0
-				},
-				
-				{
-					"glass_17_hide",
-					0
-				},
-				
-				{
-					"glass_17_unhide",
-					0
-				},
-				
-				{
-					"glass_18_hide",
-					0
-				},
-				
-				{
-					"glass_18_unhide",
-					0
-				},
-				
-				{
-					"glass_19_hide",
-					0
-				},
-				
-				{
-					"glass_19_unhide",
-					0
-				},
-				
-				{
-					"glass_20_hide",
-					0
-				},
-				
-				{
-					"glass_20_unhide",
-					0
-				},
-				
-				{
-					"glass_21_hide",
-					0
-				},
-				
-				{
-					"glass_21_unhide",
-					0
-				},
-				
-				{
-					"glass_22_hide",
-					0
-				},
-				
-				{
-					"glass_22_unhide",
-					0
-				},
-				
-				{
-					"glass_23_hide",
-					0
-				},
-				
-				{
-					"glass_23_unhide",
-					0
-				},
-				
-				{
-					"glass_24_hide",
-					0
-				},
-				
-				{
-					"glass_24_unhide",
-					0
-				},
-				
-				{
-					"glass_25_hide",
-					0
-				},
-				
-				{
-					"glass_25_unhide",
-					0
-				},
-				
-				{
-					"glass_26_hide",
-					0
-				},
-				
-				{
-					"glass_26_unhide",
-					0
-				},
-				
-				{
-					"glass_27_hide",
-					0
-				},
-				
-				{
-					"glass_27_unhide",
-					0
-				},
-				
-				{
-					"glass_28_hide",
-					0
-				},
-				
-				{
-					"glass_28_unhide",
-					0
-				},
-				
-				{
-					"glass_29_hide",
-					0
-				},
-				
-				{
-					"glass_29_unhide",
-					0
-				},
-				
-				{
-					"glass_30_hide",
-					0
-				},
-				
-				{
-					"glass_30_unhide",
-					0
-				},
-				
-				{
-					"glass_31_hide",
-					0
-				},
-				
-				{
-					"glass_31_unhide",
-					0
-				},
-				
-				{
-					"door_1_rot",
-					0
-				},
-				
-				{
-					"door_1_locked_rot",
-					0
-				},
-				
-				{
-					"door_2_rot",
-					0
-				},
-				
-				{
-					"door_2_locked_rot",
-					0
-				},
-				
-				{
-					"door_3_rot",
-					0
-				},
-				
-				{
-					"door_3_locked_rot",
-					0
-				},
-				
-				{
-					"door_4_rot",
-					0
-				},
-				
-				{
-					"door_4_locked_rot",
-					0
-				},
-				
-				{
-					"door_5_rot",
-					0
-				},
-				
-				{
-					"door_5_locked_rot",
-					0
-				},
-				
-				{
-					"door_6_rot",
-					0
-				},
-				
-				{
-					"door_6_locked_rot",
-					0
-				},
-				
-				{
-					"door_7a_move",
-					0
-				},
-				
-				{
-					"door_7a_locked_move",
-					0
-				},
-				
-				{
-					"door_7b_move",
-					0
-				},
-				
-				{
-					"door_7b_locked_move",
-					0
-				},
-				
-				{
-					"door_8a_move",
-					0
-				},
-				
-				{
-					"door_8a_locked_move",
-					0
-				},
-				
-				{
-					"door_8b_move",
-					0
-				},
-				
-				{
-					"door_8b_locked_move",
-					0
-				},
-				
-				{
-					"glass_32_hide",
-					0
-				},
-				
-				{
-					"glass_32_unhide",
-					0
-				},
-				
-				{
-					"glass_33_hide",
-					0
-				},
-				
-				{
-					"glass_33_unhide",
-					0
-				},
-				
-				{
-					"glass_34_hide",
-					0
-				},
-				
-				{
-					"glass_34_unhide",
-					0
-				},
-				
-				{
-					"glass_35_hide",
-					0
-				},
-				
-				{
-					"glass_35_unhide",
-					0
-				},
-				
-				{
-					"glass_36_hide",
-					0
-				},
-				
-				{
-					"glass_36_unhide",
-					0
-				},
-				
-				{
-					"glass_37_hide",
-					0
-				},
-				
-				{
-					"glass_37_unhide",
-					0
-				},
-				
-				{
-					"glass_38_hide",
-					0
-				},
-				
-				{
-					"glass_38_unhide",
-					0
-				},
-				
-				{
-					"glass_39_hide",
-					0
-				},
-				
-				{
-					"glass_39_unhide",
-					0
-				},
-				
-				{
-					"glass_40_hide",
-					0
-				},
-				
-				{
-					"glass_40_unhide",
-					0
-				},
-				
-				{
-					"glass_41_hide",
-					0
-				},
-				
-				{
-					"glass_41_unhide",
-					0
-				},
-				
-				{
-					"glass_42_hide",
-					0
-				},
-				
-				{
-					"glass_42_unhide",
-					0
-				},
-				
-				{
-					"glass_43_hide",
-					0
-				},
-				
-				{
-					"glass_43_unhide",
-					0
-				},
-				
-				{
-					"glass_44_hide",
-					0
-				},
-				
-				{
-					"glass_44_unhide",
-					0
-				},
-				
-				{
-					"glass_45_hide",
-					0
-				},
-				
-				{
-					"glass_45_unhide",
-					0
-				},
-				
-				{
-					"glass_46_hide",
-					0
-				},
-				
-				{
-					"glass_46_unhide",
-					0
-				},
-				
-				{
-					"glass_47_hide",
-					0
-				},
-				
-				{
-					"glass_47_unhide",
-					0
-				},
-				
-				{
-					"glass_48_hide",
-					0
-				},
-				
-				{
-					"glass_48_unhide",
-					0
-				},
-				
-				{
-					"glass_49_hide",
-					0
-				},
-				
-				{
-					"glass_49_unhide",
-					0
-				},
-				
-				{
-					"glass_50_hide",
-					0
-				},
-				
-				{
-					"glass_50_unhide",
-					0
-				},
-				
-				{
-					"glass_51_hide",
-					0
-				},
-				
-				{
-					"glass_51_unhide",
-					0
-				},
-				
-				{
-					"glass_52_hide",
-					0
-				},
-				
-				{
-					"glass_52_unhide",
-					0
-				},
-				
-				{
-					"glass_53_hide",
-					0
-				},
-				
-				{
-					"glass_53_unhide",
-					0
-				},
-				
-				{
-					"glass_54_hide",
-					0
-				},
-				
-				{
-					"glass_54_unhide",
-					0
-				},
-				
-				{
-					"glass_55_hide",
-					0
-				},
-				
-				{
-					"glass_55_unhide",
-					0
-				},
-				
-				{
-					"glass_56_hide",
-					0
-				},
-				
-				{
-					"glass_56_unhide",
-					0
-				},
-				
-				{
-					"glass_57_hide",
-					0
-				},
-				
-				{
-					"glass_57_unhide",
-					0
-				},
-				
-				{
-					"glass_58_hide",
-					0
-				},
-				
-				{
-					"glass_58_unhide",
-					0
-				},
-				
-				{
-					"glass_59_hide",
-					0
-				},
-				
-				{
-					"glass_59_unhide",
-					0
-				},
-				
-				{
-					"glass_60_hide",
-					0
-				},
-				
-				{
-					"glass_60_unhide",
-					0
-				},
-				
-				{
-					"glass_61_hide",
-					0
-				},
-				
-				{
-					"glass_61_unhide",
-					0
-				}
-			};
-			hide[]={};
-			verticalOffset=6.7740002;
-			verticalOffsetWorld=0;
-			init="''";
-		};
 		_generalMacro="Airport_right";
 		scope=2;
 		scopeCurator=2;
 		displayName="$STR_A3_CFGVEHICLES_LAND_AIRPORT_TERMINAL_2_F0";
-		model="\A3\Structures_F\Ind\AirPort\Airport_right_F.p3d";
-		cost=60000;
+	}
+	class Airport_center: Land_Airport_center_F
+	{
+		scope=1;
+		scopeCurator=0;
+	};
+	class Airport_left: Land_Airport_left_F
+	{
+		scope=1;
+		scopeCurator=0;
+	};
+	class Airport_right: Land_Airport_right_F
+	{
+		scope=1;
+		scopeCurator=0;
 	};
 	class ContainerCrane_01: House_F
 	{
@@ -34115,8 +19375,8 @@ class CfgVehicles
 			init="''";
 		};
 		_generalMacro="Barracks_acc_proxy_4";
-		scope=2;
-		scopeCurator=2;
+		scope=1;
+		scopeCurator=0;
 		displayName="$STR_expEden_Barracks_acc_proxy_4";
 		model="\A3\structures_f\mil\Barracks\Barracks_acc_proxy_4_F.p3d";
 		icon="iconObject_1x2";
@@ -37084,42 +22344,10 @@ class CfgVehicles
 	class Land_Communication_anchor_F: House_F
 	{
 		author="O&T Expansion Eden";
-		mapSize=9.7299995;
-		class SimpleObject
-		{
-			eden=0;
-			animate[]={};
-			hide[]={};
-			verticalOffset=8.5830002;
-			verticalOffsetWorld=0;
-			init="''";
-		};
 		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Land_Communication_anchor_F.jpg";
-		_generalMacro="Land_Communication_anchor_F";
 		scope=2;
 		scopeCurator=2;
 		displayName="$STR_A3_CfgVehicles_Land_Communication_anchor_F0";
-		model="\A3\Structures_F\Ind\Transmitter_Tower\Communication_anchor_F.p3d";
-		icon="iconObject_10x1";
-		editorCategory="EdCat_Structures_Altis";
-		editorSubcategory="EdSubcat_Utilities";
-		vehicleClass="Structures_Infrastructure";
-		class DestructionEffects
-		{
-			class DestroyPhase1
-			{
-				simulation="destroy";
-				type="DelayedDestruction";
-				lifeTime=1;
-				position="";
-				intensity=1;
-				interval=1;
-			};
-		};
-		class EventHandlers
-		{
-			killed="[(_this # 0)] call compile preprocessFileLineNumbers '\A3\Structures_F\Ind\Transmitter_Tower\Scripts\anchor_ruins.sqf'";
-		};
 	};
 	class Land_CraterLong_Huge: CraterLong
 	{
@@ -39452,8 +24680,8 @@ class CfgVehicles
 				tooltip="'this spawn expEden_fnc_laptopSimulationTreminatedAnimate'";
 				property="Land_Laptop_simulationTreminated_F_animate";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this spawn expEden_fnc_laptopSimulationTreminatedAnimate}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this spawn expEden_fnc_laptopSimulationTreminatedAnimate}";
 			};
 		};
 		reversed=1;
@@ -40505,15 +25733,15 @@ class CfgVehicles
 	class Land_graffiti_carRepair_F: UserTexture_1x2_F
 	{
 		author="O&T Expansion Eden";
-		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Land_graffiti_carRepair_F.jpg";
+		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Land_Poster_CarRepair_01_G.jpg";
 		_generalMacro="Land_graffiti_carRepair_F";
-		scope=2;
-		scopeCurator=2;
+		scope=1;
+		scopeCurator=0;
 		icon="iconObject_2x5";
-		displayName="$STR_A3_cfgvehicles_land_carservice_f0";
+		displayName="$STR_Globe_CfgVehicles_Land_Poster_CarRepair_01_G0";
 		hiddenSelectionsTextures[]=
 		{
-			"\A3\missions_f_orange\Data\Img\Orange_Compositions\N2\N2_CarRepair_Sign_01.paa"
+			"\a3\missions_f_orange\data\img\orange_compositions\n2\n2_carrepair_sign_01.paa"
 		};
 		hiddenSelectionsMaterials[]=
 		{
@@ -41258,8 +26486,8 @@ class CfgVehicles
 				displayName="$STR_A3_RscDisplayArsenal_ButtonRandom";
 				property="randomNumber01";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
 			};
 		};
 	};
@@ -41365,8 +26593,8 @@ class CfgVehicles
 				displayName="$STR_A3_RscDisplayArsenal_ButtonRandom";
 				property="randomNumber02";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
 			};
 		};
 	};
@@ -41473,8 +26701,8 @@ class CfgVehicles
 				displayName="$STR_A3_RscDisplayArsenal_ButtonRandom";
 				property="randomNumber03";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
 			};
 		};
 	};
@@ -41581,8 +26809,8 @@ class CfgVehicles
 				displayName="$STR_A3_RscDisplayArsenal_ButtonRandom";
 				property="randomNumber04";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
 			};
 		};
 	};
@@ -41689,8 +26917,8 @@ class CfgVehicles
 				displayName="$STR_A3_RscDisplayArsenal_ButtonRandom";
 				property="randomNumber05";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call compile preprocessFileLineNumbers '\A3\expEden\Scripts\randomizeGraffitiNumbers.sqf'}";
 			};
 		};
 	};
@@ -49244,6 +34472,109 @@ class CfgVehicles
 			};
 		};
 	};
+	class Land_SAM_System_03_G: Items_base_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=0.050000001;
+		class SimpleObject
+		{
+			eden=1;
+			animate[]={};
+			hide[]={};
+			verticalOffset=0.00070000003;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_Sams\Data\Cfgvehicles\B_SAM_system_03_F.jpg";
+		icon="\A3\Static_F_Sams\SAM_System_03\Data\UI\SAM_System_03_icon_CA.paa";
+		_generalMacro="Land_SAM_System_03_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_A3_SAM_System_03_name";
+		model="\A3\Static_F_Sams\SAM_system_03\SAM_system_03_F.p3d";
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"turret",
+			"gun",
+			"zbytek"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"A3\Static_F_Sams\SAM_System_03\Data\sam_system_03_mat_01_CO.paa",
+			"A3\Static_F_Sams\SAM_System_03\Data\sam_system_03_mat_02_CO.paa",
+			"a3\static_f_sams\sam_system_03\data\sam_system_03_mat_02_co.paa",
+			"a3\static_f_sams\sam_system_03\data\sam_system_03_mat_02_co.paa",
+			"a3\static_f_sams\sam_system_03\data\sam_system_03_mat_01_co.paa"
+		};
+		editorSubcategory="EdSubcat_Military";
+	};
+	class SoundSetSource_Sfx_MissileMulfunction_01_G: SoundSetSource_02_base
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="SoundSetSource_Sfx_MissileMulfunction_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_SoundSetSource_Sfx_MissileMulfunction_01_G0";
+		class Sounds
+		{
+			soundSets[]=
+			{
+				"Sfx_MissileMulfunction_01_G"
+			};
+		};
+	};
+	class SoundSetSource_Sfx_WindNoise_01_G: SoundSetSource_02_base
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="SoundSetSource_Sfx_WindNoise_01_G";
+		scope=1;
+		scopeCurator=0;
+		displayName="$STR_Globe_CfgVehicles_SoundSetSource_Sfx_WindNoise_01_G0";
+		class Sounds
+		{
+			soundSets[]=
+			{
+				"Sfx_WindNoise_01_G_SoundSet"
+			};
+		};
+		class Attributes
+		{
+			class WindNoise
+			{
+				property="WindNoise";
+				displayName="$WindNoise";
+				control="Combo";
+				expression="if (_value isNotEqualTo '' && !is3DEN) then {[_this,_value] call expEden_fnc_switchSoundSetSource};";
+				defaultValue="''";
+				typeName="STRING";
+				class values
+				{
+					class 1
+					{
+						name="$STR_Globe_CfgVehicles_SoundSetSource_Sfx_MobilePhone_G1";
+						value="";
+					};
+					class 2
+					{
+						name="$STR_Globe_CfgVehicles_SoundSetSource_Sfx_MobilePhone_G2";
+						value="SoundSetSource_Sfx_WindNoise_02_G";
+					};
+					class 3
+					{
+						name="$STR_Globe_CfgVehicles_SoundSetSource_Sfx_MobilePhone_G3";
+						value="SoundSetSource_Sfx_WindNoise_03_G";
+					};
+					class 14
+					{
+						name="$STR_Globe_CfgVehicles_SoundSetSource_Sfx_MobilePhone_G15";
+						value="SoundSetSource_Sfx_WindNoise_04_G";
+					};
+				};
+			};
+		};
+	};
 };
 class CfgSounds
 {
@@ -50128,6 +35459,370 @@ class CfgCloudlets
 		randomDirectionPeriodVar=0;
 		randomDirectionIntensityVar=0;
 	};
+	class ObjectDestructionFire1;
+	class ObjectDestructionFire_01_G: ObjectDestructionFire1
+	{
+		size[]=
+		{
+			"1.2 * 1 + 1.8",
+			"0.1 * 1 + 0.3"
+		};
+	};
+	class ObjectDestructionFire2;
+	class ObjectDestructionFire_02_G: ObjectDestructionFire2
+	{
+		size[]=
+		{
+			"1.2 * 1 + 1.8",
+			0.30000001
+		};
+	};
+	class FireBallBright;
+	class FireBallBright_01_G: FireBallBright
+	{
+		interval="0.05 * 1 + 0.05";
+		size[]=
+		{
+			"0.0125 * 1 + 4",
+			"0.0125 * 1 + 6"
+		};
+	};
+	class FireBallBrightSmall;
+	class FireBallBrightSmall_01_G: FireBallBrightSmall
+	{
+		interval="0.05 * 1 + 0.05";
+		size[]=
+		{
+			"0.0125 * 1 + 2",
+			"0.0125 * 1 + 6"
+		};
+	};
+	class ObjectDestructionFire1Small;
+	class ObjectDestructionFire1Small_01_G: ObjectDestructionFire1Small
+	{
+		size[]=
+		{
+			"1.2 * 0.15000001 + 1",
+			"0.1 * 0.15000001 + 0.2"
+		};
+	};
+	class ObjectDestructionFire2Small;
+	class ObjectDestructionFire2Small_01_G: ObjectDestructionFire2Small
+	{
+		size[]=
+		{
+			"1.2 * 0.15000001 + 1",
+			0.2
+		};
+	};
+	class ExhaustFirePlaneBig;
+	class ExhaustFirePlaneBig_01_G: ExhaustFirePlaneBig
+	{
+		interval=0.002;
+		lifeTime=0.005;
+		moveVelocity[]=
+		{
+			0,
+			1,
+			0
+		};
+		lifeTimeVar=0.15;
+		position[]=
+		{
+			0,
+			0,
+			0
+		};
+	};
+	class ClusterFire;
+	class ClusterFire_01_G: ClusterFire
+	{
+		size[]=
+		{
+			"0.0125 * 3 + 1",
+			"0.0125 * 3 + 8",
+			"0.0125 * 3 + 1"
+		};
+	};
+	class AirObjectDestructionFire;
+	class AirObjectDestructionFire_01_G: AirObjectDestructionFire
+	{
+		interval=0.02;
+		lifeTime=2.3;
+		moveVelocity[]=
+		{
+			0.5,
+			5,
+			0.5
+		};
+	};
+	class SmallSmokeFast2;
+	class SmallSmokeFast2_G: SmallSmokeFast2
+	{
+		interval="0.05 * 1 + 0.05";
+		size[]=
+		{
+			"0.0125 * 1 + 2",
+			"0.125 * 1 + 12",
+			"0.0.125 * 1 + 15"
+		};
+	};
+	class SmallSmokeSlow1;
+	class SmallSmokeSlow1_G: SmallSmokeSlow1
+	{
+		interval="0.05 * 1 + 0.05";
+		size[]=
+		{
+			"0.0125 * 1 + 2",
+			"0.125 * 1 + 10"
+		};
+	};
+	class SmallSmokeSlow2;
+	class SmallSmokeSlow2_G: SmallSmokeSlow2
+	{
+		interval="0.05 * 1 + 0.05";
+		size[]=
+		{
+			"0.0125 * 1 + 2",
+			"0.0125 * 1 + 10"
+		};
+	};
+	class SmokeBig;
+	class SmokeBig_G: SmokeBig
+	{
+		interval="0.025 * 1 + 0.025";
+		size[]=
+		{
+			"0.0125 * 1 + 2",
+			"0.0125 * 1 + 6",
+			"0.0125 * 1 + 11"
+		};
+	};
+	class SmokeMed;
+	class SmokeMed_G: SmokeMed
+	{
+		interval="0.002 * 1 + 0.002";
+		size[]=
+		{
+			"0.0125 * 1 + 2.5",
+			"0.0125 * 1 + 5",
+			"0.0125 * 1 + 10"
+		};
+	};
+	class GrenadeSmoke1;
+	class GrenadeSmoke1_G: GrenadeSmoke1
+	{
+		interval="0.008 * 1 + 0.008";
+		size[]=
+		{
+			"0.013 * 1 + 3",
+			"0.0125 * 1 + 6",
+			"0.013 * 1 + 8",
+			"0.013 * 1 + 10"
+		};
+	};
+	class MineSmoke1;
+	class MineSmoke1_G: MineSmoke1
+	{
+		interval="0.0015 * 1 + 0.0015";
+		size[]=
+		{
+			"0.1 * 1 + 2",
+			"0.1 * 1 + 6",
+			"0.1 * 1 + 9",
+			"0.1 * 1 + 12"
+		};
+	};
+	class SecondarySmoke;
+	class SecondarySmoke_G: SecondarySmoke
+	{
+		interval="0.018 * 1 + 0.018";
+		size[]=
+		{
+			"0.013 * 1 + 1.5",
+			"0.0125 * 1 + 4.5",
+			"0.013 * 1 + 6",
+			"0.013 * 1 + 8"
+		};
+	};
+	class CraterSmoke;
+	class CraterSmoke_G: CraterSmoke
+	{
+		size[]=
+		{
+			"0.013 * 1 + 0.3",
+			"0.0125 * 1 + 1.5",
+			"0.013 * 1 + 3.5",
+			"0.013 * 1 + 6.5"
+		};
+	};
+	class CraterSmoke_Orange;
+	class CraterSmoke_Orange_G: CraterSmoke_Orange
+	{
+		size[]=
+		{
+			"0.013 * 1 + 0.3",
+			"0.0125 * 1 + 1.5",
+			"0.013 * 1 + 3.5",
+			"0.013 * 1 + 6.5"
+		};
+	};
+	class CraterSmokeBig;
+	class CraterSmokeBig_G: CraterSmokeBig
+	{
+		size[]=
+		{
+			"0.013 * 1 + 0.3",
+			"0.0125 * 1 + 1.5",
+			"0.013 * 1 + 3.5",
+			"0.013 * 1 + 6.5"
+		};
+	};
+	class ShellSmoke;
+	class ShellSmoke_G: ShellSmoke
+	{
+		interval="0.01 * 1 + 0.01";
+		size[]=
+		{
+			"0.0125 * 1 + 2",
+			"0.0125 * 1 + 7",
+			"0.0125 * 1 + 8"
+		};
+	};
+	class ExploAmmoSmoke;
+	class ExploAmmoSmoke_G: ExploAmmoSmoke
+	{
+		interval="0.013 * 1 + 0.009";
+		size[]=
+		{
+			"0.018 * 1 + 1.2",
+			"0.018 * 1 + 3",
+			"0.018 * 1 + 5",
+			"0.018 * 1 + 7.5"
+		};
+	};
+	class ERASmoke;
+	class ERASmoke_G: ERASmoke
+	{
+		interval="0.0025 * 1 + 0.0025";
+		size[]=
+		{
+			"0.1 * 0.0099999998 + 1",
+			"0.1 * 0.0099999998 + 2",
+			"0.1 * 0.0099999998 + 3.5",
+			"0.1 * 0.0099999998 + 5"
+		};
+	};
+
+
+
+
+
+
+
+
+
+
+	class CircleDustTankSmall;
+	class CircleDustTankSmall_G: CircleDustTankSmall
+	{
+		interval=0.02;
+		colorCoef[]=
+		{
+			1,
+			1,
+			1,
+			1
+		};
+	};
+	class CircleDustTankBig;
+	class CircleDustTankBig_G: CircleDustTankBig
+	{
+		interval=0.005;
+		colorCoef[]=
+		{
+			1,
+			1,
+			1,
+			1
+		};
+		position[]=
+		{
+			0,
+			0,
+			0
+		};
+	};
+	class CircleDustTankLong;
+	class CircleDustTankLong_G: CircleDustTankLong
+	{
+		interval=0.002;
+		moveVelocity[]=
+		{
+			20,
+			0.30000001,
+			20
+		};
+		colorCoef[]=
+		{
+			1,
+			1,
+			1,
+			1
+		};
+		position[]=
+		{
+			0,
+			0,
+			0
+		};
+	};
+	class CircleDustTank;
+	class CircleDustTank_G: CircleDustTank
+	{
+		interval=0.005;
+	};
+	class CircleDustTankL;
+	class CircleDustTankL_G: CircleDustTankL
+	{
+		interval=0.008;
+	};
+	class CircleDustArtillery;
+	class CircleDustArtillery_G: CircleDustArtillery
+	{
+		interval=0.0035;
+	};
+	class CircleDustMortar;
+	class CircleDustMortar_G: CircleDustMortar
+	{
+		interval=0.005;
+	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	class CircleDustBig;
+	class CircleDustBig_G: CircleDustBig
+	{
+		size[]=
+		{
+			"0.0125 * 1 + 4.5",
+			"0.0125 * 1 + 9"
+		};
+	};
 };
 class ATMineExplosion_Globe
 {
@@ -50190,32 +35885,21 @@ class CfgVideoOptions
 		};
 	};
 };
-class CfgMagazines
-{
-	class VehicleMagazine;
-	class 100Rnd_127x99_SLAP_mag: VehicleMagazine
-	{
-		author="O&T Expansion Eden";
-		scope=2;
-		count=100;
-		ammo="B_127x99_SLAP";
-		initSpeed=1450;
-		maxLeadSpeed=36.111099;
-		tracersEvery=4;
-		nameSound="mgun";
-		displayName="displayName";
-		descriptionShort="descriptionShort";
-		muzzleImpulseFactor[]={0.1,0.1};
-	};
-};
 class CfgWeapons
 {
-	class HMG_01;
-	class HMG_M2: HMG_01
+	class autocannon_Base_F;
+	class autocannon_40mm_CTWS: autocannon_Base_F
 	{
-		magazines[]+=
+		class HE;
+	};
+	class autocannon_40mm_VTOL_01: autocannon_40mm_CTWS
+	{
+		class HE: HE
 		{
-			"100Rnd_127x99_SLAP_mag"
+			magazines[]+=
+			{
+				"60Rnd_40mm_HE_Airburst_01_G_shells"
+			};
 		};
 	};
 };
@@ -50261,6 +35945,9 @@ class CfgSoundEffects
 };
 class CfgVehicleIcons
 {
+	iconSmoke_G="\a3\ui_f\data\gui\rsc\rscdisplayarcademap\overcast_ca.paa";
+	iconFlare_G="\a3\modules_f_curator\data\portraitflare_ca.paa";
+	iconReflector_G="\A3\Ui_f\data\IGUI\Cfg\VehicleToggles\LightsIconOn_ca.paa";
 	iconSoundVariable_G="\A3\ui_f\data\igui\rscingameui\rscunitinfoairrtdfull\ico_cpt_music_on_ca.paa";
 	iconSoundFire_G="\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_fire_in_flame_ca.paa";
 };
@@ -50370,6 +36057,514 @@ class CfgPostProcessTemplates
 			{0.25,0.25,0.050000001,-0.2},
 			{1,1.05,1.1,1.1},
 			{1,1.5,1.5,0}
+		};
+	};
+};
+class CfgMovesBasic
+{
+	class Default
+	{
+		idle = "";
+	};
+	class StandBase;
+};
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class SprintCivilBaseDf;
+		class TransAnimBase;
+
+		class AidlPercMstpSrasWpstDnon_G0S;
+		class AovrPercMstpSrasWpstDf: AidlPercMstpSrasWpstDnon_G0S
+		{
+			connectTo[] =
+			{
+				"AmovPercMstpSrasWpstDnon", 0.04
+			};
+		};
+
+		class AmovPercMevaSnonWnonDf: SprintCivilBaseDf
+		{
+			connectTo[] = { };
+			interpolateTo[] =
+			{
+				"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon", 0.02, //change this into interp
+				"AmovPercMrunSnonWnonDf", 0.02,
+				"AmovPercMstpSnonWnonDnon", 0.06,
+				"AmovPercMwlkSnonWnonDf", 0.025,
+				"AmovPercMevaSnonWnonDfl", 0.02,
+				"AmovPercMevaSnonWnonDfr", 0.02,
+				"AmovPknlMevaSnonWnonDf", 0.02,
+				"Unconscious", 0.02
+			};
+		};
+
+		class AmovPercMstpSlowWrflDnon: StandBase
+		{
+			connectTo[] =
+			{
+				"AmovPercMstpSlowWrflDnon", 0.02,
+				"AmovPercMstpSlowWrflDnon_AmovPknlMstpSlowWrflDnon", 0.02,
+				"AmovPercMstpSlowWrflDnon_AmovPpneMstpSrasWrflDnon", 0.02,
+				"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon", 0.01,
+				"AmovPercMstpSlowWrflDnon_SaluteIn", 0.1,
+				"AmovPercMstpSrasWrflDnon_SaluteIn", 0.15,
+				"AmovPercMstpSlowWrflDnon_AmovPsitMstpSlowWrflDnon", 0.1,
+				"AmovPercMstpSlowWrflDnon_AmovPsitMstpSrasWrflDnon", 0.1,
+				"LadderRifleOn", 1,
+				"AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1", 0.1,
+				"Acts_TreatingWounded_in", 10e-5,
+				"Acts_SignalToCheck", 0.001,
+				"Acts_AidlPercMstpSlowWrflDnon_pissing", 0.001,
+				"AmovPercMstpSrasWrflDnon_AmovPercMstpSrasWlnrDnon", 0.02,
+				"AmovPercMstpSrasWrflDnon_AmovPercMstpSrasWpstDnon", 0.02,
+				"Acts_RifleLowStand_Default", 1
+			};
+		};
+
+		class AmovPercMstpSrasWpstDnon;
+		class AmovPknlMstpSrasWpstDnon: AmovPercMstpSrasWpstDnon
+		{
+			interpolateTo[] =
+			{
+				"AidlPknlMstpSrasWpstDnon_AI", 0.02,
+				"AinvPknlMstpSlayWpstDnon_medicIn", 0.02,
+				"AinvPknlMstpSlayWpstDnon_medicOtherIn", 0.02,
+				"AmovPknlMstpSrasWpstDnon_turnL", 0.02,
+				"AmovPknlMstpSrasWpstDnon_turnR", 0.02,
+				"AmovPknlMwlkSrasWpstDf", 0.02,
+				"AmovPknlMwlkSrasWpstDfl", 0.02,
+				"AmovPknlMwlkSrasWpstDl", 0.02,
+				"AmovPknlMwlkSrasWpstDbl", 0.02,
+				"AmovPknlMwlkSrasWpstDb", 0.02,
+				"AmovPknlMwlkSrasWpstDbr", 0.02,
+				"AmovPknlMwlkSrasWpstDr", 0.02,
+				"AmovPknlMwlkSrasWpstDfr", 0.02,
+				"AmovPknlMrunSrasWpstDf", 0.02,
+				"AmovPknlMrunSrasWpstDfl", 0.02,
+				"AmovPknlMrunSrasWpstDl", 0.02,
+				"AmovPknlMrunSrasWpstDbl", 0.02,
+				"AmovPknlMrunSrasWpstDb", 0.02,
+				"AmovPknlMrunSrasWpstDbr", 0.02,
+				"AmovPknlMrunSrasWpstDr", 0.02,
+				"AmovPknlMrunSrasWpstDfr", 0.02,
+				"Unconscious", 0.02,
+				"AovrPercMstpSrasWpstDf", 0.02,
+				"AmovPercMstpSrasWpstDnon_AcinPknlMwlkSnonWpstDb_2", 0.2,
+				"AmovPknlMstpSrasWpstDnon_relax", 0.2,
+				"AinvPercMstpSrasWrflDnon", 0.05,
+				"AmovPknlMstpSrasWpstDnon_AinvPknlMstpSrasWpstDnon", 0.02,
+				"AmovPknlMstpSrasWpstDnon_AinvPknlMstpSrasWpstDnon_Putdown", 0.02,
+				"AmovPknlMstpSrasWpstDnon_AmovPercMstpSrasWpstDnon", 0.02,
+				"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf", 0.01,
+				"AmovPknlMstpSrasWpstDnon_AmovPpneMstpSrasWpstDnon", 0.02,
+				"AfalPknlMstpSrasWpstDnon", 0.025,
+				"Campaign_Base", 0.01,
+				"AmovPknlMlmpSrasWpstDfl", 0.05,
+				"AmovPknlMlmpSrasWpstDf", 0.05,
+				"AmovPknlMlmpSrasWpstDl", 0.05,
+				"AmovPknlMlmpSrasWpstDbl", 0.05,
+				"AmovPknlMlmpSrasWpstDb", 0.05,
+				"AmovPknlMlmpSrasWpstDbr", 0.05,
+				"AmovPknlMlmpSrasWpstDr", 0.05,
+				"AmovPknlMlmpSrasWpstDfr", 0.05,
+				"UnconsciousMedicFromPistolKneel", 0.2
+			};
+		};
+
+		class AmovPknlMstpSlowWrflDnon;
+		class AmovPknlMstpSrasWrflDnon: AmovPknlMstpSlowWrflDnon
+		{
+			connectTo[] =
+			{
+				"AidlPknlMstpSlowWrflDnon_AI", 0.1,
+				"AmovPknlMstpSrasWrflDnon", 0.02,
+				"WeaponMagazineReloadKneel", 0.1,
+				"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSlowWrflDnon", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSrasWpstDnon", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSrasWlnrDnon", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AwopPknlMstpSoptWbinDnon", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AinvPknlMstpSrasWrflDnon", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSnonWnonDnon", 0.02, //change
+				"AmovPknlMstpSrasWrflDnon_AinvPknlMstpSrasWrflDnon_Putdown", 0.02,
+				"AwopPknlMstpSgthWrflDnon_Start", 0.1,
+				"AwopPknlMstpSgthWrflDnon_End", 0.1,
+				"AmovPknlMstpSrasWrflDnon_AadjPknlMstpSrasWrflDup", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AadjPknlMstpSrasWrflDdown", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AadjPknlMstpSrasWrflDleft", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AadjPknlMstpSrasWrflDright", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSrasWrflDnon_gear", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AmovPknlMrunSlowWrflDf", 0.01
+			};
+			interpolateTo[] =
+			{
+				"AmovPknlMstpSrasWrflDnon_turnL", 0.02,
+				"AmovPknlMstpSrasWrflDnon_turnR", 0.02,
+				"AmovPknlMstpSrasWrflDnon_AmovPercMstpSrasWrflDnon", 0.02, //change
+				"AmovPknlMstpSrasWrflDnon_AmovPpneMstpSrasWrflDnon", 0.02, //change
+				"AidlPknlMstpSrasWrflDnon_AI", 0.02,
+				"AinvPknlMstpSnonWrflDnon_AinvPknlMstpSnonWrflDnon_medic", 0.02,
+				"AmovPknlMwlkSrasWrflDf", 0.02,
+				"AmovPknlMwlkSrasWrflDfl", 0.02,
+				"AmovPknlMwlkSrasWrflDl", 0.02,
+				"AmovPknlMwlkSrasWrflDbl", 0.02,
+				"AovrPercMstpSrasWrflDf", 1.02,
+				"AmovPknlMwlkSrasWrflDb", 0.02,
+				"AmovPknlMwlkSrasWrflDbr", 0.02,
+				"AmovPknlMwlkSrasWrflDr", 0.02,
+				"AmovPknlMwlkSrasWrflDfr", 0.02,
+				"AmovPknlMrunSrasWrflDf", 0.02,
+				"AmovPknlMrunSrasWrflDfl", 0.02,
+				"AmovPknlMrunSrasWrflDfr", 0.02,
+				"AmovPknlMrunSrasWrflDl", 0.02,
+				"AmovPknlMrunSrasWrflDbl", 0.02,
+				"AmovPknlMrunSrasWrflDb", 0.02,
+				"AmovPknlMrunSrasWrflDbr", 0.02,
+				"AmovPknlMrunSrasWrflDr", 0.02,
+				"AmovPknlMrunSrasWrflDf_ldst", 0.02,
+				"AmovPknlMrunSrasWrflDfl_ldst", 0.02,
+				"AmovPknlMrunSrasWrflDl_ldst", 0.02,
+				"AmovPknlMrunSrasWrflDbl_ldst", 0.02,
+				"AmovPknlMrunSrasWrflDb_ldst", 0.02,
+				"AmovPknlMrunSrasWrflDbr_ldst", 0.02,
+				"AmovPknlMrunSrasWrflDr_ldst", 0.02,
+				"AmovPknlMrunSrasWrflDfr_ldst", 0.02,
+				"AmovPknlMevaSrasWrflDr", 0.025,
+				"AmovPknlMevaSrasWrflDl", 0.025,
+				"AmovPknlMtacSrasWrflDf", 0.02,
+				"AmovPknlMtacSrasWrflDfl", 0.02,
+				"AmovPknlMtacSrasWrflDl", 0.02,
+				"AmovPknlMtacSrasWrflDbl", 0.02,
+				"AmovPknlMtacSrasWrflDb", 0.02,
+				"AmovPknlMtacSrasWrflDbr", 0.02,
+				"AmovPknlMtacSrasWrflDr", 0.02,
+				"AmovPknlMtacSrasWrflDfr", 0.02,
+				"Unconscious", 0.02,
+				"AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2", 0.2,
+				"ReloadGM6", 0.2,
+				"DismountOptic", 0.2,
+				"MountOptic", 0.2,
+				"MountSide", 0.2,
+				"DismountSide", 0.2,
+				"AmovPknlMstpSlowWrflDnon_relax", 10.2,
+				"AinvPknlMstpSnonWrflDnon_medicUp", 0.2,
+				"AinvPknlMstpSlayWrflDnon_medic", 0.05,
+				"AinvPknlMstpSlayWrflDnon_medicOther", 0.05,
+				"AmovPknlMstpSlowWrflDnon_AmovPknlMstpSrasWrflDnon", 0.02,
+				"AmovPercMstpSrasWrflDnon_AmovPknlMstpSrasWrflDnon", 0.02,
+				"AfalPknlMstpSrasWrflDnon", 0.025,
+				"AinvPknlMstpSnonWrflDr_medic1", 0.05,
+				"AinvPknlMstpSnonWrflDr_medic2", 0.05,
+				"AinvPknlMstpSnonWrflDr_medic3", 0.05,
+				"AinvPknlMstpSnonWrflDr_medic4", 0.05,
+				"AinvPknlMstpSnonWrflDr_medic5", 0.05,
+				"Campaign_Base", 0.01,
+				"AmovPknlMlmpSrasWrflDf", 0.05,
+				"AmovPknlMlmpSrasWrflDfl", 0.05,
+				"AmovPknlMlmpSrasWrflDl", 0.05,
+				"AmovPknlMlmpSrasWrflDbl", 0.05,
+				"AmovPknlMlmpSrasWrflDb", 0.05,
+				"AmovPknlMlmpSrasWrflDbr", 0.05,
+				"AmovPknlMlmpSrasWrflDr", 0.05,
+				"AmovPknlMlmpSrasWrflDfr", 0.05,
+				"Acts_SupportTeam_Front_StartMove", 1,
+				"Acts_SupportTeam_Right_StartMove", 1,
+				"Acts_SupportTeam_Left_StartMove", 1,
+				"Acts_SupportTeam_Back_StartMove", 1,
+				"UnconsciousMedicFromRifleKneel", 0.2
+			};
+		};
+		class AmovPknlMrunSrasWrflDf: AmovPknlMstpSrasWrflDnon
+		{
+			interpolateTo[] =
+			{
+				"AmovPercMrunSrasWrflDf", 0.03,
+				"AmovPknlMwlkSrasWrflDf", 0.025,
+				"AmovPknlMrunSrasWrflDfl", 0.025,
+				"AmovPknlMrunSrasWrflDfr", 0.025,
+				"AmovPknlMrunSlowWrflDf", 0.025,
+				"AmovPknlMevaSrasWrflDf", 0.025,
+				"Unconscious", 0.02,
+				"AmovPknlMtacSrasWrflDf", 0.02,
+				"AmovPknlMstpSrasWrflDnon", 0.03,
+				"AmovPknlMstpSlowWrflDnon_relax", 0.1,
+				"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon", 0.02
+			};
+		};
+
+		class AmovPercMstpSnonWnonDnon: StandBase
+		{
+			mask = "weaponSwitching";
+		};
+		class AmovPercMrunSnonWnonDf: AmovPercMstpSnonWnonDnon
+		{
+			delete soundEdge;
+
+			interpolateTo[] =
+			{
+				"AmovPercMstpSnonWnonDnon", 0.025,
+				"AmovPercMwlkSnonWnonDf", 0.025,
+				"AmovPknlMrunSnonWnonDf", 0.025,
+				"AmovPercMrunSnonWnonDfl", 0.025,
+				"AmovPercMrunSnonWnonDfr", 0.025,
+				"AmovPercMrunSnonWnonDl", 0.025,
+				"AmovPercMrunSnonWnonDr", 0.025,
+				"AmovPercMevaSnonWnonDf", 0.025,
+				"AmovPercMevaSnonWnonDf", 0.025,
+				"AmovPercMrunSnonWnonDf_AmovPpneMstpSnonWnonDnon", 0.019,
+				"Unconscious", 0.02
+			};
+		};
+		class AmovPercMrunSnonWnonDfl: AmovPercMrunSnonWnonDf
+		{
+			interpolateTo[] =
+			{
+				"AmovPercMrunSnonWnonDf", 0.02,
+				"AmovPercMstpSnonWnonDnon", 0.025,
+				"AmovPercMwlkSnonWnonDfl", 0.025,
+				"AmovPercMrunSnonWnonDl", 0.025,
+				"AmovPercMrunSnonWnonDfr", 0.025,
+				"AmovPknlMrunSnonWnonDfl", 0.03,
+				"AmovPercMevaSnonWnonDfl", 0.02,
+				"AmovPercMrunSnonWnonDf_AmovPpneMstpSnonWnonDnon", 0.019,
+				"Unconscious", 0.02
+			};
+		};
+		class AmovPercMrunSnonWnonDfr: AmovPercMrunSnonWnonDf
+		{
+			interpolateTo[] =
+			{
+				"AmovPercMrunSnonWnonDf", 0.025,
+				"AmovPercMstpSnonWnonDnon", 0.025,
+				"AmovPercMwlkSnonWnonDfr", 0.025,
+				"AmovPercMrunSnonWnonDr", 0.025,
+				"AmovPercMrunSnonWnonDfl", 0.025,
+				"AmovPknlMrunSnonWnonDfr", 0.03,
+				"AmovPercMevaSnonWnonDfr", 0.02,
+				"AmovPercMrunSnonWnonDf_AmovPpneMstpSnonWnonDnon", 0.019,
+				"Unconscious", 0.02
+			};
+		};
+
+		class AmovPknlMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon
+		{
+			connectTo[] =
+			{
+				"AmovPknlMstpSnonWnonDnon_gear", 0.02,
+				"AmovPercMstpSnonWnonDnon_gear", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWlnrDnon", 0.019,
+				"AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWpstDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWrflDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPercMsprSnonWnonDf", 0.01,
+				"AmovPknlMstpSnonWnonDnon_AmovPpneMstpSnonWnonDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AwopPknlMstpSoptWbinDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon", 0.02
+			};
+		};
+		class AmovPknlMrunSnonWnonDf: AmovPknlMstpSnonWnonDnon
+		{
+			interpolateTo[] =
+			{
+				"AmovPercMrunSnonWnonDf", 0.03,
+				"AmovPknlMstpSnonWnonDnon", 0.025,
+				"AmovPknlMwlkSnonWnonDf", 0.025,
+				"AmovPknlMrunSnonWnonDfl", 0.025,
+				"AmovPknlMrunSnonWnonDfr", 0.025,
+				"AmovPknlMevaSnonWnonDf", 0.025,
+				"Unconscious", 0.02,
+				"AmovPercMrunSnonWnonDf_AmovPpneMstpSnonWnonDnon", 0.019,
+				"AmovPknlMstpSnonWnonDnon_relax", 0.1
+			};
+		};
+		class AmovPknlMrunSnonWnonDfl: AmovPknlMrunSnonWnonDf
+		{
+			interpolateTo[] =
+			{
+				"AmovPknlMstpSnonWnonDnon", 0.025,
+				"AmovPercMrunSnonWnonDfl", 0.03,
+				"AmovPknlMrunSnonWnonDf", 0.025,
+				"AmovPknlMwlkSnonWnonDfl", 0.025,
+				"AmovPknlMrunSnonWnonDl", 0.025,
+				"AmovPknlMevaSnonWnonDfl", 0.025,
+				"AmovPknlMstpSnonWnonDnon_AmovPercMsprSnonWnonDf", 0.01,
+				"Unconscious", 0.02,
+				"AmovPercMrunSnonWnonDf_AmovPpneMstpSnonWnonDnon", 0.019,
+				"AmovPknlMstpSnonWnonDnon_relax", 0.1
+			};
+		};
+		class AmovPknlMrunSnonWnonDfr: AmovPknlMrunSnonWnonDf
+		{
+			interpolateTo[] =
+			{
+				"AmovPknlMstpSnonWnonDnon", 0.025,
+				"AmovPercMrunSnonWnonDfr", 0.03,
+				"AmovPknlMrunSnonWnonDf", 0.025,
+				"AmovPknlMwlkSnonWnonDfr", 0.025,
+				"AmovPknlMrunSnonWnonDr", 0.025,
+				"AmovPknlMevaSnonWnonDfr", 0.025,
+				"AmovPknlMstpSnonWnonDnon_AmovPercMsprSnonWnonDf", 0.01,
+				"Unconscious", 0.02,
+				"AmovPercMrunSnonWnonDf_AmovPpneMstpSnonWnonDnon", 0.019,
+				"AmovPknlMstpSnonWnonDnon_relax", 0.1
+			};
+		};
+
+		class AmovPpneMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon
+		{
+			connectTo[] =
+			{
+				"AmovPpneMstpSnonWnonDnon", 0.02,
+				"AmovPpneMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon", 0.019, //move this to higher priority
+				"AmovPpneMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon", 0.02,
+				"AmovPpneMstpSnonWnonDnon_AmovPercMsprSnonWnonDf", 0.05,
+				"AmovPpneMstpSnonWnonDnon_AmovPpneMstpSrasWrflDnon", 0.01,
+				"AmovPpneMstpSnonWnonDnon_AmovPpneMstpSrasWpstDnon", 0.02,
+				"AmovPpneMstpSnonWnonDnon_AwopPpneMstpSoptWbinDnon", 0.02,
+				"AmovPpneMstpSnonWnonDnon_AmovPpneMevaSnonWnonDl", 0.02,
+				"AmovPpneMstpSnonWnonDnon_AmovPpneMevaSnonWnonDr", 0.02,
+				"AmovPpneMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground", 0.1,
+				"AwopPpneMstpSgthWnonDnon_start", 0.1,
+				"AmovPpneMstpSnonWnonDnon_healed", 0.02,
+				"AmovPpneMstpSnonWnonDnon_injured", 0.1
+			};
+		};
+
+		class AmovPercMstpSlowWrflDnon_AmovPknlMstpSlowWrflDnon: AmovPknlMstpSlowWrflDnon
+		{
+			interpolateTo[] +=
+			{
+				"AmovPknlMstpSlowWrflDnon_AmovPercMstpSlowWrflDnon", 0.0098
+			};
+			mask = "weaponSwitching";
+			soundOverride = "adjust_stand_to_kneel";
+			speed = 1.8181;
+		};
+		class AmovPknlMstpSlowWrflDnon_AmovPercMstpSlowWrflDnon: AmovPercMstpSlowWrflDnon
+		{
+			interpolateTo[] +=
+			{
+				"AmovPercMstpSlowWrflDnon_AmovPknlMstpSlowWrflDnon", 0.0098
+			};
+			mask = "weaponSwitching";
+			soundOverride = "adjust_kneel_to_stand";
+			speed = 1.8181;
+		};
+
+		class AmovPpneMstpSrasWrflDnon_AmovPercMsprSlowWrflDf: TransAnimBase
+		{
+			connectTo[] = { };
+			interpolateTo[] =
+			{
+				"AmovPpneMstpSrasWrflDnon_AmovPercMsprSlowWrflDf_2", 0.005,
+				"Unconscious", 0.02
+			};
+			interpolationSpeed = 10;
+			leftHandIKCurve[] = { 0, 0, 0.25, 0, 1, 1 };
+			minPlayTime = 0.7;
+			weaponIK = 1;
+		};
+		class AmovPpneMstpSrasWrflDnon_AmovPercMsprSlowWrflDf_2: AmovPpneMstpSrasWrflDnon_AmovPercMsprSlowWrflDf
+		{
+			interpolateTo[] =
+			{
+				"AmovPercMevaSrasWrflDf", 0.005,
+				"AmovPercMevaSrasWrflDfl", 0.005,
+				"AmovPercMevaSrasWrflDfr", 0.005,
+				"Unconscious", 0.02,
+				"AmovPercMstpSlowWrflDnon", 0.05,
+				"AmovPercMsprSlowWrflDf_AmovPpneMstpSrasWrflDnon", 0.02
+			};
+			interpolationSpeed = 4;
+			leftHandIKCurve[] = { 1 };
+			minPlayTime = 0;
+			speed = 0.5;
+		};
+
+		//adding knl to pne (can't do "from" for some reason...)
+		class AmovPknlMstpSrasWlnrDnon: Default
+		{
+			connectTo[] =
+			{
+				"AmovPknlMstpSrasWlnrDnon_AmovPercMstpSrasWlnrDnon", 0.02,
+				"AmovPknlMstpSrasWlnrDnon_AmovPknlMstpSrasWrflDnon", 0.02,
+				"AmovPknlMstpSrasWlnrDnon_AmovPknlMstpSrasWpstDnon", 0.02,
+				"AmovPknlMstpSrasWlnrDnon_AwopPknlMstpSoptWbinDnon", 0.02,
+				"AmovPknlMstpSrasWlnrDnon_AmovPpneMstpSrasWlnrDnon", 0.02, //add this
+				"AmovPknlMstpSrasWlnrDnon_AmovPercMstpSnonWnonDnon", 0.03,
+				"AmovPknlMstpSrasWlnrDnon_AmovPpneMstpSnonWnonDnon", 0.02,
+				"AmovPknlMstpSrasWlnrDnon_AmovPknlMstpSnonWnonDnon", 0.02,
+				"ReloadRPGKneel", 0.5,
+				"AmovPknlMstpSrasWlnrDnon", 0.02
+			};
+		};
+
+		//fix getting up when down
+		class AmovPpneMstpSrasWrflDnon_injured;
+		class AinjPpneMstpSnonWrflDnon: AmovPpneMstpSrasWrflDnon_injured
+		{
+			interpolateTo[] =
+			{
+				"UnconsciousReviveDefault", 0.02,
+				"Unconscious", 0.02
+			};
+		};
+
+		class AmovPpneMstpSnonWnonDnon_injured;
+		class AinjPpneMstpSnonWnonDnon: AmovPpneMstpSnonWnonDnon_injured
+		{
+			interpolateTo[] =
+			{
+				"Unconscious", 0.02,
+				"AinjPpneMrunSnonWnonDb_grab", 0.1,
+				"UnconsciousReviveDefault", 0.02
+			};
+		};
+
+		//change connect to interp
+		class AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon_2: AmovPpneMstpSnonWnonDnon
+		{
+			connectTo[] = { };
+			interpolateTo[] =
+			{
+				"AmovPpneMstpSnonWnonDnon", 0.02
+			};
+			minPlayTime = 0.9;
+		};
+
+		class AmovPpneMstpSrasWlnrDnon_AmovPknlMstpSrasWlnrDnon: TransAnimBase
+		{
+			interpolateTo[] =
+			{
+				"AmovPknlMstpSrasWlnrDnon_AmovPpneMstpSrasWlnrDnon", 0.02,
+				"Unconscious", 0.02
+			};
+			reverse = "AmovPknlMstpSrasWlnrDnon_AmovPpneMstpSrasWlnrDnon";
+		};
+
+		//fix crouched non-pistol looping
+		class AmovPknlMstpSrasWpstDnon_AmovPknlMstpSnonWnonDnon;
+		class AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWpstDnon: AmovPknlMstpSrasWpstDnon_AmovPknlMstpSnonWnonDnon
+		{
+			actions = "PistolKneelActions";
+		};
+
+		class AmovPknlMstpSrasWrflDnon_AmovPknlMstpSnonWnonDnon: AmovPknlMstpSnonWnonDnon
+		{
+			connectTo[] =
+			{
+				"AmovPknlMstpSnonWnonDnon", 0.019,
+				"AmovPknlMstpSnonWnonDnon_gear", 0.02,
+				"AmovPercMstpSnonWnonDnon_gear", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWlnrDnon", 0.019,
+				"AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWpstDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWrflDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPercMsprSnonWnonDf", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AmovPpneMstpSnonWnonDnon", 0.02,
+				"AmovPknlMstpSnonWnonDnon_AwopPknlMstpSoptWbinDnon", 0.02
+			};
 		};
 	};
 };

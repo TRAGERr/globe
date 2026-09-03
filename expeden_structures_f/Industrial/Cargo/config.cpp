@@ -34,8 +34,8 @@ class CfgVehicles
 				tooltip="$STR_Globe_CfgVehicles_Cargo_base_F_Attributes_CargoRandomColor_tooltip";
 				property="CargoRandomColor";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this spawn expEden_fnc_randomizeCargo}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this spawn expEden_fnc_randomizeCargo}";
 			};
 		};
 	};

@@ -10,6 +10,11 @@ class CfgPatches
 		requiredVersion=0.1;
 		units[]=
 		{
+			"Land_Billboard_12_G_blank",
+			"Land_Billboard_12_G_gyros",
+			"Land_Billboard_12_G_magazines",
+			"Land_Billboard_12_G_newspapers",
+			"Land_Billboard_12_G_tabloids",
 			"Sign_Direction_IDAP_LoW",
 			"Sign_Direction_Czech",
 			"Sign_Direction_IDAP_F"
@@ -19,6 +24,7 @@ class CfgPatches
 };
 class CfgVehicles
 {
+	class House_F;
 	class Sign_Direction_F;
 	class SignAd_Sponsor_F;
 	class Land_SignInfo_01_Shelter_F: SignAd_Sponsor_F
@@ -465,5 +471,113 @@ class CfgVehicles
 				defaultValue="(getObjectTextures _this) param [8,'',['']]";
 			};
 		};
+	};
+	class Billboard_12_base_G: House_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=1.1700001;
+		_generalMacro="Billboard_12_base_G";
+		scope=1;
+		scopeCurator=0;
+		displayName="$STR_Globe_CfgVehicles_Land_Billboard_12_G_blank0";
+		model="\a3\structures_f_globe\Signs\billboard_12_g_blank.p3d";
+		icon="iconObject_2x5";
+		editorCategory="EdCat_Signs";
+		editorSubcategory="EdSubcat_Residential_City";
+		vehicleClass="Signs";
+		destrType="DestructNo";
+	};
+	class Land_Billboard_12_G_blank: Billboard_12_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=5.691;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Billboard_12_G_blank.jpg";
+		_generalMacro="Land_Billboard_12_G_blank";
+		scope=2;
+		scopeCurator=2;
+	};
+	class Land_Billboard_12_G_gyros: Billboard_12_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=5.691;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Billboard_12_G_gyros.jpg";
+		_generalMacro="Land_Billboard_12_G_gyros";
+		displayName="$STR_Globe_CfgVehicles_Land_Billboard_12_G_gyros0";
+		scope=2;
+		scopeCurator=2;
+		model="\a3\structures_f_globe\Signs\billboard_12_g_gyros.p3d";
+	};
+	class Land_Billboard_12_G_magazines: Billboard_12_base_G
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=5.691;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Billboard_12_G_magazines.jpg";
+		_generalMacro="Land_Billboard_12_G_magazines";
+		displayName="$STR_Globe_CfgVehicles_Land_Billboard_12_G_magazines0";
+		scope=2;
+		scopeCurator=2;
+		model="\a3\structures_f_globe\Signs\billboard_12_g_magazines.p3d";
+	};
+	class Land_Billboard_12_G_newspapers: Land_Billboard_12_G_magazines
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=5.691;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Billboard_12_G_newspapers.jpg";
+		_generalMacro="Land_Billboard_12_G_newspapers";
+		displayName="$STR_Globe_CfgVehicles_Land_Billboard_12_G_newspapers0";
+		scope=2;
+		scopeCurator=2;
+		model="\a3\structures_f_globe\Signs\billboard_12_g_newspapers.p3d";
+	};
+	class Land_Billboard_12_G_tabloids: Land_Billboard_12_G_magazines
+	{
+		author="O&T Expansion Eden";
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=5.691;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Billboard_12_G_tabloids.jpg";
+		_generalMacro="Land_Billboard_12_G_tabloids";
+		displayName="$STR_Globe_CfgVehicles_Land_Billboard_12_G_tabloids0";
+		scope=2;
+		scopeCurator=2;
+		model="\a3\structures_f_globe\Signs\billboard_12_g_tabloids.p3d";
 	};
 };

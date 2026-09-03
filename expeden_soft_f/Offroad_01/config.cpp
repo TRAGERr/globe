@@ -98,21 +98,12 @@ class CfgVehicles
 	{
 		class TextureSources: TextureSources
 		{
-			class I_G_camo_01_G
-			{
-				displayName="$STR_Globe_CfgVehicles_Offroad_01_base_F_TextureSources_I_G_camo_01_G0";
-				author="O&T Expansion Eden";
-				textures[]=
-				{
-					"\a3\soft_f_gamma\offroad_01\data\offroad_01_ext_ig01_co.paa"
-				};
-				factions[]={};
-			};
+			class I_G_camo_01_G;
 		};
 	};
 	class Offroad_01_civil_base_F: Offroad_01_unarmed_base_F
 	{
-		class TextureSources: TextureSources
+		class TextureSources
 		{
 			class I_G_camo_01_G
 			{
@@ -128,7 +119,7 @@ class CfgVehicles
 	};
 	class Offroad_01_military_base_F: Offroad_01_base_F
 	{
-		class TextureSources: TextureSources
+		class TextureSources
 		{
 			class I_G_camo_01_G
 			{
@@ -144,7 +135,7 @@ class CfgVehicles
 	};
 	class Offroad_01_military_covered_base_F: Offroad_01_military_base_F
 	{
-		class TextureSources: TextureSources
+		class TextureSources
 		{
 			class I_G_camo_01_G
 			{
@@ -162,48 +153,21 @@ class CfgVehicles
 	{
 		class TextureSources: TextureSources
 		{
-			class I_G_camo_01_G
-			{
-				displayName="$STR_Globe_CfgVehicles_Offroad_01_base_F_TextureSources_I_G_camo_01_G0";
-				author="O&T Expansion Eden";
-				textures[]=
-				{
-					"\a3\soft_f_gamma\offroad_01\data\offroad_01_ext_ig01_co.paa"
-				};
-				factions[]={};
-			};
+			class I_G_camo_01_G;
 		};
 	};
 	class Offroad_01_AT_base_F: Offroad_01_military_base_F
 	{
 		class TextureSources: TextureSources
 		{
-			class I_G_camo_01_G
-			{
-				displayName="$STR_Globe_CfgVehicles_Offroad_01_base_F_TextureSources_I_G_camo_01_G0";
-				author="O&T Expansion Eden";
-				textures[]=
-				{
-					"\a3\soft_f_gamma\offroad_01\data\offroad_01_ext_ig01_co.paa"
-				};
-				factions[]={};
-			};
+			class I_G_camo_01_G;
 		};
 	};
 	class Offroad_01_military_comms_base_F: Offroad_01_military_covered_base_F
 	{
 		class TextureSources: TextureSources
 		{
-			class I_G_camo_01_G
-			{
-				displayName="$STR_Globe_CfgVehicles_Offroad_01_base_F_TextureSources_I_G_camo_01_G0";
-				author="O&T Expansion Eden";
-				textures[]=
-				{
-					"\a3\soft_f_gamma\offroad_01\data\offroad_01_ext_ig01_co.paa"
-				};
-				factions[]={};
-			};
+			class I_G_camo_01_G;
 		};
 	};
 };

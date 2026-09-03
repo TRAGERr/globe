@@ -7,6 +7,10 @@ class CfgPatches
 		url="https://steamcommunity.com/workshop/filedetails/?id=1923321700";
 		requiredAddons[]=
 		{
+			"A3_Data_F",
+			"A3_Data_F_Curator",
+			"A3_Roads_F",
+			"A3_Structures_F",
 			"A3_expEden"
 		};
 		requiredVersion=0.1;

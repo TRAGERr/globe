@@ -107,7 +107,7 @@ class CfgVehicles
 				property="Globe_Disabled_Ramp";
 				control="Checkbox";
 				expression="_this setVariable ['%s', _value, isServer];";
-				defaultValue="true";
+				defaultValue=1;
 			};
 		};
 	};

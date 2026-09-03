@@ -100,8 +100,8 @@ class CfgVehicles
 				displayName="$STR_a3_rscdisplayarsenal_buttonrandom";
 				property="NumberHull_random";
 				control="CheckboxStateReversed";
-				defaultValue="false";
-				expression="if (_value) then {_this call expEden_fnc_fighterRandomHullNumber}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call expEden_fnc_fighterRandomHullNumber}";
 			};
 		};
 	};

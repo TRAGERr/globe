@@ -12,6 +12,7 @@ class CfgPatches
 		requiredVersion=0.1;
 		units[]=
 		{
+			"B_support_MG_2_G",
 			"C_HunterBody_brown_G",
 			"Item_U_C_HunterBody_brown_G",
 			"I_Uniform_01_coveralls_G_gloves",
@@ -727,7 +728,7 @@ class CfgFaces
 			materialHL2="\A3\Characters_F\Heads\Data\hl_White_hairy_muscular.rvmat";
 			disabled=0;
 		};
-		class Miller
+		class Miller: Default
 		{
 			author="O&T Expansion Eden";
 			displayname="$STR_A3_CfgFaces_Man_A3_Miller0";
@@ -746,7 +747,7 @@ class CfgFaces
 			materialHL2="\A3\Characters_F\Heads\Data\hl_White_hairy_muscular.rvmat";
 			disabled=0;
 		};
-		class IG_Leader
+		class IG_Leader: Default
 		{
 			displayname="$STR_A3_I_G_resistanceLeader_F0";
 			head="IG_Leader";
@@ -1542,6 +1543,7 @@ class CfgIdentities
 };
 class CfgVehicles
 {
+    class I_G_Soldier_base_F;
     class I_E_Man_Base_F;
     class C_E_LooterJacket_01_F;
     class B_G_Soldier_M_F;
@@ -5229,9 +5231,9 @@ class CfgVehicles
 		};
 		class EventHandlers: EventHandlers
 		{
-			class Globe_randomManTShirtTexture
+			class Globe_rndmTeeTex
 			{
-				postInit="(_this select 0) setObjectTexture [0, format ['A3\Characters_F\Common\Data\BasicBody_%1_co.paa', selectRandom ['black','blue','brown','green','grey']]]; (_this select 0) setObjectTexture [1, format ['A3\Characters_F\Civil\Data\c_cloth%1_co.paa', selectRandom ['4','4_v2','4_v3']]];";
+				postInit="if (local (_this select 0) && {(_this select 0) isKindOf 'C_ManTShirt_01'}) then {(_this select 0) setObjectTexture [0, format ['A3\Characters_F\Common\Data\BasicBody_%1_co.paa', selectRandom ['black','blue','brown','green','grey']]]; (_this select 0) setObjectTexture [1, format ['A3\Characters_F\Civil\Data\c_cloth%1_co.paa', selectRandom ['4','4_v2','4_v3']]]};";
 			};
 		};
 	};
@@ -12707,6 +12709,149 @@ class CfgVehicles
 			"\A3\Characters_F\Civil\Data\c_cloth3_v3_co.paa"
 		};
 	};
+	class I_G_soldier_UAV_G: I_G_Soldier_base_F
+	{
+		author="O&T Expansion Eden";
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\I_G_soldier_UAV_G.jpg";
+		_generalMacro="I_G_soldier_UAV_G";
+		scope=1;
+		modelSides[]={0,1,2,3,4,5,6,7};
+		displayName="$STR_Globe_CfgVehicles_I_G_soldier_UAV_G0";
+		linkedItems[]=
+		{
+			"V_PlateCarrierIA2_dgtl",
+			"H_HelmetIA_camo",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio",
+			"I_UavTerminal",
+			"NVGoggles_INDEP"
+		};
+		respawnLinkedItems[]=
+		{
+			"V_PlateCarrierIA2_dgtl",
+			"H_HelmetIA_camo",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio",
+			"I_UavTerminal",
+			"NVGoggles_INDEP"
+		};
+		backpack="I_UAV_01_backpack_F";
+		role="SpecialOperative";
+		uavHacker=1;
+	};
+	class B_support_MG_2_G: B_Soldier_support_base_F
+	{
+		author="O&T Expansion Eden";
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\B_support_MG_2_G.jpg";
+		_generalMacro="B_support_MG_2_G";
+		scope=2;
+		displayName="$STR_Globe_CfgVehicles_B_support_MG_2_G0";
+		backpack="B_HMG_02_high_weapon_G";
+		weapons[]=
+		{
+			"arifle_MXC_pointer_G",
+			"Throw",
+			"Put"
+		};
+		respawnweapons[]=
+		{
+			"arifle_MXC_pointer_G",
+			"Throw",
+			"Put"
+		};
+		cost=220000;
+		role="Assistant";
+		uniformClass="U_B_CombatUniform_mcam_worn_tshirt";
+		magazines[]=
+		{
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"HandGrenade",
+			"HandGrenade",
+			"B_IR_Grenade",
+			"B_IR_Grenade",
+			"SmokeShell",
+			"SmokeShellGreen",
+			"Chemlight_green",
+			"Chemlight_green"
+		};
+		respawnMagazines[]=
+		{
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"30Rnd_65x39_caseless_mag",
+			"HandGrenade",
+			"HandGrenade",
+			"B_IR_Grenade",
+			"B_IR_Grenade",
+			"SmokeShell",
+			"SmokeShellGreen",
+			"Chemlight_green",
+			"Chemlight_green"
+		};
+		linkedItems[]=
+		{
+			"V_PlateCarrier4_rgr_F",
+			"H_HelmetB_light_grass",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio",
+			"NVGoggles"
+		};
+		respawnLinkedItems[]=
+		{
+			"V_PlateCarrier4_rgr_F",
+			"H_HelmetB_light_grass",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio",
+			"NVGoggles"
+		};
+	};
+	class B_W_Soldier_TL_F: B_Soldier_TL_F
+	{
+		weapons[]=
+		{
+			"arifle_MX_GL_Black_Hamr_Pointer_F",
+			"hgun_P07_khk_F",
+			"Throw",
+			"Put",
+			"Binocular"
+		};
+		respawnWeapons[]=
+		{
+			"arifle_MX_GL_Black_Hamr_Pointer_F",
+			"hgun_P07_khk_F",
+			"Throw",
+			"Put",
+			"Binocular"
+		};
+	};
+	class CivilianPresence_C_Marshal_grey: C_Marshal_grey
+	{
+		scope=1;
+		scopeCurator=0;
+		fsmDanger="A3\Modules_F_Tacops\Ambient\CivilianPresence\FSM\danger.fsm";
+		fsmFormation="";
+	};
+	class CivilianPresence_C_Marshal_tan: C_Marshal_tan
+	{
+		scope=1;
+		scopeCurator=0;
+		fsmDanger="A3\Modules_F_Tacops\Ambient\CivilianPresence\FSM\danger.fsm";
+		fsmFormation="";
+	};
 };
 class CfgWeapons
 {
@@ -14665,8 +14810,6 @@ class CivilianPresence_Presets
 				"C_ManJacket_01_sage_euro",
 				"C_ManJacket_01_pink_euro",
 				"C_ManTShirt_01_euro",
-				"C_Marshal_grey",
-				"C_Marshal_tan",
 				"C_Man_casual_4_v2_F_euro",
 				"C_Man_casual_5_v2_F_euro",
 				"C_Man_casual_6_v2_F_euro",
@@ -14689,7 +14832,7 @@ class CivilianPresence_Presets
 			bis_units[]+=
 			{
 				"C_man_w_worker_F_dgtl_euro",
-				"C_man_w_worker_F_grey_euroh",
+				"C_man_w_worker_F_grey_euro",
 				"C_man_w_worker_F_black_euro",
 				"C_man_w_worker_F_orange_euro",
 				"C_man_w_worker_F_dgtl_Enoch",
@@ -14712,8 +14855,6 @@ class CivilianPresence_Presets
 				"C_ManJacket_01_sage_enoch",
 				"C_ManJacket_01_pink_enoch",
 				"C_ManTShirt_01_enoch",
-				"C_Marshal_grey",
-				"C_Marshal_tan",
 				"C_Man_casual_4_v2_F_euro",
 				"C_Man_casual_5_v2_F_euro",
 				"C_Man_casual_6_v2_F_euro",
@@ -14794,6 +14935,7 @@ class CfgWorlds
 				arseniy="Arseniy";
 				david="David";
 				yan="Yan";
+				alexey="Alexey";
 			};
 			class LastNames
 			{
@@ -14811,6 +14953,8 @@ class CfgWorlds
 				glitsinsky="Glitsinsky";
 				vasilchenkov="Vasilchenkov";
 				palyansky="Palyansky";
+				savin="Savin";
+				guba="Guba";
 			};
 		};
 	};

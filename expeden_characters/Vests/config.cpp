@@ -137,10 +137,10 @@ class CfgWeapons
 	{
 		class ItemInfo;
 	};
-	class V_Chestrig_oli: Vest_NoCamo_Base
+	/* class V_Chestrig_oli: Vest_Camo_Base
 	{
 		class ItemInfo;
-	};
+	}; */
 	class V_Chestrig_khk: Vest_Camo_Base
 	{
 		class ItemInfo;

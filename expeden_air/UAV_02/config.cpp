@@ -266,7 +266,7 @@ class CfgVehicles
 		};
 		displayName="$STR_Globe_CfgVehicles_B_UAV_02_LM_G0";
 		disableInventory=1;
-		armor=3.15;
+		armor=8;
 		armorStructural=0.31;
 		damageResistance=0.0010008001;
 		fuelCapacity=500;

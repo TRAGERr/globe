@@ -2786,10 +2786,11 @@ class CfgVehicles
 		{
 			class Light
 			{
-				position="light_pos";
-				direction="light_dir";
-				hitpoint="";
-				selection="light";
+				position="Light_1_pos";
+				direction="Light_1_dir";
+				hitpoint="Light_1_hitpoint";
+				hitpointClass="Hit_Light_1";
+				selection="Light_1_hide";
 				color[]={0.25,0.25,0.60000002};
 				ambient[]={0.25,0.25,0.60000002};
 				intensity=10000;
@@ -2809,10 +2810,11 @@ class CfgVehicles
 			};
 			class Flare
 			{
-				position="light_pos";
-				direction="light_dir";
-				hitpoint="";
-				selection="light";
+				position="Light_1_pos";
+				direction="Light_1_dir";
+				hitpoint="Light_1_hitpoint";
+				hitpointClass="Hit_Light_1";
+				selection="Light_1_hide";
 				color[]={0.25,0.25,0.60000002};
 				ambient[]={0.25,0.25,0.60000002};
 				size=1;
@@ -2856,10 +2858,11 @@ class CfgVehicles
 		{
 			class Light
 			{
-				position="light_pos";
-				direction="light_dir";
-				hitpoint="";
-				selection="light";
+				position="Light_1_pos";
+				direction="Light_1_dir";
+				hitpoint="Light_1_hitpoint";
+				hitpointClass="Hit_Light_1";
+				selection="Light_1_hide";
 				color[]={0.25,0.25,0.60000002};
 				ambient[]={0.25,0.25,0.60000002};
 				intensity=10000;
@@ -2884,6 +2887,487 @@ class CfgVehicles
 			{
 				"Light"
 			}
+		};
+	};
+	class Reflector_Cone_GuardTower_G: Reflector_Cone_01_base_F
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_GuardTower_G0";
+		class Reflectors
+		{
+			class Light
+			{
+				position="Light_1_pos";
+				direction="Light_1_dir";
+				hitpoint="Light_1_hitpoint";
+				hitpointClass="Hit_Light_1";
+				selection="Light_1_hide";
+				color[]={1100,1000,1000};
+				ambient[]={10,10,12};
+				intensity=120;
+				size=1;
+				useFlare=1;
+				flareSize=5;
+				flareMaxDistance=250;
+				innerAngle=60;
+				outerAngle=130;
+				coneFadeCoef=6;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=2;
+					quadratic=0.5;
+					hardLimitStart=50;
+					hardLimitEnd=70;
+				};
+			};
+		};
+		aggregateReflectors[]=
+		{
+
+			{
+				"Light"
+			}
+		};
+	};
+	class Reflector_Cone_PowerLine_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_PowerLine_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={1000,500,300};
+				ambient[]={10,5,3};
+				intensity=7;
+				useFlare=1;
+				flareSize=2;
+				flareMaxDistance=220;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=0;
+					quadratic=0.30000001;
+					hardLimitStart=30;
+					hardLimitEnd=60;
+				};
+				innerAngle=90;
+				outerAngle=150;
+				coneFadeCoef=2;
+			};
+		};
+	};
+	class Reflector_Cone_LampGenericCar_G: Reflector_Cone_GuardTower_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_LampGenericCar_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={1200,600,300};
+				ambient[]={12,6,3};
+				intensity=7;
+				size=1;
+				useFlare=1;
+				flareSize=2;
+				flareMaxDistance=220;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=0;
+					quadratic=0.30000001;
+					hardLimitStart=40;
+					hardLimitEnd=60;
+				};
+				innerAngle=100;
+				outerAngle=180;
+				coneFadeCoef=2;
+			};
+		};
+	};
+	class Reflector_Cone_Sawmill_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_Sawmill_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={1100,1000,1000};
+				ambient[]={10,10,12};
+				intensity=150;
+				size=1;
+				useFlare=1;
+				flareSize=5;
+				flareMaxDistance=250;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=2;
+					quadratic=0.5;
+					hardLimitStart=50;
+					hardLimitEnd=70;
+				};
+				innerAngle=60;
+				outerAngle=130;
+				coneFadeCoef=6;
+			};
+		};
+	};
+	class Reflector_Cone_UGV2_G: Reflector_Cone_01_base_F
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_UGV2_G0";
+		class Reflectors
+		{
+			class Arm_Lamp
+			{
+				position="Light_1_pos";
+				direction="Light_1_dir";
+				hitpoint="Light_1_hitpoint";
+				hitpointClass="Hit_Light_1";
+				selection="Light_1_hide";
+				color[]={1,1,1};
+				ambient[]={1,1,1};
+				intensity=743;
+				size=1;
+				innerAngle=5;
+				outerAngle=25;
+				coneFadeCoef=1;
+				useFlare=0;
+				flareSize=0.5;
+				flareMaxDistance=25;
+				dayLight=1;
+				blinking=0;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=0.00050000002;
+					quadratic=0;
+					hardLimitStart=2.7;
+					hardLimitEnd=30.200001;
+				};
+			};
+			class Arm_Lamp_Flare: Arm_Lamp
+			{
+				color[]={1,1,1};
+				ambient[]={1,1,1};
+				useFlare=1;
+				outerAngle=175;
+				intensity=55;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=0.69999999;
+					quadratic=999;
+					hardLimitStart=9.9999997e-05;
+					hardLimitEnd=0.00019999999;
+				};
+			};
+		};
+		aggregateReflectors[]=
+		{
+
+			{
+				"Arm_Lamp"
+			},
+			
+			{
+				"Arm_Lamp_Flare"
+			}
+		};
+	};
+	class Reflector_Cone_Tractor1_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_Tractor1_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={1.9,1.8,1.7};
+				ambient[]={0.001,0.00025000001,1.9999999e-05};
+				intensity=10000;
+				size=1;
+				useFlare=1;
+				flareSize=1.5;
+				flareMaxDistance=50;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=15;
+					quadratic=7;
+					hardLimitStart=5;
+					hardLimitEnd=7;
+				};
+				innerAngle=45;
+				outerAngle=175;
+				coneFadeCoef=10;
+			};
+		};
+	};
+	class Reflector_Cone_Offroad1_01_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_Offroad1_01_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={1.9,1.8,1.7};
+				ambient[]={5,5,5};
+				intensity=100;
+				size=1;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.050000001;
+					hardLimitStart=50;
+					hardLimitEnd=80;
+				};
+				innerAngle=30;
+				outerAngle=179;
+				coneFadeCoef=10;
+			};
+		};
+	};
+	class Reflector_Cone_Offroad1Spotlight_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_Offroad1Spotlight_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={1.9,1.8,1.7};
+				ambient[]={5,5,5};
+				intensity=100;
+				size=1;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.050000001;
+					hardLimitStart=50;
+					hardLimitEnd=80;
+				};
+				innerAngle=30;
+				outerAngle=179;
+				coneFadeCoef=10;
+			};
+		};
+	};
+	class Reflector_Cone_Offroad1_02_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_Offroad1_02_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={1,0.25,0.02};
+				ambient[]={0.001,0.00025000001,1.9999999e-05};
+				intensity=10000;
+				size=1;
+				useFlare=1;
+				flareSize=1.5;
+				flareMaxDistance=350;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=15;
+					quadratic=7;
+					hardLimitStart=5;
+					hardLimitEnd=7;
+				};
+				innerAngle=125;
+				outerAngle=175;
+				coneFadeCoef=10;
+			};
+		};
+	};
+	class Reflector_Cone_LightHouse1_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_LightHouse1_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={8000,7000,6000};
+				ambient[]={20,17.5,15};
+				intensity=1000;
+				size=1;
+				innerAngle=5;
+				outerAngle=45;
+				coneFadeCoef=3;
+				useFlare=1;
+				flareSize=25;
+				flareMaxDistance=2500;
+				blinking=0;
+				dayLight=0;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=0.1;
+					quadratic=0;
+					hardLimitStart=800;
+					hardLimitEnd=1000;
+				};
+			};
+		};
+	};
+	class Reflector_Cone_LightHouse3_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_LightHouse3_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={8000,7000,6000};
+				ambient[]={20,17.5,15};
+				intensity=1000;
+				size=1;
+				innerAngle=40;
+				outerAngle=80;
+				coneFadeCoef=5;
+				useFlare=1;
+				flareSize=5;
+				flareMaxDistance=3000;
+				blinking=0;
+				dayLight=0;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=0;
+					hardLimitStart=10;
+					hardLimitEnd=50;
+				};
+			};
+		};
+	};
+	class Reflector_Cone_VTOL_G: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_VTOL_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={7000,7500,10000};
+				ambient[]={70,75,100};
+				intensity=50;
+				useFlare=1;
+				flareSize=10;
+				flareMaxDistance=250;
+				dayLight=0;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=1;
+					hardLimitStart=100;
+					hardLimitEnd=200;
+				};
+				innerAngle=5;
+				outerAngle=65;
+				coneFadeCoef=10;
+			};
+		};
+	};
+	class Reflector_Cone_LampGenericTruck_G: Reflector_Cone_GuardTower_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_LampGenericTruck_G0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={7000,7500,10000};
+				ambient[]={70,75,100};
+				intensity=50;
+				size=1;
+				useFlare=1;
+				flareSize=10;
+				flareMaxDistance=250;
+				dayLight=0;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=1;
+					hardLimitStart=100;
+					hardLimitEnd=200;
+				};
+				innerAngle=5;
+				outerAngle=65;
+				coneFadeCoef=10;
+			};
+		};
+	};
+	class Reflector_Cone_HeliLight3_G_searchlight: Reflector_Cone_GuardTower_G
+	{
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Reflector_Cone_HeliLight3_G_searchlight0";
+		class Reflectors: Reflectors
+		{
+			class Light: Light
+			{
+				color[]={7000,7500,10000};
+				ambient[]={70,75,100};
+				intensity=50;
+				size=1;
+				innerAngle=5;
+				outerAngle=65;
+				coneFadeCoef=10;
+				useFlare=1;
+				dayLight=0;
+				FlareSize=4;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=0;
+					quadratic=0.050000001;
+					hardLimitStart=400;
+					hardLimitEnd=450;
+				};
+			};
 		};
 	};
 };

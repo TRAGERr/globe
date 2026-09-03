@@ -3,7 +3,7 @@
 		Trager
 
 	Description:
-		ы
+		Create global marker ob object where option is encabled in attribute 'Map Marker'
 
 	Parameter(s):
 		0 (OBJECT): Object
@@ -15,6 +15,7 @@
 params[["_object",objNull,[objNull]]];
 if (isNull _object || !isServer) exitWith {};
 
+/*
 if 
 (
 	(_object isKindOf 'StaticWeapon' || _object isKindOf 'Runway_01_Base' || _object isKindOf 'HeliH' || _object isKindOf 'GalleryLabel_01_base_F' || _object isKindOf 'Man' || _object isKindOf 'Car' || _object isKindOf 'Air' || _object isKindOf 'WeaponHolder' || _object isKindOf 'Items_base_F' || _object isKindOf 'Logic' || _object isKindOf 'Helper_Base_F' || _object isKindOf 'Surface_10m_base' || _object isKindOf 'Graffiti_base_F')
@@ -38,6 +39,7 @@ if (_object get3DENAttribute "isLocalOnly" isEqualTo [true] && is3DEN) then
 {
 	_object set3DENAttribute ["isLocalOnly", false];
 };
+*/
 
 switch (true) do
 {

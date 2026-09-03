@@ -28,6 +28,7 @@ class CfgVehicles
 		class AnimationSources: AnimationSources
 		{
 			class BenchL_Up;
+			class BenchR_Up;
 		};
 		slingCargoDetachAir[]=
 		{
@@ -51,9 +52,11 @@ class CfgVehicles
 				sound="BenchAnimationSound_Heli_Light_01";
 				soundPosition="z_benchl_axis";
 			};
-			class BenchR_Up: BenchL_Up
+			class BenchR_Up: BenchR_Up
 			{
 				lockCargo[]={2,3};
+				scope=2;
+				sound="BenchAnimationSound_Heli_Light_01";
 				soundPosition="z_benchr_axis";
 			};
 		};

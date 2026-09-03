@@ -460,14 +460,29 @@ class CfgVehicles
 				sound="carrier_01_deflector";
 				soundPosition="pos_catapult_01";
 			};
-			class Deflector_2_hydraulic_1: Deflector_2
+			class Deflector_2_hydraulic_1
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_2_hydraulic_2: Deflector_2
+			class Deflector_2_hydraulic_2
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_2_hydraulic_3: Deflector_2
+			class Deflector_2_hydraulic_3
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
 		};
 		class Attributes
@@ -501,14 +516,29 @@ class CfgVehicles
 				sound="carrier_01_deflector";
 				soundPosition="pos_catapult_01";
 			};
-			class Deflector_1_hydraulic_1: Deflector_1
+			class Deflector_1_hydraulic_1
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_1_hydraulic_2: Deflector_1
+			class Deflector_1_hydraulic_2
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_1_hydraulic_3: Deflector_1
+			class Deflector_1_hydraulic_3
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
 		};
 		class Attributes
@@ -578,26 +608,61 @@ class CfgVehicles
 				sound="carrier_01_deflector";
 				soundPosition="pos_catapult_01";
 			};
-			class Deflector_3_hydraulic_1: Deflector_3
+			class Deflector_3_hydraulic_1
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_3_hydraulic_2: Deflector_3
+			class Deflector_3_hydraulic_2
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_3_hydraulic_3: Deflector_3
+			class Deflector_3_hydraulic_3
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_4: Deflector_3
+			class Deflector_4
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_4_hydraulic_1: Deflector_3
+			class Deflector_4_hydraulic_1
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_4_hydraulic_2: Deflector_3
+			class Deflector_4_hydraulic_2
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
-			class Deflector_4_hydraulic_3: Deflector_3
+			class Deflector_4_hydraulic_3
 			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+				sound="carrier_01_deflector";
+				soundPosition="pos_catapult_01";
 			};
 		};
 		class Attributes

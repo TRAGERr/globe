@@ -5,7 +5,9 @@ class CfgPatches
 		addonRootClass="A3_expEden_Animals_F";
 		requiredAddons[]=
 		{
-			"A3_expEden_Animals_F"
+			"A3_expEden_Animals_F",
+			"A3_Animals_F_Beta",
+			"A3_Data_F"
 		};
 		requiredVersion=0.1;
 		units[]={};
@@ -26,7 +28,10 @@ class CfgVehicles
 		scope=2;
 		class EventHandlers: EventHandlers
 		{
-			postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			class Globe_anmlRndEH
+			{
+				postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			};
 		};
 	};
 	class Cock_random_F: Fowl_Base_F
@@ -36,7 +41,10 @@ class CfgVehicles
 		scope=2;
 		class EventHandlers: EventHandlers
 		{
-			postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			class Globe_anmlRndEH
+			{
+				postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			};
 		};
 	};
 	class Cock_white_F: Cock_random_F
@@ -45,7 +53,10 @@ class CfgVehicles
 		scope=2;
 		class EventHandlers: EventHandlers
 		{
-			init="";
+			class Globe_anmlRndEH: Globe_anmlRndEH
+			{
+				postInit="";
+			};
 		};
 	};
 };

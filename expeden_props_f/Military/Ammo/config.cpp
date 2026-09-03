@@ -60,8 +60,8 @@ class CfgVehicles
 				displayName="$STR_A3_RscDisplayArsenal_ButtonRandom";
 				property="randomRockets";
 				control="CheckboxStateReversed";
-				defaultValue="false";
-				expression="if (_value) then {_this animate ['rocketa1', ceil random 19, true]; _this setVariable ['rocketPodRandom',true,isServer]}else{_this setVariable ['rocketPodRandom',false,isServer]}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this animate ['rocketa1', ceil random 19, true]; _this setVariable ['rocketPodRandom',true,true]}else{_this setVariable ['rocketPodRandom',false,true]}";
 			};
 			class rocketa1_source
 			{
@@ -71,7 +71,7 @@ class CfgVehicles
 				control="edit";
 				defaultValue=0;
 				validate="number";
-				expression="if (_this getVariable 'rocketPodRandom' isNotEqualTo true) then {_this animate ['rocketa1', _value, true]}; ";
+				expression="if ((_this getVariable ['rocketPodRandom',false]) isNotEqualTo true) then {_this animate ['rocketa1', _value, true]}; ";
 			};
 		};
 	};
@@ -342,7 +342,7 @@ class CfgVehicles
 		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\DismantledWeapon_HeliHeavyMinigun_01_G_right.jpg";
 		_generalMacro="DismantledWeapon_HeliHeavyMinigun_01_G_right";
 		scope=1;
-		scopeCurator=0:
+		scopeCurator=0;
 		displayName="$STR_Globe_CfgVehicles_DismantledWeapon_HeliHeavyMinigun_01_G_right0";
 		model="a3\Weapons_F\DynamicLoadout\PylonPod_HeavyMinigun_Heli_Transport_01_R_F.p3d";
 		icon="iconObject_3x1";
@@ -377,7 +377,7 @@ class CfgVehicles
 		model="a3\weapons_f\DynamicLoadout\PylonPod_Rocket_DAGR_F.p3d";
 		icon="iconObject_2x1";
 		destrType="DestructNo";
-		editorSubcategory="EdSubcat_Military";
+		editorSubcategory="EdSubcat_Airports";
 		vehicleClass="Military";
 		hiddenSelections[]=
 		{
@@ -398,8 +398,8 @@ class CfgVehicles
 				displayName="$STR_A3_RscDisplayArsenal_ButtonRandom";
 				property="randomRockets";
 				control="CheckboxStateReversed";
-				defaultValue="false";
-				expression="if (_value) then {_this animate ['rocketb1', ceil random 12, true]; _this setVariable ['rocketPodRandom',true,isServer]}else{_this setVariable ['rocketPodRandom',false,isServer]}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this animate ['rocketb1', ceil random 12, true]; _this setVariable ['rocketPodRandom',true,true]}else{_this setVariable ['rocketPodRandom',false,true]}";
 			};
 			class rocketa1_source
 			{
@@ -445,7 +445,7 @@ class CfgVehicles
 	};
 	class Land_pylonpod_12x_rocket_dar_f: Land_PylonPod_RocketDARDAGR_G
 	{
-		scope=2;
-		scopeCurator=2;
+		scope=1;
+		scopeCurator=0;
 	};
 };

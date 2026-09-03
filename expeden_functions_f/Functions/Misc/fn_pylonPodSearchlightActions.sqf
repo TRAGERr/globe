@@ -5,7 +5,7 @@ if (!(_object getVariable ['Globe_disableActionX',false])) then
 {
 	[
 		_object,
-		localize "STR_A3_Spectator_Helper_CameraRotation",
+		localize "STR_Globe_CfgVehicles_PylonPod_Searchlight_01_G_base_Attributes_pilotcamerarotx0",
 		"\a3\ui_f\data\igui\cfg\simpletasks\letters\x_ca.paa",
 		"\a3\ui_f\data\igui\cfg\simpletasks\letters\x_ca.paa",
 		"_this distance _target < 3 && {simulationEnabled _target} && {alive _target}",
@@ -28,7 +28,10 @@ if (!(_object getVariable ['Globe_disableActionX',false])) then
 		1,
 		false,
 		false,
-		false/*, radius, selection, memoryPoint */
+		false,
+		10,
+		"",
+		""
 	] call BIS_fnc_holdActionAdd;
 };
 
@@ -36,7 +39,7 @@ if (!(_object getVariable ['Globe_disableActionY',false])) then
 {
 	[
 		_object,
-		localize "STR_Globe_CfgFunctions_pylonPodSearchlightActions0",
+		localize "STR_Globe_CfgVehicles_PylonPod_Searchlight_01_G_base_Attributes_pilotcameraroty0",
 		"\a3\ui_f\data\igui\cfg\simpletasks\letters\y_ca.paa",
 		"\a3\ui_f\data\igui\cfg\simpletasks\letters\y_ca.paa",
 		"_this distance _target < 3 && {simulationEnabled _target} && {alive _target}",
@@ -59,7 +62,10 @@ if (!(_object getVariable ['Globe_disableActionY',false])) then
 		1,
 		false,
 		false,
-		false/*, radius, selection, memoryPoint */
+		false,
+		10,
+		"",
+		""
 	] call BIS_fnc_holdActionAdd;
 };
 
@@ -79,7 +85,7 @@ if (!(_object getVariable ['Globe_disableActionSwitch',false])) then
 
 			[
 				_target,
-				if (lightIsOn _target) then {"OFF"} else {"ON"}
+				if (isLightOn _target) then {"OFF"} else {"ON"}
 			] remoteExec ["switchLight", 0, _target];
 		},
 		{},
@@ -88,6 +94,9 @@ if (!(_object getVariable ['Globe_disableActionSwitch',false])) then
 		1,
 		false,
 		false,
-		false/*, radius, selection, memoryPoint */
+		false,
+		10,
+		"",
+		""
 	] call BIS_fnc_holdActionAdd;
 };

@@ -31,10 +31,10 @@ class CfgVehicles
 		{
 			class Globe_DPP
 			{
-				postInit="_this call expEden_fnc_createSoundSetSource";
-				killed="deleteVehicle ((_this # 0) getVariable 'Globe_soundSource');";
-				deleted="deleteVehicle ((_this # 0) getVariable 'Globe_soundSource');";
-				unregisteredFromWorld3DEN="deleteVehicle ((_this # 0) getVariable 'Globe_soundSource');";
+				postInit="_this call expEden_fnc_createSoundSetSource; _this spawn expEden_fnc_shortArcZapTransformer;";
+				killed="deleteVehicle [((_this # 0) getVariable 'Globe_soundSource'), ((_this # 0) getVariable 'Globe_TrnsfrTrg')];";
+				deleted="deleteVehicle [((_this # 0) getVariable 'Globe_soundSource'), ((_this # 0) getVariable 'Globe_TrnsfrTrg')];";
+				unregisteredFromWorld3DEN="deleteVehicle [((_this # 0) getVariable 'Globe_soundSource'), ((_this # 0) getVariable 'Globe_TrnsfrTrg')];";
 			};
 		};
 	};
@@ -49,10 +49,10 @@ class CfgVehicles
 		{
 			class Globe_DPP_01
 			{
-				postInit="_this call expEden_fnc_createSoundSetSource";
-				killed="deleteVehicle ((_this # 0) getVariable 'Globe_soundSource');";
-				deleted="deleteVehicle ((_this # 0) getVariable 'Globe_soundSource');";
-				unregisteredFromWorld3DEN="deleteVehicle ((_this # 0) getVariable 'Globe_soundSource');";
+				postInit="_this call expEden_fnc_createSoundSetSource; _this spawn expEden_fnc_shortArcZapTransformer;";
+				killed="deleteVehicle [((_this # 0) getVariable 'Globe_soundSource'), ((_this # 0) getVariable 'Globe_TrnsfrTrg')];";
+				deleted="deleteVehicle [((_this # 0) getVariable 'Globe_soundSource'), ((_this # 0) getVariable 'Globe_TrnsfrTrg')];";
+				unregisteredFromWorld3DEN="deleteVehicle [((_this # 0) getVariable 'Globe_soundSource'), ((_this # 0) getVariable 'Globe_TrnsfrTrg')];";
 			};
 		};
 	};

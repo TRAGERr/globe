@@ -10337,7 +10337,7 @@ class RscMenuStatus: RscSubmenu
 			title="$STR_Globe_RscMenuStatus_SentCheering0";
 			shortcuts[]={};
 			shortcutsAction="CommandingMenu3";
-			command=0;
+			command=-5;
 			class Params
 			{
 				expression="[player,'SentCheering'] call expEden_fnc_sentStatusMessage";
@@ -10348,7 +10348,7 @@ class RscMenuStatus: RscSubmenu
 			title="$STR_Globe_RscMenuStatus_SentCombatGeneric0";
 			shortcuts[]={};
 			shortcutsAction="CommandingMenu3";
-			command=0;
+			command=-5;
 			class Params
 			{
 				expression="[player,'SentCombatGeneric'] call expEden_fnc_sentStatusMessage";
@@ -10359,7 +10359,7 @@ class RscMenuStatus: RscSubmenu
 			title="$STR_Globe_RscMenuStatus_SentEndangered0";
 			shortcuts[]={};
 			shortcutsAction="CommandingMenu3";
-			command=0;
+			command=-5;
 			class Params
 			{
 				expression="[player,'SentEndangered'] call expEden_fnc_sentStatusMessage";
@@ -10431,8 +10431,8 @@ class RscLoiteringMunitionUAVGridMenu
 			text="a3\ui_f\data\gui\rsc\rscdisplaymain\infogeneric_ca.paa";
 			x="0.405 * safezoneW + safezoneX";
 			y="0.775 * safezoneH + safezoneY";
-			w="0.02 * safezoneW";
-			h="0.05* safezoneH";
+			h="0.04 * safezoneH";
+			w="0.04 * safezoneH * 3/4";
 			tooltip="$STR_a3_orange_faction_idap_action_fm";
 			color[]={1,1,1,0.8};
 			colorActive[]=

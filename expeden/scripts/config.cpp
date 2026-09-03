@@ -5,10 +5,12 @@ class CfgPatches
 		addonRootClass="A3_expEden";
 		requiredAddons[]=
 		{
-			"A3_expEden"
+			"A3_expEden",
+			"A3_Data_F_ParticleEffects"
 		};
 		units[]=
 		{
+			"Sound_SFX_MulfunctionMissileWhistle_01_G",
 			"Sound_RadioChatterCSAT_ATC_SFX",
 			"Sound_RadioChatterCIV_ATC_SFX",
 			"Sound_RadioChatterAAF_SFX",
@@ -32,6 +34,37 @@ class CfgPatches
 class Mode_SemiAuto;
 class CfgSFX
 {
+	class SFX_MulfunctionMissileWhistle_01_G
+	{
+		name="Whistle - pitch 0.55";
+		sound0[]=
+		{
+			"\a3\sounds_f_orange\vehicles\air\uav_06\uav_6_deminedrone_bomb_whistle.wss",
+			0.70794576,
+			1,
+			400,
+			0.55,
+			0,
+			0,
+			0
+		};
+		sounds[]=
+		{
+			"sound0"
+		};
+		titles[]={};
+		empty[]=
+		{
+			"",
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		};
+	};
 	class SFX_FireGasStationPump_G
 	{
 		name="Fire Gas Station Pump";
@@ -3130,7 +3163,7 @@ class CfgSFX
 			"A3\Missions_F_Oldman\Data\Sound\Flare\Flare.wss",
 			1.7782794,
 			1,
-			100,
+			120,
 			1,
 			0,
 			0,
@@ -47071,6 +47104,14 @@ class CfgVehicles
 		sound="MemoryFragment";
 		displayName="$STR_A3_Sound_MemoryFragment0";
 	};
+	class Sound_SFX_MulfunctionMissileWhistle_01_G: Sound
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="Sound_SFX_MulfunctionMissileWhistle_01_G";
+		scope=2;
+		sound="SFX_MulfunctionMissileWhistle_01_G";
+		displayName="SFX_MulfunctionMissileWhistle_01_G";
+	};
 	class Bird_Nest_day_SFX: Sound
 	{
 		author="O&T Expansion Eden";
@@ -47485,6 +47526,18 @@ class CfgVehicles
 };
 class CfgSounds
 {
+	class Sound_MulfunctionMissileWhistle_01_G
+	{
+		name="Sound_MulfunctionMissileWhistle_01_G";
+		sound[]=
+		{
+			"\a3\sounds_f_orange\vehicles\air\uav_06\uav_6_deminedrone_bomb_whistle.wss",
+			0.70794576,
+			1,
+			700,
+			1
+		};
+	};
 	class OldLaptop_VideoSound
 	{
 		name="OldLaptop_VideoSound";
@@ -53016,44 +53069,6 @@ class CfgSoundSets
 			"Launcher_Adds_Kick_SoundShader",
 			"Launcher_Adds_Metal_SoundShader",
 			"Launcher_MRAWS_distShot_SoundShader"
-		};
-	};
-	class Globe_dummy_SoundSet
-	{
-	};
-	class Insect_Day_Winged_SoundSet: Globe_dummy_SoundSet
-	{
-		soundShaders[]=
-		{
-			"Insect_Day_Winged_SoundShader"
-		};
-	};
-	class Insect_Day_SoundSet: Globe_dummy_SoundSet
-	{
-		soundShaders[]=
-		{
-			"Insect_Day_SoundShader"
-		};
-	};
-	class Crickets_Stratis_SingleA_Day_SoundSet: Globe_dummy_SoundSet
-	{
-		soundShaders[]=
-		{
-			"Crickets_Stratis_SingleA_Day_SoundShader"
-		};
-	};
-	class Crickets_Stratis_GroupA_Day_SoundSet: Globe_dummy_SoundSet
-	{
-		soundShaders[]=
-		{
-			"Crickets_Stratis_GroupA_Day_SoundShader"
-		};
-	};
-	class Crickets_Stratis_Night_SoundSet: Globe_dummy_SoundSet
-	{
-		soundShaders[]=
-		{
-			"Crickets_Stratis_Night_SoundShader"
 		};
 	};
 };
@@ -67222,22 +67237,28 @@ class CfgSoundCurves
 		};
 	};
 };
-class ArtilleryFired1
+class ArtilleryFiredL
 {
-	class Smoke1;
-};
-class ArtilleryFiredL: ArtilleryFired1
-{
-	class Smoke1: Smoke1
+	class Smoke1
 	{
+		simulation="particles";
 		type="ArtilleryFiredL";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
 	};
 };
-class ArtilleryFiredR: ArtilleryFired1
+class ArtilleryFiredR
 {
-	class Smoke1: Smoke1
+	class Smoke1
 	{
+		simulation="particles";
 		type="ArtilleryFiredR";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=0.1;
 	};
 };
 class CfgCloudlets

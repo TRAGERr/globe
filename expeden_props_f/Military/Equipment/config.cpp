@@ -59,12 +59,11 @@ class CfgVehicles
 	class ThingX;
 	class Items_base_F: ThingX
 	{
-		class Attributes;
 		class UserActions;
 	};
 	class Land_MultiScreenComputer_01_base_F: Items_base_F
 	{
-		class Attributes: Attributes
+		class Attributes
 		{
 			class open_source_monitors_left
 			{
@@ -971,8 +970,8 @@ class CfgVehicles
 				tooltip="$STR_A3_Systems_commonDescription.incCfgNotifications_OMIncomingCall0";
 				property="IPPhoneCall";
 				control="Checkbox";
-				expression="if (_value) then {_this setVariable ['expEden_IPPhoneCall_enable', true, isServer]}";
-				defaultValue="false";
+				expression="if (_value isEqualTo true) then {_this setVariable ['expEden_IPPhoneCall_enable', true, true]}";
+				defaultValue=0;
 			};
 		};
 		class EventHandlers
@@ -1278,7 +1277,7 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa"
+			"a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa"
 		};
 	};
 	class Land_FuelTank_UH80_G_empty: ExternalFuelDropTank_01_empty
@@ -1301,25 +1300,25 @@ class CfgVehicles
 					class 0
 					{
 						name="$STR_A3_TEXTURESOURCES_BLU0";
-						value="\a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa";
+						value="a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa";
 						picture="\a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa";
 					};
 					class 1
 					{
 						name="$STR_A3_TEXTURESOURCES_BLU0";
-						value="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_BLUFOR_CO.paa";
+						value="a3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_BLUFOR_CO.paa";
 						picture="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_BLUFOR_CO.paa";
 					};
 					class 2
 					{
 						name="$STR_A3_TEXTURESOURCES_JUNGLE0";
-						value="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_tropic_CO.paa";
+						value="A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_tropic_CO.paa";
 						picture="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_tropic_CO.paa";
 					};
 					class 3
 					{
 						name="$STR_A3_TEXTURESOURCES_SAND0";
-						value="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_sand_CO.paa";
+						value="A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_sand_CO.paa";
 						picture="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_sand_CO.paa";
 					};
 				};
@@ -1464,25 +1463,25 @@ class CfgVehicles
 					class 0
 					{
 						name="$STR_A3_TEXTURESOURCES_BLU0";
-						value="\a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa";
+						value="a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa";
 						picture="\a3\air_f_beta\heli_transport_01\data\heli_transport_01_ext01_add_co.paa";
 					};
 					class 1
 					{
 						name="$STR_A3_TEXTURESOURCES_BLU0";
-						value="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_BLUFOR_CO.paa";
+						value="A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_BLUFOR_CO.paa";
 						picture="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_BLUFOR_CO.paa";
 					};
 					class 2
 					{
 						name="$STR_A3_TEXTURESOURCES_JUNGLE0";
-						value="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_tropic_CO.paa";
+						value="A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_tropic_CO.paa";
 						picture="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_tropic_CO.paa";
 					};
 					class 3
 					{
 						name="$STR_A3_TEXTURESOURCES_SAND0";
-						value="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_sand_CO.paa";
+						value="A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_sand_CO.paa";
 						picture="\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_add_sand_CO.paa";
 					};
 				};
@@ -3965,7 +3964,7 @@ class CfgVehicles
 		icon="iconObject_7x1";
 		model="a3\Weapons_F\DynamicLoadout\PylonPod_ECM_01_L_F.p3d";
 		editorCategory="EdCat_Things";
-		editorSubcategory="EdSubcat_Military";
+		editorSubcategory="EdSubcat_Airports";
 		vehicleClass="Small_items";
 		hiddenSelections[]=
 		{
@@ -4202,7 +4201,7 @@ class CfgVehicles
 		icon="iconObject_1x2";
 		model="a3\Weapons_F\DynamicLoadout\PylonPod_SearchLight_01_F.p3d";
 		editorCategory="EdCat_Things";
-		editorSubcategory="EdSubcat_Military";
+		editorSubcategory="EdSubcat_Airports";
 		vehicleClass="Small_items";
 		hiddenSelections[]=
 		{
@@ -4320,7 +4319,7 @@ class CfgVehicles
 			class disableActionY
 			{
 				displayName="$STR_Globe_CfgVehicles_PylonPod_Searchlight_01_G_base_Attributes_disableActionY0";
-				tooltip="$STR_A3_C_CfgVehicles_DeconShower_01_base_F_Attributes_Decon_Shower_DisableUserActions1";
+				tooltip="$STR_Globe_CfgVehicles_PylonPod_Searchlight_01_G_base_Attributes_disableActionY1";
 				property="disableActionY";
 				control="Checkbox";
 				defaultValue=0;
@@ -4453,7 +4452,7 @@ class CfgVehicles
 		icon="iconObject_1x1";
 		model="a3\Weapons_F\DynamicLoadout\PylonPod_Radar_01_F.p3d";
 		editorCategory="EdCat_Things";
-		editorSubcategory="EdSubcat_Military";
+		editorSubcategory="EdSubcat_Airports";
 		vehicleClass="Small_items";
 		hiddenSelections[]=
 		{
@@ -4565,7 +4564,7 @@ class CfgVehicles
 		icon="iconObject_1x1";
 		model="a3\Weapons_F\DynamicLoadout\PylonPod_Camera_01_F.p3d";
 		editorCategory="EdCat_Things";
-		editorSubcategory="EdSubcat_Military";
+		editorSubcategory="EdSubcat_Airports";
 		vehicleClass="Small_items";
 		hiddenSelections[]=
 		{

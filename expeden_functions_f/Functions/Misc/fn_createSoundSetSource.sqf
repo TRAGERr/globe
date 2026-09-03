@@ -14,12 +14,23 @@ deleteVehicle (_object getVariable 'Globe_soundSource');
 switch (true) do 
 {
 
+	case (_object isKindOf "Land_AirconCondenser_01_G_on" || _object isKindOf "Land_AirconCondenser_01_G_on"):
+	{
+		private _soundSource = createVehicle ['SoundSetSource_Sfx_AirCondition', [0,0,0], [], 0, "CAN_COLLIDE"];
+		_soundSource attachTo [_object, [0,-0.6,0]];
+		_object setVariable ['Globe_soundSource', _soundSource, true];
+
+		true
+
+	};
+
 	case (_object isKindOf "Land_PowerLine_01_pole_transformer_F"):
 	{
 		private _soundSource = createVehicle ['SoundSetSource_Sfx_Transformer04kV_01_G', [0,0,0], [], 0, "CAN_COLLIDE"];
 		_soundSource attachTo [_object, [0,-1.35,4]];
 		_object setVariable ['Globe_soundSource', _soundSource, true];
 
+		true
 	};
 
 	case (_object isKindOf "Land_PowLines_Transformer_F"):

@@ -1,0 +1,3 @@
+prefix=a3\language_f\
+product=Arma 3
+version=151415

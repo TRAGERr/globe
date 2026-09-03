@@ -11,6 +11,7 @@ class CfgPatches
 		units[]={};
 		weapons[]=
 		{
+			"arifle_MXC_pointer_G",
 			"arifle_MX_Hamr_pointer_bipod_G",
 			"arifle_MX_GL_flashightMax"
 		};
@@ -18,6 +19,7 @@ class CfgPatches
 };
 class CfgWeapons
 {
+	class arifle_MXC_F;
 	class arifle_MX_F;
 	class arifle_MX_GL_F;
 	class arifle_MX_GL_flashightMax: arifle_MX_GL_F
@@ -53,6 +55,19 @@ class CfgWeapons
 			{
 				slot="UnderBarrelSlot";
 				item="bipod_01_F_snd";
+			};
+		};
+	};
+	class arifle_MXC_pointer_G: arifle_MXC_F
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="arifle_MXC_pointer_G";
+		class LinkedItems
+		{
+			class LinkedItemsAcc
+			{
+				slot="PointerSlot";
+				item="acc_pointer_IR";
 			};
 		};
 	};

@@ -14,6 +14,7 @@ class CfgPatches
 		weapons[]={};
 	};
 };
+class CBA_Extended_EventHandlers_base;
 class CfgVehicles
 {
 	class Animal;
@@ -25,6 +26,10 @@ class CfgVehicles
 			{
 				postInit="[(_this # 0)] call Globe_fnc_animalBehaviour";
 			};
+			class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base
+			{
+			};
 		};
+		SLX_XEH_DISABLED=0;
 	};
 };

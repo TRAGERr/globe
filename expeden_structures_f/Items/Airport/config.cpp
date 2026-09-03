@@ -85,7 +85,7 @@ class CfgVehicles
 				displayName="$STR_Action_searchLights_off";
 				property="DisableInit";
 				control="Checkbox";
-				defaultValue="true";
+				defaultValue=1;
 				expression="_this setVariable ['Globe_disableInit',_value,isServer]";
 			};
 		};
@@ -146,7 +146,7 @@ class CfgVehicles
 				displayName="$STR_Action_searchLights_off";
 				property="DisableInit";
 				control="Checkbox";
-				defaultValue="true";
+				defaultValue=1;
 				expression="_this setVariable ['Globe_disableInit',_value,isServer]";
 			};
 		};
@@ -207,7 +207,7 @@ class CfgVehicles
 				displayName="$STR_Action_searchLights_off";
 				property="DisableInit";
 				control="Checkbox";
-				defaultValue="true";
+				defaultValue=1;
 				expression="_this setVariable ['Globe_disableInit',_value,isServer]";
 			};
 		};
@@ -268,7 +268,7 @@ class CfgVehicles
 				displayName="$STR_Action_searchLights_off";
 				property="DisableInit";
 				control="Checkbox";
-				defaultValue="true";
+				defaultValue=1;
 				expression="_this setVariable ['Globe_disableInit',_value,isServer]";
 			};
 		};
@@ -329,7 +329,7 @@ class CfgVehicles
 				displayName="$STR_Action_searchLights_off";
 				property="DisableInit";
 				control="Checkbox";
-				defaultValue="true";
+				defaultValue=1;
 				expression="_this setVariable ['Globe_disableInit',_value,isServer]";
 			};
 		};
@@ -390,7 +390,7 @@ class CfgVehicles
 				displayName="$STR_Action_searchLights_off";
 				property="DisableInit";
 				control="Checkbox";
-				defaultValue="true";
+				defaultValue=1;
 				expression="_this setVariable ['Globe_disableInit',_value,isServer]";
 			};
 		};

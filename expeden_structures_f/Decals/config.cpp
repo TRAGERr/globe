@@ -5,11 +5,32 @@ class CfgPatches
 		addonRootClass="A3_Structures_F_Globe";
 		requiredAddons[]=
 		{
-			"A3_Structures_F_Globe"
+			"A3_Data_F",
+			"A3_Data_F_Curator",
+			"A3_Roads_F",
+			"A3_Structures_F",
+			"A3_Structures_F_Globe",
+			"A3_Structures_F_Argo",
+			"A3_Structures_F_Enoch",
+			"A3_Structures_F_EPC",
+			"A3_Structures_F_Exp",
+			"A3_Structures_F_Mark",
+			"A3_Structures_F_Orange",
+			"A3_Weapons_F"
 		};
 		requiredVersion=0.1;
 		units[]=
 		{
+			"Land_Decal_SafetySign_DHV_03_G",
+			"Land_Tarp_companies_01_G",
+			"Land_Tarp_companies_02_G",
+			"Land_Tarp_finish_01_G",
+			"Land_Tarp_IDAPOpenDay_01_G",
+			"Land_Tarp_RedWhite_01_G",
+			"Land_Tarp_RedWhite_02_G",
+			"Land_Decal_BrokenGlass_01_G",
+			"Land_Decal_BrokenGlass_02_G",
+			"Land_Decal_BrokenGlass_03_G",
 			"Land_CalvarypIcon_10_G_elijah",
 			"Land_CalvarypIcon_10_G_kazan",
 			"Land_CalvarypIcon_10_G_michael",
@@ -253,10 +274,17 @@ class CfgPatches
 };
 class CfgVehicles
 {
-	class Land_Decal_OilSpillSmall_01_G;
-	class Graffiti_Galaxy_01_G;
+	class House_F;
+	class Graffiti_base_F;
+	class Items_base_F;
+	class UserTexture_1x2_F;
+	class UserTexture10m_F;
+	class UserTexture1m_F;
 	class Land_Decal_ScorchMark_01_small_F;
 	class Land_Decal_ScorchMark_01_large_F;
+	class Land_Decal_Garbage_01_base_F;
+	class Land_Decal_OilSpillSmall_01_G;
+	class Graffiti_Galaxy_01_G;
 	class S5_ylands;
 	class N4_tomPoster;
 	class N4_tohPoster;
@@ -264,17 +292,10 @@ class CfgVehicles
 	class S5_exhibit;
 	class S8_PhotoWall_01;
 	class S8_PhotoWall_02;
-	class Graffiti_base_F;
 	class Wood_Shaves_01;
-	class Items_base_F;
 	class Runway_01;
-	class UserTexture_1x2_F;
-	class UserTexture10m_F;
-	class UserTexture1m_F;
 	class CraterLong;
-	class House_F;
 	class Road_City_Base;
-	class Land_Decal_Garbage_01_base_F;
 	class Decal_Grass_01: Land_Decal_Garbage_01_base_F
 	{
 		author="$STR_A3_Bohemia_Interactive";
@@ -1825,6 +1846,8 @@ class CfgVehicles
 	class Glass_Shattered: Wood_Shaves_01
 	{
 		author="O&T Expansion Eden";
+		scope=1;
+		scopeCurator=0;
 		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Glass_Shattered.jpg";
 		_generalMacro="Glass_Shattered";
 		displayName="$STR_expEden_Glass_Shattered";
@@ -2013,7 +2036,7 @@ class CfgVehicles
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_PoliceSignPolish_01_G0";
 		model="\a3\structures_f_globe\Decals\decal_policesignpolish_01_g.p3d";
 		editorCategory="EdCat_Signs";
-		editorSubcategory="EdSubcat_Graffiti";
+		editorSubcategory="EdSubcat_Residential_City";
 		icon="iconObject_10x1";
 		hiddenSelections[]=
 		{
@@ -2366,7 +2389,7 @@ class CfgVehicles
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_FastFoodRussian_01_G0";
 		model="\a3\structures_f_globe\Decals\decal_fastfoodrussian_01_g.p3d";
 		editorCategory="EdCat_Signs";
-		editorSubcategory="EdSubcat_Graffiti";
+		editorSubcategory="EdSubcat_Residential_City";
 		icon="iconObject_2x3";
 		hiddenSelections[]=
 		{
@@ -2392,7 +2415,7 @@ class CfgVehicles
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_GroceryRussian_01_G0";
 		model="\a3\structures_f_globe\Decals\decal_groceryrussian_01_g.p3d";
 		editorCategory="EdCat_Signs";
-		editorSubcategory="EdSubcat_Graffiti";
+		editorSubcategory="EdSubcat_Residential_City";
 		icon="iconObject_2x3";
 		hiddenSelections[]=
 		{
@@ -2418,7 +2441,7 @@ class CfgVehicles
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_NewsStandRussian_01_G0";
 		model="\a3\structures_f_globe\Decals\decal_newsstandrussian_01_g.p3d";
 		editorCategory="EdCat_Signs";
-		editorSubcategory="EdSubcat_Graffiti";
+		editorSubcategory="EdSubcat_Residential_City";
 		icon="iconObject_2x3";
 		hiddenSelections[]=
 		{
@@ -4543,7 +4566,6 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_A3_C_CfgVehicles_Land_VillageStore_01_F0";
 		model="\a3\structures_f_globe\Decals\decal_villagestore_01_g.p3d";
-		editorSubcategory="EdSubcat_Graffiti";
 		icon="iconObject_3x1";
 		hiddenSelections[]=
 		{
@@ -4557,6 +4579,7 @@ class CfgVehicles
 		{
 			"\a3\structures_f_globe\Decals\Data\village_store01_details.rvmat"
 		};
+		editorSubcategory="EdSubcat_Residential_City";
 	};
 	class Land_Decal_Sale_01_G: Graffiti_base_F
 	{
@@ -4568,7 +4591,6 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_Sale_01_G0";
 		model="\a3\structures_f_globe\Decals\decal_sale_01_g.p3d";
-		editorSubcategory="EdSubcat_Graffiti";
 		icon="iconObject_2x5";
 		hiddenSelections[]=
 		{
@@ -4582,6 +4604,7 @@ class CfgVehicles
 		{
 			"\a3\structures_f_globe\decals\data\shop_6_accessories.rvmat"
 		};
+		editorSubcategory="EdSubcat_Residential_City";
 	};
 	class Land_Decal_Seafood_01_G: Land_Decal_Sale_01_G
 	{
@@ -4592,6 +4615,7 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_Seafood_01_G0";
 		model="\a3\structures_f_globe\Decals\decal_seafood_01_g.p3d";
+		editorSubcategory="EdSubcat_Residential_City";
 	};
 	class Land_Decal_Seafood_01_G_fish: Land_Decal_Sale_01_G
 	{
@@ -4602,6 +4626,7 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_Seafood_01_G_fish0";
 		model="\a3\structures_f_globe\Decals\decal_seafood_01_g_fish.p3d";
+		editorSubcategory="EdSubcat_Residential_City";
 	};
 	class Land_Decal_Zelvra_01_G: Land_Decal_Sale_01_G
 	{
@@ -4612,6 +4637,7 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_Zelvra_01_G0";
 		model="\a3\structures_f_globe\Decals\decal_zelvra_01_g.p3d";
+		editorSubcategory="EdSubcat_Residential_City";
 	};
 	class Land_Decal_Zelvra_02_G: Land_Decal_Sale_01_G
 	{
@@ -4622,6 +4648,7 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_Zelvra_02_G0";
 		model="\a3\structures_f_globe\Decals\decal_zelvra_02_g.p3d";
+		editorSubcategory="EdSubcat_Residential_City";
 	};
 	class Land_Decal_Zelvra_03_G: Land_Decal_Sale_01_G
 	{
@@ -4632,6 +4659,7 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_Globe_CfgVehicles_Land_Decal_Zelvra_03_G0";
 		model="\a3\structures_f_globe\Decals\decal_zelvra_03_g.p3d";
+		editorSubcategory="EdSubcat_Residential_City";
 	};
 	class Land_Poster_SorryWeAreaClosed_01_G: Graffiti_base_F
 	{
@@ -5446,6 +5474,45 @@ class CfgVehicles
 		editorSubcategory="EdSubcat_Posters";
 		vehicleClass="Small_items";
 		destrType="DestructNo";
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+			class ObjectTextureCustom1
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom1_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom1";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [1,_value]";
+				defaultValue="(getObjectTextures _this) param [1,'',['']]";
+			};
+			class ObjectMaterialCustom1
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom1_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom1";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [1,_value]";
+				defaultValue="(getObjectMaterials _this) param [1,'',['']]";
+			};
+		};
 	};
 	class Land_CalvarypIcon_02_G: Land_CalvarypIcon_01_G
 	{
@@ -5681,5 +5748,451 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="$STR_Globe_CfgVehicles_Land_CalvarypIcon_11_G_theologian0";
 		model="\a3\structures_f_globe\Decals\calvarypicon_11_g_theologian.p3d";
+	};
+	class Land_Decal_BrokenGlass_base_G: Land_BrokenCarGlass_01_base_F
+	{
+		hiddenSelections[]=
+		{
+			"camo0"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_epc\dominants\ghosthotel\data\gh_piece_of_glass_ca.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_epc\dominants\ghosthotel\data\pies_of_glass.rvmat"
+		};
+		class Attributes: Attributes
+		{
+			class OffSFX: OffSFX
+			{
+				defaultValue=1;
+			};
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+		};
+	};
+	class Land_Decal_BrokenGlass_01_G: Land_Decal_BrokenGlass_base_G
+	{
+		author="O&T Expansion Eden";
+		mapSize=6;
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=0.012;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Land_Decal_BrokenGlass_01_G.jpg";
+		_generalMacro="Land_Decal_BrokenGlass_01_G";
+		scope=2;
+		scopeCurator=2;
+		icon="iconObject_2x1";
+		displayName="$STR_Globe_CfgVehicles_Land_Decal_BrokenGlass_01_G0";
+		model="\a3\structures_f_globe\Decals\decal_brokenglass_01_g.p3d";
+	};
+	class Land_Decal_BrokenGlass_02_G: Land_Decal_BrokenGlass_base_G
+	{
+		author="O&T Expansion Eden";
+		mapSize=2;
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=0.012;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Land_Decal_BrokenGlass_02_G.jpg";
+		_generalMacro="Land_Decal_BrokenGlass_02_G";
+		scope=2;
+		scopeCurator=2;
+		icon="iconObject_5x2";
+		displayName="$STR_Globe_CfgVehicles_Land_Decal_BrokenGlass_02_G0";
+		model="\a3\structures_f_globe\Decals\decal_brokenglass_02_g.p3d";
+	};
+	class Land_Decal_BrokenGlass_03_G: Land_Decal_BrokenGlass_base_G
+	{
+		author="O&T Expansion Eden";
+		mapSize=1;
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=0.012;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Land_Decal_BrokenGlass_03_G.jpg";
+		_generalMacro="Land_Decal_BrokenGlass_03_G";
+		scope=2;
+		scopeCurator=2;
+		icon="iconObject_1x1";
+		displayName="$STR_Globe_CfgVehicles_Land_Decal_BrokenGlass_03_G0";
+		model="\a3\structures_f_globe\Decals\decal_brokenglass_03_g.p3d";
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\missions_f_orange\data\img\orange_compositions\shared\glass_shattered_01_ca.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\missions_f_orange\data\img\orange_compositions\shared\glass_shattered_01_super.rvmat"
+		};
+	};
+	class Land_Poster_CarRepair_01_G: Graffiti_base_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=0.66;
+		editorPreview="\A3\EditorPreviews_f_expEden\data\cfgVehicles\Land_Poster_CarRepair_01_G.jpg";
+		_generalMacro="Land_Poster_CarRepair_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Poster_CarRepair_01_G0";
+		model="\a3\structures_f_globe\Decals\poster_carrepair_01_g.p3d";
+		icon="iconObject_2x1";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\missions_f_orange\data\img\orange_compositions\n2\n2_carrepair_sign_01.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_epb\items\documents\data\poster_01.rvmat"
+		};
+		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Posters";
+		vehicleClass="Small_items";
+		destrType="DestructNo";
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+		};
+	};
+	class Land_Decal_SafetySign_DHV_03_G: Graffiti_base_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=1.66;
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Decal_SafetySign_DHV_03_G.jpg";
+		_generalMacro="Land_Decal_SafetySign_DHV_03_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Decal_SafetySign_DHV_03_G0";
+		model="\a3\structures_f_globe\Decals\decal_safetysign_dhv_03_g.p3d";
+		editorSubcategory="EdSubcat_Graffiti";
+		icon="iconObject_2x1";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f\ind\powerlines\data\powerlines_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\data_f\default_alpha.rvmat"
+		};
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+		};
+	};
+	class Land_Tarp_companies_01_G: Graffiti_base_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=1.66;
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Tarp_companies_01_G.jpg";
+		_generalMacro="Land_Tarp_companies_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Tarp_companies_01_G0";
+		model="\a3\structures_f_globe\Decals\Tarp_companies_01_g.p3d";
+		editorSubcategory="EdSubcat_Advertisements";
+		icon="iconObject_1x5";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_orange\signs\special\data\entrancegate_idap_ca.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_kart\civ\sportsgrounds\data\finish_gate_cloth_super.rvmat"
+		};
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+		};
+	};
+	class Land_Tarp_companies_02_G: Graffiti_base_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=1.66;
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Tarp_companies_02_G.jpg";
+		_generalMacro="Land_Tarp_companies_02_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Tarp_companies_02_G0";
+		model="\a3\structures_f_globe\Decals\Tarp_companies_02_g.p3d";
+		editorSubcategory="EdSubcat_Advertisements";
+		icon="iconObject_1x5";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_orange\signs\special\data\entrancegate_idap_ca.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_kart\civ\sportsgrounds\data\finish_gate_cloth_super.rvmat"
+		};
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+		};
+	};
+	class Land_Tarp_finish_01_G: Graffiti_base_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=1.66;
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Tarp_finish_01_G.jpg";
+		_generalMacro="Land_Tarp_finish_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Tarp_finish_01_G0";
+		model="\a3\structures_f_globe\Decals\tarp_finish_01_g.p3d";
+		editorSubcategory="EdSubcat_Advertisements";
+		icon="iconObject_1x5";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_kart\civ\sportsgrounds\data\finish_gate_cloth_ca.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_kart\civ\sportsgrounds\data\finish_gate_cloth_super.rvmat"
+		};
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+		};
+	};
+	class Land_Tarp_IDAPOpenDay_01_G: Graffiti_base_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=1.66;
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Tarp_IDAPOpenDay_01_G.jpg";
+		_generalMacro="Land_Tarp_IDAPOpenDay_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Tarp_IDAPOpenDay_01_G0";
+		model="\a3\structures_f_globe\Decals\tarp_idapopenday_01_g.p3d";
+		editorSubcategory="EdSubcat_Advertisements";
+		icon="iconObject_1x5";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_orange\signs\special\data\entrancegate_idap_ca.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_kart\civ\sportsgrounds\data\finish_gate_cloth_super.rvmat"
+		};
+		class Attributes
+		{
+			class ObjectTextureCustom0
+			{
+				displayName="$STR_3den_object_attribute_objecttexturecustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objecttexturecustom_tooltip";
+				property="ObjectTextureCustom0";
+				control="Edit";
+				expression="_this setObjectTextureGlobal [0,_value]";
+				defaultValue="(getObjectTextures _this) param [0,'',['']]";
+			};
+			class ObjectMaterialCustom0
+			{
+				displayName="$STR_3den_object_attribute_objectmaterialcustom0_displayname";
+				tooltip="$STR_3den_object_attribute_objectmaterialcustom_tooltip";
+				property="ObjectMaterialCustom0";
+				control="Edit";
+				expression="_this setObjectMaterialGlobal [0,_value]";
+				defaultValue="(getObjectMaterials _this) param [0,'',['']]";
+			};
+		};
+	};
+	class Land_Tarp_RedWhite_01_G: House_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=14;
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Tarp_RedWhite_01_G.jpg";
+		_generalMacro="Land_Tarp_RedWhite_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Tarp_RedWhite_01_G0";
+		model="\a3\structures_f_globe\Decals\tarp_redwhite_01_g.p3d";
+		icon="iconObject_1x1";
+		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Decontamination";
+		vehicleClass="Signs";
+		destrType="DestructNo";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_heli\ind\airport\data\windsock_01_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_heli\ind\airport\data\windsock_01_metal.rvmat"
+		};
+	};
+	class Land_Tarp_RedWhite_02_G: House_F
+	{
+		author="O&T Expansion Eden";
+		mapSize=14;
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Tarp_RedWhite_02_G.jpg";
+		_generalMacro="Land_Tarp_RedWhite_02_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Tarp_RedWhite_02_G0";
+		model="\a3\structures_f_globe\Decals\tarp_redwhite_02_g.p3d";
+		icon="iconObject_3x2";
+		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Decontamination";
+		vehicleClass="Signs";
+		destrType="DestructNo";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_heli\ind\airport\data\windsock_01_co.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_heli\ind\airport\data\windsock_01_metal.rvmat"
+		};
 	};
 };

@@ -22,8 +22,8 @@ class CfgVehicles
 	{
 		class CargoTurret;
 		class Turrets;
-		class AnimationSources;
 		class EventHandlers;
+		class AnimationSources;
 	};
 	class Heli_Transport_01_base_F: Helicopter_Base_H
 	{
@@ -37,38 +37,23 @@ class CfgVehicles
 			"slingCargoRopeBreak0",
 			"slingCargoRopeBreak1"
 		};
-		class AnimationSources: AnimationSources
-		{
-			class Door_L
-			{
-				source="door";
-				animPeriod=1.6;
-				initPhase=0;
-				sound="Van_02_Door_Slide";
-				soundPosition="axis_door_l";
-			};
-			class Door_R: Door_L
-			{
-				soundPosition="axis_door_r";
-			};
-		};
 		class UserActions
 		{
 			class DoorL1_Open
 			{
-				condition = "((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_L') == 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
+				condition="((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_L') == 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
 			};
 			class DoorR1_Open: DoorL1_Open
 			{
-				condition = "((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_R') == 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
+				condition="((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_R') == 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
 			};
 			class DoorL1_Close: DoorL1_Open
 			{
-				condition = "((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_L') > 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
+				condition="((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_L') > 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
 			};
 			class DoorR1_Close: DoorL1_Close
 			{
-				condition = "((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_R') > 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
+				condition="((this getVariable ['Globe_Disabled_Ramp', true]) isEqualTo false) && {((this doorPhase 'door_R') > 0) && Alive(this)} && {(objectParent player isNotEqualTo this) || (player in this)}";
 			};
 		};
 		class Attributes
@@ -258,28 +243,7 @@ class CfgVehicles
 					"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_BLUFOR_CO.paa",
 					"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext02_BLUFOR_CO.paa"
 				};
-				factions[]=
-				{
-					"BLU_F",
-					"OPF_F",
-					"IND_F",
-					"IND_G_F",
-					"CIV_F",
-					"BLU_G_F",
-					"OPF_G_F",
-					"IND_C_F",
-					"BLU_T_F",
-					"BLU_CTRG_F",
-					"BLU_GEN_F",
-					"OPF_T_F",
-					"OPF_V_F",
-					"CIV_IDAP_F",
-					"IND_E_F",
-					"IND_L_F",
-					"BLU_W_F",
-					"OPF_R_F",
-					"OPF_GEN_F"
-				};
+				factions[]={};
 			};
 			class Black
 			{
@@ -290,28 +254,7 @@ class CfgVehicles
 					"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext01_CO.paa",
 					"\A3\Air_F_Beta\Heli_Transport_01\Data\Heli_Transport_01_ext02_CO.paa"
 				};
-				factions[]=
-				{
-					"BLU_F",
-					"OPF_F",
-					"IND_F",
-					"IND_G_F",
-					"CIV_F",
-					"BLU_G_F",
-					"OPF_G_F",
-					"IND_C_F",
-					"BLU_T_F",
-					"BLU_CTRG_F",
-					"BLU_GEN_F",
-					"OPF_T_F",
-					"OPF_V_F",
-					"CIV_IDAP_F",
-					"IND_E_F",
-					"IND_L_F",
-					"BLU_W_F",
-					"OPF_R_F",
-					"OPF_GEN_F"
-				};
+				factions[]={};
 			};
 			class Sand
 			{
@@ -322,28 +265,7 @@ class CfgVehicles
 					"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext01_sand_CO.paa",
 					"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext02_sand_CO.paa"
 				};
-				factions[]=
-				{
-					"BLU_F",
-					"OPF_F",
-					"IND_F",
-					"IND_G_F",
-					"CIV_F",
-					"BLU_G_F",
-					"OPF_G_F",
-					"IND_C_F",
-					"BLU_T_F",
-					"BLU_CTRG_F",
-					"BLU_GEN_F",
-					"OPF_T_F",
-					"OPF_V_F",
-					"CIV_IDAP_F",
-					"IND_E_F",
-					"IND_L_F",
-					"BLU_W_F",
-					"OPF_R_F",
-					"OPF_GEN_F"
-				};
+				factions[]={};
 			};
 			class Olive
 			{
@@ -354,28 +276,7 @@ class CfgVehicles
 					"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext01_tropic_CO.paa",
 					"\A3\Air_F_Exp\Heli_Transport_01\Data\Heli_Transport_01_ext02_tropic_CO.paa"
 				};
-				factions[]=
-				{
-					"BLU_F",
-					"OPF_F",
-					"IND_F",
-					"IND_G_F",
-					"CIV_F",
-					"BLU_G_F",
-					"OPF_G_F",
-					"IND_C_F",
-					"BLU_T_F",
-					"BLU_CTRG_F",
-					"BLU_GEN_F",
-					"OPF_T_F",
-					"OPF_V_F",
-					"CIV_IDAP_F",
-					"IND_E_F",
-					"IND_L_F",
-					"BLU_W_F",
-					"OPF_R_F",
-					"OPF_GEN_F"
-				};
+				factions[]={};
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -925,9 +826,8 @@ class CfgVehicles
 		};
 		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\B_Heli_Transport_01_unarmed.jpg";
 		_generalMacro="B_Heli_Transport_01_unarmed";
-		scope=2;
+		scope=1;
 		displayName="$STR_Globe_CfgVehicles_B_Heli_Transport_01_unarmed0";
-		forceInGarage=1;
 		side=1;
 		faction="BLU_F";
 		crew="B_Helipilot_F";
@@ -984,8 +884,5 @@ class CfgVehicles
 				defaultValue=0;
 			};
 		};
-	};
-	class Heli_Transport_01_pylons_base_F: Heli_Transport_01_base_F
-	{
 	};
 };

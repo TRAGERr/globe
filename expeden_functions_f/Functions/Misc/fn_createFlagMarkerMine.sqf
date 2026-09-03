@@ -5,12 +5,12 @@ if (isServer) then
 {
 	private _flag = createVehicle ["FlagMarker_01_G_mines", [0,0,0], [], 0, "CAN_COLLIDE"];
 	_flag attachTo [_projectile, [0.23, 0.05, 0.175]];
-	_projectile setVariable ['Globe_mineFlag', _flag, isServer];
+	_projectile setVariable ['Globe_mineFlag', _flag, true];
 
 	private _actionSphere = createVehicle ["Sign_Sphere100cm_Geometry_F", [0,0,0], [], 0, "CAN_COLLIDE"];
 	_actionSphere attachTo [_projectile, [0.23, 0.05, 0.175]];
 	_actionSphere setObjectTextureGlobal [0, "#(argb,8,8,3)color(0,0,0,0,ca)"];
-	_projectile setVariable ['Globe_mineAction', _actionSphere, isServer];
+	_projectile setVariable ['Globe_mineAction', _actionSphere, true];
 
 	[
 		_actionSphere,

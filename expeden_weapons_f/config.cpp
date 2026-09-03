@@ -41,7 +41,6 @@ class CfgWeapons
 {
 	class autocannon_Base_F;
 	class SmokeLauncher;
-	class HMG_01;
 	class LMG_Minigun_heli;
 	class MGunCore;
 	class GrenadeLauncher;
@@ -65,6 +64,15 @@ class CfgWeapons
 	class srifle_GM6_F;
 	class arifle_AK12_F;
 	class srifle_DMR_06_camo_F;
+	class HMG_01;
+	class HMG_M2: HMG_01
+	{
+		magazines[]+=
+		{
+			"100Rnd_127x99_SLAP_mag",
+			"100Rnd_127x99_HEIAP_01_G_traser_red_mag"
+		};
+	};
 	class autocannon_40mm_CTWS: autocannon_Base_F
 	{
 		class HE: autocannon_Base_F
@@ -82,16 +90,6 @@ class CfgWeapons
 			magazines[]+=
 			{
 				"60Rnd_30mm_HE_Airburst_01_G_shells"
-			};
-		};
-	};
-	class autocannon_40mm_VTOL_01: autocannon_40mm_CTWS
-	{
-		class HE: HE
-		{
-			magazines[]+=
-			{
-				"60Rnd_40mm_HE_Airburst_01_G_shells"
 			};
 		};
 	};
@@ -1191,201 +1189,6 @@ class CfgWeapons
 		maxRange=10;
 		textureType="semi";
 	};
-	class LMG_Zafir_F: Rifle_Long_Base_F
-	{
-		bullet1[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.44668359,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.44668359,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.44668359,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.44668359,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\Sounds_F\dummysound",
-			0.56234133,
-			1,
-			15
-		};
-		bullet13[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			1,
-			1,
-			15
-		};
-		bullet14[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		bullet15[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		bullet16[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		bullet17[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		bullet18[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		bullet19[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		bullet20[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		bullet21[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\Shellcase_762_Grass_04",
-			0.56234133,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.04761904761,
-			"bullet2",
-			0.04761904761,
-			"bullet3",
-			0.04761904761,
-			"bullet4",
-			0.04761904761,
-			"bullet5",
-			0.04761904761,
-			"bullet6",
-			0.04761904761,
-			"bullet7",
-			0.04761904761,
-			"bullet8",
-			0.04761904761,
-			"bullet9",
-			0.04761904761,
-			"bullet10",
-			0.04761904761,
-			"bullet11",
-			0.04761904761,
-			"bullet12",
-			0.04761904761,
-			"bullet13",
-			0.04761904761,
-			"bullet14",
-			0.04761904761,
-			"bullet15",
-			0.04761904761,
-			"bullet16",
-			0.04761904761,
-			"bullet17",
-			0.04761904761,
-			"bullet18",
-			0.04761904761,
-			"bullet19",
-			0.04761904761,
-			"bullet20",
-			0.04761904761,
-			"bullet21",
-			0.04761904761
-		};
-	};
 };
 class CfgAmmo
 {
@@ -1397,6 +1200,16 @@ class CfgAmmo
 	class B_762x51_Ball;
 	class BulletBase;
 	class ShellBase;
+	class B_127x108_Ball;
+	class B_127x99_Ball;
+	class B_127x99_SLAP: B_127x99_Ball
+	{
+		warheadName="AP";
+	};
+	class B_127x108_APDS: B_127x108_Ball
+	{
+		warheadName="AP";
+	};
 	class Sh_120mm_HE: ShellBase
 	{
 		soundFakeFall0[]=
@@ -3447,9 +3260,90 @@ class CfgAmmo
 			fired="_this spawn expEden_fnc_setProjectileAirburst";
 		};
 	};
+	class B_127x99_HEIAP_01_G: BulletBase
+	{
+		hit=55;
+		caliber=3.2;
+		typicalSpeed=900;
+		airFriction=-0.00060000003;
+		indirectHit=3;
+		indirectHitRange=2;
+		explosive=0.40000001;
+		warheadName="HE";
+		explosionEffects="ImpactEffectsGroundSabot127x99";
+		craterEffects="ExploAmmoCrater";
+		cost=20;
+		class CamShakeExplode
+		{
+			power=4.4721398;
+			duration=0.80000001;
+			frequency=20;
+			distance=13.4164;
+		};
+		class CamShakeHit
+		{
+			power=20;
+			duration=0.40000001;
+			frequency=20;
+			distance=1;
+		};
+		SoundSetExplosion[]=
+		{
+			"HEIAP_01_exp_SoundSet"
+		};
+		class HitEffects
+		{
+			hitMetal="ImpactMetalSabot127x99Small";
+			hitMetalPlate="ImpactMetalSabot127x99Small";
+			hitBuilding="ImpactConcreteSabot127x99Small";
+			hitConcrete="ImpactConcreteSabot127x99Small";
+			hitGroundSoft="ImpactEffectsGroundSabot127x99";
+			hitGroundHard="ImpactEffectsGroundSabot127x99";
+			Hit_Foliage_green="ImpactLeavesGreen";
+			Hit_Foliage_Dead="ImpactLeavesDead";
+			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
+			Hit_Foliage_Palm="ImpactLeavesPalm";
+			Hit_Foliage_Pine="ImpactLeavesPine";
+			hitFoliage="ImpactLeaves";
+			hitGlass="ImpactGlass";
+			hitGlassArmored="ImpactGlassThin";
+			hitWood="ImpactWood";
+			hitHay="ImpactHay";
+			hitPlastic="ImpactPlastic";
+			hitRubber="ImpactRubber";
+			hitTyre="ImpactTyre";
+			hitMan="ImpactEffectsBlood";
+			hitWater="ImpactEffectsWater";
+			default_mat="ImpactEffectsGroundSabot127x99";
+		};
+	};
+	class B_127x99_HEIAP_01_G_traser_red: B_127x99_HEIAP_01_G
+	{
+		model="\A3\Weapons_f\Data\bullettracer\tracer_red";
+	};
 };
 class CfgSoundSets
 {
+	class HEIAP_01_exp_SoundSet
+	{
+		soundShaders[]=
+		{
+			"HEIAP_01_Exp_SoundShader"
+		};
+		frequencyFactor=0.80000001;
+		frequencyRandomizer=0.69999999;
+		volumeRandomizer=1.21;
+		volumeRandomizerMin=0.075000003;
+		volumeFactor=1.05;
+		volumeCurve="InverseSquare1Curve";
+		spatial=1;
+		doppler=0;
+		loop=0;
+		sound3DProcessingType="ExplosionLight3DProcessingType";
+		distanceFilter="explosionDistanceFreqAttenuationFilter";
+		occlusionFactor=0.30000001;
+		obstructionFactor=0;
+	};
 	class Launchers_Exp_SoundSet
 	{
 		soundShaders[]=
@@ -3462,6 +3356,8 @@ class CfgSoundSets
 		doppler=0;
 		loop=0;
 		frequencyRandomizer=1.2;
+		volumeRandomizer=0.2;
+		volumeRandomizerMin=0.075000003;
 		sound3DProcessingType="ExplosionLight3DProcessingType";
 		distanceFilter="explosionDistanceFreqAttenuationFilter";
 	};
@@ -3519,6 +3415,40 @@ class CfgSoundSets
 };
 class CfgSoundShaders
 {
+	class HEIAP_01_Exp_SoundShader
+	{
+		samples[]=
+		{
+			
+			{
+				"A3\Sounds_F\arsenal\explosives\grenades\GrenadeLight_midExp_01",
+				1
+			},
+			
+			{
+				"A3\Sounds_F\arsenal\explosives\grenades\GrenadeLight_midExp_02",
+				1
+			},
+			
+			{
+				"A3\Sounds_F\arsenal\explosives\grenades\GrenadeLight_midExp_03",
+				1
+			},
+			
+			{
+				"A3\Sounds_F\arsenal\explosives\grenades\GrenadeLight_midExp_04",
+				1
+			}
+		};
+		volume=0.6;
+		range=500;
+		rangeCurve[]=
+		{
+			{0,1},
+			{100,1},
+			{500,0}
+		};
+	};
 	class Launchers_Exp_SoundShader
 	{
 		samples[]=
@@ -4388,6 +4318,36 @@ class CfgMagazines
 		ammo="B_30mm_HE_Airburst_01_G";
 		count=60;
 	};
+	class 100Rnd_127x99_SLAP_mag: VehicleMagazine
+	{
+		author="O&T Expansion Eden";
+		scope=2;
+		count=100;
+		ammo="B_127x99_SLAP";
+		initSpeed=1450;
+		maxLeadSpeed=400.111099;
+		tracersEvery=4;
+		nameSound="mgun";
+		displayName="$STR_Globe_CfgMagazines_100Rnd_127x99_SLAP_mag0";
+		descriptionShort="$STR_Globe_CfgMagazines_100Rnd_127x99_SLAP_mag1";
+		displaynameshort="SLAP";
+		muzzleImpulseFactor[]={0.050000001,0.050000001};
+	};
+	class 100Rnd_127x99_HEIAP_01_G_traser_red_mag: VehicleMagazine
+	{
+		author="O&T Expansion Eden";
+		scope=2;
+		count=100;
+		ammo="B_127x99_HEIAP_01_G_traser_red";
+		initSpeed=900;
+		maxLeadSpeed=25.1;
+		tracersEvery=1;
+		nameSound="mgun";
+		displayName="$STR_Globe_CfgMagazines_100Rnd_127x99_HEIAP_01_G_traser_red_mag0";
+		descriptionShort="$STR_Globe_CfgMagazines_100Rnd_127x99_HEIAP_01_G_traser_red_mag1";
+		displaynameshort="HEIAP";
+		muzzleImpulseFactor[]={0.075,0.075};
+	};
 };
 class CfgMagazineWells
 {
@@ -4416,5 +4376,146 @@ class CfgMagazineWells
 		{
 			"1Rnd_Canister_Grenade_shell"
 		};
+	};
+};
+class ImpactEffectsGroundSabotSmall
+{
+	class ImpactDust1
+	{
+		simulation="particles";
+		type="ImpactDustSabot2";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+	class ImpactDustWater1
+	{
+		simulation="particles";
+		type="ImpactDustWater2";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+	class ImpactConcrete
+	{
+		simulation="particles";
+		type="ImpactConcreteSabot";
+		position[]={0,0,0};
+		intensity=1;
+		interval=1;
+		lifeTime=1;
+	};
+};
+class ImpactEffectsGroundSabot127x99: ImpactEffectsGroundSabotSmall
+{
+	class SparksLight
+	{
+		simulation="light";
+		type="SparksLightSabot";
+		position[]={0,0,0};
+		intensity=0.001;
+		interval=1;
+		lifeTime=0.25;
+	};
+	class ImpactSparks1
+	{
+		simulation="particles";
+		type="ImpactSparksSabot1Small";
+		position[]={0,0,0};
+		intensity=0.5;
+		interval=0.0049999999;
+		lifeTime=0.25;
+	};
+	class ImpactDust1: ImpactDust1
+	{
+		interval=0.0014;
+	};
+	class ImpactDustWater1: ImpactDustWater1
+	{
+		interval=0.0089999996;
+	};
+	class ImpactConcrete: ImpactConcrete
+	{
+		interval=0.0099999998;
+	};
+};
+class ImpactMetalSabot127x99Small
+{
+	class SparksLight
+	{
+		simulation="light";
+		type="SparksLightSabot";
+		position[]={0,0,0};
+		intensity=0.001;
+		interval=1;
+		lifeTime=0.25;
+	};
+	class ImpactSparks1
+	{
+		simulation="particles";
+		type="ImpactSparksSabot1Small";
+		position[]={0,0,0};
+		intensity=0.5;
+		interval=0.0049999999;
+		lifeTime=0.25;
+	};
+	class ImpactSparks2
+	{
+		simulation="particles";
+		type="ImpactSparksSabot2";
+		position[]={0,0,0};
+		intensity=1;
+		interval=0.0099999998;
+		lifeTime=0.039999999;
+	};
+	class ImpactSmoke2
+	{
+		simulation="particles";
+		type="ImpactSmokeSabot2";
+		position[]={0,0,0};
+		intensity=1;
+		interval=0.1;
+		lifeTime=0.5;
+	};
+};
+class ImpactConcreteSabot127x99Small
+{
+	class SparksLight
+	{
+		simulation="light";
+		type="SparksLightSabot";
+		position[]={0,0,0};
+		intensity=0.001;
+		interval=1;
+		lifeTime=0.25;
+	};
+	class ImpactSparks1
+	{
+		simulation="particles";
+		type="ImpactSparksSabot1Small";
+		position[]={0,0,0};
+		intensity=0.5;
+		interval=0.0049999999;
+		lifeTime=0.25;
+	};
+	class ImpactDust
+	{
+		simulation="particles";
+		type="ImpactDustConcreteSabot";
+		position[]={0,0,0};
+		intensity=1;
+		interval=0.0024999999;
+		lifeTime=0.21;
+	};
+	class ImpactDust2
+	{
+		simulation="particles";
+		type="ImpactDustConcreteSabot2";
+		position[]={0,0,0};
+		intensity=1;
+		interval=0.0024999999;
+		lifeTime=0.12;
 	};
 };

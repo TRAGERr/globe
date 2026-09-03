@@ -55,16 +55,28 @@ class Cfg3DEN
 			{
 				class Attributes
 				{
+					class DoorKnocking
+					{
+						property="DoorKnocking";
+						control="DoorKnocking";
+						displayName="$STR_Globe_3DEN_Object_Attribute_DoorKnocking0";
+						tooltip="$STR_Globe_3DEN_Object_Attribute_DoorKnocking1";
+						expression = "['init', _this, _value] call expEden_fnc_3DENAttributeDoorKnocking;";
+						defaultValue="[0,0,0]";
+						condition="script";
+						conditionScript="getNumber (configfile >> 'CfgVehicles' >> typeOf _this >> 'numberOfDoors') != 0";
+					};
 					class ObjectBoxMarker
 					{
 						property="ObjectBoxMarker";
 						control="Checkbox";
 						displayName="$STR_Globe_3DEN_Object_Attribute_ObjectBoxMarker_displayName";
 						tooltip="$STR_Globe_3DEN_Object_Attribute_ObjectBoxMarker_tooltip";
-						expression="if (_value) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-						defaultValue="false";
+						expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
+						defaultValue=0;
 						wikiType="[[Bool]]";
-						condition="(1 - (objectBrain)) 	* (1 - (logicModule)) 		  * (1 - 	(objectVehicle)) 				* (1 - (objectAgent))";
+						condition="Script";
+						conditionScript="_this call expEden_fnc_3DENObjectBoxMarkerCondition";
 					};
 					class GlassStates
 					{
@@ -103,7 +115,7 @@ class Cfg3DEN
 						control="CheckboxArray0";
 						displayName="$STR_Globe_3DEN_Object_Attribute_ObjectCollision0";
 						tooltip="$STR_Globe_3DEN_Object_Attribute_ObjectCollision1";
-						expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+						expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
 						defaultValue="getPhysicsCollisionFlag _this";
 						wikiType="[[Bool]]";
 						condition="(1 - (logicModule))";
@@ -120,6 +132,7 @@ class Cfg3DEN
 						typeName="BOOL";
 						wikiType="[[Bool]]";
 					};
+
 				};
 			};
 			class VehicleSystems
@@ -132,8 +145,8 @@ class Cfg3DEN
 						control="Checkbox";
 						displayName="$STR_a3_cfgsounds_alarmcar0";
 						tooltip="$STR_Globe_3DEN_Object_Attribute_CarAlarm_tooltip";
-						expression="if (_value) then {_this remoteExecCall ['expEden_fnc_3DENCarAlarmInit']}";
-						defaultValue="false";
+						expression="if (_value isEqualTo true) then {_this remoteExecCall ['expEden_fnc_3DENCarAlarmInit']}";
+						defaultValue=0;
 						wikiType="[[Bool]]";
 						condition="objectVehicle";
 					};
@@ -170,6 +183,35 @@ class Cfg3DEN
 						condition="objectHasInventoryCargo";
 						typeName="BOOL";
 						wikiType="[[Bool]]";
+					};
+				};
+			};
+			class Presence
+			{
+				class Attributes
+				{
+					class DeleteDelay
+					{
+						property="DeleteDelay_property";
+						control="EditShort";
+						displayName="$STR_Globe_Cfg3DEN_Object_Attribute_DeleteDelay0";
+						tooltip="$STR_Globe_Cfg3DEN_Object_Attribute_DeleteDelay1";
+						expression="if (!is3DEN && {_value isEqualType 0 && {_value > 0}}) then {[_this, _value] spawn {params ['_object', '_value']; if (isNull _object) exitWith {}; private _cond = _object getVariable ['Globe_delCond', 'false']; if (_cond isEqualType '') then {if (!(call compile _cond)) exitWith {}}; waitUntil {sleep 0.1; if (isNull _object) exitWith {true}; private _condNow = _object getVariable ['Globe_delCond', 'false']; private _result = call compile _condNow; if (isNil '_result') then {false} else {_result}}; sleep _value; if (isNull _object) exitWith {}; deleteVehicle _object}}";
+						defaultValue=0;
+						wikiType="[[Number]]";
+						validate="number";
+						typeName="NUMBER";
+					};
+					class DeleteDelayCondition
+					{
+						property="DeleteDelayCondition_property";
+						control="EditCode";
+						displayName="$STR_Globe_Cfg3DEN_Object_Attribute_DeleteDelayCondition0";
+						tooltip="$STR_Globe_Cfg3DEN_Object_Attribute_DeleteDelayCondition1";
+						expression="_this setVariable ['Globe_delCond', _value, true]";
+						defaultValue="true";
+						wikiType="[[Code]]";
+						typeName="CODE";
 					};
 				};
 			};
@@ -2208,6 +2250,703 @@ class Cfg3DEN
 				};
 			};
 		};
+		class DoorKnocking: Title
+		{
+			attributeLoad = "['attributeLoad', (get3DENSelected 'object' select 0), _this, _value] call expEden_fnc_3DENAttributeDoorKnocking";
+			attributeSave = "['attributeSave', (get3DENSelected 'object' select 0), _this] call expEden_fnc_3DENAttributeDoorKnocking";
+			h="3 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+			class Controls: Controls
+			{
+				class Title: Title
+				{
+					idc=99;
+					h="3 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+					colorBackground[]={0,0,0,0};
+				};
+				class Value: ctrlControlsGroupNoScrollbars
+				{
+					idc=100;
+					x="48 * (pixelW * pixelGrid * 	0.50)";
+					w="80 * (pixelW * pixelGrid * 	0.50)";
+					h="3 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+					class Controls
+					{
+						class CheckboxBackground1: ctrlStatic
+						{
+							idc="125+1";
+							text="";
+							x="(1-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox1: ctrlActivePicture
+						{
+							idc="100+1";
+							x="(1-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text1: ctrlStatic
+						{
+							idc="150+1";
+							text=1;
+							x="(1-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground2: ctrlStatic
+						{
+							idc="125+2";
+							text="";
+							x="(2-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox2: ctrlActivePicture
+						{
+							idc="100+2";
+							x="(2-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text2: ctrlStatic
+						{
+							idc="150+2";
+							text=2;
+							x="(2-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground3: ctrlStatic
+						{
+							idc="125+3";
+							text="";
+							x="(3-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox3: ctrlActivePicture
+						{
+							idc="100+3";
+							x="(3-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text3: ctrlStatic
+						{
+							idc="150+3";
+							text=3;
+							x="(3-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground4: ctrlStatic
+						{
+							idc="125+4";
+							text="";
+							x="(4-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox4: ctrlActivePicture
+						{
+							idc="100+4";
+							x="(4-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text4: ctrlStatic
+						{
+							idc="150+4";
+							text=4;
+							x="(4-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground5: ctrlStatic
+						{
+							idc="125+5";
+							text="";
+							x="(5-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox5: ctrlActivePicture
+						{
+							idc="100+5";
+							x="(5-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text5: ctrlStatic
+						{
+							idc="150+5";
+							text=5;
+							x="(5-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground6: ctrlStatic
+						{
+							idc="125+6";
+							text="";
+							x="(6-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox6: ctrlActivePicture
+						{
+							idc="100+6";
+							x="(6-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text6: ctrlStatic
+						{
+							idc="150+6";
+							text=6;
+							x="(6-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground7: ctrlStatic
+						{
+							idc="125+7";
+							text="";
+							x="(7-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox7: ctrlActivePicture
+						{
+							idc="100+7";
+							x="(7-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text7: ctrlStatic
+						{
+							idc="150+7";
+							text=7;
+							x="(7-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground8: ctrlStatic
+						{
+							idc="125+8";
+							text="";
+							x="(8-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class Checkbox8: ctrlActivePicture
+						{
+							idc="100+8";
+							x="(8-1) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y=0;
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							color[]={1,1,1,1};
+							colorBackground[]={0,0,0,0.25};
+							colorActive[]={1,1,1,1};
+							colorDisabled[]={1,1,1,1};
+							text="\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa";
+							onMouseButtonDown="['onMouseButtonUp',get3DENSelected 'object' select 0,_this] call expEden_fnc_3DENAttributeDoorKnocking";
+						};
+						class Text8: ctrlStatic
+						{
+							idc="150+8";
+							text=8;
+							x="(8-1) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+							w="2 * 																	5						 * (pixelW * pixelGrid * 	0.50) - 							pixelW";
+							h="1 * 																	5						 * (pixelH * pixelGrid * 	0.50) - 							pixelH";
+							shadow=0;
+							colorText[]={1,1,1,0.5};
+							colorBackground[]={0,0,0,0.25};
+							colorShadow[]={0,0,0,0};
+							type=0;
+							style=2;
+							onLoad="(_this select 0) ctrlEnable false;";
+						};
+						class CheckboxBackground9: CheckboxBackground1
+						{
+							idc="125+9";
+							x="(9-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox9: Checkbox1
+						{
+							idc="100+9";
+							x="(9-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text9: Text1
+						{
+							idc="150+9";
+							text=9;
+							x="(9-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground10: CheckboxBackground1
+						{
+							idc="125+10";
+							x="(10-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox10: Checkbox1
+						{
+							idc="100+10";
+							x="(10-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text10: Text1
+						{
+							idc="150+10";
+							text=10;
+							x="(10-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground11: CheckboxBackground1
+						{
+							idc="125+11";
+							x="(11-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox11: Checkbox1
+						{
+							idc="100+11";
+							x="(11-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text11: Text1
+						{
+							idc="150+11";
+							text=11;
+							x="(11-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground12: CheckboxBackground1
+						{
+							idc="125+12";
+							x="(12-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox12: Checkbox1
+						{
+							idc="100+12";
+							x="(12-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text12: Text1
+						{
+							idc="150+12";
+							text=12;
+							x="(12-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground13: CheckboxBackground1
+						{
+							idc="125+13";
+							x="(13-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox13: Checkbox1
+						{
+							idc="100+13";
+							x="(13-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text13: Text1
+						{
+							idc="150+13";
+							text=13;
+							x="(13-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground14: CheckboxBackground1
+						{
+							idc="125+14";
+							x="(14-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox14: Checkbox1
+						{
+							idc="100+14";
+							x="(14-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text14: Text1
+						{
+							idc="150+14";
+							text=14;
+							x="(14-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground15: CheckboxBackground1
+						{
+							idc="125+15";
+							x="(15-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox15: Checkbox1
+						{
+							idc="100+15";
+							x="(15-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text15: Text1
+						{
+							idc="150+15";
+							text=15;
+							x="(15-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground16: CheckboxBackground1
+						{
+							idc="125+16";
+							x="(16-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Checkbox16: Checkbox1
+						{
+							idc="100+16";
+							x="(16-9) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class Text16: Text1
+						{
+							idc="150+16";
+							text=16;
+							x="(16-9) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground17: CheckboxBackground1
+						{
+							idc="125+17";
+							x="(17-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox17: Checkbox1
+						{
+							idc="100+17";
+							x="(17-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text17: Text1
+						{
+							idc="150+17";
+							text=17;
+							x="(17-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground18: CheckboxBackground1
+						{
+							idc="125+18";
+							x="(18-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox18: Checkbox1
+						{
+							idc="100+18";
+							x="(18-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text18: Text1
+						{
+							idc="150+18";
+							text=18;
+							x="(18-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground19: CheckboxBackground1
+						{
+							idc="125+19";
+							x="(19-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox19: Checkbox1
+						{
+							idc="100+19";
+							x="(19-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text19: Text1
+						{
+							idc="150+19";
+							text=19;
+							x="(19-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground20: CheckboxBackground1
+						{
+							idc="125+20";
+							x="(20-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox20: Checkbox1
+						{
+							idc="100+20";
+							x="(20-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text20: Text1
+						{
+							idc="150+20";
+							text=20;
+							x="(20-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground21: CheckboxBackground1
+						{
+							idc="125+21";
+							x="(21-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox21: Checkbox1
+						{
+							idc="100+21";
+							x="(21-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text21: Text1
+						{
+							idc="150+21";
+							text=21;
+							x="(21-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground22: CheckboxBackground1
+						{
+							idc="125+22";
+							x="(22-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox22: Checkbox1
+						{
+							idc="100+22";
+							x="(22-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text22: Text1
+						{
+							idc="150+22";
+							text=22;
+							x="(22-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground23: CheckboxBackground1
+						{
+							idc="125+23";
+							x="(23-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox23: Checkbox1
+						{
+							idc="100+23";
+							x="(23-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text23: Text1
+						{
+							idc="150+23";
+							text=23;
+							x="(23-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+						class CheckboxBackground24: CheckboxBackground1
+						{
+							idc="125+24";
+							x="(24-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Checkbox24: Checkbox1
+						{
+							idc="100+24";
+							x="(24-17) * 							2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="2 * (							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50))";
+						};
+						class Text24: Text1
+						{
+							idc="150+24";
+							text=24;
+							x="(24-17) * 								2 * 																	5						 * (pixelW * pixelGrid * 	0.50)";
+							y="3 * 							2 * 																	5						 * (pixelH * pixelGrid * 	0.50) + 2 * 								1 * 																	5						 * (pixelH * pixelGrid * 	0.50)";
+						};
+					};
+				};
+			};
+		};
 	};
 	class Marker
 	{
@@ -2283,7 +3022,7 @@ class Cfg3DEN
 							displayName="$STR_Globe_Cfg3DEN_Attributes_SyncCloudLayerCB";
 							tooltip="$STR_Globe_Cfg3DEN_Attributes_SyncCloudLayerCB_tooltip";
 							defaultValue="false";
-							expression="missionNamespace setVariable ['Globe_SyncCloudLayer',_value,isServer]";
+							expression="missionNamespace setVariable ['Globe_SyncCloudLayer',_value,true]";
 							typeName="BOOL";
 							wikiType="[[Bool]]";
 						};
@@ -2294,7 +3033,7 @@ class Cfg3DEN
 							displayName="$STR_Globe_Cfg3DEN_Attributes_SyncCloudLayerSlider";
 							tooltip="$STR_Globe_Cfg3DEN_Attributes_SyncCloudLayerSlider_tooltip";
 							defaultValue="600";
-							expression="if (missionNamespace getVariable ['Globe_SyncCloudLayer',false] && isMultiplayer && (!is3DEN)) then { _value spawn { waitUntil {time > 0}; while {missionNamespace getVariable ['Globe_SyncCloudLayer',false]} do { remoteExecCall ['simulWeatherSync']; private _cool = time + _this; waitUntil {time >= _cool}; } } };";
+							expression="if (missionNamespace getVariable ['Globe_SyncCloudLayer', false] && isMultiplayer && {!is3DEN}) then { _value spawn { private _delay = (_this param [0, 90, [0]]) max 90; waitUntil {time > 0}; while {missionNamespace getVariable ['Globe_SyncCloudLayer', false]} do { remoteExecCall ['simulWeatherSync', -2]; sleep _delay; }; }; };";
 							typeName="NUMBER";
 							wikiType="[[Number]]";
 						};
@@ -2317,7 +3056,7 @@ class Cfg3DEN
 							control="ShowLawOfWar_G_control";
 							property="ShowLawOfWar_G_property";
 							defaultValue="missionNamespace getVariable ['Globe_ShowLoW', [   false,     false,false,false]];";
-							expression="missionNamespace setVariable ['Globe_ShowLoW', [   (_value # 0),     (_value # 1),     (_value # 2),    (_value # 3)       ]];";
+							expression="missionNamespace setVariable ['Globe_ShowLoW', [   (_value # 0),     (_value # 1),     (_value # 2),    (_value # 3)       ], true];";
 							typeName="ARRAY";
 						};
 					};
@@ -2347,6 +3086,45 @@ class Display3DEN
 				picture="\a3\ui_f\data\igui\rsctitles\mpprogress\respawn_ca.paa";
 				action="  {			_x set3DENAttribute ['Rotation',[	(_x get3DENAttribute 'Rotation')#0#0, (_x get3DENAttribute 'Rotation')#0#1,		(random 360)]]		}				forEach (get3DENSelected 'object')";
 			};
+		};
+	};
+};
+class CfgNonAIVehicles
+{
+	class EmptyDetector;
+	class EmptyDetectorShortArcZap_01_G: EmptyDetector
+	{
+		author="O&T Expansion Eden";
+		scope=2;
+		displayName="$STR_Globe_CfgNonAIVehicles_EmptyDetectorShortArcZap_01_G0";
+		class AttributeValues
+		{
+			size2[]={3,3};
+			size3[]={3,3,1.5};
+			text="$STR_Globe_CfgNonAIVehicles_EmptyDetectorShortArcZap_01_G1";
+			ActivationBy="ANY";
+			repeatable=1;
+			isServerOnly=0;
+			onActivation="thisTrigger spawn expEden_fnc_shortArcZap;";
+			triggerInterval=0.75;
+		};
+	};
+	class EmptyDetectorRazorWire_01_G: EmptyDetector
+	{
+		author="O&T Expansion Eden";
+		scope=2;
+		displayName="$STR_Globe_CfgNonAIVehicles_EmptyDetectorRazorWire_01_G0";
+		class AttributeValues
+		{
+			size2[]={1,4};
+			size3[]={1,4,1.5};
+			isRectangle=1;
+			text="$STR_Globe_CfgNonAIVehicles_EmptyDetectorRazorWire_01_G1";
+			ActivationBy="ANY";
+			repeatable=1;
+			isServerOnly=0;
+			onActivation="thisTrigger spawn expEden_fnc_razorWireDamage;";
+			triggerInterval=0.25;
 		};
 	};
 };

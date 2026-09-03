@@ -10,6 +10,7 @@ class CfgPatches
 		requiredVersion=0.1;
 		units[]=
 		{
+			"Land_Razorwire_01_G",
 			"BagFence_couple",
 			"BagFence_couple_green"
 		};
@@ -18,6 +19,7 @@ class CfgPatches
 };
 class CfgVehicles
 {
+	class NonStrategic;
 	class Land_BagFence_End_F;
 	class BagFence_couple: Land_BagFence_End_F
 	{
@@ -99,6 +101,7 @@ class CfgVehicles
 	};
 	class BagFence_couple_green: BagFence_couple
 	{
+		author="O&T Expansion Eden";
 		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\BagFence_couple_green.jpg";
 		_generalMacro="BagFence_couple_green";
 		displayName="$STR_Globe_CfgVehicles_BagFence_couple_green0";
@@ -107,5 +110,43 @@ class CfgVehicles
 			"a3\structures_f_exp\military\fortifications\data\sandbag_01_green_co.paa"
 		};
 		editorCategory="EdCat_Structures_Tanoa";
+	};
+	class Land_Razorwire_01_G: NonStrategic
+	{
+		author="O&T Expansion Eden";
+		mapSize=8.46;
+		class SimpleObject
+		{
+			eden=0;
+			animate[]={};
+			hide[]={};
+			verticalOffset=0.755;
+			verticalOffsetWorld=0;
+			init="''";
+		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_Razorwire_F.jpg";
+		_generalMacro="Land_Razorwire_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Razorwire_01_G0";
+		model="\A3\Structures_F\Mil\Fortification\Razorwire_F.p3d";
+		icon="iconObject_4x1";
+		editorCategory="EdCat_Fences";
+		editorSubcategory="EdSubcat_Military";
+		vehicleClass="Fortifications";
+		destrType="DestructTent";
+		cost=100;
+		armor=100;
+		class EventHandlers
+		{
+			class Globe_rzrWreEH
+			{
+				postinit="(_this # 0) spawn expEden_fnc_razorWire;";
+			};
+		};
+		class AttributeValues
+		{
+			ObjectCollision=0;
+		};
 	};
 };

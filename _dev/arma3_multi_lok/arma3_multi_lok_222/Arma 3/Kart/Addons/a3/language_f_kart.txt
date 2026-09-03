@@ -1,0 +1,3 @@
+prefix=a3\language_f_kart\
+product=Arma 3
+version=151414

@@ -12,6 +12,10 @@ class CfgPatches
 		requiredVersion=0.1;
 		units[]=
 		{
+			"ModuleLoiteringMunition_01_G",
+			"ModuleLoiteringMunition_01_G_NATO",
+			"ModuleLoiteringMunition_01_G_CSAT",
+			"ModuleLoiteringMunition_01_G_AAF",
 			"ModuleSimpleObject_F",
 			"ModuleCreatePowerLine_01_G"
 		};
@@ -426,6 +430,97 @@ class CfgVehicles
 				"All"
 			};
 		};
+	};
+	class ModuleLoiteringMunition_01_G: Module_F
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="ModuleLoiteringMunition_01_G";
+		scope=2;
+		scopeCurator=0;
+		isGlobal=0;
+		isTriggerActivated=1;
+		category="Effects";
+		displayName="$STR_Globe_CfgVehicles_ModuleLoiteringMunition_01_G0";
+		icon="\a3\drones_f\air_f_gamma\uav_02\data\ui\map_uav_02_ca.paa";
+		portrait="\a3\drones_f\air_f_gamma\uav_02\data\ui\map_uav_02_ca.paa";
+		function="expEden_fnc_moduleLoiteringMunition";
+		curatorCost=4;
+		class Arguments
+		{
+			class Type
+			{
+				displayName="$STR_A3_CfgVehicles_ModuleOrdnance_F_Arguments_Type";
+				description="";
+				typeName="NUMBER";
+				class values
+				{
+					class NATO
+					{
+						name="$STR_A3_CFGFACTIONCLASSES_BLU_F0";
+						value=0;
+						default=1;
+					};
+					class CSAT
+					{
+						name="$STR_A3_CFGFACTIONCLASSES_OPF_F0";
+						value=1;
+					};
+					class AAF
+					{
+						name="$STR_A3_CFGFACTIONCLASSES_IND_F0";
+						value=2;
+					};
+				};
+			};
+		};
+		class ModuleDescription: ModuleDescription
+		{
+			description="$STR_Globe_CfgVehicles_ModuleLoiteringMunition_01_G_ModuleDescription0";
+			position=1;
+			direction=1;
+			class __DummyDescClass
+			{
+			};
+		};
+	};
+	class ModuleLoiteringMunition_01_G_NATO: ModuleLoiteringMunition_01_G
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="ModuleLoiteringMunition_01_G_NATO";
+		scope=1;
+		scopeCurator=2;
+		simulation="house";
+		category="Ordnance";
+		displayName="$STR_Globe_CfgVehicles_ModuleLoiteringMunition_01_G_NATO0";
+		function="expEden_fnc_moduleLoiteringMunitionNATO";
+		delete Arguments;
+		model="\A3\data_f\force.p3d";
+	};
+	class ModuleLoiteringMunition_01_G_CSAT: ModuleLoiteringMunition_01_G
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="ModuleLoiteringMunition_01_G_CSAT";
+		scope=1;
+		scopeCurator=2;
+		simulation="house";
+		category="Ordnance";
+		displayName="$STR_Globe_CfgVehicles_ModuleLoiteringMunition_01_G_CSAT0";
+		function="expEden_fnc_moduleLoiteringMunitionCSAT";
+		delete Arguments;
+		model="\A3\data_f\force.p3d";
+	};
+	class ModuleLoiteringMunition_01_G_AAF: ModuleLoiteringMunition_01_G
+	{
+		author="O&T Expansion Eden";
+		_generalMacro="ModuleLoiteringMunition_01_G_AAF";
+		scope=1;
+		scopeCurator=2;
+		simulation="house";
+		category="Ordnance";
+		displayName="$STR_Globe_CfgVehicles_ModuleLoiteringMunition_01_G_AAF0";
+		function="expEden_fnc_moduleLoiteringMunitionAAF";
+		delete Arguments;
+		model="\A3\data_f\force.p3d";
 	};
 };
 class CivilianPresence_Presets

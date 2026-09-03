@@ -66,8 +66,8 @@ class CfgVehicles
 				displayName="$STR_Globe_Land_PortableCabinet_01_bookcase_base_F_Attributes_RandomDrawers";
 				tooltip="$STR_Globe_Land_PortableCabinet_01_bookcase_base_F_Attributes_RandomDrawers_Tooltip";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this call compile preprocessFileLineNumbers '\A3\Props_F_Globe\Furniture\scripts\randomize_drawers.sqf'}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call compile preprocessFileLineNumbers '\A3\Props_F_Globe\Furniture\scripts\randomize_drawers.sqf'}";
 			};
 		};
 	};

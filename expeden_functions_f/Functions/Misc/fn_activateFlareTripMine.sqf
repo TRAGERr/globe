@@ -1,11 +1,10 @@
 params["_object","","","_pos","","","_ammo"];
 
-private _future = time + 2.1;
-waitUntil {time >= _future};
+private _sparks	= createVehicle ["Particle_TrainingMineEffect_F", [0,0,0], [], 0, "CAN_COLLIDE"];
+_sparks	setPosATL _pos;
 
-private _sparks = "Particle_TrainingMineEffect_F" createVehicle _pos;
-private _flare = createVehicle ["F_TripWireMine_Red", [0,0,0], [], 0, "CAN_COLLIDE"];
-private _posATL = (_pos vectorAdd [0.03,+0.1,-(_pos # 2)]);
+private _flare	= createVehicle ["F_40mm_Red_Illumination", [0,0,0], [], 0, "CAN_COLLIDE"];
+private _posATL	= (_pos vectorAdd [0.03,+0.1,-(_pos # 2)]);
 _flare setPosATL (_posATL vectorAdd [0,0,0.4]);
 _flare setVelocity [(random [-11,0,11]),(random [-11,0,11]), 50];
 
@@ -25,7 +24,7 @@ _flareFallSound attachTo [_flare];
 		"a3\sounds_f_orange\vehicles\air\uav_06\uav_6_deminedrone_bomb_whistle.wss",
 		(_this # 0),
 		false,
-		(_this # 1),
+		ATLToASL (_this # 1),
 		0.70000001,
 		1,
 		400,
@@ -40,7 +39,7 @@ _flareFallSound attachTo [_flare];
 		format ["a3\sounds_f_orange\arsenal\explosives\trainingmine\trainingmine_whistle_0%1.wss", ceil random 6],
 		(_this # 0),
 		false,
-		(_this # 1),
+		ATLToASL (_this # 1),
 		5,
 		1,
 		200,

@@ -1,0 +1,3 @@
+prefix=a3\languagemissions_f\
+product=Arma 3
+version=151415

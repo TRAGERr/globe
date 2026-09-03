@@ -100,8 +100,28 @@ class CfgVehicles
 				displayName="$STR_a3_rscdisplayarsenal_buttonrandom";
 				property="NumberHull_random";
 				control="CheckboxStateReversed";
-				defaultValue="false";
-				expression="if (_value) then {_this call expEden_fnc_fighterRandomHullNumber}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this call expEden_fnc_fighterRandomHullNumber}";
+			};
+		};
+		class UserActions
+		{
+			class Plane_Fighter_01_Eject;
+			class Plane_Fighter_01_tailhook_down: Plane_Fighter_01_Eject
+			{
+				statement="this animate ['tailhook',0]; this animate ['tailhook_door_l',0]; this animate ['tailhook_door_r',0]; this SetUserMFDvalue [4,1]; [this] spawn BIS_fnc_AircraftTailhook; [ [this], { params ['_veh']; if (player in _veh) then { playSound 'Plane_Fighter_01_tailhook_down_sound'} else { _veh say3D ['Plane_Fighter_01_tailhook_down_sound', 100, 1, false]; }; }] remoteExec ['spawn', 0];";
+			};
+			class Plane_Fighter_01_tailhook_up: Plane_Fighter_01_tailhook_down
+			{
+				statement="this animate ['tailhook',1]; this animate ['tailhook_door_l',1]; this animate ['tailhook_door_r',1]; this SetUserMFDvalue [4,0]; [ [this], { params ['_veh']; if (player in _veh) then { playSound 'Plane_Fighter_01_tailhook_up_sound'; } else { _veh say3D ['Plane_Fighter_01_tailhook_up_sound', 100, 1, false]; }; } ] remoteExec ['spawn', 0];";
+			};
+			class Plane_Fighter_01_fold_wings: Plane_Fighter_01_Eject
+			{
+				statement="this animate ['wing_fold_l',1]; this animate ['wing_fold_r',1]; this animate ['wing_fold_cover_l',1]; this animate ['wing_fold_cover_r',1]; [this, ['Plane_Fighter_01_foldwing_sound', 150, 1, 0, 0, false]] remoteExecCall ['say3D'];";
+			};
+			class Plane_Fighter_01_unfold_wings: Plane_Fighter_01_fold_wings
+			{
+				statement="this animate ['wing_fold_l',0]; this animate ['wing_fold_r',0]; this animate ['wing_fold_cover_l',0]; this animate ['wing_fold_cover_r',0]; [this, ['Plane_Fighter_01_foldwing_sound', 150, 1, 0, 0, false]] remoteExecCall ['say3D'];";
 			};
 		};
 	};

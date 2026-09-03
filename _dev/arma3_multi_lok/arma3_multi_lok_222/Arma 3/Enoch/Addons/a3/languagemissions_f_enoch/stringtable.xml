@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?><Project name="Contact">
+  <Package name="Languagemissions_Enoch">
+    <Container name="MPMissions" dialogName="Missions">
+      <Container name="MP_ZGM_m16" dialogName="Missions">
+        <Key ID="STR_A3_C_CfgMissions_MPMissions_MP_ZGM_m16_WEST">
+          <Original>Zeus 16+2 Master Livonia (NATO)</Original>
+          <English>Zeus 16+2 Master Livonia (NATO)</English>
+          <Czech>Zeus 16+2 Master Livonia (NATO)</Czech>
+          <German>Zeus 16+2 Master Livonia (NATO)</German>
+          <Russian>Zeus 16+2 Master Livonia (НАТО)</Russian>
+          <Polish>Zeus 16+2 Master Livonia (NATO)</Polish>
+          <Hungarian>Zeus 16+2 Master Livonia (NATO)</Hungarian>
+          <Italian>Zeus 16+2 Master Livonia (NATO)</Italian>
+          <Spanish>Zeus 16+2 Master Livonia (OTAN)</Spanish>
+          <French>Zeus 16+2 Master Livonia (OTAN)</French>
+          <Chinese>Zeus 16+2 Master Livonia（NATO）</Chinese>
+          <Japanese>Zeus 16+2 Master Livonia (NATO)</Japanese>
+          <Korean>Zeus 16+2 Master Livonia (NATO)</Korean>
+          <Portuguese>Zeus 16+2 Master Livonia (OTAN)</Portuguese>
+          <Chinesesimp>Zeus 16+2 Master Livonia (NATO)</Chinesesimp>
+          <Turkish>Zeus 16+2 Master Livonia (NATO)</Turkish>
+          <Latin>Zeus 16+2 Master Livonia (NATO)</Latin>
+          <Bulgarian>Zeus 16+2 Master Livonia (NATO)</Bulgarian>
+          <Slovak>Zeus 16+2 Master Livonia (NATO)</Slovak>
+          <Ukrainian>Zeus 16+2 Master Livonia (NATO)</Ukrainian>
+        </Key>
+        <Key ID="STR_A3_C_moduleMPTypeGameMaster_onLoadName_Enoch">
+          <Original>Master Livonia</Original>
+          <English>Master Livonia</English>
+          <Czech>Master Livonia</Czech>
+          <German>Master Livonia</German>
+          <Russian>Master Livonia</Russian>
+          <Polish>Master Livonia</Polish>
+          <Hungarian>Master Livonia</Hungarian>
+          <Italian>Master Livonia</Italian>
+          <Spanish>Master Livonia</Spanish>
+          <French>Master Livonia</French>
+          <Chinese>Master Livonia</Chinese>
+          <Japanese>Master Livonia</Japanese>
+          <Korean>Master Livonia</Korean>
+          <Portuguese>Master Livonia</Portuguese>
+          <Chinesesimp>Master Livonia</Chinesesimp>
+          <Turkish>Master Livonia</Turkish>
+          <Latin>Master Livonia</Latin>
+          <Bulgarian>Master Livonia</Bulgarian>
+          <Slovak>Master Livonia</Slovak>
+          <Ukrainian>Master Livonia</Ukrainian>
+        </Key>
+        <Key ID="STR_A3_C_CfgMissions_MPMissions_MP_ZGM_m16">
+          <Original>Zeus 48+2 Master Livonia</Original>
+          <English>Zeus 48+2 Master Livonia</English>
+          <Czech>Zeus 48+2 Master Livonia</Czech>
+          <German>Zeus 48+2 Master Livonia</German>
+          <Russian>Zeus 48+2 Master Livonia</Russian>
+          <Polish>Zeus 48+2 Master Livonia</Polish>
+          <Hungarian>Zeus 48+2 Master Livonia</Hungarian>
+          <Italian>Zeus 48+2 Master Livonia</Italian>
+          <Spanish>Zeus 48+2 Master Livonia</Spanish>
+          <French>Zeus 48+2 Master Livonia</French>
+          <Chinese>Zeus 48+2 Master Livonia</Chinese>
+          <Japanese>Zeus 48+2 Master Livonia</Japanese>
+          <Korean>Zeus 48+2 Master Livonia</Korean>
+          <Portuguese>Zeus 48+2 Master Livonia</Portuguese>
+          <Chinesesimp>Zeus 48+2 Master Livonia</Chinesesimp>
+          <Turkish>Zeus 48+2 Master Livonia</Turkish>
+          <Latin>Zeus 48+2 Master Livonia</Latin>
+          <Bulgarian>Zeus 48+2 Master Livonia</Bulgarian>
+          <Slovak>Zeus 48+2 Master Livonia</Slovak>
+          <Ukrainian>Zeus 48+2 Master Livonia</Ukrainian>
+        </Key>
+        <Key ID="STR_A3_C_CfgMissions_MPMissions_MP_ZGM_m16_EAST">
+          <Original>Zeus 16+2 Master Livonia (CSAT)</Original>
+          <English>Zeus 16+2 Master Livonia (CSAT)</English>
+          <Czech>Zeus 16+2 Master Livonia (CSAT)</Czech>
+          <German>Zeus 16+2 Master Livonia (CSAT)</German>
+          <Russian>Zeus 16+2 Master Livonia (CSAT)</Russian>
+          <Polish>Zeus 16+2 Master Livonia (CSAT)</Polish>
+          <Hungarian>Zeus 16+2 Master Livonia (CSAT)</Hungarian>
+          <Italian>Zeus 16+2 Master Livonia (CSAT)</Italian>
+          <Spanish>Zeus 16+2 Master Livonia (CSAT)</Spanish>
+          <French>Zeus 16+2 Master Livonia (CSAT)</French>
+          <Chinese>Zeus 16+2 Master Livonia（CSAT）</Chinese>
+          <Japanese>Zeus 16+2 Master Livonia (CSAT)</Japanese>
+          <Korean>Zeus 16+2 Master Livonia (CSAT)</Korean>
+          <Portuguese>Zeus 16+2 Master Livonia (CSAT)</Portuguese>
+          <Chinesesimp>Zeus 16+2 Master Livonia (CSAT)</Chinesesimp>
+          <Turkish>Zeus 16+2 Master Livonia (CSAT)</Turkish>
+          <Latin>Zeus 16+2 Master Livonia (CSAT)</Latin>
+          <Bulgarian>Zeus 16+2 Master Livonia (CSAT)</Bulgarian>
+          <Slovak>Zeus 16+2 Master Livonia (CSAT)</Slovak>
+          <Ukrainian>Zeus 16+2 Master Livonia (CSAT)</Ukrainian>
+        </Key>
+        <Key ID="STR_A3_C_CfgMissions_MPMissions_MP_ZGM_m16_GUER">
+          <Original>Zeus 16+2 Master Livonia (LDF)</Original>
+          <English>Zeus 16+2 Master Livonia (LDF)</English>
+          <Czech>Zeus 16+2 Master Livonia (LDF)</Czech>
+          <German>Zeus 16+2 Master Livonia (LDF)</German>
+          <Russian>Zeus 16+2 Master Livonia (ВСЛ)</Russian>
+          <Polish>Zeus 16+2 Master Livonia (LDF)</Polish>
+          <Hungarian>Zeus 16+2 Master Livonia (LDF)</Hungarian>
+          <Italian>Zeus 16+2 Master Livonia (LDF)</Italian>
+          <Spanish>Zeus 16+2 Master Livonia (LDF)</Spanish>
+          <French>Zeus 16+2 Master Livonia (LDF)</French>
+          <Chinese>Zeus 16+2 Master Livonia（LDF）</Chinese>
+          <Japanese>Zeus 16+2 Master Livonia (LDF)</Japanese>
+          <Korean>Zeus 16+2 Master Livonia (LDF)</Korean>
+          <Portuguese>Zeus 16+2 Master Livonia (FDL)</Portuguese>
+          <Chinesesimp>Zeus 16+2 Master Livonia (LDF)</Chinesesimp>
+          <Turkish>Zeus 16+2 Master Livonia (LDF)</Turkish>
+          <Latin>Zeus 16+2 Master Livonia (LDF)</Latin>
+          <Bulgarian>Zeus 16+2 Master Livonia (LDF)</Bulgarian>
+          <Slovak>Zeus 16+2 Master Livonia (LDF)</Slovak>
+          <Ukrainian>Zeus 16+2 Master Livonia (LDF)</Ukrainian>
+        </Key>
+      </Container>
+    </Container>
+    <Container name="Warlords">
+      <Key ID="STR_A3_C_WL_scenario_name_enoch">
+        <Original>SC 24 Warlords</Original>
+        <English>SC 24 Warlords</English>
+        <Czech>SC 24 Warlords</Czech>
+        <German>SC 24 Warlords</German>
+        <Russian>SC 24 Warlords</Russian>
+        <Polish>SC 24 Warlords</Polish>
+        <Hungarian>SC 24 Warlords</Hungarian>
+        <Italian>SC 24 Warlords</Italian>
+        <Spanish>SC 24 Warlords</Spanish>
+        <French>SC 24 Warlords</French>
+        <Chinese>SC 24 Warlords</Chinese>
+        <Japanese>SC 24 Warlords</Japanese>
+        <Korean>SC 24 Warlords</Korean>
+        <Portuguese>SC 24 Warlords</Portuguese>
+        <Chinesesimp>SC 24 Warlords</Chinesesimp>
+        <Turkish>SC 24 Warlords</Turkish>
+        <Latin>SC 24 Warlords</Latin>
+        <Bulgarian>SC 24 Warlords</Bulgarian>
+        <Slovak>SC 24 Warlords</Slovak>
+        <Ukrainian>SC 24 Warlords</Ukrainian>
+      </Key>
+    </Container>
+    <Container name="CombatPatrol">
+      <Key ID="str_a3_c_cp_enoch_location_9">
+        <Original>Topolin (South)</Original>
+        <English>Topolin (South)</English>
+        <Czech>Topolin (jih)</Czech>
+        <German>Topolin (Süden)</German>
+        <Russian>Тополин (Юг)</Russian>
+        <Polish>Topolin (południe)</Polish>
+        <Hungarian>Topolin (Dél)</Hungarian>
+        <Italian>Topolin (sud)</Italian>
+        <Spanish>Topolin (sur)</Spanish>
+        <French>Topolin (sud)</French>
+        <Chinese>托普林（南）</Chinese>
+        <Japanese>トポリン（南）</Japanese>
+        <Korean>토폴린 (남부)</Korean>
+        <Portuguese>Topolin (sul)</Portuguese>
+        <Chinesesimp>Topolin（南）</Chinesesimp>
+        <Turkish>Topolin (Güney)</Turkish>
+        <Latin>Topolin (Meridies)</Latin>
+        <Bulgarian>Тополин (Юг)</Bulgarian>
+        <Slovak>Topolin (Juh)</Slovak>
+        <Ukrainian>Тополін (Південь)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_8">
+        <Original>Topolin (East)</Original>
+        <English>Topolin (East)</English>
+        <Czech>Topolin (východ)</Czech>
+        <German>Topolin (Osten)</German>
+        <Russian>Тополин (Восток)</Russian>
+        <Polish>Topolin (wschód)</Polish>
+        <Hungarian>Topolin (Kelet)</Hungarian>
+        <Italian>Topolin (est)</Italian>
+        <Spanish>Topolin (este)</Spanish>
+        <French>Topolin (est)</French>
+        <Chinese>托普林（東）</Chinese>
+        <Japanese>トポリン（東）</Japanese>
+        <Korean>토폴린 (동부)</Korean>
+        <Portuguese>Topolin (leste)</Portuguese>
+        <Chinesesimp>Topolin（东）</Chinesesimp>
+        <Turkish>Topolin (Doğu)</Turkish>
+        <Latin>Topolin (Oriens)</Latin>
+        <Bulgarian>Тополин (Изток)</Bulgarian>
+        <Slovak>Topolin (Východ)</Slovak>
+        <Ukrainian>Тополін (Схід)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_7">
+        <Original>Topolin (West)</Original>
+        <English>Topolin (West)</English>
+        <Czech>Topolin (západ)</Czech>
+        <German>Topolin (Westen)</German>
+        <Russian>Тополин (Запад)</Russian>
+        <Polish>Topolin (zachód)</Polish>
+        <Hungarian>Topolin (Nyugat)</Hungarian>
+        <Italian>Topolin (ovest)</Italian>
+        <Spanish>Topolin (oeste)</Spanish>
+        <French>Topolin (ouest)</French>
+        <Chinese>托普林（西）</Chinese>
+        <Japanese>トポリン（西）</Japanese>
+        <Korean>토폴린 (서부)</Korean>
+        <Portuguese>Topolin (oeste)</Portuguese>
+        <Chinesesimp>Topolin（西）</Chinesesimp>
+        <Turkish>Topolin (Batı)</Turkish>
+        <Latin>Topolin (Occidens)</Latin>
+        <Bulgarian>Тополин (Запад)</Bulgarian>
+        <Slovak>Topolin (Západ)</Slovak>
+        <Ukrainian>Тополін (Захід)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_5">
+        <Original>Lembork (East)</Original>
+        <English>Lembork (East)</English>
+        <Czech>Lembork (východ)</Czech>
+        <German>Lembork (Osten)</German>
+        <Russian>Лемборк (Восток)</Russian>
+        <Polish>Lembork (wschód)</Polish>
+        <Hungarian>Lembork (Kelet)</Hungarian>
+        <Italian>Lembork (est)</Italian>
+        <Spanish>Lembork (este)</Spanish>
+        <French>Lembork (est)</French>
+        <Chinese>雷伯克（東）</Chinese>
+        <Japanese>レンボルク（東）</Japanese>
+        <Korean>렘보크 (동부)</Korean>
+        <Portuguese>Lembork (leste)</Portuguese>
+        <Chinesesimp>Lembork（东）</Chinesesimp>
+        <Turkish>Lembork (Doğu)</Turkish>
+        <Latin>Lembork (Oriens)</Latin>
+        <Bulgarian>Лемборк (Изток)</Bulgarian>
+        <Slovak>Lembork (Východ)</Slovak>
+        <Ukrainian>Лемборк (Схід)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_4">
+        <Original>Lembork (West)</Original>
+        <English>Lembork (West)</English>
+        <Czech>Lembork (západ)</Czech>
+        <German>Lembork (Westen)</German>
+        <Russian>Лемборк (Запад)</Russian>
+        <Polish>Lembork (zachód)</Polish>
+        <Hungarian>Lembork (Nyugat)</Hungarian>
+        <Italian>Lembork (ovest)</Italian>
+        <Spanish>Lembork (oeste)</Spanish>
+        <French>Lembork (ouest)</French>
+        <Chinese>雷伯克（西）</Chinese>
+        <Japanese>レンボルク（西）</Japanese>
+        <Korean>렘보크 (서부)</Korean>
+        <Portuguese>Lembork (oeste)</Portuguese>
+        <Chinesesimp>Lembork（西）</Chinesesimp>
+        <Turkish>Lembork (Batı)</Turkish>
+        <Latin>Lembork (Occidens)</Latin>
+        <Bulgarian>Лемборк (Запад)</Bulgarian>
+        <Slovak>Lembork (Západ)</Slovak>
+        <Ukrainian>Лемборк (Захід)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_3">
+        <Original>Factory (Sitnik)</Original>
+        <English>Factory (Sitnik)</English>
+        <Czech>Továrna (Sitnik)</Czech>
+        <German>Fabrik (Sitnik)</German>
+        <Russian>Фабрика (Ситник)</Russian>
+        <Polish>Fabryka (Sitnik)</Polish>
+        <Hungarian>Gyár (Sitnik)</Hungarian>
+        <Italian>Fabbrica (Sitnik)</Italian>
+        <Spanish>Fábrica (Sitnik)</Spanish>
+        <French>Usine (Sitnik)</French>
+        <Chinese>工廠（錫特尼科）</Chinese>
+        <Japanese>工場（シートニク）</Japanese>
+        <Korean>공장 (시트닉)</Korean>
+        <Portuguese>Fábrica (Sitnik)</Portuguese>
+        <Chinesesimp>工厂 (Sitnik)</Chinesesimp>
+        <Turkish>Fabrika (Sitnik)</Turkish>
+        <Latin>Officina (Sitnik)</Latin>
+        <Bulgarian>Фабрика (Ситник)</Bulgarian>
+        <Slovak>Továreň (Sitnik)</Slovak>
+        <Ukrainian>Завод (Ситник)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_11">
+        <Original>Topolin (Central)</Original>
+        <English>Topolin (Central)</English>
+        <Czech>Topolin (střed)</Czech>
+        <German>Topolin (Zentrum)</German>
+        <Russian>Тополин (Центр)</Russian>
+        <Polish>Topolin (centrum)</Polish>
+        <Hungarian>Topolin (Központ)</Hungarian>
+        <Italian>Topolin (centrale)</Italian>
+        <Spanish>Topolin (central)</Spanish>
+        <French>Topolin (centre)</French>
+        <Chinese>托普林（中央）</Chinese>
+        <Japanese>トポリン（中央）</Japanese>
+        <Korean>토폴린 (중부)</Korean>
+        <Portuguese>Topolin (central)</Portuguese>
+        <Chinesesimp>Topolin（中部）</Chinesesimp>
+        <Turkish>Topolin (Merkez)</Turkish>
+        <Latin>Topolin (Media)</Latin>
+        <Bulgarian>Тополин (Център)</Bulgarian>
+        <Slovak>Topolin (Centrum)</Slovak>
+        <Ukrainian>Тополін (Центр)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_10">
+        <Original>Topolin (Farm)</Original>
+        <English>Topolin (Farm)</English>
+        <Czech>Topolin (hospodářství)</Czech>
+        <German>Topolin (Farm)</German>
+        <Russian>Тополин (Ферма)</Russian>
+        <Polish>Topolin (gospodarstwo)</Polish>
+        <Hungarian>Topolin (Tanya)</Hungarian>
+        <Italian>Topolin (fattoria)</Italian>
+        <Spanish>Topolin (granja)</Spanish>
+        <French>Topolin (ferme)</French>
+        <Chinese>托普林（農場）</Chinese>
+        <Japanese>トポリン（農場）</Japanese>
+        <Korean>토폴린 (농장)</Korean>
+        <Portuguese>Topolin (fazenda)</Portuguese>
+        <Chinesesimp>Topolin（农场）</Chinesesimp>
+        <Turkish>Topolin (Çiftlik)</Turkish>
+        <Latin>Topolin (Villa Rustica)</Latin>
+        <Bulgarian>Тополин (Ферма)</Bulgarian>
+        <Slovak>Topolin (Farma)</Slovak>
+        <Ukrainian>Тополін (Ферма)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_1">
+        <Original>Radar Base</Original>
+        <English>Radar Base</English>
+        <Czech>Radarová základna</Czech>
+        <German>Radarbasis</German>
+        <Russian>База с РЛС</Russian>
+        <Polish>Baza radarowa</Polish>
+        <Hungarian>Radarbázis</Hungarian>
+        <Italian>Base radar</Italian>
+        <Spanish>Base del radar</Spanish>
+        <French>Complexe radar</French>
+        <Chinese>雷達基地</Chinese>
+        <Japanese>レーダー基地</Japanese>
+        <Korean>레이더 기지</Korean>
+        <Portuguese>Base do radar</Portuguese>
+        <Chinesesimp>雷达基地</Chinesesimp>
+        <Turkish>Radar Üssü</Turkish>
+        <Latin>Statio Radiolocatoria</Latin>
+        <Bulgarian>Радарна база</Bulgarian>
+        <Slovak>Radarová základňa</Slovak>
+        <Ukrainian>Радарна база</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_12">
+        <Original>Gieraltów (East)</Original>
+        <English>Gieraltów (East)</English>
+        <Czech>Gieraltów (východ)</Czech>
+        <German>Gieraltów (Osten)</German>
+        <Russian>Гиральтов (Восток)</Russian>
+        <Polish>Gieraltów (wschód)</Polish>
+        <Hungarian>Gieraltów (Kelet)</Hungarian>
+        <Italian>Gieraltów (est)</Italian>
+        <Spanish>Gieraltów (este)</Spanish>
+        <French>Gieraltów (est)</French>
+        <Chinese>傑洛圖（東）</Chinese>
+        <Japanese>ギエラルトゥフ（東）</Japanese>
+        <Korean>지에랄토프 (동부)</Korean>
+        <Portuguese>Gieraltów (leste)</Portuguese>
+        <Chinesesimp>Gieraltów（东）</Chinesesimp>
+        <Turkish>Gieraltów (Doğu)</Turkish>
+        <Latin>Gieraltów (Oriens)</Latin>
+        <Bulgarian>Гиералтув (Изток)</Bulgarian>
+        <Slovak>Gieraltów (Východ)</Slovak>
+        <Ukrainian>Гєралтув (Схід)</Ukrainian>
+      </Key>
+      <Key ID="str_a3_c_cp_enoch_location_13">
+        <Original>Gieraltów (West)</Original>
+        <English>Gieraltów (West)</English>
+        <Czech>Gieraltów (západ)</Czech>
+        <German>Gieraltów (Westen)</German>
+        <Russian>Гиральтов (Запад)</Russian>
+        <Polish>Gieraltów (zachód)</Polish>
+        <Hungarian>Gieraltów (Nyugat)</Hungarian>
+        <Italian>Gieraltów (ovest)</Italian>
+        <Spanish>Gieraltów (oeste)</Spanish>
+        <French>Gieraltów (ouest)</French>
+        <Chinese>傑洛圖（西）</Chinese>
+        <Japanese>ギエラルトゥフ（西）</Japanese>
+        <Korean>지에랄토프 (서부)</Korean>
+        <Portuguese>Gieraltów (oeste)</Portuguese>
+        <Chinesesimp>Gieraltów（西）</Chinesesimp>
+        <Turkish>Gieraltów (Batı)</Turkish>
+        <Latin>Gieraltów (Occidens)</Latin>
+        <Bulgarian>Гиералтув (Запад)</Bulgarian>
+        <Slovak>Gieraltów (Západ)</Slovak>
+        <Ukrainian>Гєралтув (Захід)</Ukrainian>
+      </Key>
+    </Container>
+    <Container name="Missions">
+      <Container name="Misc">
+        <Key ID="str_a3_c_campaign_overviewtext">
+          <Original>In a remote region of Livonia, NATO soldiers are presented with a mysterious event that will change the face of human history forever.</Original>
+          <English>In a remote region of Livonia, NATO soldiers are presented with a mysterious event that will change the face of human history forever.</English>
+          <Czech>V odlehlých končinách Livonie se vojáci NATO musí vypořádat se záhadnou událostí, která jednou provždy změní podobu lidských dějin.</Czech>
+          <German>In einer abgelegenen Region Livonias werden NATO-Soldaten Zeugen eines mysteriösen Vorfalls, der die Geschichte der Menschheit für immer verändern wird.</German>
+          <Russian>Солдаты батальона НАТО, развернутого в отдаленном регионе Ливонии, оказались в самом центре загадочного события, которое станет новой вехой в истории человечества.</Russian>
+          <Polish>Żołnierze NATO muszą zmierzyć się w odległym rejonie Liwonii z tajemniczym wydarzeniem, które na zawsze zmieni historię ludzkości.</Polish>
+          <Hungarian>Livónia egy távoli vidékén a NATO katonái egy rejtélyes eseménnyel szembesülnek, amely örökre megváltoztatja az emberi történelem menetét.</Hungarian>
+          <Italian>In una remota regione della Livonia, i soldati NATO si ritrovano alle prese con un evento misterioso che muterà per sempre il volto della storia dell’umanità.</Italian>
+          <Spanish>En una región remota de Livonia, los soldados de la OTAN se enfrentan a un evento misterioso que cambiará para siempre la historia de la humanidad.</Spanish>
+          <French>Dans une région reculée de la Livonie, les soldats de l'OTAN doivent faire face à un mystérieux événement, qui marquera à jamais l'histoire de l'humanité.</French>
+          <Chinese>NATO 士兵被派駐到里沃尼亞的偏遠地區，並在那裡目睹了足以改變人類歷史的神秘事件。</Chinese>
+          <Japanese>リヴォニアの辺境の地で、NATO の兵士達が人類の歴史を永久的に変えてしまう謎めいた出来事に巻き込まれていく。</Japanese>
+          <Korean>리보니아의 외딴 지역에서 NATO 병사들이 인류 역사를 영원히 뒤바꿔놓을 불가사의한 사건과 마주합니다.</Korean>
+          <Portuguese>Numa região remota da Livônia, os soldados da OTAN se deparam com um evento misterioso que mudará a face da história humana para sempre.</Portuguese>
+          <Chinesesimp>在利沃尼亚一处遥远的地区，NATO 士兵正面临着一个即将永远改变人类历史面貌的神秘事件。</Chinesesimp>
+          <Turkish>Livonia’nın uzak bir köşesinde, NATO askerleri insanlık tarihini sonsuza dek değiştirecek gizemli bir olayla karşı karşıya.</Turkish>
+          <Latin>In remota Livoniae regione, milites NATO cum arcano eventu occurrunt, qui faciem historiae humanae in perpetuum mutabit.</Latin>
+          <Bulgarian>В отдалечен район на Ливония войниците на НАТО се сблъскват със загадъчно събитие, което завинаги ще промени хода на човешката история.</Bulgarian>
+          <Slovak>V odľahlej oblasti Livónie sa vojaci NATO stretávajú so záhadnou udalosťou, ktorá navždy zmení tvár ľudských dejín.</Slovak>
+          <Ukrainian>У віддаленому регіоні Лівонії солдати НАТО стикаються із загадковою подією, яка назавжди змінить хід людської історії.</Ukrainian>
+        </Key>
+        <Key ID="str_a3_c_campaign_briefingname">
+          <Original>First Contact</Original>
+          <English>First Contact</English>
+          <Czech>První kontakt</Czech>
+          <German>Erstkontakt</German>
+          <Russian>Первый контакт</Russian>
+          <Polish>Pierwszy kontakt</Polish>
+          <Hungarian>Első kapcsolatfelvétel</Hungarian>
+          <Italian>Primo contatto</Italian>
+          <Spanish>Primer contacto</Spanish>
+          <French>Premier Contact</French>
+          <Chinese>第一次接觸</Chinese>
+          <Japanese>第一次接触</Japanese>
+          <Korean>최초의 접촉</Korean>
+          <Portuguese>Primeiro contato</Portuguese>
+          <Chinesesimp>第一次接触</Chinesesimp>
+          <Turkish>İlk Temas</Turkish>
+          <Latin>Primus Contactus</Latin>
+          <Bulgarian>Първи контакт</Bulgarian>
+          <Slovak>Prvý kontakt</Slovak>
+          <Ukrainian>Перший контакт</Ukrainian>
+        </Key>
+      </Container>
+    </Container>
+  </Package>
+</Project>

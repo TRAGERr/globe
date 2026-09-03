@@ -1,0 +1,1646 @@
+<?xml version="1.0" encoding="UTF-8"?><Project name="Arma3">
+  <Package name="Language_Decade">
+    <Container name="Data_F">
+      <Key ID="str_a3_cfgeditorsubcategories_edsubcat_space0">
+        <Original>Space</Original>
+        <Chinese>太空</Chinese>
+        <French>Espace</French>
+        <Spanish>Espacio</Spanish>
+        <Italian>Spazio</Italian>
+        <Hungarian>Világűr</Hungarian>
+        <Polish>Kosmos</Polish>
+        <Russian>Космос</Russian>
+        <German>Weltraum</German>
+        <Czech>Vesmír</Czech>
+        <English>Space</English>
+        <Portuguese>Espacial</Portuguese>
+        <Korean>우주</Korean>
+        <Chinesesimp>太空</Chinesesimp>
+        <Japanese>宇宙</Japanese>
+        <Turkish>Boşluk</Turkish>
+        <Latin>Spatium</Latin>
+        <Bulgarian>Космос</Bulgarian>
+        <Slovak>Vesmír</Slovak>
+        <Ukrainian>Космос</Ukrainian>
+      </Key>
+    </Container>
+    <Container name="Armor_F">
+      <Key ID="str_a3_cfgvehicles_mbt_02_railgun_base_f0">
+        <Original>T-100X Futura</Original>
+        <Chinese>T-100X Futura</Chinese>
+        <French>T-100X Futura</French>
+        <Spanish>T-100X Futura</Spanish>
+        <Italian>T-100X Futura</Italian>
+        <Hungarian>T-100X Futura</Hungarian>
+        <Polish>T-100X Futura</Polish>
+        <Russian>T-100X Futura</Russian>
+        <German>T-100X Futura</German>
+        <Czech>T-100X Futura</Czech>
+        <English>T-100X Futura</English>
+        <Portuguese>T-100X Futura</Portuguese>
+        <Korean>T-100X Futura</Korean>
+        <Chinesesimp>T-100X Futura</Chinesesimp>
+        <Japanese>T-100X Futura</Japanese>
+        <Turkish>T-100X Futura</Turkish>
+        <Latin>T-100X Futura</Latin>
+        <Bulgarian>T-100X Futura</Bulgarian>
+        <Slovak>T-100X Futura</Slovak>
+        <Ukrainian>T-100X Futura</Ukrainian>
+      </Key>
+      <Key ID="str_a3_cfgvehicles_mbt_02_railgun_base_library0">
+        <Original>Rapid advancements in fuel cell technology, power systems, and material sciences have allowed CSAT weapons engineers to scale a railgun system to fit on a Main Battle Tank. Previously only available as ship-based weapons, railguns are starting to bring unprecedented projectile velocities and range to tank crews. Field testing started by fitting the cannon onto the existing T-100 platform. Several significant drawbacks are still being assessed by the Shenlong Group, such as the enormous stresses on the barrel when firing, cooling issues, and capacitor charging.</Original>
+        <Chinese>燃料電池技術、動力系統和材料科學的進步，使 CSAT 工程師成功在主力戰車上裝載過往只能用於軍艦的磁軌砲系統，為戰車帶來前所未有的彈速和射程。初步測試使用現有的 T-100 平台；神龍集團正在改進現時的重大缺點，例如射擊對砲管的重大負荷、冷卻問題、及電容器充電問題。</Chinese>
+        <French>Grâce à des progrès dans les domaines de la pile à combustible, de l'alimentation électrique et de la science des matériaux, les ingénieurs du CSAT sont parvenus à monter un canon électrique sur leur char de combat. Après de premières applications en tant qu'armement naval, le canon électrique dote désormais la série des chars T-100 d'une vélocité et d'une portée de tir inégalées. Toutefois, l'équipe du Groupe Shenlong doit encore surmonter divers obstacles : contraintes énormes infligées au canon lors du tir, et problèmes de refroidissement et de recharge du condensateur.</French>
+        <Spanish>Los rápidos avances en tecnologías de celdas de combustible, sistemas de energía y ciencias de los materiales han permitido a los ingenieros armamentísticos del CSAT adaptar la escala de un sistema de cañón de riel para que quepa en un carro de combate. Los cañones de riel son armas que antes solo podían instalarse en naves y que ofrecen a las tripulaciones de tanques unos alcances y velocidades de proyectiles sin precedentes. Las pruebas de campo comenzaron con el montaje del cañón en la plataforma T-100 existente. El Grupo Shenlong aún está valorando diversos inconvenientes relevantes, como por ejemplo las enormes tensiones que soporta el cañón al disparar, los problemas de refrigeración y la carga del condensador.</Spanish>
+        <Italian>I rapidi progressi osservati nella tecnologia delle celle a combustibile, nei sistemi di alimentazione e nelle scienze dei materiali hanno reso possibile la realizzazione da parte degli ingegneri CSAT specializzati in armamenti di un cannone a rotaia, di dimensioni più contenute, per carro armato da combattimento. Anche gli equipaggi dei carri armati potranno beneficiare dell’impressionante velocità dei proiettili e della portata di queste armi, in precedenza utilizzate solamente a bordo delle navi. Dalle prove sul campo iniziate sull’esistente T-100 sono emersi alcuni considerevoli inconvenienti al vaglio del Gruppo Shenlong, quali l’ingente pressione sulla canna al momento dello sparo, problemi di raffreddamento e la carica del condensatore.</Italian>
+        <Hungarian>Az üzemanyagcella-technológia, az energiaellátó rendszerek és az anyagtudomány gyors fejlődése lehetővé tette a CSAT fegyverfejlesztő mérnökeinek, hogy egy sínágyúrendszert fő harckocsira méretezzenek. A korábban csak hajófegyverként alkalmazott sínágyúk példátlan lövedéksebességet és hatótávolságot kezdenek biztosítani a harckocsizó személyzeteknek. A terepi tesztelés a löveg meglévő T-100 platformra történő felszerelésével kezdődött. A Shenlong Group még mindig több jelentős hátrányt vizsgál, például a csőre tüzeléskor ható óriási igénybevételt, a hűtési problémákat és a kondenzátorok töltését.</Hungarian>
+        <Polish>Szybki rozwój technologii ogniw paliwowych, układów zasilania oraz inżynierii materiałowej umożliwiły konstruktorom uzbrojenia CSAT na wyposażenie czołgu podstawowego w działo kinetyczne. Ten rodzaj broni, stosowany dotychczas przez marynarkę, zapewnia załogom czołgów bezprecedensowy zasięg oraz prędkości pocisków. Testy polowe rozpoczęto od uzbrojenia w działko dotychczasowej platformy T-100. Grupa Shenlong wciąż pracuje nad rozwiązaniem wielu istotnych mankamentów technologii, w tym olbrzymich przeciążeń lufy podczas wystrzału, problemu chłodzenia, jak i ładowania kondensatorów.</Polish>
+        <Russian>Быстрый прогресс в области технологий топливных элементов, энергетических систем и материалов позволил оружейным инженерам CSAT адаптировать систему рельсотрона для установки на основной боевой танк. Рельсотроны, которые ранее были доступны только в качестве корабельного оружия, теперь обеспечивают экипажам танков беспрецедентную скорость и дальность полета снарядов. Полевые испытания начались с установки орудия на существующую платформу Т-100. Группа Shenlong все еще борется с рядом существенных недостатков, таких как огромные нагрузки на ствол при стрельбе, проблемы с охлаждением и зарядкой конденсаторов.</Russian>
+        <German>Rasante Fortschritte bei der Entwicklung von Treibstoffzellen, Stromversorgungssystemen sowie in der Materialforschung haben es den Waffeningenieuren von CSAT ermöglicht, ein Railgun-System auf einem Kampfpanzer zu montieren, das bis dato nur auf Schiffen zum Einsatz kam. Panzertrupps verfügen daher jetzt über nie dagewesene Projektilgeschwindigkeiten und Reichweite. Erste Feldversuche wurden durchgeführt, indem die Railgun auf der bestehenden T-100-Plattform montiert wurde. Die Shenlong Group wertet aktuell noch eine Reihe wesentlicher Mankos aus, wie die enorme mechanische Beanspruchung des Kanonenlaufs und Schwierigkeiten bei der Kühlung sowie bei der Ladung des Kondensators.</German>
+        <Czech>Díky rapidním pokrokům v technologiích palivových článků, napájecích systémů a materiálových vědách dokázali zbraňoví konstruktéři CSAT zvětšit elektromagnetická děla na velikost vhodnou pro hlavní bojové tanky. Zatímco dřív se EM děla využívala jen jako lodní zbraně, nově jimi můžou střílet nevídaně rychlé projektily i posádky tanků. Terénní zkoušky začaly upevněním děla na existující platformu T-100. Skupina Shenlong Group stále ještě ladí několik výrazných omezení, například enormní zatížení hlavně při palbě, problémy s chlazením nebo nabíjení kondenzátorů.</Czech>
+        <English>Rapid advancements in fuel cell technology, power systems, and material sciences have allowed CSAT weapons engineers to scale a railgun system to fit on a Main Battle Tank. Previously only available as ship-based weapons, railguns are starting to bring unprecedented projectile velocities and range to tank crews. Field testing started by fitting the cannon onto the existing T-100 platform. Several significant drawbacks are still being assessed by the Shenlong Group, such as the enormous stresses on the barrel when firing, cooling issues, and capacitor charging.</English>
+        <Portuguese>O rápido progresso tecnológico de células de combustível, sistemas de energia e ciências dos materiais permitiu que os engenheiros de armas da CSAT desenvolvessem um sistema de canhão de Gauss que cabe em um tanque de batalha principal. Antigamente disponíveis apenas para navios, essas armas estão começando a proporcionar alcances e velocidades sem precedentes para as tripulações de tanques. Os testes de campo começaram com a adaptação do canhão para o modelo disponível do T-100. Diversas limitações significativas ainda estão sendo avaliadas pelo Shenlong Group, como as grandes tensões exercidas no cano durante os disparos, problemas de resfriamento e o carregamento do capacitor.</Portuguese>
+        <Korean>연료 전지 기술, 동력 장치, 재료 과학의 급속한 발전 덕분에 CSAT 무기 엔지니어들은 레일건 시스템을 주 전투용 전차에 장착할 수 있게 되었습니다. 이전에는 함상 무기로만 활용되었던 레일건의 전례 없는 발사체 속도와 사거리를 전차 승무원도 경험할 수 있게 된 것입니다. 현장 테스트는 대포를 기존의 T-100 플랫폼에 장착하여 시작했습니다. Shenlong 그룹은 사격할 때 포신에 가해지는 엄청난 부담, 냉각 문제, 축전기 충전과 같은 몇 가지 심각한 결함을 발견했습니다.</Korean>
+        <Chinesesimp>由于在燃料电池技术、电力系统以及材料科技等方面的快速发展，使得 CSAT 武器工程师能够将电磁炮小型化，使其可安装在主战坦克上。电磁炮以前只能作为舰载武器使用；科技的进步使其为坦克组员带来前所未有的炮弹射速和射程。实地测试始于将电磁炮安装在现有的 T-100 平台上。神龙集团（Shenlong Group）仍在评估几个重大缺陷，比如开火时炮管承受的巨大压力、冷却问题以及电容器充电等等。</Chinesesimp>
+        <Japanese>燃料電池テクノロジー、 電力システム、物質科学の急速な発展により、CSAT の兵器技術者は主力戦車に搭載できるほどまでレールガンシステムを縮小させることができた。これまでは艦載兵器としてのみ利用可能だったレールガンの導入により、戦車の搭乗員は前例のない飛翔体速度と射程距離で戦えるようになる。実地テストは既存の T-100 プラットフォームに大砲を取り付けることから始まった。現在、発射時の銃身に対する膨大な負荷、冷却問題、コンデンサの充電など、大きな欠点がまだ複数見られるため、それを神龍グループが査定している。</Japanese>
+        <Turkish>Yakıt hücresi teknolojisinde, güç sistemlerinde ve malzeme biliminde yaşanan hızlı gelişimler CSAT silah mühendislerinin Muharebe Tanklarında kullanılabilecek boyutta bir elektromanyetik top üretmesine imkân tanıdı. Eskiden sadece gemilerde kullanılabilen bu toplar artık tank mürettebatına eşi benzeri görülmemiş bir mermi hızı ve menzil sağlıyor. Saha testi, topun mevcut bir T-100 platformuna monte edilmesiyle başlatıldı. Shenlong Grubu ateş sırasında namluda oluşan stres, soğutma sorunları ve kondansatör şarjı gibi bazı önemli eksiklikleri gözden geçirmeye devam ediyor.</Turkish>
+        <Latin>Celeres progressus in technologia cellularum combustibilium, rationibus energiae, et scientiis materiarum fecerunt ut machinatores armorum CSAT systema tormenti electromagnetici ad currum bellicum gravem aptare possent. Antehac tantum ut arma navalia praesto, tormenta electromagnetica iam incipiunt velocitates missilium et spatium sine exemplo turmis curruum afferre. Experimenta in campo coepta sunt tormento in iam exsistentem suggestum T-100 aptato. Complura incommoda gravia adhuc a Shenlong Group aestimantur, ut ingentes contentiones in canna cum ignitur, difficultates refrigerationis, et condensatorum oneratio.</Latin>
+        <Bulgarian>Бързият напредък в технологиите на горивните клетки, енергийните системи и материалознанието позволи на оръжейните инженери на CSAT да мащабират система за релсово оръдие така, че да се побере на основен боен танк. Достъпни преди само като корабни оръжия, релсовите оръдия започват да дават на танковите екипажи безпрецедентни скорости на снарядите и обсег. Полевите изпитания започнаха с монтирането на оръдието върху съществуващата платформа T-100. Няколко съществени недостатъка все още се оценяват от Shenlong Group, като огромните натоварвания върху цевта при стрелба, проблемите с охлаждането и зареждането на кондензаторите.</Bulgarian>
+        <Slovak>Rýchly pokrok v technológii palivových článkov, energetických systémoch a materiálových vedách umožnil zbrojným inžinierom CSAT zväčšiť systém koľajového dela tak, aby sa zmestil na hlavný bojový tank. Koľajové delá, ktoré boli predtým dostupné len ako lodné zbrane, začínajú tankovým posádkam prinášať bezprecedentnú rýchlosť striel a dostrel. Poľné skúšky sa začali osadením dela na existujúcu platformu T-100. Shenlong Group stále posudzuje niekoľko významných nevýhod, ako sú obrovské namáhanie hlavne pri streľbe, problémy s chladením a nabíjanie kondenzátorov.</Slovak>
+        <Ukrainian>Стрімкий прогрес у технологіях паливних елементів, енергосистемах і матеріалознавстві дозволив зброярам-інженерам CSAT масштабувати систему рейкотрону так, щоб її можна було встановити на основний бойовий танк. Раніше доступні лише як корабельне озброєння, рейкотрони починають надавати танковим екіпажам безпрецедентну швидкість і дальність польоту снарядів. Польові випробування почалися з встановлення гармати на наявну платформу T-100. Група Shenlong Group досі оцінює кілька суттєвих недоліків, зокрема величезні навантаження на ствол під час стрільби, проблеми з охолодженням і заряджанням конденсаторів.</Ukrainian>
+      </Key>
+    </Container>
+    <Container name="Weapons_F">
+      <Key ID="str_a3_cfgmagazines_60rnd_75mm_railgun_apfsds_mag0">
+        <Original>APFSDS-KE</Original>
+        <Chinese>APFSDS-KE</Chinese>
+        <French>APFSDS-KE</French>
+        <Spanish>APFSDS-KE</Spanish>
+        <Italian>APFSDS-KE</Italian>
+        <Hungarian>APFSDS-KE</Hungarian>
+        <Polish>APFSDS-EK</Polish>
+        <Russian>БОПС-КЭ</Russian>
+        <German>APFSDS-KE</German>
+        <Czech>APFSDS-KE</Czech>
+        <English>APFSDS-KE</English>
+        <Portuguese>APFSDS-KE</Portuguese>
+        <Korean>APFSDS-KE</Korean>
+        <Chinesesimp>APFSDS-KE</Chinesesimp>
+        <Japanese>APFSDS-KE</Japanese>
+        <Turkish>APFSDS-KE</Turkish>
+        <Latin>APFSDS-KE</Latin>
+        <Bulgarian>APFSDS-KE</Bulgarian>
+        <Slovak>APFSDS-KE</Slovak>
+        <Ukrainian>APFSDS-KE</Ukrainian>
+      </Key>
+      <Key ID="str_a3_cannon_railgun0">
+        <Original>Railgun 75mm</Original>
+        <Chinese>75mm 磁軌砲</Chinese>
+        <French>Canon électrique 75 mm</French>
+        <Spanish>Cañón de riel 75 mm</Spanish>
+        <Italian>Cannone a rotaia 75 mm</Italian>
+        <Hungarian>75 mm-es sínágyú</Hungarian>
+        <Polish>Działo kinetyczne 75 mm</Polish>
+        <Russian>Рельсотрон, 75 мм</Russian>
+        <German>Railgun 75 mm</German>
+        <Czech>75mm EM dělo</Czech>
+        <English>Railgun 75mm</English>
+        <Portuguese>Canhão de Gauss 75mm</Portuguese>
+        <Korean>레일건 75mm</Korean>
+        <Chinesesimp>电磁炮 75 毫米</Chinesesimp>
+        <Japanese>レールガン 75mm</Japanese>
+        <Turkish>75mm Elektromanyetik Top</Turkish>
+        <Latin>Tormentum electromyli 75 mm</Latin>
+        <Bulgarian>Релсово оръдие 75 мм</Bulgarian>
+        <Slovak>Koľajové delo 75 mm</Slovak>
+        <Ukrainian>Рейкова гармата 75 мм</Ukrainian>
+      </Key>
+    </Container>
+    <Container name="Characters_F">
+      <Container name="Headgear">
+        <Key ID="str_a3_cfgweapons_h_cap_maldentours0">
+          <Original>Cap (Malden Tours)</Original>
+          <Chinese>帽子（Malden Tours）</Chinese>
+          <French>Casquette (Malden Tours)</French>
+          <Spanish>Gorra (Malden Tours)</Spanish>
+          <Italian>Berretto (Malden Tours)</Italian>
+          <Hungarian>Sapka (Malden Tours)</Hungarian>
+          <Polish>Czapka (Malden Tours)</Polish>
+          <Russian>Кепка (Malden Tours)</Russian>
+          <German>Kappe (Malden Tours)</German>
+          <Czech>Kšiltovka (Malden Tours)</Czech>
+          <English>Cap (Malden Tours)</English>
+          <Portuguese>Boné (Malden Tours)</Portuguese>
+          <Korean>모자 (Malden Tours)</Korean>
+          <Chinesesimp>帽子（Malden Tours）</Chinesesimp>
+          <Japanese>キャップ (Malden Tours)</Japanese>
+          <Turkish>Şapka (Malden Tours)</Turkish>
+          <Latin>Petasus (Malden Tours)</Latin>
+          <Bulgarian>Шапка с козирка (Malden Tours)</Bulgarian>
+          <Slovak>Šiltovka (Malden Tours)</Slovak>
+          <Ukrainian>Кепка (Malden Tours)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgweapons_h_cap_lyfe0">
+          <Original>Cap (Lyfe)</Original>
+          <Chinese>帽子（Lyfe）</Chinese>
+          <French>Casquette (Lyfe)</French>
+          <Spanish>Gorra (Lyfe)</Spanish>
+          <Italian>Berretto (Lyfe)</Italian>
+          <Hungarian>Sapka (Lyfe)</Hungarian>
+          <Polish>Czapka (Lyfe)</Polish>
+          <Russian>Кепка (Lyfe)</Russian>
+          <German>Kappe (Lyfe)</German>
+          <Czech>Kšiltovka (Lyfe)</Czech>
+          <English>Cap (Lyfe)</English>
+          <Portuguese>Boné (Lyfe)</Portuguese>
+          <Korean>모자 (Lyfe)</Korean>
+          <Chinesesimp>帽子（Lyfe）</Chinesesimp>
+          <Japanese>キャップ (Lyfe)</Japanese>
+          <Turkish>Şapka (Lyfe)</Turkish>
+          <Latin>Petasus (Lyfe)</Latin>
+          <Bulgarian>Шапка с козирка (Lyfe)</Bulgarian>
+          <Slovak>Šiltovka (Lyfe)</Slovak>
+          <Ukrainian>Кепка (Lyfe)</Ukrainian>
+        </Key>
+      </Container>
+      <Container name="Facewear">
+        <Key ID="str_a3_cfgglasses_g_bandanna_vampire_010">
+          <Original>Bandana (Vampire)</Original>
+          <Chinese>頭巾（Vampire）</Chinese>
+          <French>Bandana (vampire)</French>
+          <Spanish>Pañuelo (vampiro)</Spanish>
+          <Italian>Bandana (vampiro)</Italian>
+          <Hungarian>Bandana (vámpír)</Hungarian>
+          <Polish>Bandana (wampir)</Polish>
+          <Russian>Бандана (вампир)</Russian>
+          <German>Bandana (Vampir)</German>
+          <Czech>Šátek (upír)</Czech>
+          <English>Bandana (Vampire)</English>
+          <Portuguese>Bandana (Vampiro)</Portuguese>
+          <Korean>반다나 (뱀파이어)</Korean>
+          <Chinesesimp>头巾（吸血鬼）</Chinesesimp>
+          <Japanese>バンダナ (Vampire)</Japanese>
+          <Turkish>Bandana (Vampir)</Turkish>
+          <Latin>Bandana (vampyrus)</Latin>
+          <Bulgarian>Бандана (вампир)</Bulgarian>
+          <Slovak>Šatka (upír)</Slovak>
+          <Ukrainian>Бандана (вампір)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_syndikat20">
+          <Original>Bandana [Syndikat]</Original>
+          <Chinese>頭巾 [Syndikat]</Chinese>
+          <French>Bandana [Syndikat]</French>
+          <Spanish>Pañuelo (Syndikat)</Spanish>
+          <Italian>Bandana [Syndikat]</Italian>
+          <Hungarian>Bandana [Syndikat]</Hungarian>
+          <Polish>Bandana [Syndikat]</Polish>
+          <Russian>Бандана [Syndikat]</Russian>
+          <German>Bandana [Syndikat]</German>
+          <Czech>Šátek [Syndikat]</Czech>
+          <English>Bandana [Syndikat]</English>
+          <Portuguese>Bandana [Syndikat]</Portuguese>
+          <Korean>반다나 [Syndikat]</Korean>
+          <Chinesesimp>头巾 [Syndikat]</Chinesesimp>
+          <Japanese>バンダナ [Syndikat]</Japanese>
+          <Turkish>Bandana [Syndikat]</Turkish>
+          <Latin>Bandana [Syndikat]</Latin>
+          <Bulgarian>Бандана [Syndikat]</Bulgarian>
+          <Slovak>Šatka [Syndikat]</Slovak>
+          <Ukrainian>Бандана [Syndikat]</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_syndikat10">
+          <Original>Bandana (Skull) [Syndikat]</Original>
+          <Chinese>頭巾（骷髏） [Syndikat]</Chinese>
+          <French>Bandana (crâne) [Syndikat]</French>
+          <Spanish>Pañuelo (calavera, Syndikat)</Spanish>
+          <Italian>Bandana (teschio) [Syndikat]</Italian>
+          <Hungarian>Bandana (koponya) [Syndikat]</Hungarian>
+          <Polish>Bandana (czaszka) [Syndikat]</Polish>
+          <Russian>Бандана (череп) [Syndikat]</Russian>
+          <German>Bandana (Schädel) [Syndikat]</German>
+          <Czech>Šátek (lebka) [Syndikat]</Czech>
+          <English>Bandana (Skull) [Syndikat]</English>
+          <Portuguese>Bandana (Caveira) [Syndikat]</Portuguese>
+          <Korean>반다나 (해골) [Syndikat]</Korean>
+          <Chinesesimp>头巾（骷髅）[Syndikat]</Chinesesimp>
+          <Japanese>バンダナ（ドクロ） [Syndikat]</Japanese>
+          <Turkish>Bandana (Kuru Kafa) [Syndikat]</Turkish>
+          <Latin>Bandana (cranium) [Syndikat]</Latin>
+          <Bulgarian>Бандана (череп) [Syndikat]</Bulgarian>
+          <Slovak>Šatka (lebka) [Syndikat]</Slovak>
+          <Ukrainian>Бандана (череп) [Syndikat]</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_skull20">
+          <Original>Bandana (Skull, Ornamental)</Original>
+          <Chinese>頭巾（骷髏，裝飾用）</Chinese>
+          <French>Bandana (crâne, décoratif)</French>
+          <Spanish>Pañuelo (calavera, ornamental)</Spanish>
+          <Italian>Bandana (teschio, decorativa)</Italian>
+          <Hungarian>Bandana (koponya, díszes)</Hungarian>
+          <Polish>Bandana (czaszka, ozdobna)</Polish>
+          <Russian>Бандана (череп, орнамент)</Russian>
+          <German>Bandana (Schädel, Ornament)</German>
+          <Czech>Šátek (lebka, zdobená)</Czech>
+          <English>Bandana (Skull, Ornamental)</English>
+          <Portuguese>Bandana (Caveira, ornamental)</Portuguese>
+          <Korean>반다나 (해골, 장식용)</Korean>
+          <Chinesesimp>头巾（骷髅，装饰品）</Chinesesimp>
+          <Japanese>バンダナ（ドクロ、装飾用）</Japanese>
+          <Turkish>Bandana (Kuru Kafa, Dekoratif)</Turkish>
+          <Latin>Bandana (cranium, ornatum)</Latin>
+          <Bulgarian>Бандана (череп, орнаментален)</Bulgarian>
+          <Slovak>Šatka (lebka, zdobená)</Slovak>
+          <Ukrainian>Бандана (череп, орнаментальний)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_skull10">
+          <Original>Bandana (Skull)</Original>
+          <Chinese>頭巾（骷髏）</Chinese>
+          <French>Bandana (crâne)</French>
+          <Spanish>Pañuelo (calavera)</Spanish>
+          <Italian>Bandana (teschio)</Italian>
+          <Hungarian>Bandana (koponya)</Hungarian>
+          <Polish>Bandana (czaszka)</Polish>
+          <Russian>Бандана (череп)</Russian>
+          <German>Bandana (Schädel)</German>
+          <Czech>Šátek (lebka)</Czech>
+          <English>Bandana (Skull)</English>
+          <Portuguese>Bandana (Caveira)</Portuguese>
+          <Korean>반다나 (해골)</Korean>
+          <Chinesesimp>头巾（骷髅）</Chinesesimp>
+          <Japanese>バンダナ（ドクロ）</Japanese>
+          <Turkish>Bandana (Kuru Kafa)</Turkish>
+          <Latin>Bandana (cranium)</Latin>
+          <Bulgarian>Бандана (череп)</Bulgarian>
+          <Slovak>Šatka (lebka)</Slovak>
+          <Ukrainian>Бандана (череп)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_redflame10">
+          <Original>Bandana (Red Flames)</Original>
+          <Chinese>頭巾（紅焰）</Chinese>
+          <French>Bandana (flammes rouges)</French>
+          <Spanish>Pañuelo (llamas rojas)</Spanish>
+          <Italian>Bandana (fiamme rosse)</Italian>
+          <Hungarian>Bandana (vörös lángok)</Hungarian>
+          <Polish>Bandana (czerwone płomienie)</Polish>
+          <Russian>Бандана (красное пламя)</Russian>
+          <German>Bandana (Rote Flammen)</German>
+          <Czech>Šátek (červené plameny)</Czech>
+          <English>Bandana (Red Flames)</English>
+          <Portuguese>Bandana (Chamas vermelhas)</Portuguese>
+          <Korean>반다나 (붉은색 화염)</Korean>
+          <Chinesesimp>头巾（红色火焰）</Chinesesimp>
+          <Japanese>バンダナ（赤い炎）</Japanese>
+          <Turkish>Bandana (Kırmızı Alevler)</Turkish>
+          <Latin>Bandana (flammae rubrae)</Latin>
+          <Bulgarian>Бандана (червени пламъци)</Bulgarian>
+          <Slovak>Šatka (červené plamene)</Slovak>
+          <Ukrainian>Бандана (червоні язики полум'я)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_orangeflame10">
+          <Original>Bandana (Orange Flames)</Original>
+          <Chinese>頭巾（橙焰）</Chinese>
+          <French>Bandana (flammes orange)</French>
+          <Spanish>Pañuelo (llamas naranjas)</Spanish>
+          <Italian>Bandana (fiamme arancioni)</Italian>
+          <Hungarian>Bandana (narancssárga lángok)</Hungarian>
+          <Polish>Bandana (pomarańczowe płomienie)</Polish>
+          <Russian>Бандана (оранжевое пламя)</Russian>
+          <German>Bandana (Orange Flammen)</German>
+          <Czech>Šátek (oranžové plameny)</Czech>
+          <English>Bandana (Orange Flames)</English>
+          <Portuguese>Bandana (Chamas laranjas)</Portuguese>
+          <Korean>반다나 (주황색 화염)</Korean>
+          <Chinesesimp>头巾（橙色火焰）</Chinesesimp>
+          <Japanese>バンダナ（オレンジの炎）</Japanese>
+          <Turkish>Bandana (Turuncu Alevler)</Turkish>
+          <Latin>Bandana (flammae aurantiacae)</Latin>
+          <Bulgarian>Бандана (оранжеви пламъци)</Bulgarian>
+          <Slovak>Šatka (oranžové plamene)</Slovak>
+          <Ukrainian>Бандана (помаранчеві язики полум'я)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_candyskull0">
+          <Original>Bandana (Candy Skull)</Original>
+          <Chinese>頭巾（糖果骷髏）</Chinese>
+          <French>Bandana (crâne bonbon)</French>
+          <Spanish>Pañuelo (calavera de caramelo)</Spanish>
+          <Italian>Bandana (teschio di zucchero)</Italian>
+          <Hungarian>Bandana (cukorkoponya)</Hungarian>
+          <Polish>Bandana (cukierkowa czaszka)</Polish>
+          <Russian>Бандана (конфетный череп)</Russian>
+          <German>Bandana (Bonbon-Schädel)</German>
+          <Czech>Šátek (lebka bonbon)</Czech>
+          <English>Bandana (Candy Skull)</English>
+          <Portuguese>Bandana (Caveira doce)</Portuguese>
+          <Korean>반다나 (캔디 해골)</Korean>
+          <Chinesesimp>头巾（糖果骷髅）</Chinesesimp>
+          <Japanese>バンダナ（キャンディードクロ）</Japanese>
+          <Turkish>Bandana (Tatlı Kuru Kafa)</Turkish>
+          <Latin>Bandana (cranium dulcis)</Latin>
+          <Bulgarian>Бандана (захарен череп)</Bulgarian>
+          <Slovak>Šatka (cukrová lebka)</Slovak>
+          <Ukrainian>Бандана (цукровий череп)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_blueflame20">
+          <Original>Bandana (Blue Flames)</Original>
+          <Chinese>頭巾（藍焰）</Chinese>
+          <French>Bandana (flammes bleues)</French>
+          <Spanish>Pañuelo (llamas azules)</Spanish>
+          <Italian>Bandana (fiamme blu)</Italian>
+          <Hungarian>Bandana (kék lángok)</Hungarian>
+          <Polish>Bandana (niebieskie płomienie)</Polish>
+          <Russian>Бандана (синее пламя)</Russian>
+          <German>Bandana (Blaue Flammen)</German>
+          <Czech>Šátek (modré plameny)</Czech>
+          <English>Bandana (Blue Flames)</English>
+          <Portuguese>Bandana (Chamas azuis)</Portuguese>
+          <Korean>반다나 (파란색 화염)</Korean>
+          <Chinesesimp>头巾（蓝色火焰）</Chinesesimp>
+          <Japanese>バンダナ（青い炎）</Japanese>
+          <Turkish>Bandana (Mavi Alevler)</Turkish>
+          <Latin>Bandana (flammae caeruleae)</Latin>
+          <Bulgarian>Бандана (сини пламъци)</Bulgarian>
+          <Slovak>Šatka (modré plamene)</Slovak>
+          <Ukrainian>Бандана (сині язики полум'я)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_bandanna_blueflame10">
+          <Original>Bandana (Blue Flame)</Original>
+          <Chinese>頭巾（藍焰）</Chinese>
+          <French>Bandana (flamme bleue)</French>
+          <Spanish>Pañuelo (llama azul)</Spanish>
+          <Italian>Bandana (fiamma blu)</Italian>
+          <Hungarian>Bandana (kék láng)</Hungarian>
+          <Polish>Bandana (niebieski płomień)</Polish>
+          <Russian>Бандана (синий язык пламени)</Russian>
+          <German>Bandana (Blaue Flamme)</German>
+          <Czech>Šátek (modrý plamen)</Czech>
+          <English>Bandana (Blue Flame)</English>
+          <Portuguese>Bandana (Chama azul)</Portuguese>
+          <Korean>반다나 (파란색 화염)</Korean>
+          <Chinesesimp>头巾（蓝色火焰）</Chinesesimp>
+          <Japanese>バンダナ（青い炎）</Japanese>
+          <Turkish>Bandana (Mavi Alev)</Turkish>
+          <Latin>Bandana (flamma caerulea)</Latin>
+          <Bulgarian>Бандана (син пламък)</Bulgarian>
+          <Slovak>Šatka (modrý plameň)</Slovak>
+          <Ukrainian>Бандана (синє полум'я)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_balaclava_tropentarn0">
+          <Original>Balaclava (Tropentarn)</Original>
+          <Chinese>巴拉克拉瓦頭套（熱帶迷彩）</Chinese>
+          <French>Passe-montagne (Tropentarn)</French>
+          <Spanish>Pasamontañas (Tropentarn)</Spanish>
+          <Italian>Passamontagna (tropentarn)</Italian>
+          <Hungarian>Maszk (Tropentarn)</Hungarian>
+          <Polish>Kominiarka (tropentarn)</Polish>
+          <Russian>Балаклава (пустынный камуфляж)</Russian>
+          <German>Balaclava (Tropentarn)</German>
+          <Czech>Kukla (Tropentarn)</Czech>
+          <English>Balaclava (Tropentarn)</English>
+          <Portuguese>Balaclava (Tropical)</Portuguese>
+          <Korean>바라클라바 (트로펜타른)</Korean>
+          <Chinesesimp>巴拉克拉法帽（热带迷彩）</Chinesesimp>
+          <Japanese>バラクラバ（トロペンターン）</Japanese>
+          <Turkish>Kar Maskesi (Tropentarn)</Turkish>
+          <Latin>Balaclava (Tropentarn)</Latin>
+          <Bulgarian>Балаклава (Tropentarn)</Bulgarian>
+          <Slovak>Kukla (Tropentarn)</Slovak>
+          <Ukrainian>Балаклава (Tropentarn)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_balaclava_skull10">
+          <Original>Balaclava (Skull)</Original>
+          <Chinese>巴拉克拉瓦頭套（骷髏）</Chinese>
+          <French>Passe-montagne (crâne)</French>
+          <Spanish>Pasamontañas (calavera)</Spanish>
+          <Italian>Passamontagna (teschio)</Italian>
+          <Hungarian>Maszk (koponya)</Hungarian>
+          <Polish>Kominiarka (czaszka)</Polish>
+          <Russian>Балаклава (череп)</Russian>
+          <German>Balaclava (Schädel)</German>
+          <Czech>Kukla (lebka)</Czech>
+          <English>Balaclava (Skull)</English>
+          <Portuguese>Balaclava (Caveira)</Portuguese>
+          <Korean>바라클라바 (해골)</Korean>
+          <Chinesesimp>巴拉克拉法帽（骷髅）</Chinesesimp>
+          <Japanese>バラクラバ（ドクロ）</Japanese>
+          <Turkish>Kar Maskesi (Kuru Kafa)</Turkish>
+          <Latin>Balaclava (cranium)</Latin>
+          <Bulgarian>Балаклава (череп)</Bulgarian>
+          <Slovak>Kukla (lebka)</Slovak>
+          <Ukrainian>Балаклава (череп)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_balaclava_scarecrow_010">
+          <Original>Balaclava (Scarecrow)</Original>
+          <Chinese>巴拉克拉瓦頭套（稻草人）</Chinese>
+          <French>Passe-montagne (épouvantail)</French>
+          <Spanish>Pasamontañas (espantapájaros)</Spanish>
+          <Italian>Passamontagna (spaventapasseri)</Italian>
+          <Hungarian>Maszk (madárijesztő)</Hungarian>
+          <Polish>Kominiarka (strach na wróble)</Polish>
+          <Russian>Балаклава (пугало)</Russian>
+          <German>Balaclava (Vogelscheuche)</German>
+          <Czech>Kukla (strašák)</Czech>
+          <English>Balaclava (Scarecrow)</English>
+          <Portuguese>Balaclava (Espantalho)</Portuguese>
+          <Korean>바라클라바 (허수아비)</Korean>
+          <Chinesesimp>巴拉克拉法帽（稻草人）</Chinesesimp>
+          <Japanese>バラクラバ（カカシ）</Japanese>
+          <Turkish>Kar Maskesi (Korkuluk)</Turkish>
+          <Latin>Balaclava (terriculum)</Latin>
+          <Bulgarian>Балаклава (плашило)</Bulgarian>
+          <Slovak>Kukla (strašiak)</Slovak>
+          <Ukrainian>Балаклава (опудало)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_balaclava_halloween_010">
+          <Original>Balaclava (Halloween)</Original>
+          <Chinese>巴拉克拉瓦頭套（萬聖節）</Chinese>
+          <French>Passe-montagne (Halloween)</French>
+          <Spanish>Pasamontañas (Halloween)</Spanish>
+          <Italian>Passamontagna (Halloween)</Italian>
+          <Hungarian>Maszk (Halloween)</Hungarian>
+          <Polish>Kominiarka (Halloween)</Polish>
+          <Russian>Балаклава (Хэллоуин)</Russian>
+          <German>Balaclava (Halloween)</German>
+          <Czech>Kukla (Halloween)</Czech>
+          <English>Balaclava (Halloween)</English>
+          <Portuguese>Balaclava (Dia das Bruxas)</Portuguese>
+          <Korean>바라클라바 (핼러윈)</Korean>
+          <Chinesesimp>巴拉克拉法帽（万圣节）</Chinesesimp>
+          <Japanese>バラクラバ（ハロウィーン）</Japanese>
+          <Turkish>Kar Maskesi (Cadılar Bayramı)</Turkish>
+          <Latin>Balaclava (Halloween)</Latin>
+          <Bulgarian>Балаклава (Хелоуин)</Bulgarian>
+          <Slovak>Kukla (Halloween)</Slovak>
+          <Ukrainian>Балаклава (Геловін)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_balaclava_flecktarn0">
+          <Original>Balaclava (Flecktarn)</Original>
+          <Chinese>巴拉克拉瓦頭套（斑點迷彩）</Chinese>
+          <French>Passe-montagne (Flecktarn)</French>
+          <Spanish>Pasamontañas (Flecktarn)</Spanish>
+          <Italian>Passamontagna (flecktarn)</Italian>
+          <Hungarian>Maszk (Flecktarn)</Hungarian>
+          <Polish>Kominiarka (flecktarn)</Polish>
+          <Russian>Балаклава (пятнистый камуфляж)</Russian>
+          <German>Balaclava (Flecktarn)</German>
+          <Czech>Kukla (Flecktarn)</Czech>
+          <English>Balaclava (Flecktarn)</English>
+          <Portuguese>Balaclava (Flecktarn)</Portuguese>
+          <Korean>바라클라바 (플레크타른)</Korean>
+          <Chinesesimp>巴拉克拉法帽（斑点迷彩）</Chinesesimp>
+          <Japanese>バラクラバ（フレックターン）</Japanese>
+          <Turkish>Kar Maskesi (Flecktarn)</Turkish>
+          <Latin>Balaclava (Flecktarn)</Latin>
+          <Bulgarian>Балаклава (Flecktarn)</Bulgarian>
+          <Slovak>Kukla (Flecktarn)</Slovak>
+          <Ukrainian>Балаклава (Flecktarn)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_balaclava_flames10">
+          <Original>Balaclava (Orange Pattern)</Original>
+          <Chinese>巴拉克拉瓦頭套（橙圖案）</Chinese>
+          <French>Passe-montagne (motif orange)</French>
+          <Spanish>Pasamontañas (estampado naranja)</Spanish>
+          <Italian>Passamontagna (motivo arancione)</Italian>
+          <Hungarian>Maszk (narancssárga minta)</Hungarian>
+          <Polish>Kominiarka (pomarańczowy wzór)</Polish>
+          <Russian>Балаклава (оранжевый узор)</Russian>
+          <German>Balaclava (Oranges Muster)</German>
+          <Czech>Kukla (oranžový vzor)</Czech>
+          <English>Balaclava (Orange Pattern)</English>
+          <Portuguese>Balaclava (Estampa laranja)</Portuguese>
+          <Korean>바라클라바 (주황색 패턴)</Korean>
+          <Chinesesimp>巴拉克拉法帽（橙色图案）</Chinesesimp>
+          <Japanese>バラクラバ（オレンジ柄）</Japanese>
+          <Turkish>Kar Maskesi (Turuncu Desen)</Turkish>
+          <Latin>Balaclava (ornatus aurantiacus)</Latin>
+          <Bulgarian>Балаклава (оранжев десен)</Bulgarian>
+          <Slovak>Kukla (oranžový vzor)</Slovak>
+          <Ukrainian>Балаклава (помаранчевий візерунок)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgglasses_g_balaclava_bluestrips0">
+          <Original>Balaclava (Blue Stripe)</Original>
+          <Chinese>巴拉克拉瓦頭套（藍條紋）</Chinese>
+          <French>Passe-montagne (bande bleue)</French>
+          <Spanish>Pasamontañas (franja azul)</Spanish>
+          <Italian>Passamontagna (striscia blu)</Italian>
+          <Hungarian>Maszk (kék csík)</Hungarian>
+          <Polish>Kominiarka (niebieski pas)</Polish>
+          <Russian>Балаклава (синяя полоска)</Russian>
+          <German>Balaclava (Blauer Streifen)</German>
+          <Czech>Kukla (modrý pruh)</Czech>
+          <English>Balaclava (Blue Stripe)</English>
+          <Portuguese>Balaclava (Listra azul)</Portuguese>
+          <Korean>바라클라바 (파란색 줄무늬)</Korean>
+          <Chinesesimp>巴拉克拉法帽（蓝色条纹）</Chinesesimp>
+          <Japanese>バラクラバ（ブルーストライプ）</Japanese>
+          <Turkish>Kar Maskesi (Mavi Şerit)</Turkish>
+          <Latin>Balaclava (stria caerulea)</Latin>
+          <Bulgarian>Балаклава (синя ивица)</Bulgarian>
+          <Slovak>Kukla (modrý pruh)</Slovak>
+          <Ukrainian>Балаклава (синя смуга)</Ukrainian>
+        </Key>
+      </Container>
+    </Container>
+    <Container name="Props_F">
+      <Container name="Civilian">
+        <Container name="Camping">
+          <Key ID="str_a3_cfgvehicles_lantern_01_red_f0">
+            <Original>Lantern (Red)</Original>
+            <Chinese>燈籠（紅）</Chinese>
+            <French>Lanterne (rouge)</French>
+            <Spanish>Linterna (roja)</Spanish>
+            <Italian>Lanterna (rossa)</Italian>
+            <Hungarian>Lámpás (piros)</Hungarian>
+            <Polish>Latarnia (czerwona)</Polish>
+            <Russian>Фонарь (красный)</Russian>
+            <German>Laterne (rot)</German>
+            <Czech>Petrolejka (červená)</Czech>
+            <English>Lantern (Red)</English>
+            <Portuguese>Lanterna (Vermelha)</Portuguese>
+            <Korean>랜턴 (적색)</Korean>
+            <Chinesesimp>灯笼（红色）</Chinesesimp>
+            <Japanese>ランタン（赤）</Japanese>
+            <Turkish>Fener (Kırmızı)</Turkish>
+            <Latin>Lanterna (rubra)</Latin>
+            <Bulgarian>Фенер (червен)</Bulgarian>
+            <Slovak>Lampáš (červený)</Slovak>
+            <Ukrainian>Ліхтар (червоний)</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_lantern_01_green_f0">
+            <Original>Lantern (Green)</Original>
+            <Chinese>燈籠（綠）</Chinese>
+            <French>Lanterne (verte)</French>
+            <Spanish>Linterna (verde)</Spanish>
+            <Italian>Lanterna (verde)</Italian>
+            <Hungarian>Lámpás (zöld)</Hungarian>
+            <Polish>Latarnia (zielona)</Polish>
+            <Russian>Фонарь (зеленый)</Russian>
+            <German>Laterne (grün)</German>
+            <Czech>Petrolejka (zelená)</Czech>
+            <English>Lantern (Green)</English>
+            <Portuguese>Lanterna (Verde)</Portuguese>
+            <Korean>랜턴 (녹색)</Korean>
+            <Chinesesimp>灯笼（绿色）</Chinesesimp>
+            <Japanese>ランタン（緑）</Japanese>
+            <Turkish>Fener (Yeşil)</Turkish>
+            <Latin>Lanterna (viridis)</Latin>
+            <Bulgarian>Фенер (зелен)</Bulgarian>
+            <Slovak>Lampáš (zelený)</Slovak>
+            <Ukrainian>Ліхтар (зелений)</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_lantern_01_blue_f0">
+            <Original>Lantern (Blue)</Original>
+            <Chinese>燈籠（藍）</Chinese>
+            <French>Lanterne (bleue)</French>
+            <Spanish>Linterna (azul)</Spanish>
+            <Italian>Lanterna (blu)</Italian>
+            <Hungarian>Lámpás (kék)</Hungarian>
+            <Polish>Latarnia (niebieska)</Polish>
+            <Russian>Фонарь (синий)</Russian>
+            <German>Laterne (blau)</German>
+            <Czech>Petrolejka (modrá)</Czech>
+            <English>Lantern (Blue)</English>
+            <Portuguese>Lanterna (Azul)</Portuguese>
+            <Korean>랜턴 (청색)</Korean>
+            <Chinesesimp>灯笼（蓝色）</Chinesesimp>
+            <Japanese>ランタン（青）</Japanese>
+            <Turkish>Fener (Mavi)</Turkish>
+            <Latin>Lanterna (caerulea)</Latin>
+            <Bulgarian>Фенер (син)</Bulgarian>
+            <Slovak>Lampáš (modrý)</Slovak>
+            <Ukrainian>Ліхтар (синій)</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_lantern_01_black_f0">
+            <Original>Lantern (Black)</Original>
+            <Chinese>燈籠（黑）</Chinese>
+            <French>Lanterne (noire)</French>
+            <Spanish>Linterna (negra)</Spanish>
+            <Italian>Lanterna (nera)</Italian>
+            <Hungarian>Lámpás (fekete)</Hungarian>
+            <Polish>Latarnia (czarna)</Polish>
+            <Russian>Фонарь (черный)</Russian>
+            <German>Laterne (schwarz)</German>
+            <Czech>Petrolejka (černá)</Czech>
+            <English>Lantern (Black)</English>
+            <Portuguese>Lanterna (Preta)</Portuguese>
+            <Korean>랜턴 (흑색)</Korean>
+            <Chinesesimp>灯笼（黑色）</Chinesesimp>
+            <Japanese>ランタン（黒）</Japanese>
+            <Turkish>Fener (Siyah)</Turkish>
+            <Latin>Lanterna (nigra)</Latin>
+            <Bulgarian>Фенер (черен)</Bulgarian>
+            <Slovak>Lampáš (čierny)</Slovak>
+            <Ukrainian>Ліхтар (чорний)</Ukrainian>
+          </Key>
+        </Container>
+      </Container>
+      <Container name="Humanitarian">
+        <Container name="Supplies">
+          <Key ID="str_a3_cfgvehicles_land_pumpkin_01_halloween_f0">
+            <Original>Pumpkin (Halloween)</Original>
+            <Chinese>南瓜（萬聖節）</Chinese>
+            <French>Citrouille (Halloween)</French>
+            <Spanish>Calabaza (Halloween)</Spanish>
+            <Italian>Zucca (Halloween)</Italian>
+            <Hungarian>Tök (Halloween)</Hungarian>
+            <Polish>Dynia (Halloween)</Polish>
+            <Russian>Тыква (Хэллоуин)</Russian>
+            <German>Kürbis (Halloween)</German>
+            <Czech>Dýně (Halloween)</Czech>
+            <English>Pumpkin (Halloween)</English>
+            <Portuguese>Abóbora (Dia das Bruxas)</Portuguese>
+            <Korean>호박 (핼러윈)</Korean>
+            <Chinesesimp>南瓜（万圣节）</Chinesesimp>
+            <Japanese>パンプキン（ハロウィーン）</Japanese>
+            <Turkish>Bal Kabağı (Cadılar Bayramı)</Turkish>
+            <Latin>Cucurbita (Halloween)</Latin>
+            <Bulgarian>Тиква (Хелоуин)</Bulgarian>
+            <Slovak>Tekvica (Halloween)</Slovak>
+            <Ukrainian>Гарбуз (Геловін)</Ukrainian>
+          </Key>
+        </Container>
+      </Container>
+      <Container name="Industrial">
+        <Container name="Agriculture">
+          <Key ID="str_a3_cfgvehicles_scarecrow_01_f0">
+            <Original>Scarecrow</Original>
+            <Chinese>稻草人</Chinese>
+            <French>Épouvantail</French>
+            <Spanish>Espantapájaros</Spanish>
+            <Italian>Spaventapasseri</Italian>
+            <Hungarian>Madárijesztő</Hungarian>
+            <Polish>Strach na wróble</Polish>
+            <Russian>Пугало</Russian>
+            <German>Vogelscheuche</German>
+            <Czech>Strašák</Czech>
+            <English>Scarecrow</English>
+            <Portuguese>Espantalho</Portuguese>
+            <Korean>허수아비</Korean>
+            <Chinesesimp>稻草人</Chinesesimp>
+            <Japanese>カカシ</Japanese>
+            <Turkish>Korkuluk</Turkish>
+            <Latin>Terriculamentum</Latin>
+            <Bulgarian>Плашило</Bulgarian>
+            <Slovak>Strašiak</Slovak>
+            <Ukrainian>Опудало</Ukrainian>
+          </Key>
+        </Container>
+      </Container>
+      <Container name="Military">
+        <Container name="Decorative">
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_nato_f0">
+            <Original>Battlefield Memorial [NATO]</Original>
+            <Chinese>戰場紀念碑 [NATO]</Chinese>
+            <French>Tombe improvisée [OTAN]</French>
+            <Spanish>Recuerdo de los caídos en combate (OTAN)</Spanish>
+            <Italian>Compos. commemorativa [NATO]</Italian>
+            <Hungarian>Harctéri emlékmű [NATO]</Hungarian>
+            <Polish>Pomnik ku czci poległych [NATO]</Polish>
+            <Russian>Мемориал поля битвы [НАТО]</Russian>
+            <German>Schlachtfeld-Denkmal [NATO]</German>
+            <Czech>Polní památník [NATO]</Czech>
+            <English>Battlefield Memorial [NATO]</English>
+            <Portuguese>Memorial de campo de batalha [OTAN]</Portuguese>
+            <Korean>전장 기념물 [NATO]</Korean>
+            <Chinesesimp>战场纪念 [NATO]</Chinesesimp>
+            <Japanese>戦場の記念碑 [NATO]</Japanese>
+            <Turkish>Savaş Alanı Anıtı [NATO]</Turkish>
+            <Latin>Memoriale campi proelii [NATO]</Latin>
+            <Bulgarian>Паметник на бойното поле [NATO]</Bulgarian>
+            <Slovak>Pamätník bojiska [NATO]</Slovak>
+            <Ukrainian>Пам'ятник полеглим [NATO]</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_ldf_f0">
+            <Original>Battlefield Memorial [LDF]</Original>
+            <Chinese>戰場紀念碑 [LDF]</Chinese>
+            <French>Tombe improvisée [LDF]</French>
+            <Spanish>Recuerdo de los caídos en combate (LDF)</Spanish>
+            <Italian>Compos. commemorativa [LDF]</Italian>
+            <Hungarian>Harctéri emlékmű [LDF]</Hungarian>
+            <Polish>Pomnik ku czci poległych [LDF]</Polish>
+            <Russian>Мемориал поля битвы [ВСЛ]</Russian>
+            <German>Schlachtfeld-Denkmal [LDF]</German>
+            <Czech>Polní památník [LDF]</Czech>
+            <English>Battlefield Memorial [LDF]</English>
+            <Portuguese>Memorial de campo de batalha [LDF]</Portuguese>
+            <Korean>전장 기념물 [LDF]</Korean>
+            <Chinesesimp>战场纪念 [LDF]</Chinesesimp>
+            <Japanese>戦場の記念碑 [LDF]</Japanese>
+            <Turkish>Savaş Alanı Anıtı [LDF]</Turkish>
+            <Latin>Memoriale campi proelii [LDF]</Latin>
+            <Bulgarian>Паметник на бойното поле [LDF]</Bulgarian>
+            <Slovak>Pamätník bojiska [LDF]</Slovak>
+            <Ukrainian>Пам'ятник полеглим [LDF]</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_green_nato_f0">
+            <Original>Battlefield Memorial (Green) [NATO]</Original>
+            <Chinese>戰場紀念碑（綠） [NATO]</Chinese>
+            <French>Tombe improvisée (verte) [OTAN]</French>
+            <Spanish>Recuerdo de los caídos en combate (verde, OTAN)</Spanish>
+            <Italian>Compos. commemorativa (verde) [NATO]</Italian>
+            <Hungarian>Harctéri emlékmű (zöld) [NATO]</Hungarian>
+            <Polish>Pomnik ku czci poległych (zielony) [NATO]</Polish>
+            <Russian>Мемориал поля битвы (зеленый) [НАТО]</Russian>
+            <German>Schlachtfeld-Denkmal [NATO] (grün)</German>
+            <Czech>Polní památník (zelený) [NATO]</Czech>
+            <English>Battlefield Memorial (Green) [NATO]</English>
+            <Portuguese>Memorial de campo de batalha (Verde) [OTAN]</Portuguese>
+            <Korean>전장 기념물 (녹색) [NATO]</Korean>
+            <Chinesesimp>战场纪念（绿色）[NATO]</Chinesesimp>
+            <Japanese>戦場の記念碑（緑） [NATO]</Japanese>
+            <Turkish>Savaş Alanı Anıtı (Yeşil) [NATO]</Turkish>
+            <Latin>Memoriale campi proelii (viride) [NATO]</Latin>
+            <Bulgarian>Паметник на бойното поле (зелен) [NATO]</Bulgarian>
+            <Slovak>Pamätník bojiska (zelený) [NATO]</Slovak>
+            <Ukrainian>Пам'ятник полеглим (зелений) [NATO]</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_green_ldf_f0">
+            <Original>Battlefield Memorial (Green) [LDF]</Original>
+            <Chinese>戰場紀念碑（綠） [LDF]</Chinese>
+            <French>Tombe improvisée (verte) [LDF]</French>
+            <Spanish>Recuerdo de los caídos en combate (verde, LDF)</Spanish>
+            <Italian>Compos. commemorativa (verde) [LDF]</Italian>
+            <Hungarian>Harctéri emlékmű (zöld) [LDF]</Hungarian>
+            <Polish>Pomnik ku czci poległych (zielony) [LDF]</Polish>
+            <Russian>Мемориал поля битвы (зеленый) [ВСЛ]</Russian>
+            <German>Schlachtfeld-Denkmal [LDF] (grün)</German>
+            <Czech>Polní památník (zelený) [LDF]</Czech>
+            <English>Battlefield Memorial (Green) [LDF]</English>
+            <Portuguese>Memorial de campo de batalha (Verde) [LDF]</Portuguese>
+            <Korean>전장 기념물 (녹색) [LDF]</Korean>
+            <Chinesesimp>战场纪念（绿色）[LDF]</Chinesesimp>
+            <Japanese>戦場の記念碑（緑） [LDF]</Japanese>
+            <Turkish>Savaş Alanı Anıtı (Yeşil) [LDF]</Turkish>
+            <Latin>Memoriale campi proelii (viride) [LDF]</Latin>
+            <Bulgarian>Паметник на бойното поле (зелен) [LDF]</Bulgarian>
+            <Slovak>Pamätník bojiska (zelený) [LDF]</Slovak>
+            <Ukrainian>Пам'ятник полеглим (зелений) [LDF]</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_green_f0">
+            <Original>Battlefield Memorial (Green)</Original>
+            <Chinese>戰場紀念碑（綠）</Chinese>
+            <French>Tombe improvisée (verte)</French>
+            <Spanish>Recuerdo de los caídos en combate (verde)</Spanish>
+            <Italian>Compos. commemorativa (verde)</Italian>
+            <Hungarian>Harctéri emlékmű (zöld)</Hungarian>
+            <Polish>Pomnik ku czci poległych (zielony)</Polish>
+            <Russian>Мемориал поля битвы (зеленый)</Russian>
+            <German>Schlachtfeld-Denkmal (grün)</German>
+            <Czech>Polní památník (zelený)</Czech>
+            <English>Battlefield Memorial (Green)</English>
+            <Portuguese>Memorial de campo de batalha (Verde)</Portuguese>
+            <Korean>전장 기념물 (녹색)</Korean>
+            <Chinesesimp>战场纪念（绿色）</Chinesesimp>
+            <Japanese>戦場の記念碑（緑）</Japanese>
+            <Turkish>Savaş Alanı Anıtı (Yeşil)</Turkish>
+            <Latin>Memoriale campi proelii (viride)</Latin>
+            <Bulgarian>Паметник на бойното поле (зелен)</Bulgarian>
+            <Slovak>Pamätník bojiska (zelený)</Slovak>
+            <Ukrainian>Пам'ятник полеглим (зелений)</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_green_csat_f0">
+            <Original>Battlefield Memorial (Green) [CSAT]</Original>
+            <Chinese>戰場紀念碑（綠） [CSAT]</Chinese>
+            <French>Tombe improvisée (verte) [CSAT]</French>
+            <Spanish>Recuerdo de los caídos en combate (verde, CSAT)</Spanish>
+            <Italian>Compos. commemorativa (verde) [CSAT]</Italian>
+            <Hungarian>Harctéri emlékmű (zöld) [CSAT]</Hungarian>
+            <Polish>Pomnik ku czci poległych (zielony) [CSAT]</Polish>
+            <Russian>Мемориал поля битвы (зеленый) [CSAT]</Russian>
+            <German>Schlachtfeld-Denkmal [CSAT] (grün)</German>
+            <Czech>Polní památník (zelený) [CSAT]</Czech>
+            <English>Battlefield Memorial (Green) [CSAT]</English>
+            <Portuguese>Memorial de campo de batalha (Verde) [CSAT]</Portuguese>
+            <Korean>전장 기념물 (녹색) [CSAT]</Korean>
+            <Chinesesimp>战场纪念（绿色）[CSAT]</Chinesesimp>
+            <Japanese>戦場の記念碑（緑） [CSAT]</Japanese>
+            <Turkish>Savaş Alanı Anıtı (Yeşil) [CSAT]</Turkish>
+            <Latin>Memoriale campi proelii (viride) [CSAT]</Latin>
+            <Bulgarian>Паметник на бойното поле (зелен) [CSAT]</Bulgarian>
+            <Slovak>Pamätník bojiska (zelený) [CSAT]</Slovak>
+            <Ukrainian>Пам'ятник полеглим (зелений) [CSAT]</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_green_aaf_f0">
+            <Original>Battlefield Memorial (Green) [AAF]</Original>
+            <Chinese>戰場紀念碑（綠） [AAF]</Chinese>
+            <French>Tombe improvisée (verte) [AAF]</French>
+            <Spanish>Recuerdo de los caídos en combate (verde, AAF)</Spanish>
+            <Italian>Compos. commemorativa (verde) [AAF]</Italian>
+            <Hungarian>Harctéri emlékmű (zöld) [AAF]</Hungarian>
+            <Polish>Pomnik ku czci poległych (zielony) [AAF]</Polish>
+            <Russian>Мемориал поля битвы (зеленый) [AAF]</Russian>
+            <German>Schlachtfeld-Denkmal [AAF] (grün)</German>
+            <Czech>Polní památník (zelený) [AAF]</Czech>
+            <English>Battlefield Memorial (Green) [AAF]</English>
+            <Portuguese>Memorial de campo de batalha (Verde) [AAF]</Portuguese>
+            <Korean>전장 기념물 (녹색) [AAF]</Korean>
+            <Chinesesimp>战场纪念（绿色）[AAF]</Chinesesimp>
+            <Japanese>戦場の記念碑（緑） [AAF]</Japanese>
+            <Turkish>Savaş Alanı Anıtı (Yeşil) [AAF]</Turkish>
+            <Latin>Memoriale campi proelii (viride) [AAF]</Latin>
+            <Bulgarian>Паметник на бойното поле (зелен) [AAF]</Bulgarian>
+            <Slovak>Pamätník bojiska (zelený) [AAF]</Slovak>
+            <Ukrainian>Пам'ятник полеглим (зелений) [AAF]</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_f0">
+            <Original>Battlefield Memorial</Original>
+            <Chinese>戰場紀念碑</Chinese>
+            <French>Tombe improvisée</French>
+            <Spanish>Recuerdo de los caídos en combate</Spanish>
+            <Italian>Compos. commemorativa</Italian>
+            <Hungarian>Harctéri emlékmű</Hungarian>
+            <Polish>Pomnik ku czci poległych</Polish>
+            <Russian>Мемориал поля битвы</Russian>
+            <German>Schlachtfeld-Denkmal</German>
+            <Czech>Polní památník</Czech>
+            <English>Battlefield Memorial</English>
+            <Portuguese>Memorial de campo de batalha</Portuguese>
+            <Korean>전장 기념물</Korean>
+            <Chinesesimp>战场纪念</Chinesesimp>
+            <Japanese>戦場の記念碑</Japanese>
+            <Turkish>Savaş Alanı Anıtı</Turkish>
+            <Latin>Memoriale campi proelii</Latin>
+            <Bulgarian>Паметник на бойното поле</Bulgarian>
+            <Slovak>Pamätník bojiska</Slovak>
+            <Ukrainian>Пам'ятник полеглим</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_csat_f0">
+            <Original>Battlefield Memorial [CSAT]</Original>
+            <Chinese>戰場紀念碑 [CSAT]</Chinese>
+            <French>Tombe improvisée [CSAT]</French>
+            <Spanish>Recuerdo de los caídos en combate (CSAT)</Spanish>
+            <Italian>Compos. commemorativa [CSAT]</Italian>
+            <Hungarian>Harctéri emlékmű [CSAT]</Hungarian>
+            <Polish>Pomnik ku czci poległych [CSAT]</Polish>
+            <Russian>Мемориал поля битвы [CSAT]</Russian>
+            <German>Schlachtfeld-Denkmal [CSAT]</German>
+            <Czech>Polní památník [CSAT]</Czech>
+            <English>Battlefield Memorial [CSAT]</English>
+            <Portuguese>Memorial de campo de batalha [CSAT]</Portuguese>
+            <Korean>전장 기념물 [CSAT]</Korean>
+            <Chinesesimp>战场纪念[CSAT]</Chinesesimp>
+            <Japanese>戦場の記念碑 [CSAT]</Japanese>
+            <Turkish>Savaş Alanı Anıtı [CSAT]</Turkish>
+            <Latin>Memoriale campi proelii [CSAT]</Latin>
+            <Bulgarian>Паметник на бойното поле [CSAT]</Bulgarian>
+            <Slovak>Pamätník bojiska [CSAT]</Slovak>
+            <Ukrainian>Пам'ятник полеглим [CSAT]</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_useractions_take_weapon1">
+            <Original>Take Weapon</Original>
+            <Chinese>拾取武器</Chinese>
+            <French>Prendre arme</French>
+            <Spanish>Tomar arma</Spanish>
+            <Italian>Prendi arma</Italian>
+            <Hungarian>Fegyver elvétele</Hungarian>
+            <Polish>Weź broń</Polish>
+            <Russian>Взять оружие</Russian>
+            <German>Waffe nehmen</German>
+            <Czech>Vzít zbraň</Czech>
+            <English>Take Weapon</English>
+            <Portuguese>Pegar arma</Portuguese>
+            <Korean>무기 확보하기</Korean>
+            <Chinesesimp>拿取武器</Chinesesimp>
+            <Japanese>武器を取る</Japanese>
+            <Turkish>Silahı Al</Turkish>
+            <Latin>Sume arma</Latin>
+            <Bulgarian>Вземи оръжието</Bulgarian>
+            <Slovak>Vziať zbraň</Slovak>
+            <Ukrainian>Взяти зброю</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_useractions_take_helmet0">
+            <Original>Take Headgear</Original>
+            <Chinese>拾取頭飾</Chinese>
+            <French>Prendre couvre-chef</French>
+            <Spanish>Tomar equipamiento para cabeza</Spanish>
+            <Italian>Prendi copricapo</Italian>
+            <Hungarian>Fejfedő elvétele</Hungarian>
+            <Polish>Weź nakrycie głowy</Polish>
+            <Russian>Взять головной убор</Russian>
+            <German>Kopfbedeckung nehmen</German>
+            <Czech>Vzít pokrývku hlavy</Czech>
+            <English>Take Headgear</English>
+            <Portuguese>Pegar acessório de cabeça</Portuguese>
+            <Korean>헤드기어 확보하기</Korean>
+            <Chinesesimp>拿取帽子</Chinesesimp>
+            <Japanese>帽子を取る</Japanese>
+            <Turkish>Başlığı Al</Turkish>
+            <Latin>Sume tegmen capitis</Latin>
+            <Bulgarian>Вземи покривало за глава</Bulgarian>
+            <Slovak>Vziať pokrývku hlavy</Slovak>
+            <Ukrainian>Взяти головний убір</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_attributes_weapon_position0">
+            <Original>Weapon position</Original>
+            <Chinese>武器位置</Chinese>
+            <French>Emplacement d'arme</French>
+            <Spanish>Posición de arma</Spanish>
+            <Italian>Posizione arma</Italian>
+            <Hungarian>Fegyver pozíciója</Hungarian>
+            <Polish>Pozycja broni</Polish>
+            <Russian>Позиция оружия</Russian>
+            <German>Position – Waffe</German>
+            <Czech>Pozice zbraně</Czech>
+            <English>Weapon position</English>
+            <Portuguese>Posição da arma</Portuguese>
+            <Korean>무기 위치</Korean>
+            <Chinesesimp>武器位置</Chinesesimp>
+            <Japanese>武器の位置</Japanese>
+            <Turkish>Silah pozisyonu</Turkish>
+            <Latin>Positio armi</Latin>
+            <Bulgarian>Позиция на оръжието</Bulgarian>
+            <Slovak>Pozícia zbrane</Slovak>
+            <Ukrainian>Положення зброї</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_attributes_primaryweaponslot0">
+            <Original>Primary weapon</Original>
+            <Chinese>主武器</Chinese>
+            <French>Arme principale</French>
+            <Spanish>Arma principal</Spanish>
+            <Italian>Arma principale</Italian>
+            <Hungarian>Elsődleges fegyver</Hungarian>
+            <Polish>Broń podstawowa</Polish>
+            <Russian>Основное оружие</Russian>
+            <German>Primärwaffe</German>
+            <Czech>Hlavní zbraň</Czech>
+            <English>Primary weapon</English>
+            <Portuguese>Arma primária</Portuguese>
+            <Korean>주 무기</Korean>
+            <Chinesesimp>主武器</Chinesesimp>
+            <Japanese>メイン武器</Japanese>
+            <Turkish>Birincil silah</Turkish>
+            <Latin>Arma primaria</Latin>
+            <Bulgarian>Основно оръжие</Bulgarian>
+            <Slovak>Hlavná zbraň</Slovak>
+            <Ukrainian>Основна зброя</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_attributes_hide_sandbags0">
+            <Original>Hide sandbags</Original>
+            <Chinese>隱藏沙包</Chinese>
+            <French>Masquer sacs de sable</French>
+            <Spanish>Ocultar sacos terreros</Spanish>
+            <Italian>Nascondi sacchi di sabbia</Italian>
+            <Hungarian>Homokzsákok elrejtése</Hungarian>
+            <Polish>Ukryj worki z piaskiem</Polish>
+            <Russian>Скрыть мешки с песком</Russian>
+            <German>Sandsäcke ausblenden</German>
+            <Czech>Skrýt pytle s pískem</Czech>
+            <English>Hide sandbags</English>
+            <Portuguese>Ocultar sacos de areia</Portuguese>
+            <Korean>모래주머니 감추기</Korean>
+            <Chinesesimp>隐藏沙袋</Chinesesimp>
+            <Japanese>サンドバッグを隠す</Japanese>
+            <Turkish>Kum torbalarını sakla</Turkish>
+            <Latin>Occulta saccos harenarios</Latin>
+            <Bulgarian>Скрий чувалите с пясък</Bulgarian>
+            <Slovak>Skryť vrecia s pieskom</Slovak>
+            <Ukrainian>Сховати мішки з піском</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_attributes_helmet_position0">
+            <Original>Headgear position</Original>
+            <Chinese>頭飾位置</Chinese>
+            <French>Emplacement de couvre-chef</French>
+            <Spanish>Posición de equipamiento para cabeza</Spanish>
+            <Italian>Posizione copricapo</Italian>
+            <Hungarian>Fejfedő pozíciója</Hungarian>
+            <Polish>Pozycja nakrycia głowy</Polish>
+            <Russian>Позиция головного убора</Russian>
+            <German>Position – Kopfbedeckung</German>
+            <Czech>Pozice pokrývky hlavy</Czech>
+            <English>Headgear position</English>
+            <Portuguese>Posição do acessório de cabeça</Portuguese>
+            <Korean>헤드기어 위치</Korean>
+            <Chinesesimp>帽子位置</Chinesesimp>
+            <Japanese>帽子の位置</Japanese>
+            <Turkish>Başlık pozisyonu</Turkish>
+            <Latin>Positio tegminis capitis</Latin>
+            <Bulgarian>Позиция на покривалото за глава</Bulgarian>
+            <Slovak>Pozícia pokrývky hlavy</Slovak>
+            <Ukrainian>Положення головного убору</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_attributes_headgearslot0">
+            <Original>Headgear</Original>
+            <Chinese>頭飾</Chinese>
+            <French>Couvre-chef</French>
+            <Spanish>Equipamiento para cabeza</Spanish>
+            <Italian>Copricapo</Italian>
+            <Hungarian>Fejfedő</Hungarian>
+            <Polish>Nakrycie głowy</Polish>
+            <Russian>Головной убор</Russian>
+            <German>Kopfbedeckungen</German>
+            <Czech>Pokrývka hlavy</Czech>
+            <English>Headgear</English>
+            <Portuguese>Acessório de cabeça</Portuguese>
+            <Korean>헤드기어</Korean>
+            <Chinesesimp>帽子</Chinesesimp>
+            <Japanese>帽子</Japanese>
+            <Turkish>Başlık</Turkish>
+            <Latin>Tegmen capitis</Latin>
+            <Bulgarian>Покривало за глава</Bulgarian>
+            <Slovak>Pokrývka hlavy</Slovak>
+            <Ukrainian>Головний убір</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_base_f_attributes_disableactions0">
+            <Original>Disable actions</Original>
+            <Chinese>停用動作</Chinese>
+            <French>Désactiver actions</French>
+            <Spanish>Desactivar acciones</Spanish>
+            <Italian>Disabilita azioni</Italian>
+            <Hungarian>Műveletek letiltása</Hungarian>
+            <Polish>Wyłącz akcje</Polish>
+            <Russian>Отключить действия</Russian>
+            <German>Aktionen deaktivieren</German>
+            <Czech>Vypnout akce</Czech>
+            <English>Disable actions</English>
+            <Portuguese>Desativar ações</Portuguese>
+            <Korean>액션 비활성화</Korean>
+            <Chinesesimp>停用动作</Chinesesimp>
+            <Japanese>アクションを無効化する</Japanese>
+            <Turkish>Eylemleri kapat</Turkish>
+            <Latin>Actiones disable</Latin>
+            <Bulgarian>Деактивирай действията</Bulgarian>
+            <Slovak>Zakázať akcie</Slovak>
+            <Ukrainian>Вимкнути дії</Ukrainian>
+          </Key>
+          <Key ID="str_a3_cfgvehicles_land_battlefieldcross_01_aaf_f0">
+            <Original>Battlefield Memorial [AAF]</Original>
+            <Chinese>戰場紀念碑 [AAF]</Chinese>
+            <French>Tombe improvisée [AAF]</French>
+            <Spanish>Recuerdo de los caídos en combate (AAF)</Spanish>
+            <Italian>Compos. commemorativa [AAF]</Italian>
+            <Hungarian>Harctéri emlékmű [AAF]</Hungarian>
+            <Polish>Pomnik ku czci poległych [AAF]</Polish>
+            <Russian>Мемориал поля битвы [AAF]</Russian>
+            <German>Schlachtfeld-Denkmal [AAF]</German>
+            <Czech>Polní památník [AAF]</Czech>
+            <English>Battlefield Memorial [AAF]</English>
+            <Portuguese>Memorial de campo de batalha [AAF]</Portuguese>
+            <Korean>전장 기념물 [AAF]</Korean>
+            <Chinesesimp>战场纪念 [AAF]</Chinesesimp>
+            <Japanese>戦場の記念碑 [AAF]</Japanese>
+            <Turkish>Savaş Alanı Anıtı [AAF]</Turkish>
+            <Latin>Memoriale campi proelii [AAF]</Latin>
+            <Bulgarian>Паметник на бойното поле [AAF]</Bulgarian>
+            <Slovak>Pamätník bojiska [AAF]</Slovak>
+            <Ukrainian>Пам'ятник полеглим [AAF]</Ukrainian>
+          </Key>
+        </Container>
+      </Container>
+      <Container name="Objectives">
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_base_f_attributes_progress_source0">
+          <Original>Progress bar</Original>
+          <Chinese>進度條</Chinese>
+          <French>Barre de progression</French>
+          <Spanish>Barra de progreso</Spanish>
+          <Italian>Barra di avanzamento</Italian>
+          <Hungarian>Folyamatjelző sáv</Hungarian>
+          <Polish>Pasek postępu</Polish>
+          <Russian>Шкала прогресса</Russian>
+          <German>Fortschrittsleiste</German>
+          <Czech>Ukazatel postupu</Czech>
+          <English>Progress bar</English>
+          <Portuguese>Barra de progresso</Portuguese>
+          <Korean>진행상황 바</Korean>
+          <Chinesesimp>进度条</Chinesesimp>
+          <Japanese>進行バー</Japanese>
+          <Turkish>İlerleme çubuğu</Turkish>
+          <Latin>Trabs progressionis</Latin>
+          <Bulgarian>Лента за напредъка</Bulgarian>
+          <Slovak>Ukazovateľ priebehu</Slovak>
+          <Ukrainian>Індикатор перебігу</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_base_f_attributes_openterminal0">
+          <Original>Open terminal</Original>
+          <Chinese>打開終端機</Chinese>
+          <French>Ouvrir terminal</French>
+          <Spanish>Abrir terminal</Spanish>
+          <Italian>Apri terminale</Italian>
+          <Hungarian>Terminál megnyitása</Hungarian>
+          <Polish>Otwórz terminal</Polish>
+          <Russian>Открыть терминал</Russian>
+          <German>Auf Terminal zugreifen</German>
+          <Czech>Otevřít terminál</Czech>
+          <English>Open terminal</English>
+          <Portuguese>Abrir terminal</Portuguese>
+          <Korean>터미널 열기</Korean>
+          <Chinesesimp>打开终端</Chinesesimp>
+          <Japanese>ターミナルを開く</Japanese>
+          <Turkish>Terminali aç</Turkish>
+          <Latin>Aperi terminale</Latin>
+          <Bulgarian>Отвори терминала</Bulgarian>
+          <Slovak>Otvoriť terminál</Slovak>
+          <Ukrainian>Відкрити термінал</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_02_communications_f0">
+          <Original>Rugged Communications Terminal (Large)</Original>
+          <Chinese>堅固通訊終端（大型）</Chinese>
+          <French>Terminal radio renforcé (grand)</French>
+          <Spanish>Terminal de comunicaciones resistente (grande)</Spanish>
+          <Italian>Terminale comunicazioni robusto (grande)</Italian>
+          <Hungarian>Masszív kommunikációs terminál (nagy)</Hungarian>
+          <Polish>Wzmocniony terminal komunikacyjny (duży)</Polish>
+          <Russian>Прочный терминал связи (большой)</Russian>
+          <German>Robustes Kommunikationsterminal (groß)</German>
+          <Czech>Odolný komunikační terminál (velký)</Czech>
+          <English>Rugged Communications Terminal (Large)</English>
+          <Portuguese>Terminal de comunicações robusto (Grande)</Portuguese>
+          <Korean>견고한 통신 터미널 (대형)</Korean>
+          <Chinesesimp>坚固型通信终端（大型）</Chinesesimp>
+          <Japanese>頑丈な通信ターミナル（大）</Japanese>
+          <Turkish>Sağlam İletişim Terminali (Büyük)</Turkish>
+          <Latin>Terminale communicationis robustum (magnum)</Latin>
+          <Bulgarian>Устойчив комуникационен терминал (голям)</Bulgarian>
+          <Slovak>Odolný komunikačný terminál (veľký)</Slovak>
+          <Ukrainian>Захищений термінал зв'язку (великий)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_01_f_attributes_stopping_source0">
+          <Original>Stopping progress bar</Original>
+          <Chinese>正在停止進度條</Chinese>
+          <French>Arrêt de la barre de progression</French>
+          <Spanish>Deteniendo barra de progreso</Spanish>
+          <Italian>Arresto barra di avanzamento</Italian>
+          <Hungarian>Leállítási folyamatjelző sáv</Hungarian>
+          <Polish>Przerywanie paska postępu</Polish>
+          <Russian>Шкала остановки</Russian>
+          <German>Fortschrittsleiste – anhalten</German>
+          <Czech>Zastavování ukazatele postupu</Czech>
+          <English>Stopping progress bar</English>
+          <Portuguese>Parando barra de progresso</Portuguese>
+          <Korean>진행상황 바 멈추는 중</Korean>
+          <Chinesesimp>正在停止进度条</Chinesesimp>
+          <Japanese>進行バーを停止中</Japanese>
+          <Turkish>İlerleme çubuğu durduruluyor</Turkish>
+          <Latin>Trabs progressionis sistendae</Latin>
+          <Bulgarian>Лента за напредъка при спиране</Bulgarian>
+          <Slovak>Ukazovateľ priebehu zastavenia</Slovak>
+          <Ukrainian>Індикатор перебігу зупинки</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_01_f_attributes_preparing_source0">
+          <Original>Preparing progress bar</Original>
+          <Chinese>正在準備進度條</Chinese>
+          <French>Préparation de la barre de progression</French>
+          <Spanish>Preparando barra de progreso</Spanish>
+          <Italian>Preparazione barra di avanzamento</Italian>
+          <Hungarian>Előkészítési folyamatjelző sáv</Hungarian>
+          <Polish>Przygotowywanie paska postępu</Polish>
+          <Russian>Шкала подготовки</Russian>
+          <German>Fortschrittsleiste – vorbereiten</German>
+          <Czech>Připravování ukazatele postupu</Czech>
+          <English>Preparing progress bar</English>
+          <Portuguese>Preparando barra de progresso</Portuguese>
+          <Korean>진행상황 바 준비 중</Korean>
+          <Chinesesimp>正在准备进度条</Chinesesimp>
+          <Japanese>進行バーを準備中</Japanese>
+          <Turkish>İlerleme çubuğu hazırlanıyor</Turkish>
+          <Latin>Trabs progressionis praeparationis</Latin>
+          <Bulgarian>Лента за напредъка при подготовка</Bulgarian>
+          <Slovak>Ukazovateľ priebehu prípravy</Slovak>
+          <Ukrainian>Індикатор перебігу підготовки</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_01_f_attributes_downloading_source0">
+          <Original>Downloading progress bar</Original>
+          <Chinese>正在下載進度條</Chinese>
+          <French>Barre de progression de téléchargement</French>
+          <Spanish>Descargando barra de progreso</Spanish>
+          <Italian>Download barra di avanzamento</Italian>
+          <Hungarian>Letöltési folyamatjelző sáv</Hungarian>
+          <Polish>Pobieranie paska postępu</Polish>
+          <Russian>Шкала загрузки</Russian>
+          <German>Fortschrittsleiste – herunterladen</German>
+          <Czech>Stahování ukazatele postupu</Czech>
+          <English>Downloading progress bar</English>
+          <Portuguese>Baixando barra de progresso</Portuguese>
+          <Korean>진행상황 바 다운로드 중</Korean>
+          <Chinesesimp>正在下载进度条</Chinesesimp>
+          <Japanese>進行バーをダウンロード中</Japanese>
+          <Turkish>İlerleme çubuğu indiriliyor</Turkish>
+          <Latin>Trabs progressionis deponendae</Latin>
+          <Bulgarian>Лента за напредъка при изтегляне</Bulgarian>
+          <Slovak>Ukazovateľ priebehu sťahovania</Slovak>
+          <Ukrainian>Індикатор перебігу завантаження</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_01_f0">
+          <Original>Rugged Terminal</Original>
+          <Chinese>堅固終端機</Chinese>
+          <French>Terminal renforcé</French>
+          <Spanish>Terminal resistente</Spanish>
+          <Italian>Terminale robusto</Italian>
+          <Hungarian>Masszív terminál</Hungarian>
+          <Polish>Wzmocniony terminal</Polish>
+          <Russian>Прочный терминал</Russian>
+          <German>Robustes Terminal</German>
+          <Czech>Odolný terminál</Czech>
+          <English>Rugged Terminal</English>
+          <Portuguese>Terminal robusto</Portuguese>
+          <Korean>견고한 터미널</Korean>
+          <Chinesesimp>坚固型终端</Chinesesimp>
+          <Japanese>頑丈なターミナル</Japanese>
+          <Turkish>Dayanıklı Terminal</Turkish>
+          <Latin>Terminale robustum</Latin>
+          <Bulgarian>Устойчив терминал</Bulgarian>
+          <Slovak>Odolný terminál</Slovak>
+          <Ukrainian>Захищений термінал</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_01_communications_hub_f0">
+          <Original>Rugged Communications Hub</Original>
+          <Chinese>堅固通訊中樞</Chinese>
+          <French>Hub radio renforcé</French>
+          <Spanish>Nodo de comunicaciones resistente</Spanish>
+          <Italian>Centro comunicazioni robusto</Italian>
+          <Hungarian>Masszív kommunikációs központ</Hungarian>
+          <Polish>Wzmocnione centrum łączności</Polish>
+          <Russian>Прочный центр связи</Russian>
+          <German>Robustes Kommunikationszentrum</German>
+          <Czech>Odolná komunikační centrála</Czech>
+          <English>Rugged Communications Hub</English>
+          <Portuguese>Centro de comunicações robusto</Portuguese>
+          <Korean>견고한 통신 허브</Korean>
+          <Chinesesimp>坚固型通信中心</Chinesesimp>
+          <Japanese>頑丈な通信ハブ</Japanese>
+          <Turkish>Dayanıklı İletişim Merkezi</Turkish>
+          <Latin>Nodus communicationis robustus</Latin>
+          <Bulgarian>Устойчив комуникационен център</Bulgarian>
+          <Slovak>Odolné komunikačné centrum</Slovak>
+          <Ukrainian>Захищений вузол зв'язку</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_ruggedterminal_01_communications_f0">
+          <Original>Rugged Communications Terminal</Original>
+          <Chinese>堅固通訊終端</Chinese>
+          <French>Terminal radio renforcé</French>
+          <Spanish>Terminal de comunicaciones resistente</Spanish>
+          <Italian>Terminale comunicazioni robusto</Italian>
+          <Hungarian>Masszív kommunikációs terminál</Hungarian>
+          <Polish>Wzmocniony terminal komunikacyjny</Polish>
+          <Russian>Прочный терминал связи</Russian>
+          <German>Robustes Kommunikationsterminal</German>
+          <Czech>Odolný komunikační terminál</Czech>
+          <English>Rugged Communications Terminal</English>
+          <Portuguese>Terminal de comunicações robusto</Portuguese>
+          <Korean>견고한 통신 터미널</Korean>
+          <Chinesesimp>坚固型通信终端</Chinesesimp>
+          <Japanese>頑丈な通信ターミナル</Japanese>
+          <Turkish>Dayanıklı İletişim Terminali</Turkish>
+          <Latin>Terminale communicationis robustum</Latin>
+          <Bulgarian>Устойчив комуникационен терминал</Bulgarian>
+          <Slovak>Odolný komunikačný terminál</Slovak>
+          <Ukrainian>Захищений термінал зв'язку</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_portableflagpole_01_f_attributes_flag_source0">
+          <Original>Flag position</Original>
+          <Chinese>旗幟位置</Chinese>
+          <French>Emplacement de drapeau</French>
+          <Spanish>Posición de bandera</Spanish>
+          <Italian>Posizione bandiera</Italian>
+          <Hungarian>Zászló pozíciója</Hungarian>
+          <Polish>Pozycja flagi</Polish>
+          <Russian>Позиция флага</Russian>
+          <German>Position – Flagge</German>
+          <Czech>Pozice vlajky</Czech>
+          <English>Flag position</English>
+          <Portuguese>Posição da bandeira</Portuguese>
+          <Korean>깃발 위치</Korean>
+          <Chinesesimp>旗帜位置</Chinesesimp>
+          <Japanese>旗の位置</Japanese>
+          <Turkish>Bayrak pozisyonu</Turkish>
+          <Latin>Positio vexilli</Latin>
+          <Bulgarian>Позиция на флага</Bulgarian>
+          <Slovak>Poloha vlajky</Slovak>
+          <Ukrainian>Положення прапора</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_portableflagpole_01_f_attributes_flag_custom0">
+          <Original>Flag (custom)</Original>
+          <Chinese>旗幟（自訂）</Chinese>
+          <French>Drapeau (personnalisé)</French>
+          <Spanish>Bandera (personalizada)</Spanish>
+          <Italian>Bandiera (personalizzata)</Italian>
+          <Hungarian>Zászló (egyéni)</Hungarian>
+          <Polish>Flaga (własna)</Polish>
+          <Russian>Флаг (пользовательский)</Russian>
+          <German>Flagge (benutzerdefiniert)</German>
+          <Czech>Vlajka (vlastní)</Czech>
+          <English>Flag (custom)</English>
+          <Portuguese>Bandeira (Personalizada)</Portuguese>
+          <Korean>깃발 (커스텀)</Korean>
+          <Chinesesimp>旗帜（自定义）</Chinesesimp>
+          <Japanese>旗（カスタム）</Japanese>
+          <Turkish>Bayrak (özel)</Turkish>
+          <Latin>Vexillum (consuetum)</Latin>
+          <Bulgarian>Флаг (персонализиран)</Bulgarian>
+          <Slovak>Vlajka (vlastná)</Slovak>
+          <Ukrainian>Прапор (власний)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_portableflagpole_01_f_attributes_flag0">
+          <Original>Flag</Original>
+          <Chinese>旗幟</Chinese>
+          <French>Drapeau</French>
+          <Spanish>Bandera</Spanish>
+          <Italian>Bandiera</Italian>
+          <Hungarian>Zászló</Hungarian>
+          <Polish>Flaga</Polish>
+          <Russian>Флаг</Russian>
+          <German>Flagge</German>
+          <Czech>Vlajka</Czech>
+          <English>Flag</English>
+          <Portuguese>Bandeira</Portuguese>
+          <Korean>깃발</Korean>
+          <Chinesesimp>旗帜</Chinesesimp>
+          <Japanese>旗</Japanese>
+          <Turkish>Bayrak</Turkish>
+          <Latin>Vexillum</Latin>
+          <Bulgarian>Флаг</Bulgarian>
+          <Slovak>Vlajka</Slovak>
+          <Ukrainian>Прапор</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_portableflagpole_01_f0">
+          <Original>Portable Flagpole</Original>
+          <Chinese>便攜旗桿</Chinese>
+          <French>Mât de drapeau portatif</French>
+          <Spanish>Mástil de bandera portátil</Spanish>
+          <Italian>Pennone portatile</Italian>
+          <Hungarian>Hordozható zászlórúd</Hungarian>
+          <Polish>Przenośny maszt</Polish>
+          <Russian>Переносной флагшток</Russian>
+          <German>Tragbarer Fahnenmast</German>
+          <Czech>Přenosný stožár</Czech>
+          <English>Portable Flagpole</English>
+          <Portuguese>Mastro portátil</Portuguese>
+          <Korean>휴대용 깃대</Korean>
+          <Chinesesimp>便携式旗杆</Chinesesimp>
+          <Japanese>携帯用旗ざお</Japanese>
+          <Turkish>Taşınabilir Direk</Turkish>
+          <Latin>Vexillifer portatilis</Latin>
+          <Bulgarian>Преносим пилон за флаг</Bulgarian>
+          <Slovak>Prenosný stožiar</Slovak>
+          <Ukrainian>Переносний флагшток</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_areamarker_01_f0">
+          <Original>Area Marker</Original>
+          <Chinese>區域標記</Chinese>
+          <French>Marqueur de zone</French>
+          <Spanish>Marcador de zona</Spanish>
+          <Italian>Indicatore area</Italian>
+          <Hungarian>Területjelölő</Hungarian>
+          <Polish>Znacznik obszaru</Polish>
+          <Russian>Метка области</Russian>
+          <German>Bereichsmarkierung</German>
+          <Czech>Značka oblasti</Czech>
+          <English>Area Marker</English>
+          <Portuguese>Marcador de área</Portuguese>
+          <Korean>지역 마커</Korean>
+          <Chinesesimp>区域标记</Chinesesimp>
+          <Japanese>エリアマーカー</Japanese>
+          <Turkish>Bölge İşareti</Turkish>
+          <Latin>Signum areae</Latin>
+          <Bulgarian>Маркер на зона</Bulgarian>
+          <Slovak>Značka oblasti</Slovak>
+          <Ukrainian>Маркер зони</Ukrainian>
+        </Key>
+      </Container>
+      <Container name="Spaceship">
+        <Key ID="str_a3_cfgvehicles_spaceshipcapsule_01_wreck_f0">
+          <Original>Space Capsule Wreck</Original>
+          <Chinese>太空艙殘骸</Chinese>
+          <French>Épave de capsule spatiale</French>
+          <Spanish>Restos de cápsula espacial</Spanish>
+          <Italian>Rottame capsula spaziale</Italian>
+          <Hungarian>Űrkapszula-roncs</Hungarian>
+          <Polish>Wrak kapsuły kosmicznej</Polish>
+          <Russian>Обломки космической капсулы</Russian>
+          <German>Weltraumkapsel-Wrack</German>
+          <Czech>Vrak vesmírného modulu</Czech>
+          <English>Space Capsule Wreck</English>
+          <Portuguese>Ruína de cápsula espacial</Portuguese>
+          <Korean>우주 캡슐 잔해</Korean>
+          <Chinesesimp>太空舱残骸</Chinesesimp>
+          <Japanese>宇宙カプセルの残骸</Japanese>
+          <Turkish>Uzay Kapsülü Enkazı</Turkish>
+          <Latin>Ruina capsulae spatialis</Latin>
+          <Bulgarian>Останки от космическа капсула</Bulgarian>
+          <Slovak>Vrak vesmírnej kapsuly</Slovak>
+          <Ukrainian>Уламки космічної капсули</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_spaceshipcapsule_01_parachute_f0">
+          <Original>Space Capsule Parachutes</Original>
+          <Chinese>太空艙降落傘</Chinese>
+          <French>Parachutes de capsule spatiale</French>
+          <Spanish>Paracaídas de cápsula espacial</Spanish>
+          <Italian>Paracaduti capsula spaziale</Italian>
+          <Hungarian>Űrkapszula ejtőernyői</Hungarian>
+          <Polish>Spadochrony kapsuły kosmicznej</Polish>
+          <Russian>Парашюты космической капсулы</Russian>
+          <German>Weltraumkapsel-Fallschirme</German>
+          <Czech>Padáky vesmírného modulu</Czech>
+          <English>Space Capsule Parachutes</English>
+          <Portuguese>Paraquedas de cápsula espacial</Portuguese>
+          <Korean>우주 캡슐 낙하산</Korean>
+          <Chinesesimp>太空舱降落伞</Chinesesimp>
+          <Japanese>宇宙カプセルのパラシュート</Japanese>
+          <Turkish>Uzay Kapsülü Paraşütleri</Turkish>
+          <Latin>Parachutae capsulae spatialis</Latin>
+          <Bulgarian>Парашути на космическа капсула</Bulgarian>
+          <Slovak>Padáky vesmírnej kapsuly</Slovak>
+          <Ukrainian>Парашути космічної капсули</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_spaceshipcapsule_01_f_attributes_attachparachute0">
+          <Original>Attach parachute</Original>
+          <Chinese>連接降落傘</Chinese>
+          <French>Attacher parachute</French>
+          <Spanish>Colocar paracaídas</Spanish>
+          <Italian>Fissa paracadute</Italian>
+          <Hungarian>Ejtőernyő csatlakoztatása</Hungarian>
+          <Polish>Przymocuj spadochron</Polish>
+          <Russian>Прикрепить парашют</Russian>
+          <German>Fallschirm anbringen</German>
+          <Czech>Připevnit padák</Czech>
+          <English>Attach parachute</English>
+          <Portuguese>Anexar paraquedas</Portuguese>
+          <Korean>낙하산 부착</Korean>
+          <Chinesesimp>连接降落伞</Chinesesimp>
+          <Japanese>パラシュートを取り付ける</Japanese>
+          <Turkish>Paraşütü bağla</Turkish>
+          <Latin>Adnecte parachutam</Latin>
+          <Bulgarian>Прикачи парашут</Bulgarian>
+          <Slovak>Pripevniť padák</Slovak>
+          <Ukrainian>Прикріпити парашут</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_spaceshipcapsule_01_f0">
+          <Original>Space Capsule</Original>
+          <Chinese>太空艙</Chinese>
+          <French>Capsule spatiale</French>
+          <Spanish>Cápsula espacial</Spanish>
+          <Italian>Capsula spaziale</Italian>
+          <Hungarian>Űrkapszula</Hungarian>
+          <Polish>Kapsuła kosmiczna</Polish>
+          <Russian>Космическая капсула</Russian>
+          <German>Weltraumkapsel</German>
+          <Czech>Vesmírný modul</Czech>
+          <English>Space Capsule</English>
+          <Portuguese>Cápsula espacial</Portuguese>
+          <Korean>우주 캡슐</Korean>
+          <Chinesesimp>太空舱</Chinesesimp>
+          <Japanese>宇宙カプセル</Japanese>
+          <Turkish>Uzay Kapsülü</Turkish>
+          <Latin>Capsula spatialis</Latin>
+          <Bulgarian>Космическа капсула</Bulgarian>
+          <Slovak>Vesmírna kapsula</Slovak>
+          <Ukrainian>Космічна капсула</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_spaceshipcapsule_01_debris_f0">
+          <Original>Space Capsule Wreck (Debris)</Original>
+          <Chinese>太空艙殘骸（碎片）</Chinese>
+          <French>Épave de capsule spatiale (débris)</French>
+          <Spanish>Restos de cápsula espacial (fragmentos)</Spanish>
+          <Italian>Rottame capsula spaziale (detriti)</Italian>
+          <Hungarian>Űrkapszula-roncs (törmelék)</Hungarian>
+          <Polish>Wrak kapsuły kosmicznej (szczątki)</Polish>
+          <Russian>Космическая капсула (обломки)</Russian>
+          <German>Weltraumkapsel-Wrack (Trümmer)</German>
+          <Czech>Vrak vesmírného modulu (sutiny)</Czech>
+          <English>Space Capsule Wreck (Debris)</English>
+          <Portuguese>Ruína de cápsula espacial (Detritos)</Portuguese>
+          <Korean>우주 캡슐 잔해 (파편)</Korean>
+          <Chinesesimp>太空舱残骸（碎片）</Chinesesimp>
+          <Japanese>宇宙カプセルの残骸（破片）</Japanese>
+          <Turkish>Uzay Kapsülü Enkazı (Moloz)</Turkish>
+          <Latin>Ruina capsulae spatialis (rudera)</Latin>
+          <Bulgarian>Останки от космическа капсула (отломки)</Bulgarian>
+          <Slovak>Vrak vesmírnej kapsuly (trosky)</Slovak>
+          <Ukrainian>Уламки космічної капсули (уламки)</Ukrainian>
+        </Key>
+        <Key ID="str_a3_cfgvehicles_spaceshipcapsule_01_container_f0">
+          <Original>Space Capsule Container</Original>
+          <Chinese>太空艙容器</Chinese>
+          <French>Conteneur de capsule spatiale</French>
+          <Spanish>Contenedor de cápsula espacial</Spanish>
+          <Italian>Container capsula spaziale</Italian>
+          <Hungarian>Űrkapszula-konténer</Hungarian>
+          <Polish>Pojemnik kapsuły kosmicznej</Polish>
+          <Russian>Контейнер космической капсулы</Russian>
+          <German>Weltraumkapsel-Behälter</German>
+          <Czech>Kontejner vesmírného modulu</Czech>
+          <English>Space Capsule Container</English>
+          <Portuguese>Contêiner de cápsula espacial</Portuguese>
+          <Korean>우주 캡슐 컨테이너</Korean>
+          <Chinesesimp>太空舱集装箱</Chinesesimp>
+          <Japanese>宇宙カプセルのコンテナ</Japanese>
+          <Turkish>Uzay Kapsülü Konteyneri</Turkish>
+          <Latin>Continens capsulae spatialis</Latin>
+          <Bulgarian>Контейнер на космическа капсула</Bulgarian>
+          <Slovak>Kontajner vesmírnej kapsuly</Slovak>
+          <Ukrainian>Контейнер космічної капсули</Ukrainian>
+        </Key>
+      </Container>
+    </Container>
+    <Container name="Achievements">
+      <Key ID="STR_A3_AchDecadeModLover_Title">
+        <Original>Mod Lover</Original>
+        <Chinese>修改模組愛好者</Chinese>
+        <French>Amoureux des mods</French>
+        <Spanish>Amante de los mods</Spanish>
+        <Italian>Passione mod</Italian>
+        <Hungarian>Modrajongó</Hungarian>
+        <Polish>Miłośnik modów</Polish>
+        <Russian>Любитель модов</Russian>
+        <German>Mod-Liebhaber</German>
+        <Czech>Milovník modů</Czech>
+        <English>Mod Lover</English>
+        <Portuguese>Viciado em mods</Portuguese>
+        <Korean>모드 애호가</Korean>
+        <Chinesesimp>修改模块爱好者</Chinesesimp>
+        <Japanese>MOD 愛好家</Japanese>
+        <Turkish>Mod Tutkunu</Turkish>
+        <Latin>Amator modorum</Latin>
+        <Bulgarian>Любител на модове</Bulgarian>
+        <Slovak>Milovník modov</Slovak>
+        <Ukrainian>Любитель модів</Ukrainian>
+      </Key>
+      <Key ID="STR_A3_AchDecadeAnderson_Description">
+        <Original>Equipped any variant of the ADR-97 submachine gun.</Original>
+        <Chinese>裝備任何版本的 ADR-97 衝鋒槍。</Chinese>
+        <French>Vous avez utilisé une variante de la mitraillette ADR-97.</French>
+        <Spanish>Te has equipado con cualquier variante del subfusil ADR-97.</Spanish>
+        <Italian>Hai equipaggiato tutte le varianti della pistola mitragliatrice ADR-97.</Italian>
+        <Hungarian>Felszerelted az ADR-97 géppisztoly bármely változatát.</Hungarian>
+        <Polish>Wyposażono dowolny wariant pistoletu maszynowego ADR-97.</Polish>
+        <Russian>Установил любой из вариантов пистолета-пулемета ADR-97.</Russian>
+        <German>Hat eine beliebige Variante der ADR-97-Maschinenpistole ausgerüstet.</German>
+        <Czech>Za zařazení libovolné varianty samopalu ADR-97 do výbavy.</Czech>
+        <English>Equipped any variant of the ADR-97 submachine gun.</English>
+        <Portuguese>Equipou qualquer variante de uma submetralhadora ADR-97.</Portuguese>
+        <Korean>아무 버전의 ADR-97 기관단총을 장착했습니다.</Korean>
+        <Chinesesimp>装备了 ADR-97 机枪的任何变款。</Chinesesimp>
+        <Japanese>ADR-97 短機関銃のいずれかのバリアントを装備した。</Japanese>
+        <Turkish>ADR-97 makineli tabancasının herhangi bir türünü kuşan.</Turkish>
+        <Latin>Instruxit quamlibet variantem sclopeti automatici ADR-97.</Latin>
+        <Bulgarian>Оборудва който и да е вариант на картечния пистолет ADR-97.</Bulgarian>
+        <Slovak>Vybavil si sa ľubovoľným variantom samopalu ADR-97.</Slovak>
+        <Ukrainian>Оснастив будь-який варіант пістолета-кулемета ADR-97.</Ukrainian>
+      </Key>
+      <Key ID="STR_A3_AchDecadeModLover_Description">
+        <Original>Started Arma 3 with at least 10 mods loaded – thanks to all modders for their splendid work!</Original>
+        <Chinese>同時載入最少 10 種《Arma 3》修改模組 - 感謝各位才華橫溢的修改模組創作者的努力！</Chinese>
+        <French>Vous avez lancé Arma 3 avec au moins 10 mods. Merci à tous les modders pour leur incroyable travail !</French>
+        <Spanish>Has iniciado Arma 3 con al menos 10 mods cargados. ¡Gracias a todos los modders por un trabajo excelente!</Spanish>
+        <Italian>Hai avviato Arma 3 con almeno 10 mod. Grazie a tutti i modder per il lavoro eccezionale!</Italian>
+        <Hungarian>Elindítottad az Arma 3-at legalább 10 betöltött modd al – köszönet minden moddernek a nagyszerű munkájukért!</Hungarian>
+        <Polish>Uruchomiono Arma 3 z co najmniej 10 załadowanymi modami – dziękujemy ich autorom za fantastyczną robotę!</Polish>
+        <Russian>Запустил Arma 3 минимум с 10 загруженными модами — большое спасибо всем моддерам за их прекрасную работу!</Russian>
+        <German>Hat Arma 3 mit mindestens 10 geladenen Mods gestartet – danke an alle Modder für eure großartige Arbeit!</German>
+        <Czech>Za spuštění Arma 3 s přinejmenším 10 načtenými mody. Děkujeme modderům za jejich parádní práci!</Czech>
+        <English>Started Arma 3 with at least 10 mods loaded – thanks to all modders for their splendid work!</English>
+        <Portuguese>Iniciou Arma 3 com pelo menos 10 mods carregados. Agradecemos a todos os modders pelo incrível trabalho!</Portuguese>
+        <Korean>10개 이상의 모드를 로드한 채로 Arma 3를 실행했습니다. 훌륭한 모드를 제작해 주신 모든 모더들께 감사의 말씀을 전합니다!</Korean>
+        <Chinesesimp>启动《Arma 3》游戏时至少加载了 10 款修改模块 - 感谢所有修改模块制作者，感谢他们为我们共享了各种才华横溢的作品！</Chinesesimp>
+        <Japanese>10 個以上の MOD が読み込まれた状態で『Arma 3』を開始した。MOD を使いまくってくれた皆さんに感謝です！</Japanese>
+        <Turkish>Arma 3’ü en az 10 mod yüklüyken başlat. Çıkardıkları harika işler için bütün mod tutkunlarına teşekkür ederiz!</Turkish>
+        <Latin>Arma 3 incepit cum saltem 10 modis oneratis – gratiae omnibus modderibus pro opere eorum splendido!</Latin>
+        <Bulgarian>Стартира Arma 3 с поне 10 заредени мода – благодарим на всички модъри за великолепната им работа!</Bulgarian>
+        <Slovak>Spustil si Arma 3 s aspoň 10 načítanými modmi – vďaka všetkým modderom za ich skvelú prácu!</Slovak>
+        <Ukrainian>Запустив Arma 3 щонайменше з 10 завантаженими модами — дякуємо всім моддерам за їхню чудову роботу!</Ukrainian>
+      </Key>
+      <Key ID="STR_A3_AchDecadeArmaD_Description">
+        <Original>Got Arma'd into the air while inside a ground vehicle.</Original>
+        <Chinese>乘搭地面載具時遭到意外撞到岩石並翻車。</Chinese>
+        <French>Vous avez pris votre envol alors que vous étiez dans un véhicule terrestre.</French>
+        <Spanish>Te han hecho la ArmAdinha y has volado por los aires desde dentro de un vehículo.</Spanish>
+        <Italian>Sei stato scaraventato in aria mentre eri all’interno di un veicolo di terra.</Italian>
+        <Hungarian>A levegőbe repültél, miközben egy szárazföldi járműben voltál.</Hungarian>
+        <Polish>Zrobiono Arma’d w powietrze, będąc wewnątrz pojazdu naziemnego.</Polish>
+        <Russian>Взмыл в небо, находясь в наземной технике.</Russian>
+        <German>Wurde in einem Bodenfahrzeug in die Luft geARMAt.</German>
+        <Czech>Arma hráče při řízení pozemního vozidla znenadání vymrštila do vzduchu.</Czech>
+        <English>Got Arma'd into the air while inside a ground vehicle.</English>
+        <Portuguese>Foi arremessado no ar dentro de um veículo terrestre.</Portuguese>
+        <Korean>지상 차량 내부에 있다가 공중으로 아르마 당했습니다.</Korean>
+        <Chinesesimp>在驾驶或乘坐地面载具时，意外撞上岩石并在空中翻车（Arma'd）。</Chinesesimp>
+        <Japanese>陸上車両に乗っている時に Arma お決まりの空中回転が発生した。</Japanese>
+        <Turkish>Bir kara aracının içinden havaya Arma’lan.</Turkish>
+        <Latin>In aera proiectus es, cum in vehiculo terrestri esses.</Latin>
+        <Bulgarian>Изхвърча във въздуха, докато беше в наземно превозно средство.</Bulgarian>
+        <Slovak>Vyletel si do vzduchu, keď si bol v pozemnom vozidle.</Slovak>
+        <Ukrainian>Злетів у повітря, перебуваючи всередині наземної техніки.</Ukrainian>
+      </Key>
+      <Key ID="STR_A3_AchDecadeArmaD_Title">
+        <Original>Arma'd</Original>
+        <Chinese>Arma'd</Chinese>
+        <French>Arma Airlines</French>
+        <Spanish>ArmAdinha</Spanish>
+        <Italian>Arma'd!</Italian>
+        <Hungarian>Arma'd</Hungarian>
+        <Polish>Arma'd</Polish>
+        <Russian>Arma'd</Russian>
+        <German>geARMAt</German>
+        <Czech>Ach ta Arma</Czech>
+        <English>Arma'd</English>
+        <Portuguese>Arma'd</Portuguese>
+        <Korean>Arma'd</Korean>
+        <Chinesesimp>Arma'd</Chinesesimp>
+        <Japanese>Arma のお約束</Japanese>
+        <Turkish>Arma’landın</Turkish>
+        <Latin>Arma'd</Latin>
+        <Bulgarian>Arma'd</Bulgarian>
+        <Slovak>Arma'd</Slovak>
+        <Ukrainian>Arma'd</Ukrainian>
+      </Key>
+    </Container>
+  </Package>
+</Project>

@@ -60,17 +60,24 @@ private _configPath = configFile >> "CfgVehicles" >> (typeOf _plane) >> "Ejectio
 private _ejectionSoundInt = getText (_configPath >> "EjectionSoundInt");
 private _ejectionSoundExt = getText (_configPath >> "EjectionSoundExt");
 
-[_ejectionSeat, _ejectionSoundInt] remoteExec ["say", owner _ejectionSeat];
 [
-    [_ejectionSeat, _ejectionSoundExt], 
-    {
-        params ["_seat", "_sound"];
-        if (vehicle player != _seat) then 
+	[_plane, _ejectionSoundInt, _ejectionSoundExt], 
+	{
+		params["_plane", "_ejectionSoundInt", "_ejectionSoundExt"];
+		if (hasInterface) then
 		{
-            _seat say3D [_sound, 1400, 1, false];
-        };
-    }
-] remoteExec ["spawn", [0, -2] select isDedicated];
+			if (player in (crew _plane)) then
+			{
+				playSound _ejectionSoundInt
+			}
+			else
+			{
+				_plane say3D [_ejectionSoundExt, 1400, 1, 0, 0, true];
+			};
+		};
+	}
+] remoteExec ["spawn", 0];
+
 _ejectionSeat animate ["Rocket_Flash_hide",1];
 
 [
@@ -83,7 +90,8 @@ _ejectionSeat animate ["Rocket_Flash_hide",1];
 		_light setLightBrightness 0.3;
 		_light setLightAmbient[0.8, 0.6, 0.2];
 		_light setLightColor[1, 0.5, 0.2];
-		_light lightAttachObject [_s, [0,0,0]];
+		// _light lightAttachObject [_s, [0,0,0]];
+		_light attachTo [_s];
 
 		private _smokeTrail = "#particlesource" createVehicleLocal (getPos _s);
 		_smokeTrail setParticleClass "FX_EjectorSeatSmoke";

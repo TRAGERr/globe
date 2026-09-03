@@ -5,6 +5,10 @@ class CfgPatches
 		addonRootClass="A3_expEden";
 		requiredAddons[]=
 		{
+			"Static_Globe_SAM_Systems",
+			"expEden_fixTextureSourcesFactions_G",
+			"Structures_Globe_Civilian_Garbage",
+			"Structures_Globe_Industrial_Tanks",
 			"Structures_Globe_Humanitarian_Camps",
 			"Structures_Globe_Humanitarian",
 			"Weapons_Globe_MMG_01_light",

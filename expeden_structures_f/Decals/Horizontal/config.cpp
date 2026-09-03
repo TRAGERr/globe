@@ -5,11 +5,21 @@ class CfgPatches
 		addonRootClass="A3_Structures_F_Globe";
 		requiredAddons[]=
 		{
+			"A3_Data_F",
+			"A3_Data_F_Curator",
+			"A3_Roads_F",
+			"A3_Structures_F",
+			"A3_Modules_F_Curator",
+			"A3_Structures_F_Argo",
+			"A3_Structures_F_Enoch",
+			"A3_Structures_F_Exp",
 			"Structures_Globe_Decals"
 		};
 		requiredVersion=0.1;
 		units[]=
 		{
+			"Land_Road_Industrial_01_G",
+			"Land_Road_Industrial_01_G_end",
 			"Land_Road_AsphaltEnoch_01_G",
 			"Land_Road_AsphaltEnoch_01_G_end",
 			"Land_Road_AsphaltEnoch_01_G_old",
@@ -250,13 +260,13 @@ class CfgPatches
 };
 class CfgVehicles
 {
+	class House_F;
 	class Decontamination_base_F;
 	class Land_Marking_Carrier_RW_01_G;
 	class Land_Marking_Carrier_YR_01_G;
 	class Land_Marking_Carrier_YW_01_G;
 	class Land_Decal_ScorchMark_02_5x7_G;
 	class Land_dirt_road_damage_long_05_F;
-	class House_F;
 	class OrdnanceCASZones_Base: House_F
 	{
 		author="$STR_A3_Bohemia_Interactive";
@@ -405,6 +415,8 @@ class CfgVehicles
 	};
 	class Road_Highway_Base: Roads_Base
 	{
+		scope=1;
+		scopeCurator=0;
 	};
 	class Road_Highway_end: Road_Highway_Base
 	{
@@ -2178,8 +2190,8 @@ class CfgVehicles
 		author="O&T Expansion Eden";
 		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Road_MainTanoa_01_G_long.jpg";
 		_generalMacro="Land_Road_MainTanoa_01_G_long";
-		scope=2;
-		scopeCurator=2;
+		scope=1;
+		scopeCurator=0;
 		displayName="$STR_Globe_CfgVehicles_Land_Road_MainTanoa_01_G_long0";
 		model="\a3\structures_f_globe\Decals\Horizontal\road_maintanoa_01_g_long.p3d";
 	};
@@ -2224,8 +2236,8 @@ class CfgVehicles
 		author="O&T Expansion Eden";
 		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Road_RuralTanoa_01_G_long.jpg";
 		_generalMacro="Land_Road_RuralTanoa_01_G_long";
-		scope=2;
-		scopeCurator=2;
+		scope=1;
+		scopeCurator=0;
 		displayName="$STR_Globe_CfgVehicles_Land_Road_RuralTanoa_01_G_long0";
 		model="\a3\structures_f_globe\Decals\Horizontal\road_RuralTanoa_01_g_long.p3d";
 	};
@@ -3069,6 +3081,42 @@ class CfgVehicles
 		hiddenSelectionsMaterials[]=
 		{
 			"a3\props_f_enoch\military\decontamination\data\WaterTrail_01_Foam.rvmat"
+		};
+	};
+	class Land_Road_Industrial_01_G: Road_City_Base
+	{
+		author="O&T Expansion Eden";
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Road_Industrial_01_G.jpg";
+		_generalMacro="Land_Road_Industrial_01_G";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Road_Industrial_01_G0";
+		model="\a3\structures_f_globe\Decals\Horizontal\road_industrial_01_g.p3d";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_exp\data\roads\surf_exp_roaddirt_mine_ca.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\a3\structures_f_exp\data\roads\surf_exp_roaddirt_mine.rvmat"
+		};
+	};
+	class Land_Road_Industrial_01_G_end: Land_Road_Industrial_01_G
+	{
+		author="O&T Expansion Eden";
+		editorPreview="\A3\EditorPreviews_F_expEden\Data\CfgVehicles\Land_Road_Industrial_01_G_end.jpg";
+		_generalMacro="Land_Road_Industrial_01_G_end";
+		scope=2;
+		scopeCurator=2;
+		displayName="$STR_Globe_CfgVehicles_Land_Road_Industrial_01_G_end0";
+		model="\a3\structures_f_globe\Decals\Horizontal\road_industrial_01_g_end.p3d";
+		hiddenSelectionsTextures[]=
+		{
+			"\a3\structures_f_exp\data\roads\surf_exp_roaddirt_mine_end_ca.paa"
 		};
 	};
 };

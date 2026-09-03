@@ -154,6 +154,7 @@ class CfgVehicles
 		_generalMacro="Particle_Smoke_F";
 		displayName="$STR_A3_cfgVehicles_test_EmptyObjectForSmoke0";
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class EventHandlers
 		{
 			postInit="(_this # 0) call compile preprocessFileLineNumbers '\A3\weapons_f\data\scripts\smoke.sqf';";
@@ -185,7 +186,7 @@ class CfgVehicles
 		scope=1;
 		scopeCurator=0;
 		editorSubcategory="EdSubcat_Fire";
-		icon="iconSoundFire_G";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Confetti1
@@ -557,6 +558,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -572,6 +574,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -587,6 +590,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -602,6 +606,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1170,6 +1175,7 @@ class CfgVehicles
 		_generalMacro="Particle_collisionVehSmoke";
 		scope=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1185,6 +1191,7 @@ class CfgVehicles
 		_generalMacro="Particle_ScudSmoke2";
 		scope=1;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1200,6 +1207,7 @@ class CfgVehicles
 		_generalMacro="Particle_ImpactSmoke";
 		scope=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1215,6 +1223,7 @@ class CfgVehicles
 		_generalMacro="Particle_HouseDestrSmokeLongLow";
 		scope=2;
 		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
 		class Effects
 		{
 			class Smoke
@@ -1230,6 +1239,7 @@ class CfgVehicles
 		_generalMacro="Particle_WinchDestructionSmoke";
 		scope=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1245,6 +1255,7 @@ class CfgVehicles
 		_generalMacro="Particle_SmallWreckSmoke";
 		scope=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1261,6 +1272,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1276,6 +1288,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1291,6 +1304,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1306,6 +1320,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke
@@ -1854,6 +1869,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke1
@@ -1874,6 +1890,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke1
@@ -1889,12 +1906,1336 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
 		class Effects
 		{
 			class Smoke2
 			{
 				simulation="particles";
 				type="FuelSmoke_02_G";
+			};
+		};
+	};
+	class Particle_ObjectDestructionFire_01_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ObjectDestructionFire_01_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="ObjectDestructionFire_01_G";
+			};
+		};
+	};
+	class Particle_ObjectDestructionFire_02_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ObjectDestructionFire_02_G0";
+		scope=1;
+		scopeCurator=0;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="ObjectDestructionFire_02_G";
+			};
+		};
+	};
+	class Particle_AirObjectDestructionFire_01_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_AirObjectDestructionFire_01_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="AirObjectDestructionFire_01_G";
+			};
+		};
+	};
+	class Particle_ObjectDestructionFire1Small_01_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ObjectDestructionFire1Small_01_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="ObjectDestructionFire1Small_01_G";
+			};
+		};
+	};
+	class Particle_ObjectDestructionFire2Small_01_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_ObjectDestructionFire2Small_01_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="ObjectDestructionFire2Small_01_G";
+			};
+		};
+	};
+	class Particle_ExhaustFirePlaneBig_01_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ExhaustFirePlaneBig_01_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="ExhaustFirePlaneBig_01_G";
+			};
+		};
+	};
+	class Particle_ClusterFire_01_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ClusterFire_01_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="ClusterFire_01_G";
+			};
+		};
+	};
+	class Particle_ClusterFire_02_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ClusterFire_02_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Fire";
+		icon="iconSoundFire_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="particles";
+				type="ClusterExpFire";
+			};
+		};
+	};
+	class Reflector_base_G: Particle_Base_F
+	{
+		editorSubcategory="EdSubcat_Lamps";
+	};
+	class Reflector_ObjectDestructionLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ObjectDestructionLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ObjectDestructionLight";
+			};
+		};
+	};
+	class Reflector_ExplosionLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ExplosionLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ExplosionLight_01_G";
+			};
+		};
+	};
+	class Reflector_CmeasuresLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_CmeasuresLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="CmeasuresLight";
+			};
+		};
+	};
+	class Reflector_ScudLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ScudLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ScudLight_01_G";
+			};
+		};
+	};
+	class Reflector_SmallFireLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_SmallFireLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="SmallFireLight_01_G";
+			};
+		};
+	};
+	class Reflector_SmallFirePlaceLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_SmallFirePlaceLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="SmallFirePlaceLight_01_G";
+			};
+		};
+	};
+	class Reflector_SmallFlameLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_SmallFlameLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="SmallFlameLight";
+			};
+		};
+	};
+	class Reflector_Chemlight_Green_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Chemlight_Green_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Chemlight_Green";
+			};
+		};
+	};
+	class Reflector_Chemlight_Red_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Chemlight_Red_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Chemlight_Red";
+			};
+		};
+	};
+	class Reflector_Chemlight_Yellow_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Chemlight_Yellow_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Chemlight_Yellow";
+			};
+		};
+	};
+	class Reflector_ChemLight_Blue_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ChemLight_Blue_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ChemLight_Blue";
+			};
+		};
+	};
+	class Reflector_ObjectDestructionLightSmall_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ObjectDestructionLightSmall_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ObjectDestructionLightSmall";
+			};
+		};
+	};
+	class Reflector_ExploLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ExploLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ExploLight";
+			};
+		};
+	};
+	class Reflector_ExploLightMed_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ExploLightMed_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ExploLightMed";
+			};
+		};
+	};
+	class Reflector_FiredLightMed_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FiredLightMed_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FiredLightMed";
+			};
+		};
+	};
+	class Reflector_FiredLightLauncher_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FiredLightLauncher_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FiredLightLauncher";
+			};
+		};
+	};
+	class Reflector_FiredLightLauncherSmall_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FiredLightLauncherSmall_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FiredLightLauncherSmall";
+			};
+		};
+	};
+	class Reflector_FiredLightCannon_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FiredLightCannon_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FiredLightCannon_01_G";
+			};
+		};
+	};
+	class Reflector_FiredLightSmall_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FiredLightSmall_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FiredLightSmall";
+			};
+		};
+	};
+	class Reflector_GrenadeExploLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_GrenadeExploLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="GrenadeExploLight";
+			};
+		};
+	};
+	class Reflector_MineExploLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_MineExploLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="MineExploLight";
+			};
+		};
+	};
+	class Reflector_RocketLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_RocketLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="RocketLight_01_G";
+			};
+		};
+	};
+	class Reflector_CruiseMissileLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_CruiseMissileLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="CruiseMissileLight_01_G";
+			};
+		};
+	};
+	class Reflector_SparksLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_SparksLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="SparksLight";
+			};
+		};
+	};
+	class Reflector_SparksLightSabot_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_SparksLightSabot_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="SparksLightSabot";
+			};
+		};
+	};
+	class Reflector_ClusterLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ClusterLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ClusterLight";
+			};
+		};
+	};
+	class Reflector_ClusterFlyLight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ClusterFlyLight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ClusterFlyLight";
+			};
+		};
+	};
+	class Reflector_TrainingMine_light_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_TrainingMine_light_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="TrainingMine_light";
+			};
+		};
+	};
+	class Reflector_Lantern_01_Light_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Lantern_01_Light_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Lantern_01_Light_01_G";
+			};
+		};
+	};
+	class Reflector_FiredLightRailgun_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FiredLightRailgun_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FiredLightRailgun_01_G";
+			};
+		};
+	};
+	class Reflector_BigFireLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_BigFireLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="BigFireLight_01_G";
+			};
+		};
+	};
+	class Reflector_MediumFireLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_MediumFireLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="MediumFireLight_01_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_01_white_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_01_white_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_01_white_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_01_green_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_01_green_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_01_green_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_01_red_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_01_red_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_01_red_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_01_yellow_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_01_yellow_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_01_yellow_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_02_white_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_02_white_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_02_white_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_02_green_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_02_green_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_02_green_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_02_red_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_02_red_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_02_red_G";
+			};
+		};
+	};
+	class Reflector_FlareLight_02_yellow_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_FlareLight_02_yellow_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="FlareLight_02_yellow_G";
+			};
+		};
+	};
+	class Reflector_ThunderBoltLight_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ThunderBoltLight_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconFlare_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ThunderBoltLight_01_G";
+			};
+		};
+	};
+	class Reflector_ThunderBoltLight_02_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ThunderBoltLight_02_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ThunderBoltLight_02_G";
+			};
+		};
+	};
+	class Reflector_ThunderBoltLight_03_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_ThunderBoltLight_03_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="ThunderBoltLight_03_G";
+			};
+		};
+	};
+	class Reflector_GuardTower_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_GuardTower_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="GuardTower_G";
+			};
+		};
+	};
+	class Reflector_PowerLine_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_PowerLine_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="PowerLine_G";
+			};
+		};
+	};
+	class Reflector_LampGenericCar_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_LampGenericCar_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="LampGenericCar_G";
+			};
+		};
+	};
+	class Reflector_Sawmill_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Sawmill_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Sawmill_G";
+			};
+		};
+	};
+	class Reflector_UGV2_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_UGV2_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="UGV2_G";
+			};
+		};
+	};
+	class Reflector_Tractor1Light_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Tractor1Light_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Tractor1Light_G";
+			};
+		};
+	};
+	class Reflector_Offroad1Spotlight_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Offroad1Spotlight_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Offroad1Spotlight_G";
+			};
+		};
+	};
+	class Reflector_Offroad1_01_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Offroad1_01_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Offroad1_01_G";
+			};
+		};
+	};
+	class Reflector_Offroad1_02_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_Offroad1_02_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="Offroad1_02_G";
+			};
+		};
+	};
+	class Reflector_LightHouse1_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_LightHouse1_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="LightHouse1_G";
+			};
+		};
+	};
+	class Reflector_LightHouse3_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_LightHouse3_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="LightHouse3_G";
+			};
+		};
+	};
+	class Reflector_VTOL_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_VTOL_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="VTOL_G";
+			};
+		};
+	};
+	class Reflector_LampGenericTruck_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_LampGenericTruck_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="LampGenericTruck_G";
+			};
+		};
+	};
+	class Reflector_HeliLight3_G: Reflector_base_G
+	{
+		displayName="$STR_Globe_CfgVehicles_Reflector_HeliLight3_G0";
+		scope=2;
+		scopeCurator=2;
+		icon="iconReflector_G";
+		class Effects
+		{
+			class Fire
+			{
+				simulation="light";
+				type="HeliLight3_G";
+			};
+		};
+	};
+	class Particle_SmallSmokeFast2_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_SmallSmokeFast2_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="SmallSmokeFast2_G";
+			};
+		};
+	};
+	class Particle_SmallSmokeSlow1_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_SmallSmokeSlow1_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="SmallSmokeSlow1_G";
+			};
+		};
+	};
+	class Particle_SmallSmokeSlow2_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_SmallSmokeSlow2_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="SmallSmokeSlow2_G";
+			};
+		};
+	};
+	class Particle_SmokeBig_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_SmokeBig_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="SmokeBig_G";
+			};
+		};
+	};
+	class Particle_SmokeMed_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_SmokeMed_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="SmokeMed_G";
+			};
+		};
+	};
+	class Particle_GrenadeSmoke1_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_GrenadeSmoke1_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="GrenadeSmoke1_G";
+			};
+		};
+	};
+	class Particle_SecondarySmoke_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_SecondarySmoke_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="SecondarySmoke_G";
+			};
+		};
+	};
+	class Particle_CraterSmoke_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CraterSmoke_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CraterSmoke_G";
+			};
+		};
+	};
+	class Particle_CraterSmoke_Orange_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CraterSmoke_Orange_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CraterSmoke_Orange_G";
+			};
+		};
+	};
+	class Particle_CraterSmokeBig_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CraterSmokeBig_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CraterSmokeBig_G";
+			};
+		};
+	};
+	class Particle_ShellSmoke_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ShellSmoke_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="ShellSmoke_G";
+			};
+		};
+	};
+	class Particle_ExploAmmoSmoke_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ExploAmmoSmoke_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="ExploAmmoSmoke_G";
+			};
+		};
+	};
+	class Particle_ERASmoke_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_ERASmoke_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Smoke";
+		icon="iconSmoke_G";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="ERASmoke_G";
+			};
+		};
+	};
+	class Particle_CircleDustTankSmall_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustTankSmall_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustTankSmall_G";
+			};
+		};
+	};
+	class Particle_CircleDustTankBig_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustTankBig_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustTankBig_G";
+			};
+		};
+	};
+	class Particle_CircleDustTankLong_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustTankLong_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustTankLong_G";
+			};
+		};
+	};
+	class Particle_CircleDustTank_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustTank_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustTank_G";
+			};
+		};
+	};
+	class Particle_CircleDustTankL_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustTankL_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustTankL_G";
+			};
+		};
+	};
+	class Particle_CircleDustArtillery_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustArtillery_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustArtillery_G";
+			};
+		};
+	};
+	class Particle_CircleDustMortar_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustMortar_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustMortar_G";
+			};
+		};
+	};
+	class Particle_CircleDustBig_G: Particle_Base_F
+	{
+		displayName="$STR_Globe_CfgVehicles_Particle_CircleDustBig_G0";
+		scope=2;
+		scopeCurator=2;
+		editorSubcategory="EdSubcat_Default";
+		icon="iconObject_circle";
+		class Effects
+		{
+			class Smoke
+			{
+				simulation="particles";
+				type="CircleDustBig_G";
 			};
 		};
 	};

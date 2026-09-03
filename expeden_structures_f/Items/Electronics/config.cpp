@@ -991,8 +991,8 @@ class CfgVehicles
 				tooltip="Cyclic animation change, it never ends";
 				property="RebootProgress";
 				control="Checkbox";
-				defaultValue="false";
-				expression="if (_value) then {_this spawn expEden_fnc_PCSetRebooting}";
+				defaultValue=0;
+				expression="if (_value isEqualTo true) then {_this spawn expEden_fnc_PCSetRebooting}";
 			};
 			class SwitchTexture
 			{

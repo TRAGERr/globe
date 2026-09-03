@@ -14,19 +14,18 @@ class CfgPatches
 };
 class CfgVehicles
 {
-	class Animal;
-	class Animal_Base_F: Animal
-	{
-		class EventHandlers;
-	};
+	class Animal_Base_F;
 	class Snake_random_F: Animal_Base_F
 	{
 		editorPreview="\a3\editorpreviews_f_expEden\data\CfgVehicles\Snake_random_F.jpg";
 		displayName="$STR_A3_Globe_CfgVehicles_Snake_random_F0";
 		scope=2;
-		class EventHandlers: EventHandlers
+		class EventHandlers
 		{
-			postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			class Globe_anmlRndEH
+			{
+				postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			};
 		};
 	};
 	class Snake_vipera_random_F: Snake_random_F
@@ -34,9 +33,12 @@ class CfgVehicles
 		editorPreview="\a3\editorpreviews_f_expEden\data\CfgVehicles\Snake_vipera_random_F.jpg";
 		displayName="$STR_A3_Globe_CfgVehicles_Snake_Vipera_random_F0";
 		scope=2;
-		class EventHandlers: EventHandlers
+		class EventHandlers
 		{
-			postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			class Globe_anmlRndEH
+			{
+				postInit="(_this # 0) call bis_fnc_animalRandomization;";
+			};
 		};
 	};
 };

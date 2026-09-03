@@ -37,3 +37,20 @@ building setHitPointDamage [format ["glass_%1_hitpoint", id + 1], [0,0.5,1] sele
 
 #define SETUP_GLASS_PREVIEW(building,id,state)\
 building setHitPointDamage [format ["glass_%1_hitpoint", id + 1], [0,0.5,1] select state];
+
+#define DOOR_INDEX_MIN 1
+#define DOOR_INDEX_MAX 24
+#define DOOR_COLUMNS 8
+#define DOOR_ROWS 3
+
+#define KNOCK_DISABLED 0
+#define KNOCK_ENABLED 1
+
+#define TEXTURE_KNOCK_ON "\A3\3DEN_Globe\Data\texturedoor_knock_ca.paa"
+#define TEXTURE_KNOCK_OFF "\a3\modules_f\data\editterrainobject\texturedoor_closed_ca.paa"
+
+#define TEXT_KNOCK_OFF (localize "STR_disable_Controller")
+#define TEXT_KNOCK_ON (localize "STR_Enable_Controller")
+
+#define COLOR_KNOCK_OFF [0.5, 0.5, 0.5, 0.6]
+#define COLOR_KNOCK_ON [0.13, 0.77, 0.13, 1]
